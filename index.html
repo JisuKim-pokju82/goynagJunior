@@ -85,6 +85,37 @@
     .safe-bottom {
       padding-bottom: env(safe-area-inset-bottom, 20px);
     }
+
+    canvas {
+      pointer-events: none !important;
+    }
+
+    .floating-cheer-badge {
+      position: absolute;
+      bottom: 20px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #FFD200;
+      text-shadow: 0 0 8px rgba(0,0,0,0.9);
+      pointer-events: none;
+      animation: floatCheerUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      z-index: 30;
+    }
+
+    @keyframes floatCheerUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-28px) scale(1.15);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(1);
+      }
+    }
   </style>
 </head>
 <body class="h-full flex flex-col bg-[#0E1017] text-slate-100 antialiased selection:bg-yellow-400 selection:text-black">
@@ -1911,16 +1942,17 @@
 
       <div class="rounded-3xl bg-gradient-to-b from-[#1C1F2B] via-[#161922] to-[#12151E] p-4 border border-yellow-500/40 shadow-xl space-y-4">
         <!-- Interactive Heart Button -->
-        <div class="text-center space-y-2">
+        <div class="text-center space-y-2 relative">
           <div class="text-xs text-zinc-300 font-medium">
             버튼을 눌러 우리 멋진 고양주니어 선수들에게 파이팅 에너지를 선물해주세요!
           </div>
-          <div class="flex items-center justify-center gap-3 pt-1">
-            <button type="button" id="cheerBtn" onclick="sendCheer(event)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-sm flex items-center gap-2 shadow-lg active:scale-90 transition transform duration-150 border border-yellow-500/50 cursor-pointer">
-              <i class="fa-solid fa-heart text-red-600 text-lg" id="heartIcon"></i>
+          <div class="flex items-center justify-center gap-3 pt-1 relative">
+            <button type="button" id="cheerBtn" onclick="sendCheer(event); return false;" class="relative px-6 py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-sm flex items-center gap-2 shadow-lg active:scale-90 transition transform duration-150 border border-yellow-500/50 cursor-pointer select-none">
+              <i class="fa-solid fa-heart text-red-600 text-lg transition-transform" id="heartIcon"></i>
               <span>파이팅 보내기!</span>
               <span id="cheerCount" class="font-num bg-black text-yellow-300 px-2.5 py-0.5 rounded-full text-xs ml-1">1,248</span>
             </button>
+            <div id="floatingHeartsContainer" class="absolute pointer-events-none inset-0 flex items-center justify-center"></div>
           </div>
         </div>
 
@@ -1931,12 +1963,12 @@
             <span>아이들 & 학부모님 한줄 응원 남기기</span>
           </div>
 
-          <form onsubmit="submitCheerComment(event)" class="space-y-2">
+          <form action="javascript:void(0);" onsubmit="submitCheerComment(event); return false;" method="POST" class="space-y-2">
             <div class="grid grid-cols-3 gap-2">
               <input type="text" id="cheerAuthor" placeholder="작성자 (예: 동하아빠, 7번)" maxlength="12" required class="col-span-1 px-3 py-2.5 rounded-xl bg-[#0E1017] border border-[#282D3D] focus:border-yellow-400 text-xs text-white placeholder-zinc-500 focus:outline-none transition" />
               <input type="text" id="cheerText" placeholder="한줄 응원! (예: 부상없이 우승 가자!)" maxlength="40" required class="col-span-2 px-3 py-2.5 rounded-xl bg-[#0E1017] border border-[#282D3D] focus:border-yellow-400 text-xs text-white placeholder-zinc-500 focus:outline-none transition" />
             </div>
-            <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-gold hover:bg-yellow-300 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+            <button type="submit" id="cheerSubmitBtn" class="w-full py-2.5 rounded-xl bg-brand-gold hover:bg-yellow-300 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
               <i class="fa-solid fa-paper-plane text-[11px]"></i>
               <span>응원 메시지 등록하기</span>
             </button>
@@ -3184,6 +3216,7 @@
         if (typeof e.preventDefault === 'function') e.preventDefault();
         if (typeof e.stopPropagation === 'function') e.stopPropagation();
       }
+      
       cheerCount++;
       try {
         localStorage.setItem('goyang_cheer_count', cheerCount.toString());
@@ -3195,25 +3228,46 @@
       const heart = document.getElementById('heartIcon');
       if (heart) {
         heart.style.transform = 'scale(1.4)';
-        setTimeout(() => heart.style.transform = 'scale(1)', 200);
+        setTimeout(() => heart.style.transform = 'scale(1)', 180);
       }
 
-      // Safe Confetti trigger (no page navigation)
+      // Spawn floating +1 badge over the button
+      spawnFloatingHeart();
+
+      // Trigger Confetti Burst safely without blocking
+      fireSafeConfetti(0.5, 0.85);
+      
+      showToast('고양주니어 선수들에게 파이팅을 보냈습니다! ⚽🔥');
+      return false;
+    }
+
+    function spawnFloatingHeart() {
+      const container = document.getElementById('floatingHeartsContainer');
+      if (!container) return;
+      const el = document.createElement('div');
+      el.className = 'floating-cheer-badge';
+      el.innerText = '+1 ❤️';
+      const randomX = (Math.random() * 60 - 30);
+      el.style.left = `calc(50% + ${randomX}px)`;
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 950);
+    }
+
+    function fireSafeConfetti(originX, originY) {
       try {
         if (typeof confetti === 'function') {
           confetti({
-            particleCount: 40,
-            spread: 70,
-            origin: { y: 0.8 },
-            colors: ['#FFD200', '#EF4444', '#3B82F6', '#10B981']
+            particleCount: 35,
+            spread: 60,
+            origin: { x: originX || 0.5, y: originY || 0.85 },
+            colors: ['#FFD200', '#EF4444', '#3B82F6', '#10B981'],
+            zIndex: 9999,
+            disableForReducedMotion: true
           });
         }
       } catch (err) {
         console.warn(err);
       }
-      
-      showToast('고양주니어 선수들에게 파이팅을 보냈습니다! ⚽🔥');
-      return false;
     }
 
     function addToCalendar(title, startIso, endIso, location) {
@@ -3324,12 +3378,16 @@
     }
 
     function submitCheerComment(event) {
-      event.preventDefault();
+      if (event) {
+        if (typeof event.preventDefault === 'function') event.preventDefault();
+        if (typeof event.stopPropagation === 'function') event.stopPropagation();
+      }
+      
       const authorInput = document.getElementById('cheerAuthor');
       const textInput = document.getElementById('cheerText');
-      const author = authorInput.value.trim();
-      const text = textInput.value.trim();
-      if (!author || !text) return;
+      const author = authorInput ? authorInput.value.trim() : '';
+      const text = textInput ? textInput.value.trim() : '';
+      if (!author || !text) return false;
 
       const comments = getStoredComments();
       comments.unshift({
@@ -3340,18 +3398,15 @@
       saveComments(comments);
       renderCheerComments();
 
-      authorInput.value = '';
-      textInput.value = '';
-
-      if (window.confetti) {
-        confetti({
-          particleCount: 30,
-          spread: 60,
-          origin: { y: 0.85 },
-          colors: ['#FFD200', '#EF4444', '#10B981']
-        });
+      if (authorInput) authorInput.value = '';
+      if (textInput) {
+        textInput.value = '';
+        textInput.blur(); // dismiss mobile keyboard immediately
       }
+
+      fireSafeConfetti(0.5, 0.85);
       showToast('소중한 응원 메시지가 등록되었습니다! ⚽💌');
+      return false;
     }
 
     // Initialize on load
