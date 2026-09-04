@@ -205,10 +205,10 @@
       <!-- Core Module Header -->
       <div class="flex items-center justify-between px-1 pb-0.5">
         <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse ring-4 ring-yellow-400/20"></span>
+          <span id="tabSectionDot" class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse ring-4 ring-yellow-400/20"></span>
           <h2 class="text-sm font-black text-white flex items-center gap-1.5">
             <span>고양주니어FC 경기 일정</span>
-            <span class="text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm">CORE</span>
+            <span id="tabSectionBadge" class="text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm">예선 리그</span>
           </h2>
         </div>
         <div class="flex items-center gap-1 px-2 py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-[10px] text-blue-300 font-bold">
@@ -2365,6 +2365,9 @@
       
       const prelimBtn = document.getElementById('stageBtn-prelim');
       const finalBtn = document.getElementById('stageBtn-final');
+      const tabSection = document.getElementById('tab-section');
+      const sectionBadge = document.getElementById('tabSectionBadge');
+      const sectionDot = document.getElementById('tabSectionDot');
 
       if (stage === 'prelim') {
         if (prelimBtn) {
@@ -2373,22 +2376,48 @@
         if (finalBtn) {
           finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition';
         }
+        if (tabSection) {
+          tabSection.className = 'relative rounded-3xl bg-[#11141D] p-3 sm:p-4 border-2 border-yellow-500/60 shadow-[0_0_30px_rgba(234,179,8,0.14)] ring-1 ring-yellow-400/30 space-y-3.5 transition-all duration-300';
+        }
+        if (sectionBadge) {
+          sectionBadge.className = 'text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm';
+          sectionBadge.innerText = '예선 리그';
+        }
+        if (sectionDot) {
+          sectionDot.className = 'w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse ring-4 ring-yellow-400/20';
+        }
         // Update tab badges
         ALL_TAB_KEYS.forEach(t => {
           const badge = document.getElementById('tabBadge-' + t);
-          if (badge) badge.innerText = '예선';
+          if (badge) {
+            badge.innerText = '예선';
+            badge.className = 'text-[8px] opacity-80 leading-none mb-0.5';
+          }
         });
       } else {
         if (finalBtn) {
-          finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition';
+          finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-red-500 via-rose-600 to-red-600 text-white shadow-lg shadow-red-500/30 active:scale-95 transition';
         }
         if (prelimBtn) {
           prelimBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition';
         }
+        if (tabSection) {
+          tabSection.className = 'relative rounded-3xl bg-[#11141D] p-3 sm:p-4 border-2 border-red-500/60 shadow-[0_0_30px_rgba(239,68,68,0.18)] ring-1 ring-red-400/30 space-y-3.5 transition-all duration-300';
+        }
+        if (sectionBadge) {
+          sectionBadge.className = 'text-[9px] bg-gradient-to-r from-red-500 to-rose-600 text-white font-black px-1.5 py-0.2 rounded-full shadow-sm';
+          sectionBadge.innerText = '본선 토너먼트';
+        }
+        if (sectionDot) {
+          sectionDot.className = 'w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse ring-4 ring-red-400/20';
+        }
         // Update tab badges
         ALL_TAB_KEYS.forEach(t => {
           const badge = document.getElementById('tabBadge-' + t);
-          if (badge) badge.innerText = '본선';
+          if (badge) {
+            badge.innerText = '본선';
+            badge.className = 'text-[8px] font-black text-red-200 leading-none mb-0.5';
+          }
         });
       }
 
@@ -2401,12 +2430,16 @@
     }
 
     function renderActivePane() {
-      // 1. Update Tab Button Styles
+      // 1. Update Tab Button Styles (Yellow for Prelim, Red for Finals)
       ALL_TAB_KEYS.forEach(t => {
         const btn = document.getElementById('btn-' + t);
         if (btn) {
           if (t === currentTab) {
-            btn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow';
+            if (currentStage === 'prelim') {
+              btn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow';
+            } else {
+              btn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-rose-600 text-white font-black shadow-lg shadow-red-500/30 ring-1 ring-red-400/50';
+            }
           } else {
             btn.className = 'tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold';
           }
