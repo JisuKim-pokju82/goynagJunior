@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>고양주니어FC | 2026 화랑대기 전국 유소년 축구대회</title>
   
-  <meta name="description" content="고양시 NO.1 축구교실 고양주니어FC 2026 화랑대기 전국 유소년 축구대회 U-10, U-11, U-12 전 경기 일정, KFA 실시간 스코어, 선발 라인업, 라이브 중계" />
-  <meta property="og:title" content="고양주니어FC | 2026 화랑대기 공식 일정 & KFA 실시간 결과" />
-  <meta property="og:description" content="고양주니어FC 학부모님 및 서포터즈를 위한 실시간 경기 일정, KFA 스코어, 경기장 길찾기 안내" />
+  <meta name="description" content="고양시 NO.1 축구교실 고양주니어FC 2026 화랑대기 전국 유소년 축구대회 U-10, U-11, U-12 전 경기 일정, KFA 실시간 스코어, 선발 라인업, 상대팀 엠블럼" />
+  <meta property="og:title" content="고양주니어FC | 2026 화랑대기 공식 일정 & 상대팀 정보" />
+  <meta property="og:description" content="고양주니어FC 학부모님 및 서포터즈를 위한 실시간 경기 일정, KFA 스코어, 상대팀 엠블럼 및 구장 안내" />
   <meta name="theme-color" content="#0E1017" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -76,10 +76,14 @@
     }
 
     .emblem-box {
-      transition: transform 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
     }
     .emblem-box:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-2px);
+    }
+    .emblem-box:active {
+      transform: scale(0.95);
     }
 
     .safe-bottom {
@@ -135,7 +139,7 @@
         <h1 class="text-2xl font-black title-font tracking-tight text-white mt-0.5">
           화랑대기 <span class="text-brand-gold">경기 일정 & 스코어</span>
         </h1>
-        <p class="text-xs text-zinc-400 mt-0.5">선수단과 학부모님을 위한 실시간 일정 및 중계 안내</p>
+        <p class="text-xs text-zinc-400 mt-0.5">선수단과 학부모님을 위한 실시간 일정 및 상대팀 분석</p>
       </div>
 
       <!-- D-Day Timer -->
@@ -229,14 +233,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(옐로우)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u10_1">
                 0 : 0
@@ -246,14 +252,17 @@
               </button>
             </div>
 
+            <!-- Opponent: 부평유소년 블랙 -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-zinc-900 border-2 border-zinc-600 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#121216] border-2 border-zinc-600 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('bupyeong_black')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <path d="M50 10 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="#18181B" stroke="#52525B" stroke-width="3"/>
-                  <circle cx="50" cy="48" r="22" fill="#FFFFFF"/>
-                  <circle cx="50" cy="48" r="18" fill="#18181B"/>
-                  <text x="50" y="44" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="900">부평</text>
-                  <text x="50" y="58" text-anchor="middle" fill="#E4E4E7" font-size="8" font-weight="900">BLACK</text>
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#18181B" stroke="#71717A" stroke-width="3"/>
+                  <path d="M50 14 L82 28 L82 56 C82 72 50 86 50 86 C50 86 18 72 18 56 L18 28 Z" fill="#27272A"/>
+                  <circle cx="50" cy="46" r="18" fill="#18181B" stroke="#E4E4E7" stroke-width="2"/>
+                  <!-- Football pattern -->
+                  <polygon points="50,38 56,43 54,49 46,49 44,43" fill="#FFFFFF"/>
+                  <text x="50" y="72" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900" letter-spacing="0.5">부평유소년</text>
+                  <text x="50" y="80" text-anchor="middle" fill="#A1A1AA" font-size="7" font-weight="800">BLACK</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">인천 부평유소년</div>
@@ -294,14 +303,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(홈팀/옐로우)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u10_2">
                 0 : 0
@@ -311,13 +322,22 @@
               </button>
             </div>
 
+            <!-- Opponent: 남양주 BEST FC -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-emerald-950/40 border-2 border-emerald-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#064E3B] border-2 border-emerald-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('namyangju_best')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <polygon points="50,10 90,40 75,90 25,90 10,40" fill="#059669" stroke="#34D399" stroke-width="3"/>
-                  <polygon points="50,22 80,45 68,82 32,82 20,45" fill="#FFFFFF"/>
-                  <text x="50" y="52" text-anchor="middle" fill="#059669" font-size="11" font-weight="900">남양주</text>
-                  <text x="50" y="66" text-anchor="middle" fill="#047857" font-size="9" font-weight="800">BEST</text>
+                  <!-- Crown / Shield Emblem -->
+                  <path d="M50 8 L86 24 L86 58 C86 78 50 94 50 94 C50 94 14 78 14 58 L14 24 Z" fill="#047857" stroke="#34D399" stroke-width="3"/>
+                  <!-- Gold Crown Top -->
+                  <polygon points="32,32 38,22 50,30 62,22 68,32" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/>
+                  <circle cx="50" cy="20" r="3" fill="#FDE047"/>
+                  <circle cx="38" cy="18" r="2.5" fill="#FDE047"/>
+                  <circle cx="62" cy="18" r="2.5" fill="#FDE047"/>
+                  <!-- Center Shield -->
+                  <circle cx="50" cy="50" r="16" fill="#FFFFFF"/>
+                  <text x="50" y="47" text-anchor="middle" fill="#047857" font-size="8" font-weight="900">남양주</text>
+                  <text x="50" y="57" text-anchor="middle" fill="#D97706" font-size="10" font-weight="900">BEST</text>
+                  <text x="50" y="78" text-anchor="middle" fill="#A7F3D0" font-size="7" font-weight="800">FOOTBALL CLUB</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 남양주 BEST</div>
@@ -358,14 +378,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(옐로우)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u10_3">
                 0 : 0
@@ -375,13 +397,16 @@
               </button>
             </div>
 
+            <!-- Opponent: 대구 TDN 레드 -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-rose-950/40 border-2 border-rose-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#881337] border-2 border-rose-500 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('tdn_red')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <polygon points="50,12 88,32 88,72 50,92 12,72 12,32" fill="#E11D48" stroke="#F43F5E" stroke-width="3"/>
-                  <polygon points="50,22 78,38 78,68 50,82 22,68 22,38" fill="#FFFFFF"/>
-                  <text x="50" y="52" text-anchor="middle" fill="#E11D48" font-size="14" font-weight="900">TDN</text>
-                  <text x="50" y="66" text-anchor="middle" fill="#BE123C" font-size="8" font-weight="800">RED</text>
+                  <path d="M50 8 L88 26 L88 60 C88 80 50 94 50 94 C50 94 12 80 12 60 L12 26 Z" fill="#BE123C" stroke="#FB7185" stroke-width="3"/>
+                  <polygon points="50,16 80,30 80,58 50,84 20,58 20,30" fill="#E11D48"/>
+                  <circle cx="50" cy="46" r="16" fill="#FFFFFF"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#9F1239" font-size="8" font-weight="900">DAEGU</text>
+                  <text x="50" y="55" text-anchor="middle" fill="#E11D48" font-size="11" font-weight="900">TDN</text>
+                  <text x="50" y="74" text-anchor="middle" fill="#FFE4E6" font-size="7" font-weight="800">RED TEAM</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">대구 TDN</div>
@@ -435,14 +460,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(와인)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u11_1">
                 0 : 0
@@ -452,14 +479,16 @@
               </button>
             </div>
 
+            <!-- Opponent: 부평유소년 레드 -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-red-950/40 border-2 border-red-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#7F1D1D] border-2 border-red-500 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('bupyeong_red')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <path d="M50 10 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="#DC2626" stroke="#991B1B" stroke-width="3"/>
-                  <circle cx="50" cy="48" r="22" fill="#FFFFFF"/>
-                  <circle cx="50" cy="48" r="18" fill="#DC2626"/>
-                  <text x="50" y="44" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="900">부평</text>
-                  <text x="50" y="58" text-anchor="middle" fill="#FFD200" font-size="8" font-weight="900">RED</text>
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#DC2626" stroke="#EF4444" stroke-width="3"/>
+                  <path d="M50 14 L82 28 L82 56 C82 72 50 86 50 86 C50 86 18 72 18 56 L18 28 Z" fill="#991B1B"/>
+                  <circle cx="50" cy="46" r="18" fill="#FFFFFF"/>
+                  <polygon points="50,38 56,43 54,49 46,49 44,43" fill="#DC2626"/>
+                  <text x="50" y="72" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900" letter-spacing="0.5">부평유소년</text>
+                  <text x="50" y="80" text-anchor="middle" fill="#FFD200" font-size="7" font-weight="800">RED</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">인천 부평유소년</div>
@@ -500,14 +529,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(홈팀/와인)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u11_2">
                 0 : 0
@@ -517,14 +548,18 @@
               </button>
             </div>
 
+            <!-- Opponent: 경기 염기훈 주니어 FC -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-blue-950/40 border-2 border-blue-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#172554] border-2 border-blue-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('yeom_junior')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <circle cx="50" cy="50" r="46" fill="#1E3A8A" stroke="#3B82F6" stroke-width="3"/>
-                  <circle cx="50" cy="50" r="36" fill="#FFFFFF"/>
-                  <path d="M50 25 L65 50 L35 50 Z" fill="#1E3A8A"/>
-                  <text x="50" y="65" text-anchor="middle" fill="#1E3A8A" font-size="10" font-weight="900">염기훈</text>
-                  <text x="50" y="78" text-anchor="middle" fill="#2563EB" font-size="8" font-weight="800">JUNIOR</text>
+                  <!-- Shield -->
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#1E40AF" stroke="#60A5FA" stroke-width="3"/>
+                  <!-- Wings / Left foot icon -->
+                  <path d="M26 34 Q50 20 74 34 Q62 50 50 54 Q38 50 26 34 Z" fill="#FBBF24"/>
+                  <circle cx="50" cy="46" r="14" fill="#FFFFFF"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#1E3A8A" font-size="8" font-weight="900">YKH FC</text>
+                  <text x="50" y="52" text-anchor="middle" fill="#2563EB" font-size="7" font-weight="900">염기훈</text>
+                  <text x="50" y="74" text-anchor="middle" fill="#93C5FD" font-size="7" font-weight="800">JUNIOR FOOTBALL</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 염기훈 주니어</div>
@@ -565,14 +600,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(와인)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u11_3">
                 0 : 0
@@ -582,13 +619,16 @@
               </button>
             </div>
 
+            <!-- Opponent: 대구 TDN 블루 -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-sky-950/40 border-2 border-sky-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#082F49] border-2 border-sky-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('tdn_blue')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <polygon points="50,12 88,32 88,72 50,92 12,72 12,32" fill="#0284C7" stroke="#38BDF8" stroke-width="3"/>
-                  <polygon points="50,22 78,38 78,68 50,82 22,68 22,38" fill="#FFFFFF"/>
-                  <text x="50" y="52" text-anchor="middle" fill="#0284C7" font-size="14" font-weight="900">TDN</text>
-                  <text x="50" y="66" text-anchor="middle" fill="#0369A1" font-size="8" font-weight="800">BLUE</text>
+                  <path d="M50 8 L88 26 L88 60 C88 80 50 94 50 94 C50 94 12 80 12 60 L12 26 Z" fill="#0284C7" stroke="#38BDF8" stroke-width="3"/>
+                  <polygon points="50,16 80,30 80,58 50,84 20,58 20,30" fill="#0369A1"/>
+                  <circle cx="50" cy="46" r="16" fill="#FFFFFF"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#0C4A6E" font-size="8" font-weight="900">DAEGU</text>
+                  <text x="50" y="55" text-anchor="middle" fill="#0284C7" font-size="11" font-weight="900">TDN</text>
+                  <text x="50" y="74" text-anchor="middle" fill="#E0F2FE" font-size="7" font-weight="800">BLUE TEAM</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">대구 TDN</div>
@@ -642,14 +682,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(U-12 대표)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_1">
                 0 : 0
@@ -659,13 +701,16 @@
               </button>
             </div>
 
+            <!-- Opponent: 속초시 체육회 -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-cyan-950/40 border-2 border-cyan-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#083344] border-2 border-cyan-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('sokcho')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <circle cx="50" cy="50" r="46" fill="#0891B2" stroke="#22D3EE" stroke-width="3"/>
-                  <circle cx="50" cy="50" r="36" fill="#FFFFFF"/>
-                  <path d="M30 65 Q50 30 70 65 Z" fill="#0891B2"/>
-                  <text x="50" y="78" text-anchor="middle" fill="#0E7490" font-size="10" font-weight="900">속초 체육회</text>
+                  <circle cx="50" cy="50" r="46" fill="#0E7490" stroke="#22D3EE" stroke-width="3"/>
+                  <!-- Mountain & Sea Wave -->
+                  <path d="M22 62 L38 42 L52 56 L64 38 L78 62 Z" fill="#164E63"/>
+                  <path d="M16 64 Q32 54 50 64 Q68 74 84 64 L84 76 Q68 86 50 76 Q32 66 16 76 Z" fill="#38BDF8"/>
+                  <circle cx="50" cy="30" r="8" fill="#FDE047"/>
+                  <text x="50" y="86" text-anchor="middle" fill="#CFFAFE" font-size="8" font-weight="900">속초시체육회</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">강원 속초시 체육회</div>
@@ -706,14 +751,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(홈팀)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_2">
                 0 : 0
@@ -723,13 +770,17 @@
               </button>
             </div>
 
+            <!-- Opponent: 세종 공공SC -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-indigo-950/40 border-2 border-indigo-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#1E1B4B] border-2 border-indigo-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('sejong_sc')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <path d="M50 12 L86 28 L86 62 C86 78 50 90 50 90 C50 90 14 78 14 62 L14 28 Z" fill="#4F46E5" stroke="#818CF8" stroke-width="3"/>
-                  <circle cx="50" cy="48" r="22" fill="#FFFFFF"/>
-                  <text x="50" y="46" text-anchor="middle" fill="#4F46E5" font-size="10" font-weight="900">세종</text>
-                  <text x="50" y="60" text-anchor="middle" fill="#3730A3" font-size="8" font-weight="800">공공SC</text>
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#4338CA" stroke="#818CF8" stroke-width="3"/>
+                  <!-- Sejong Symbol Style -->
+                  <circle cx="50" cy="44" r="18" fill="#FFFFFF"/>
+                  <path d="M40 44 Q50 32 60 44 Q50 56 40 44 Z" fill="#4338CA"/>
+                  <circle cx="50" cy="44" r="4" fill="#38BDF8"/>
+                  <text x="50" y="72" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">세종공공SC</text>
+                  <text x="50" y="80" text-anchor="middle" fill="#C7D2FE" font-size="7" font-weight="800">SPORTS CLUB</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">세종 공공SC</div>
@@ -770,14 +821,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(U-12 대표)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_3">
                 0 : 0
@@ -787,14 +840,18 @@
               </button>
             </div>
 
+            <!-- Opponent: 서울 K리거 강용FC -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-orange-950/40 border-2 border-orange-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#431407] border-2 border-orange-500 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('kangyong')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <circle cx="50" cy="50" r="46" fill="#EA580C" stroke="#FB923C" stroke-width="3"/>
-                  <circle cx="50" cy="50" r="36" fill="#FFFFFF"/>
-                  <text x="50" y="44" text-anchor="middle" fill="#EA580C" font-size="10" font-weight="900">K리거</text>
-                  <text x="50" y="58" text-anchor="middle" fill="#111827" font-size="11" font-weight="900">강용FC</text>
-                  <text x="50" y="70" text-anchor="middle" fill="#C2410C" font-size="7" font-weight="800">SEOUL</text>
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#EA580C" stroke="#FB923C" stroke-width="3"/>
+                  <path d="M50 14 L82 28 L82 56 C82 72 50 86 50 86 C50 86 18 72 18 56 L18 28 Z" fill="#1C1917"/>
+                  <!-- Striker Silhouette -->
+                  <circle cx="50" cy="36" r="6" fill="#FDBA74"/>
+                  <path d="M46 44 L54 44 L58 56 L50 64 L42 54 Z" fill="#FDBA74"/>
+                  <circle cx="62" cy="58" r="4" fill="#FFFFFF"/>
+                  <text x="50" y="74" text-anchor="middle" fill="#FFFFFF" font-size="8" font-weight="900">K리거 강용FC</text>
+                  <text x="50" y="82" text-anchor="middle" fill="#FB923C" font-size="6.5" font-weight="800">SEOUL ACADEMY</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">서울 K리거 강용FC</div>
@@ -835,14 +892,16 @@
 
         <div class="p-3.5">
           <div class="grid grid-cols-5 items-center gap-1">
+            <!-- Goyang Junior -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
               <span class="text-[10px] text-brand-gold font-bold">(U-12 대표)</span>
             </div>
 
+            <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center">
               <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_4">
                 0 : 0
@@ -852,13 +911,15 @@
               </button>
             </div>
 
+            <!-- Opponent: 경기 이천유나이티드 -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-amber-950/40 border-2 border-amber-500/40 p-1 shadow-md">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#451A03] border-2 border-amber-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('icheon_united')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <polygon points="50,12 86,28 86,65 50,90 14,65 14,28" fill="#CA8A04" stroke="#FBBF24" stroke-width="3"/>
-                  <polygon points="50,22 76,36 76,60 50,80 24,60 24,36" fill="#FFFFFF"/>
-                  <text x="50" y="48" text-anchor="middle" fill="#CA8A04" font-size="11" font-weight="900">이천</text>
-                  <text x="50" y="62" text-anchor="middle" fill="#111827" font-size="8" font-weight="900">UNITED</text>
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#D97706" stroke="#FBBF24" stroke-width="3"/>
+                  <path d="M50 14 L82 28 L82 56 C82 72 50 86 50 86 C50 86 18 72 18 56 L18 28 Z" fill="#1E293B"/>
+                  <polygon points="50,26 53,34 62,34 55,39 58,47 50,42 42,47 45,39 38,34 47,34" fill="#FDE047"/>
+                  <text x="50" y="62" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">이천 UTD</text>
+                  <text x="50" y="74" text-anchor="middle" fill="#FBBF24" font-size="7" font-weight="800">UNITED FC</text>
                 </svg>
               </div>
               <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 이천유나이티드</div>
@@ -1146,8 +1207,8 @@
         <div class="w-6 h-6 rounded-full bg-brand-gold text-black flex items-center justify-center text-xs font-black shadow ring-1 ring-yellow-400">
           ⚽
         </div>
-        <div class="text-xs font-black text-zinc-100">
-          만든 사람 : <span class="text-brand-gold font-black tracking-wide">고양주니어 U12 김동하 화이팅!</span>
+        <div class="text-xs font-black text-brand-gold tracking-wide">
+          고양주니어 화이팅! 김동하도 화이팅!
         </div>
       </div>
       <p class="text-[10px] text-zinc-500 mt-2 font-semibold">고양주니어FC 선수단과 학부모님의 승리를 응원합니다!</p>
@@ -1177,6 +1238,32 @@
         <i class="fa-solid fa-share-nodes text-base text-brand-gold"></i>
         <span class="text-[10px]">공유하기</span>
       </button>
+    </div>
+  </div>
+
+  <!-- TEAM DETAILS MODAL (상대팀 엠블럼 & 정보 확대 팝업) -->
+  <div id="teamModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md" onclick="closeTeamModal()">
+    <div class="relative max-w-xs w-full bg-[#161922] rounded-3xl overflow-hidden shadow-2xl border border-yellow-500/50 p-4" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-center pb-2 border-b border-[#282D3D]">
+        <span class="text-xs font-bold text-brand-gold">구단 공식 엠블럼 & 정보</span>
+        <button onclick="closeTeamModal()" class="w-7 h-7 rounded-full bg-[#1E222E] text-zinc-400 hover:text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="my-4 text-center">
+        <div id="teamModalEmblem" class="w-24 h-24 mx-auto mb-3 rounded-2xl bg-black/60 border-2 border-yellow-400/40 p-2 shadow-xl flex items-center justify-center">
+          <!-- Dynamic Team Crest -->
+        </div>
+        <h3 id="teamModalName" class="text-base font-black text-white">팀명</h3>
+        <p id="teamModalDesc" class="text-xs text-zinc-400 mt-1 leading-relaxed">구단 설명</p>
+      </div>
+
+      <div class="pt-2">
+        <button onclick="closeTeamModal()" class="w-full py-2.5 rounded-xl bg-brand-gold text-black font-black text-xs hover:bg-yellow-300 transition active:scale-95 shadow">
+          닫기
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1248,13 +1335,85 @@
 
   <!-- INLINE DATA & SCRIPTS -->
   <script>
-    // Embedded Base64 Images Dictionary
+    // Embedded Base64 / CDN Images Dictionary
     const INLINE_IMAGES = {
       logo: 'https://iili.io/nJAGX7S.png',
       u10: 'https://iili.io/nJAGvBj.jpg',
       u11: 'https://iili.io/nJAGg2V.jpg',
       u12: 'https://iili.io/nJAG6p1.jpg'
     };
+
+    // Team Information Map for Interactive Modal
+    const TEAMS_INFO = {
+      goyang: {
+        name: '경기 고양주니어 FC',
+        desc: '고양시 NO.1 유소년 축구교실 (중산점). 2026 화랑대기 U-10, U-11, U-12 참가!',
+        html: `<img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />`
+      },
+      bupyeong_black: {
+        name: '인천 부평유소년 FC (블랙)',
+        desc: '인천광역시 부평구를 대표하는 전통의 유소년 명문 축구클럽.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#18181B" stroke="#71717A" stroke-width="3"/><circle cx="50" cy="46" r="18" fill="#18181B" stroke="#E4E4E7" stroke-width="2"/><polygon points="50,38 56,43 54,49 46,49 44,43" fill="#FFFFFF"/><text x="50" y="74" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">부평유소년</text><text x="50" y="82" text-anchor="middle" fill="#A1A1AA" font-size="7" font-weight="800">BLACK</text></svg>`
+      },
+      bupyeong_red: {
+        name: '인천 부평유소년 FC (레드)',
+        desc: '인천 부평유소년 축구클럽의 막강한 화력을 자랑하는 레드팀.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#DC2626" stroke="#EF4444" stroke-width="3"/><circle cx="50" cy="46" r="18" fill="#FFFFFF"/><polygon points="50,38 56,43 54,49 46,49 44,43" fill="#DC2626"/><text x="50" y="74" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">부평유소년</text><text x="50" y="82" text-anchor="middle" fill="#FFD200" font-size="7" font-weight="800">RED</text></svg>`
+      },
+      namyangju_best: {
+        name: '경기 남양주 BEST FC',
+        desc: '경기도 남양주시 다산동 유소년 축구 전문 육성 클럽 (베스트FC).',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L86 24 L86 58 C86 78 50 94 50 94 C50 94 14 78 14 58 L14 24 Z" fill="#047857" stroke="#34D399" stroke-width="3"/><polygon points="32,32 38,22 50,30 62,22 68,32" fill="#FBBF24" stroke="#D97706" stroke-width="1.5"/><circle cx="50" cy="50" r="16" fill="#FFFFFF"/><text x="50" y="47" text-anchor="middle" fill="#047857" font-size="8" font-weight="900">남양주</text><text x="50" y="57" text-anchor="middle" fill="#D97706" font-size="10" font-weight="900">BEST</text></svg>`
+      },
+      tdn_red: {
+        name: '대구 TDN FC (레드)',
+        desc: '대구광역시의 탄탄한 기본기와 스피드를 갖춘 TDN 축구클럽 레드팀.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 26 L88 60 C88 80 50 94 50 94 C50 94 12 80 12 60 L12 26 Z" fill="#BE123C" stroke="#FB7185" stroke-width="3"/><circle cx="50" cy="46" r="16" fill="#FFFFFF"/><text x="50" y="44" text-anchor="middle" fill="#9F1239" font-size="8" font-weight="900">DAEGU</text><text x="50" y="55" text-anchor="middle" fill="#E11D48" font-size="11" font-weight="900">TDN</text></svg>`
+      },
+      tdn_blue: {
+        name: '대구 TDN FC (블루)',
+        desc: '대구광역시 TDN 축구클럽의 정교한 패스 플레이가 돋보이는 블루팀.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 26 L88 60 C88 80 50 94 50 94 C50 94 12 80 12 60 L12 26 Z" fill="#0284C7" stroke="#38BDF8" stroke-width="3"/><circle cx="50" cy="46" r="16" fill="#FFFFFF"/><text x="50" y="44" text-anchor="middle" fill="#0C4A6E" font-size="8" font-weight="900">DAEGU</text><text x="50" y="55" text-anchor="middle" fill="#0284C7" font-size="11" font-weight="900">TDN</text></svg>`
+      },
+      yeom_junior: {
+        name: '경기 염기훈 주니어 FC (YKH FC)',
+        desc: '전 국가대표 & 레전드 왼발의 마술사 염기훈 감독의 유소년 축구클럽.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#1E40AF" stroke="#60A5FA" stroke-width="3"/><path d="M26 34 Q50 20 74 34 Q62 50 50 54 Q38 50 26 34 Z" fill="#FBBF24"/><circle cx="50" cy="46" r="14" fill="#FFFFFF"/><text x="50" y="44" text-anchor="middle" fill="#1E3A8A" font-size="8" font-weight="900">YKH FC</text><text x="50" y="52" text-anchor="middle" fill="#2563EB" font-size="7" font-weight="900">염기훈</text></svg>`
+      },
+      sokcho: {
+        name: '강원 속초시 체육회',
+        desc: '강원특별자치도 속초시 체육회 소속의 끈끈한 조직력을 자랑하는 유소년팀.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="46" fill="#0E7490" stroke="#22D3EE" stroke-width="3"/><path d="M22 62 L38 42 L52 56 L64 38 L78 62 Z" fill="#164E63"/><path d="M16 64 Q32 54 50 64 Q68 74 84 64 L84 76 Q68 86 50 76 Q32 66 16 76 Z" fill="#38BDF8"/><text x="50" y="86" text-anchor="middle" fill="#CFFAFE" font-size="8" font-weight="900">속초시체육회</text></svg>`
+      },
+      sejong_sc: {
+        name: '세종 공공스포츠클럽 (세종 공공SC)',
+        desc: '세종특별자치시 공공스포츠클럽 엘리트 유소년 축구단.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#4338CA" stroke="#818CF8" stroke-width="3"/><circle cx="50" cy="44" r="18" fill="#FFFFFF"/><path d="M40 44 Q50 32 60 44 Q50 56 40 44 Z" fill="#4338CA"/><circle cx="50" cy="44" r="4" fill="#38BDF8"/><text x="50" y="74" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">세종공공SC</text></svg>`
+      },
+      kangyong: {
+        name: '서울 K리거 강용 FC',
+        desc: '전 국가대표 및 프로 K리거 출신 강용 감독이 직접 지도하는 유소년 축구교실.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#EA580C" stroke="#FB923C" stroke-width="3"/><circle cx="50" cy="36" r="6" fill="#FDBA74"/><path d="M46 44 L54 44 L58 56 L50 64 L42 54 Z" fill="#FDBA74"/><text x="50" y="76" text-anchor="middle" fill="#FFFFFF" font-size="8" font-weight="900">K리거 강용FC</text></svg>`
+      },
+      icheon_united: {
+        name: '경기 이천 유나이티드 FC',
+        desc: '경기도 이천시의 탄탄한 유소년 축구 시스템을 갖춘 이천 유나이티드.',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#D97706" stroke="#FBBF24" stroke-width="3"/><polygon points="50,26 53,34 62,34 55,39 58,47 50,42 42,47 45,39 38,34 47,34" fill="#FDE047"/><text x="50" y="66" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">이천 UTD</text></svg>`
+      }
+    };
+
+    function openTeamModal(teamKey) {
+      const info = TEAMS_INFO[teamKey];
+      if (!info) return;
+      document.getElementById('teamModalName').innerText = info.name;
+      document.getElementById('teamModalDesc').innerText = info.desc;
+      document.getElementById('teamModalEmblem').innerHTML = info.html.replace('https://iili.io/nJAGX7S.png', INLINE_IMAGES.logo);
+      document.getElementById('teamModal').classList.remove('hidden');
+    }
+
+    function closeTeamModal() {
+      document.getElementById('teamModal').classList.add('hidden');
+    }
 
     function scrapeMatch(matchId, btnEl) {
       const icon = btnEl.querySelector('i');
