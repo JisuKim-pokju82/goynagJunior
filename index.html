@@ -64,15 +64,10 @@
     }
     
     .tab-pane {
-      display: none;
-      opacity: 0;
-      transform: translateY(4px);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: none !important;
     }
     .tab-pane.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
+      display: block !important;
     }
 
     .emblem-box {
@@ -235,7 +230,7 @@
     </div>
 
     <!-- ==================== TAB 1: U-10 (옐로우) ==================== -->
-    <div id="pane-u10" class="tab-pane active space-y-3.5">
+    <div id="pane-u10" class="tab-pane active space-y-3.5" style="display: block !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
@@ -462,7 +457,7 @@
     </div>
 
     <!-- ==================== TAB 2: U-11 (와인) ==================== -->
-    <div id="pane-u11" class="tab-pane space-y-3.5">
+    <div id="pane-u11" class="tab-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
@@ -684,7 +679,7 @@
     </div>
 
     <!-- ==================== TAB 3: U-12 (대표팀) ==================== -->
-    <div id="pane-u12" class="tab-pane space-y-3.5">
+    <div id="pane-u12" class="tab-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
@@ -975,7 +970,7 @@
     </div>
 
     <!-- ==================== TAB 4: 전체 일정 & 종합 ==================== -->
-    <div id="pane-u13" class="tab-pane space-y-3.5">
+    <div id="pane-u13" class="tab-pane space-y-3.5" style="display: none !important;">
       <div class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center shadow-lg">
         <h3 class="text-sm font-black text-white">고양주니어FC 화랑대기 전체 타임라인</h3>
         <p class="text-[11px] text-zinc-400 mt-0.5">총 10경기 일정과 장소를 일자별로 한눈에 비교하세요</p>
@@ -1101,7 +1096,7 @@
 
 
     <!-- ==================== TAB 5: 조별 순위표 & 2차 리그 전체 일정 ==================== -->
-    <div id="pane-league" class="tab-pane space-y-4">
+    <div id="pane-league" class="tab-pane space-y-4" style="display: none !important;">
       
       <!-- HEADER BANNER -->
       <div class="rounded-3xl bg-gradient-to-r from-amber-950/60 via-[#191D28] to-amber-900/40 p-4 border border-yellow-500/40 shadow-xl text-center space-y-1">
@@ -2001,14 +1996,33 @@
     }
 
     function switchTab(team) {
-      const allTabs = ['u10', 'u11', 'u12', 'u13', 'league'];
-      allTabs.forEach(t => {
-        const pane = document.getElementById('pane-' + t);
-        if (pane) pane.classList.remove('active');
-        const btn = document.getElementById('btn-' + t);
-        if (btn) {
-          btn.className = 'tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold';
+      const tabs = ['u10', 'u11', 'u12', 'u13', 'league'];
+      
+      tabs.forEach(t => {
+        const p = document.getElementById('pane-' + t);
+        const b = document.getElementById('btn-' + t);
+        if (p) {
+          p.style.setProperty('display', 'none', 'important');
+          p.classList.remove('active');
         }
+        if (b) {
+          b.classList.remove('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
+          b.classList.add('text-zinc-400', 'font-bold');
+        }
+      });
+
+      const activePane = document.getElementById('pane-' + team);
+      const activeBtn = document.getElementById('btn-' + team);
+      
+      if (activePane) {
+        activePane.style.setProperty('display', 'block', 'important');
+        activePane.classList.add('active');
+      }
+      if (activeBtn) {
+        activeBtn.classList.remove('text-zinc-400', 'font-bold');
+        activeBtn.classList.add('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
+      }
+    }
       });
 
       const targetPane = document.getElementById('pane-' + team);
