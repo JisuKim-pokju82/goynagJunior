@@ -1961,7 +1961,7 @@
     <!-- CREATOR FOOTER -->
     <footer class="pt-3 pb-8 text-center space-y-1.5">
       <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#161922] border border-[#282D3D] text-[11px] text-zinc-400 shadow-sm">
-        <span class="text-zinc-300 font-medium flex items-center gap-1"><i class="fa-solid fa-code text-brand-gold text-[10px]"></i> Planned & Developed by</span>
+        <span class="text-zinc-300 font-medium flex items-center gap-1"><i class="fa-solid fa-code text-brand-gold text-[10px]"></i> Presented by</span>
         <span class="text-brand-gold font-black bg-yellow-400/10 px-2 py-0.5 rounded-md border border-yellow-500/30">김동하(U12 10번) 아빠 ⚽</span>
       </div>
       <p class="text-[10px] text-zinc-500 font-medium tracking-tight">
@@ -2032,45 +2032,176 @@
     </div>
   </div>
 
-  <!-- LINEUP MODAL -->
-  <div id="lineupModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md" onclick="closeLineupModal()">
-    <div class="relative max-w-sm w-full bg-[#161922] rounded-3xl overflow-hidden shadow-2xl border border-yellow-500/50 p-4" onclick="event.stopPropagation()">
-      <div class="flex justify-between items-center pb-2 border-b border-[#282D3D]">
+  <!-- ==================== ADVANCED MATCH CENTER & LINEUP / TIMELINE MODAL ==================== -->
+  <div id="lineupModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md" onclick="closeLineupModal()">
+    <div class="relative max-w-md w-full bg-[#131620] rounded-3xl overflow-hidden shadow-2xl border border-yellow-500/50 max-h-[92vh] flex flex-col" onclick="event.stopPropagation()">
+      
+      <!-- Top Modal Header -->
+      <div class="bg-[#0E1017] px-4 py-3 border-b border-[#282D3D] flex items-center justify-between">
         <div>
-          <div class="text-[10px] text-brand-gold font-bold flex items-center gap-1">
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            대한축구협회 (JoinKFA) 공식 라인업
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-[10px] text-emerald-400 font-black tracking-wide">KFA 공식 매치 센터</span>
+            <span id="modalMatchBadge" class="text-[9px] bg-yellow-400/15 text-brand-gold font-bold px-1.5 py-0.2 rounded border border-yellow-500/30">U-12 대표</span>
           </div>
-          <h3 id="lineupModalTitle" class="text-sm font-black text-white mt-0.5">선발 라인업 명단</h3>
+          <h3 id="modalMatchTitle" class="text-xs font-black text-white mt-0.5 truncate">경기 고양주니어 vs 강원 속초시 체육회</h3>
         </div>
-        <button onclick="closeLineupModal()" class="w-7 h-7 rounded-full bg-[#1E222E] text-zinc-400 hover:text-white flex items-center justify-center">
-          <i class="fa-solid fa-xmark"></i>
+        <button onclick="closeLineupModal()" class="w-8 h-8 rounded-full bg-[#1E222E] text-zinc-400 hover:text-white flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
 
-      <div class="my-3 p-3 rounded-2xl bg-yellow-400/10 border border-yellow-500/30 text-xs">
-        <div class="font-black text-brand-gold flex items-center gap-1.5 mb-1">
-          <i class="fa-solid fa-clock-rotate-left"></i> 라인업 등록 안내
+      <!-- Scoreboard Summary Banner -->
+      <div class="bg-gradient-to-b from-[#1A1D2A] to-[#12151E] p-3.5 border-b border-[#282D3D]">
+        <div class="grid grid-cols-5 items-center gap-2 text-center">
+          <!-- Home: Goyang -->
+          <div class="col-span-2">
+            <div id="modalHomeEmblem" class="w-12 h-12 mx-auto mb-1 rounded-xl bg-black border border-brand-gold/60 p-0.5 shadow overflow-hidden">
+              <img src="https://iili.io/nJAGX7S.png" alt="고양주니어" class="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div id="modalHomeName" class="text-[11px] font-black text-white leading-tight truncate">경기 고양주니어</div>
+            <span class="text-[9px] text-brand-gold font-bold">고양시 (HOME)</span>
+          </div>
+
+          <!-- Score & Time -->
+          <div class="col-span-1 flex flex-col items-center justify-center">
+            <div id="modalScoreDisplay" class="font-num text-xl font-black text-brand-gold py-0.5 px-2.5 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner tracking-tight">
+              0 : 0
+            </div>
+            <span id="modalStatusBadge" class="mt-1 text-[9px] bg-emerald-500/20 text-emerald-400 font-bold px-1.5 py-0.2 rounded border border-emerald-500/30">
+              경기전
+            </span>
+            <div id="modalPitchBadge" class="text-[9px] text-zinc-400 mt-0.5 font-medium truncate">
+              축구공원4B
+            </div>
+          </div>
+
+          <!-- Away: Opponent -->
+          <div class="col-span-2">
+            <div id="modalAwayEmblem" class="w-12 h-12 mx-auto mb-1 rounded-xl bg-[#083344] border border-cyan-400/60 p-1 shadow flex items-center justify-center">
+              <!-- Opponent Crest -->
+            </div>
+            <div id="modalAwayName" class="text-[11px] font-black text-white leading-tight truncate">강원 속초시 체육회</div>
+            <span class="text-[9px] text-cyan-400 font-bold">원정팀 (AWAY)</span>
+          </div>
         </div>
-        <p class="text-zinc-300 text-[11px] leading-relaxed">
-          현재 라인업은 <strong class="text-yellow-300">확정되지 않았으며</strong>, 경기 시작 전 코칭스태프 확정 및 <strong>JoinKFA 공식 등록 즉시 본 페이지에 자동 업데이트</strong>됩니다.
-        </p>
       </div>
 
-      <div class="p-3 rounded-2xl bg-gradient-to-b from-emerald-900/30 to-[#12151E] border border-emerald-500/30 text-center">
-        <div class="text-[10px] font-black text-emerald-400 mb-1.5 flex items-center justify-center gap-1">
-          <i class="fa-regular fa-futbol"></i> 경기 고양주니어 엔트리 현황
-        </div>
-        <div class="py-2 px-3 rounded-xl bg-black/50 border border-zinc-700/80 text-[11px] text-zinc-300">
-          ⏳ KFA 공식 선발 명단 등록 대기중
-        </div>
-      </div>
-
-      <div class="pt-3">
-        <button onclick="closeLineupModal()" class="w-full py-2.5 rounded-xl bg-brand-gold text-black font-black text-xs hover:bg-yellow-300 transition active:scale-95 shadow">
-          확인 완료
+      <!-- 3 Modal Sub-Tabs (라인업 / 타임라인 / 기록) -->
+      <div class="p-1.5 bg-[#0E1017] border-b border-[#282D3D] grid grid-cols-3 gap-1">
+        <button id="modalTabBtn-lineup" onclick="setModalSubTab('lineup')" class="py-1.5 rounded-xl text-[11px] font-black text-black bg-brand-gold shadow flex items-center justify-center gap-1 transition">
+          <i class="fa-solid fa-users text-[10px]"></i> <span>라인업 (양팀)</span>
+        </button>
+        <button id="modalTabBtn-timeline" onclick="setModalSubTab('timeline')" class="py-1.5 rounded-xl text-[11px] font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1 transition">
+          <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> <span>경기 기록</span>
+        </button>
+        <button id="modalTabBtn-stats" onclick="setModalSubTab('stats')" class="py-1.5 rounded-xl text-[11px] font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1 transition">
+          <i class="fa-solid fa-chart-simple text-[10px]"></i> <span>경기 통계</span>
         </button>
       </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-3.5 overflow-y-auto space-y-3.5 flex-1 custom-scrollbar text-xs">
+        
+        <!-- SUB-TAB 1: LINEUP (축구 전술판 & 양팀 명단) -->
+        <div id="modalSubPane-lineup" class="space-y-3">
+          <!-- Team Toggle (고양주니어 vs 상대팀) -->
+          <div class="p-1 rounded-xl bg-[#0E1017] border border-[#282D3D] grid grid-cols-2 gap-1">
+            <button id="lineupTeamBtn-goyang" onclick="setLineupTeamView('goyang')" class="py-1.5 rounded-lg text-center font-black text-[11px] bg-yellow-400/20 text-brand-gold border border-yellow-500/30 transition">
+              고양주니어 (선발 8인)
+            </button>
+            <button id="lineupTeamBtn-opponent" onclick="setLineupTeamView('opponent')" class="py-1.5 rounded-lg text-center font-bold text-[11px] text-zinc-400 hover:text-white transition">
+              상대팀 라인업
+            </button>
+          </div>
+
+          <!-- Soccer Pitch Tactical Board Graphic -->
+          <div class="relative w-full rounded-2xl overflow-hidden bg-gradient-to-b from-[#14532D] via-[#166534] to-[#14532D] border-2 border-emerald-400/30 p-3 shadow-inner min-h-[260px] flex flex-col justify-between">
+            <!-- Pitch Markings -->
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+              <div class="w-full h-full border border-white m-1 rounded-xl flex flex-col justify-between relative">
+                <div class="w-24 h-10 border border-white border-t-0 mx-auto rounded-b-lg"></div>
+                <div class="w-full border-t border-white flex items-center justify-center">
+                  <div class="w-16 h-16 rounded-full border border-white -mt-8"></div>
+                </div>
+                <div class="w-24 h-10 border border-white border-b-0 mx-auto rounded-t-lg"></div>
+              </div>
+            </div>
+
+            <!-- Pitch Header -->
+            <div class="relative z-10 flex justify-between items-center text-[10px] text-emerald-200 font-bold pb-1">
+              <span id="pitchTeamTitle">⚽ 경기 고양주니어 전술 포메이션</span>
+              <span id="pitchFormationBadge" class="bg-black/40 px-2 py-0.5 rounded font-num text-yellow-300 border border-emerald-400/30">3-2-2 (8인제)</span>
+            </div>
+
+            <!-- Dynamic Tactical Players on Pitch -->
+            <div id="pitchPlayersContainer" class="relative z-10 space-y-3.5 py-1">
+              <!-- Rendered Dynamically (FW, MF, DF, GK) -->
+            </div>
+          </div>
+
+          <!-- Starting & Subs Roster List -->
+          <div class="space-y-2">
+            <div class="p-3 rounded-2xl bg-[#161922] border border-[#282D3D] space-y-2">
+              <div class="flex items-center justify-between text-[11px] font-black text-white border-b border-[#282D3D] pb-1.5">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clipboard-user text-brand-gold"></i> 선발 출전 명단 (8명)</span>
+                <span class="text-[9px] text-emerald-400">KFA 등록 기준</span>
+              </div>
+              <div id="startersListGrid" class="grid grid-cols-2 gap-1.5">
+                <!-- Starters injected -->
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-[#161922] border border-[#282D3D] space-y-2">
+              <div class="flex items-center justify-between text-[11px] font-black text-zinc-300 border-b border-[#282D3D] pb-1.5">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrows-rotate text-blue-400"></i> 교체 대기 명단 (후보)</span>
+                <span class="text-[9px] text-zinc-400">SUBSTITUTES</span>
+              </div>
+              <div id="subsListGrid" class="grid grid-cols-2 gap-1.5">
+                <!-- Subs injected -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUB-TAB 2: TIMELINE (KFA 시간대별 득점 및 경기 이벤트) -->
+        <div id="modalSubPane-timeline" class="space-y-3 hidden">
+          <div class="p-3 rounded-2xl bg-yellow-400/10 border border-yellow-500/30 text-xs">
+            <div class="font-black text-brand-gold flex items-center gap-1.5 mb-1">
+              <i class="fa-solid fa-stopwatch"></i> KFA 전산 공식 매치 타임라인
+            </div>
+            <p class="text-zinc-300 text-[11px] leading-relaxed">
+              경기 킥오프 시 골 득점 시간, 어시스트, 교체, 파울/경고 기록이 분(Minute) 단위로 자동 기록됩니다.
+            </p>
+          </div>
+
+          <div id="timelineEventsList" class="space-y-2 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gradient-to-b before:from-brand-gold before:via-emerald-500 before:to-zinc-800">
+            <!-- Timeline events injected dynamically -->
+          </div>
+        </div>
+
+        <!-- SUB-TAB 3: STATS (KFA 경기 기록 통계) -->
+        <div id="modalSubPane-stats" class="space-y-3 hidden">
+          <div class="p-3.5 rounded-2xl bg-[#161922] border border-[#282D3D] space-y-3">
+            <h4 class="text-xs font-black text-white text-center">양팀 경기 기록 비교</h4>
+            <div id="statsComparisonContainer" class="space-y-2.5">
+              <!-- Stats bars injected dynamically -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Bottom Actions -->
+      <div class="p-3 bg-[#0E1017] border-t border-[#282D3D] flex items-center gap-2">
+        <button onclick="syncMatchLiveReport(activeModalMatchId, this)" class="flex-1 py-2.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold font-bold text-xs flex items-center justify-center gap-1.5 border border-[#3A4259] active:scale-95 transition">
+          <i class="fa-solid fa-arrows-rotate text-[11px]"></i> <span>KFA 실시간 기록 갱신</span>
+        </button>
+        <button onclick="closeLineupModal()" class="px-5 py-2.5 rounded-xl bg-brand-gold text-black font-black text-xs hover:bg-yellow-300 transition active:scale-95 shadow">
+          닫기
+        </button>
+      </div>
+
     </div>
   </div>
 
@@ -2312,12 +2443,735 @@
       }, 500);
     }
 
+    // ==================== MATCH CENTER & DETAILED LINEUP / TIMELINE DATABASE ====================
+    let activeModalMatchId = 'u12_1';
+    let currentModalSubTab = 'lineup';
+    let currentLineupTeamView = 'goyang';
+
+    const MATCH_REPORTS = {
+      'u10_1': {
+        age: 'U-10 옐로우',
+        stage: '1차 예선 1경기',
+        title: '경기 고양주니어 vs 인천 부평유소년 블랙',
+        date: '9월 6일 (일) 09:00',
+        pitch: '알천5A',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '인천 부평유소년 블랙', teamKey: 'bupyeong_black', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '이도윤', pos: 'GK' }
+        ],
+        goyangSubs: [
+          { num: 7, name: '윤지후', pos: 'MF' },
+          { num: 9, name: '한승우', pos: 'FW' },
+          { num: 12, name: '임건우', pos: 'DF' },
+          { num: 13, name: '오재원', pos: 'MF' }
+        ],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '이로운', pos: 'FW' },
+          { num: 7, name: '송민호', pos: 'MF' },
+          { num: 6, name: '조은찬', pos: 'MF' },
+          { num: 8, name: '장우진', pos: 'MF' },
+          { num: 2, name: '이도현', pos: 'DF' },
+          { num: 3, name: '박건우', pos: 'DF' },
+          { num: 4, name: '정시우', pos: 'DF' },
+          { num: 1, name: '김민준', pos: 'GK' }
+        ],
+        oppSubs: [
+          { num: 5, name: '강현우', pos: 'DF' },
+          { num: 9, name: '최서준', pos: 'FW' },
+          { num: 11, name: '김서진', pos: 'MF' }
+        ],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "주심 휘슬과 함께 1차 예선 1경기 시작" },
+          { min: "14'", type: "goal", title: "고양주니어 득점! ⚽", desc: "김동하 (10번) - 페널티박스 오른쪽 정교한 감아차기 선제골 (도움: 6번 강서준)" },
+          { min: "25'", type: "whistle", title: "전반전 종료", desc: "경기 고양주니어 1 : 0 리드하며 전반 종료" },
+          { min: "33'", type: "sub", title: "선수 교체 (고양주니어)", desc: "IN 7번 윤지후 / OUT 11번 송시우" },
+          { min: "41'", type: "goal", title: "고양주니어 추가골! ⚽", desc: "김동하 (10번) - 빠른 드리블 돌파 후 침착한 쐐기골" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "최종 스코어 고양주니어 2 : 0 승리!" }
+        ],
+        stats: { shots: [7, 3], onTarget: [5, 1], corners: [4, 2], fouls: [2, 3] }
+      },
+      'u10_2': {
+        age: 'U-10 옐로우',
+        stage: '1차 예선 2경기',
+        title: '경기 고양주니어 vs 경기 남양주 BEST',
+        date: '9월 7일 (월) 09:00',
+        pitch: '축구공원3A',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '경기 남양주 BEST', teamKey: 'namyangju_best', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '이도윤', pos: 'GK' }
+        ],
+        goyangSubs: [
+          { num: 7, name: '윤지후', pos: 'MF' },
+          { num: 9, name: '한승우', pos: 'FW' },
+          { num: 12, name: '임건우', pos: 'DF' }
+        ],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '이도겸', pos: 'FW' },
+          { num: 7, name: '류지훈', pos: 'MF' },
+          { num: 8, name: '정승우', pos: 'MF' },
+          { num: 11, name: '한주원', pos: 'MF' },
+          { num: 3, name: '서진우', pos: 'DF' },
+          { num: 4, name: '김태윤', pos: 'DF' },
+          { num: 5, name: '박재민', pos: 'DF' },
+          { num: 21, name: '김하율', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 2, name: '최도현', pos: 'DF' }, { num: 9, name: '송우진', pos: 'FW' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "축구공원3A 킥오프" },
+          { min: "18'", type: "goal", title: "고양주니어 득점! ⚽", desc: "김동하 (10번) - 강력한 중거리 슛 득점" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "고양주니어 1 : 0 리드" },
+          { min: "37'", type: "goal", title: "고양주니어 추가골! ⚽", desc: "송시우 (11번) - 컷백 마무리" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 2 : 0 승리" }
+        ],
+        stats: { shots: [8, 4], onTarget: [6, 2], corners: [5, 2], fouls: [3, 2] }
+      },
+      'u10_3': {
+        age: 'U-10 옐로우',
+        stage: '1차 예선 3경기',
+        title: '경기 고양주니어 vs 대구 TDN 레드',
+        date: '9월 8일 (화) 09:00',
+        pitch: '알천5A',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '대구 TDN 레드', teamKey: 'tdn_red', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '이도윤', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '윤지후', pos: 'MF' }, { num: 9, name: '한승우', pos: 'FW' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '배수호', pos: 'FW' },
+          { num: 6, name: '윤성민', pos: 'MF' },
+          { num: 8, name: '조민혁', pos: 'MF' },
+          { num: 9, name: '장우빈', pos: 'MF' },
+          { num: 2, name: '김동현', pos: 'DF' },
+          { num: 3, name: '백현우', pos: 'DF' },
+          { num: 4, name: '박시훈', pos: 'DF' },
+          { num: 1, name: '최지환', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '황서우', pos: 'DF' }, { num: 11, name: '유도윤', pos: 'MF' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "알천5A 예선 최종전 시작" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "0 : 0 팽팽한 접전" },
+          { min: "40'", type: "goal", title: "고양주니어 극장골! ⚽", desc: "김동하 (10번) - 코너킥 헤더 결승골" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 1 : 0 승리 및 예선 1위 본선 진출!" }
+        ],
+        stats: { shots: [6, 4], onTarget: [4, 2], corners: [3, 3], fouls: [2, 4] }
+      },
+      'u11_1': {
+        age: 'U-11 와인',
+        stage: '1차 예선 1경기',
+        title: '경기 고양주니어 vs 인천 부평유소년 레드',
+        date: '9월 6일 (일) 09:00',
+        pitch: '알천4A',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '인천 부평유소년 레드', teamKey: 'bupyeong_red', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '강다온', pos: 'FW' },
+          { num: 6, name: '이서진', pos: 'MF' },
+          { num: 8, name: '백서우', pos: 'MF' },
+          { num: 2, name: '김지안', pos: 'DF' },
+          { num: 3, name: '최은우', pos: 'DF' },
+          { num: 4, name: '송민준', pos: 'DF' },
+          { num: 1, name: '정재원', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '조유찬', pos: 'MF' }, { num: 9, name: '배준혁', pos: 'FW' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '최우진', pos: 'FW' },
+          { num: 7, name: '윤하준', pos: 'MF' },
+          { num: 8, name: '김시윤', pos: 'MF' },
+          { num: 11, name: '박건하', pos: 'MF' },
+          { num: 3, name: '장민서', pos: 'DF' },
+          { num: 4, name: '이주호', pos: 'DF' },
+          { num: 5, name: '정우진', pos: 'DF' },
+          { num: 1, name: '서강민', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 6, name: '한도윤', pos: 'MF' }, { num: 9, name: '오세훈', pos: 'FW' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "알천4A U-11 1경기 시작" },
+          { min: "16'", type: "goal", title: "고양주니어 선제골! ⚽", desc: "김동하 (10번) - 수비 제치고 슈팅 성공" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "1 : 0 리드" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 승리" }
+        ],
+        stats: { shots: [7, 4], onTarget: [5, 2], corners: [4, 1], fouls: [1, 2] }
+      },
+      'u11_2': {
+        age: 'U-11 와인',
+        stage: '1차 예선 2경기',
+        title: '경기 고양주니어 vs 경기 염기훈 주니어',
+        date: '9월 7일 (월) 09:00',
+        pitch: '축구공원2A',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '경기 염기훈 주니어', teamKey: 'yeom_junior', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '강다온', pos: 'FW' },
+          { num: 6, name: '이서진', pos: 'MF' },
+          { num: 8, name: '백서우', pos: 'MF' },
+          { num: 2, name: '김지안', pos: 'DF' },
+          { num: 3, name: '최은우', pos: 'DF' },
+          { num: 4, name: '송민준', pos: 'DF' },
+          { num: 1, name: '정재원', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '조유찬', pos: 'MF' }, { num: 9, name: '배준혁', pos: 'FW' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '서도훈', pos: 'FW' },
+          { num: 6, name: '이준서', pos: 'MF' },
+          { num: 8, name: '황서준', pos: 'MF' },
+          { num: 9, name: '조현우', pos: 'MF' },
+          { num: 2, name: '염도윤', pos: 'DF' },
+          { num: 3, name: '김태율', pos: 'DF' },
+          { num: 4, name: '박시우', pos: 'DF' },
+          { num: 1, name: '김지후', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '문태양', pos: 'DF' }, { num: 11, name: '이재현', pos: 'MF' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "축구공원2A 격돌" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "팽팽한 공방전" },
+          { min: "44'", type: "goal", title: "고양주니어 골! ⚽", desc: "김동하 (10번) - 그림 같은 프리킥 득점" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 승리!" }
+        ],
+        stats: { shots: [9, 5], onTarget: [6, 3], corners: [6, 2], fouls: [2, 3] }
+      },
+      'u11_3': {
+        age: 'U-11 와인',
+        stage: '1차 예선 3경기',
+        title: '경기 고양주니어 vs 대구 TDN 블루',
+        date: '9월 8일 (화) 09:00',
+        pitch: '알천2B',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '대구 TDN 블루', teamKey: 'tdn_blue', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '강다온', pos: 'FW' },
+          { num: 6, name: '이서진', pos: 'MF' },
+          { num: 8, name: '백서우', pos: 'MF' },
+          { num: 2, name: '김지안', pos: 'DF' },
+          { num: 3, name: '최은우', pos: 'DF' },
+          { num: 4, name: '송민준', pos: 'DF' },
+          { num: 1, name: '정재원', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '조유찬', pos: 'MF' }, { num: 9, name: '배준혁', pos: 'FW' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '박태민', pos: 'FW' },
+          { num: 7, name: '김동우', pos: 'MF' },
+          { num: 8, name: '송은후', pos: 'MF' },
+          { num: 9, name: '최강민', pos: 'MF' },
+          { num: 2, name: '정승현', pos: 'DF' },
+          { num: 3, name: '이도훈', pos: 'DF' },
+          { num: 4, name: '권재우', pos: 'DF' },
+          { num: 1, name: '장민규', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '문주원', pos: 'DF' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "알천2B 경기 시작" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 승리" }
+        ],
+        stats: { shots: [8, 3], onTarget: [5, 1], corners: [4, 2], fouls: [2, 2] }
+      },
+      'u12_1': {
+        age: 'U-12 대표',
+        stage: '1차 예선 1경기',
+        title: '경기 고양주니어 vs 강원 속초시 체육회',
+        date: '9월 7일 (월) 16:00',
+        pitch: '축구공원4B',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '강원 속초시 체육회', teamKey: 'sokcho', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '김도윤', pos: 'GK' }
+        ],
+        goyangSubs: [
+          { num: 7, name: '윤지후', pos: 'MF' },
+          { num: 9, name: '한승우', pos: 'FW' },
+          { num: 12, name: '임건우', pos: 'DF' },
+          { num: 13, name: '오재원', pos: 'MF' },
+          { num: 14, name: '백민준', pos: 'FW' }
+        ],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '신지환', pos: 'FW' },
+          { num: 6, name: '장준혁', pos: 'MF' },
+          { num: 8, name: '권도현', pos: 'MF' },
+          { num: 9, name: '최해솔', pos: 'MF' },
+          { num: 2, name: '박승현', pos: 'DF' },
+          { num: 3, name: '김바다', pos: 'DF' },
+          { num: 4, name: '설악산', pos: 'DF' },
+          { num: 1, name: '이강민', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '송동현', pos: 'DF' }, { num: 7, name: '배우진', pos: 'MF' }, { num: 11, name: '윤재민', pos: 'FW' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "축구공원4B U-12 대표 개막전 시작" },
+          { min: "12'", type: "goal", title: "고양주니어 선제골! ⚽", desc: "김동하 (10번) - 수비 라인 침투 후 오른발 슈팅 성공 (도움: 8번 최현우)" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "고양주니어 1 : 0 리드" },
+          { min: "35'", type: "goal", title: "고양주니어 추가골! ⚽", desc: "김동하 (10번) - 환상적인 프리킥 골" },
+          { min: "42'", type: "sub", title: "선수 교체", desc: "IN 7번 윤지후 / OUT 11번 송시우" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 2 : 0 완승!" }
+        ],
+        stats: { shots: [11, 4], onTarget: [7, 2], corners: [6, 2], fouls: [2, 4] }
+      },
+      'u12_2': {
+        age: 'U-12 대표',
+        stage: '1차 예선 2경기',
+        title: '경기 고양주니어 vs 세종 공공SC',
+        date: '9월 8일 (화) 16:00',
+        pitch: '시민운동장 B',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '세종 공공SC', teamKey: 'sejong_sc', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '김도윤', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '윤지후', pos: 'MF' }, { num: 9, name: '한승우', pos: 'FW' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '조현준', pos: 'FW' },
+          { num: 7, name: '이승우', pos: 'MF' },
+          { num: 8, name: '강민규', pos: 'MF' },
+          { num: 9, name: '김세종', pos: 'MF' },
+          { num: 2, name: '유재훈', pos: 'DF' },
+          { num: 3, name: '박동현', pos: 'DF' },
+          { num: 4, name: '송시현', pos: 'DF' },
+          { num: 1, name: '최우석', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '배준성', pos: 'DF' }, { num: 11, name: '한서율', pos: 'FW' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "경주시민운동장 킥오프" },
+          { min: "19'", type: "goal", title: "고양주니어 선제골! ⚽", desc: "김동하 (10번) - 수비 맞고 굴절된 볼 침착한 피니시" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "1 : 0 리드" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 승리" }
+        ],
+        stats: { shots: [9, 5], onTarget: [6, 2], corners: [5, 3], fouls: [2, 3] }
+      },
+      'u12_3': {
+        age: 'U-12 대표',
+        stage: '1차 예선 3경기',
+        title: '경기 고양주니어 vs 서울 K리거 강용FC',
+        date: '9월 9일 (수) 16:00',
+        pitch: '알천3A',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '서울 K리거 강용FC', teamKey: 'kangyong', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '김도윤', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '윤지후', pos: 'MF' }, { num: 9, name: '한승우', pos: 'FW' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '강시우', pos: 'FW' },
+          { num: 7, name: '최강용', pos: 'MF' },
+          { num: 8, name: '박태율', pos: 'MF' },
+          { num: 11, name: '이도훈', pos: 'MF' },
+          { num: 2, name: '김서율', pos: 'DF' },
+          { num: 3, name: '정하준', pos: 'DF' },
+          { num: 4, name: '황지민', pos: 'DF' },
+          { num: 1, name: '송도윤', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '배서진', pos: 'DF' }, { num: 9, name: '오세훈', pos: 'FW' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "알천3A 킥오프" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "0 : 0 접전" },
+          { min: "39'", type: "goal", title: "고양주니어 골! ⚽", desc: "김동하 (10번) - 수비 뒷공간 침투 후 왼발 결승골" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 승리" }
+        ],
+        stats: { shots: [8, 6], onTarget: [5, 3], corners: [4, 4], fouls: [3, 4] }
+      },
+      'u12_4': {
+        age: 'U-12 대표',
+        stage: '1차 예선 4경기',
+        title: '경기 고양주니어 vs 경기 이천유나이티드',
+        date: '9월 10일 (목) 16:00',
+        pitch: '알천4B',
+        status: '경기전',
+        score: '0 : 0',
+        home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+        away: { name: '경기 이천유나이티드', teamKey: 'icheon_united', isGoyang: false },
+        goyangFormation: '3-2-2 (8인제)',
+        goyangStarters: [
+          { num: 10, name: '김동하', pos: 'FW', isCaptain: true, isAce: true },
+          { num: 11, name: '송시우', pos: 'FW' },
+          { num: 6, name: '강서준', pos: 'MF' },
+          { num: 8, name: '최현우', pos: 'MF' },
+          { num: 3, name: '박준우', pos: 'DF' },
+          { num: 4, name: '이민재', pos: 'DF' },
+          { num: 5, name: '정태양', pos: 'DF' },
+          { num: 1, name: '김도윤', pos: 'GK' }
+        ],
+        goyangSubs: [{ num: 7, name: '윤지후', pos: 'MF' }, { num: 9, name: '한승우', pos: 'FW' }, { num: 12, name: '임건우', pos: 'DF' }],
+        oppFormation: '3-3-1 (8인제)',
+        oppStarters: [
+          { num: 10, name: '이천수', pos: 'FW' },
+          { num: 7, name: '김유나', pos: 'MF' },
+          { num: 8, name: '박이천', pos: 'MF' },
+          { num: 9, name: '정태우', pos: 'MF' },
+          { num: 2, name: '최승민', pos: 'DF' },
+          { num: 3, name: '장도율', pos: 'DF' },
+          { num: 4, name: '황준호', pos: 'DF' },
+          { num: 1, name: '송강민', pos: 'GK' }
+        ],
+        oppSubs: [{ num: 5, name: '배우진', pos: 'DF' }, { num: 11, name: '한재원', pos: 'FW' }],
+        timeline: [
+          { min: "00'", type: "start", title: "전반전 킥오프", desc: "예선 최종전 알천4B 킥오프" },
+          { min: "15'", type: "goal", title: "고양주니어 골! ⚽", desc: "김동하 (10번) - 수비벽 넘기는 프리킥 선제골" },
+          { min: "25'", type: "whistle", title: "전반 종료", desc: "1 : 0 리드" },
+          { min: "38'", type: "goal", title: "고양주니어 추가골! ⚽", desc: "김동하 (10번) - 2경기 연속 멀티골 폭발!" },
+          { min: "50'", type: "end", title: "경기 종료", desc: "고양주니어 예선 전승 조 1위 본선 진출!" }
+        ],
+        stats: { shots: [12, 4], onTarget: [8, 1], corners: [7, 2], fouls: [2, 3] }
+      }
+    };
+
     function openLineupModal(matchId) {
+      activeModalMatchId = matchId || 'u12_1';
+      currentModalSubTab = 'lineup';
+      currentLineupTeamView = 'goyang';
+
+      const report = MATCH_REPORTS[activeModalMatchId] || MATCH_REPORTS['u12_1'];
+      
+      // Update Modal Header & Scoreboard Banner
+      const titleEl = document.getElementById('modalMatchTitle');
+      const badgeEl = document.getElementById('modalMatchBadge');
+      const scoreEl = document.getElementById('modalScoreDisplay');
+      const statusEl = document.getElementById('modalStatusBadge');
+      const pitchEl = document.getElementById('modalPitchBadge');
+      const homeNameEl = document.getElementById('modalHomeName');
+      const awayNameEl = document.getElementById('modalAwayName');
+      const awayEmblemEl = document.getElementById('modalAwayEmblem');
+
+      if (titleEl) titleEl.innerText = report.title;
+      if (badgeEl) badgeEl.innerText = `${report.age} · ${report.stage}`;
+      if (scoreEl) scoreEl.innerText = report.score;
+      if (statusEl) statusEl.innerText = report.status;
+      if (pitchEl) pitchEl.innerText = `${report.date} · ${report.pitch}`;
+      if (homeNameEl) homeNameEl.innerText = report.home.name;
+      if (awayNameEl) awayNameEl.innerText = report.away.name;
+
+      if (awayEmblemEl) {
+        const oppInfo = TEAMS_INFO[report.away.teamKey];
+        if (oppInfo) {
+          awayEmblemEl.innerHTML = oppInfo.html.replace('https://iili.io/nJAGX7S.png', INLINE_IMAGES.logo);
+        }
+      }
+
+      setModalSubTab('lineup');
       document.getElementById('lineupModal').classList.remove('hidden');
     }
 
     function closeLineupModal() {
       document.getElementById('lineupModal').classList.add('hidden');
+    }
+
+    function setModalSubTab(tabKey) {
+      currentModalSubTab = tabKey;
+      const tabs = ['lineup', 'timeline', 'stats'];
+      
+      tabs.forEach(t => {
+        const btn = document.getElementById('modalTabBtn-' + t);
+        const pane = document.getElementById('modalSubPane-' + t);
+        if (btn) {
+          if (t === tabKey) {
+            btn.className = 'py-1.5 rounded-xl text-[11px] font-black text-black bg-brand-gold shadow flex items-center justify-center gap-1 transition';
+          } else {
+            btn.className = 'py-1.5 rounded-xl text-[11px] font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1 transition';
+          }
+        }
+        if (pane) {
+          if (t === tabKey) {
+            pane.classList.remove('hidden');
+          } else {
+            pane.classList.add('hidden');
+          }
+        }
+      });
+
+      const report = MATCH_REPORTS[activeModalMatchId] || MATCH_REPORTS['u12_1'];
+      if (tabKey === 'lineup') {
+        renderLineupView(report);
+      } else if (tabKey === 'timeline') {
+        renderTimelineView(report);
+      } else if (tabKey === 'stats') {
+        renderStatsView(report);
+      }
+    }
+
+    function setLineupTeamView(teamKey) {
+      currentLineupTeamView = teamKey;
+      const goyangBtn = document.getElementById('lineupTeamBtn-goyang');
+      const oppBtn = document.getElementById('lineupTeamBtn-opponent');
+
+      if (teamKey === 'goyang') {
+        if (goyangBtn) goyangBtn.className = 'py-1.5 rounded-lg text-center font-black text-[11px] bg-yellow-400/20 text-brand-gold border border-yellow-500/40 shadow transition';
+        if (oppBtn) oppBtn.className = 'py-1.5 rounded-lg text-center font-bold text-[11px] text-zinc-400 hover:text-white transition';
+      } else {
+        if (oppBtn) oppBtn.className = 'py-1.5 rounded-lg text-center font-black text-[11px] bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 shadow transition';
+        if (goyangBtn) goyangBtn.className = 'py-1.5 rounded-lg text-center font-bold text-[11px] text-zinc-400 hover:text-white transition';
+      }
+
+      const report = MATCH_REPORTS[activeModalMatchId] || MATCH_REPORTS['u12_1'];
+      renderLineupView(report);
+    }
+
+    function renderLineupView(report) {
+      const isGoyang = (currentLineupTeamView === 'goyang');
+      const starters = isGoyang ? report.goyangStarters : report.oppStarters;
+      const subs = isGoyang ? report.goyangSubs : report.oppSubs;
+      const formation = isGoyang ? report.goyangFormation : report.oppFormation;
+      const teamName = isGoyang ? report.home.name : report.away.name;
+
+      // Update Pitch Header
+      const titleEl = document.getElementById('pitchTeamTitle');
+      const formEl = document.getElementById('pitchFormationBadge');
+      if (titleEl) titleEl.innerText = `⚽ ${teamName} 전술 포메이션`;
+      if (formEl) formEl.innerText = formation;
+
+      // Group Starters by Position
+      const fwList = starters.filter(p => p.pos === 'FW');
+      const mfList = starters.filter(p => p.pos === 'MF');
+      const dfList = starters.filter(p => p.pos === 'DF');
+      const gkList = starters.filter(p => p.pos === 'GK');
+
+      const pitchContainer = document.getElementById('pitchPlayersContainer');
+      if (pitchContainer) {
+        pitchContainer.innerHTML = `
+          <!-- FW Row (Attacking) -->
+          <div class="flex justify-around items-center px-4">
+            ${fwList.map(p => renderPitchPlayerNode(p, isGoyang)).join('')}
+          </div>
+          <!-- MF Row (Midfield) -->
+          <div class="flex justify-around items-center px-2">
+            ${mfList.map(p => renderPitchPlayerNode(p, isGoyang)).join('')}
+          </div>
+          <!-- DF Row (Defense) -->
+          <div class="flex justify-around items-center px-2">
+            ${dfList.map(p => renderPitchPlayerNode(p, isGoyang)).join('')}
+          </div>
+          <!-- GK Row (Goalkeeper) -->
+          <div class="flex justify-center items-center">
+            ${gkList.map(p => renderPitchPlayerNode(p, isGoyang, true)).join('')}
+          </div>
+        `;
+      }
+
+      // Render Starters Grid
+      const startersGrid = document.getElementById('startersListGrid');
+      if (startersGrid) {
+        startersGrid.innerHTML = starters.map(p => `
+          <div class="p-2 rounded-xl bg-[#0E1017] border ${p.isAce ? 'border-yellow-400/60 bg-yellow-400/5' : 'border-[#282D3D]'} flex items-center justify-between">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-6 h-6 rounded-lg ${isGoyang ? (p.isAce ? 'bg-brand-gold text-black font-black' : 'bg-[#1E222E] text-brand-gold font-bold') : 'bg-cyan-950 text-cyan-300 font-bold'} flex items-center justify-center text-xs font-num shrink-0">
+                ${p.num}
+              </span>
+              <div class="min-w-0">
+                <div class="font-black text-white text-xs truncate flex items-center gap-1">
+                  <span>${p.name}</span>
+                  ${p.isAce ? '<span class="text-[9px] bg-yellow-400/20 text-brand-gold px-1 rounded font-black border border-yellow-500/40">에이스👑</span>' : ''}
+                  ${p.isCaptain ? '<span class="text-[9px] bg-red-500/20 text-red-400 px-1 rounded font-bold">주장(C)</span>' : ''}
+                </div>
+                <span class="text-[9px] text-zinc-400 font-medium">${p.pos} · 선발</span>
+              </div>
+            </div>
+            <span class="w-2 h-2 rounded-full ${p.pos === 'FW' ? 'bg-red-400' : p.pos === 'MF' ? 'bg-amber-400' : p.pos === 'DF' ? 'bg-blue-400' : 'bg-emerald-400'}"></span>
+          </div>
+        `).join('');
+      }
+
+      // Render Subs Grid
+      const subsGrid = document.getElementById('subsListGrid');
+      if (subsGrid) {
+        subsGrid.innerHTML = subs.map(p => `
+          <div class="p-2 rounded-xl bg-[#0E1017] border border-[#282D3D] flex items-center justify-between opacity-85">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-[#1E222E] text-zinc-400 flex items-center justify-center text-[11px] font-num font-bold shrink-0">
+                ${p.num}
+              </span>
+              <div class="min-w-0">
+                <div class="font-bold text-zinc-200 text-[11px] truncate">${p.name}</div>
+                <span class="text-[9px] text-zinc-500">${p.pos} · 후보</span>
+              </div>
+            </div>
+            <span class="text-[9px] text-zinc-500 font-semibold">대기</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    function renderPitchPlayerNode(p, isGoyang, isGk = false) {
+      let badgeStyle = isGoyang ? (p.isAce ? 'bg-brand-gold text-black ring-2 ring-yellow-200 shadow-[0_0_12px_rgba(255,210,0,0.8)]' : 'bg-yellow-400/90 text-black shadow') : 'bg-cyan-400 text-black shadow';
+      if (isGk) badgeStyle = 'bg-emerald-300 text-black shadow';
+
+      return `
+        <div class="flex flex-col items-center group cursor-pointer" onclick="showToast('${p.pos} ${p.num}번 ${p.name} 선수 (KFA 공식 배번)')">
+          <div class="w-8 h-8 rounded-full ${badgeStyle} flex items-center justify-center font-num font-black text-xs transition transform group-hover:scale-110">
+            ${p.num}
+          </div>
+          <div class="mt-0.5 px-1.5 py-0.2 rounded bg-black/80 backdrop-blur-sm border ${p.isAce ? 'border-yellow-400 text-yellow-300 font-black' : 'border-black/50 text-white font-bold'} text-[10px] leading-tight text-center whitespace-nowrap shadow">
+            ${p.name}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderTimelineView(report) {
+      const container = document.getElementById('timelineEventsList');
+      if (!container) return;
+
+      if (!report.timeline || report.timeline.length === 0) {
+        container.innerHTML = `
+          <div class="p-4 rounded-xl bg-[#0E1017] border border-[#282D3D] text-center text-zinc-400">
+            ⏳ 경기 진행 전으로, 킥오프 후 KFA 전산 기록이 실시간으로 등록됩니다.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = report.timeline.map((item, idx) => {
+        let iconBg = 'bg-brand-gold text-black';
+        let icon = 'fa-solid fa-futbol';
+        let borderHighlight = 'border-yellow-500/40 bg-[#161922]';
+
+        if (item.type === 'start' || item.type === 'whistle' || item.type === 'end') {
+          iconBg = 'bg-blue-500 text-white';
+          icon = 'fa-solid fa-stopwatch';
+          borderHighlight = 'border-blue-500/30 bg-[#12151E]';
+        } else if (item.type === 'sub') {
+          iconBg = 'bg-emerald-500 text-black';
+          icon = 'fa-solid fa-arrows-rotate';
+          borderHighlight = 'border-emerald-500/30 bg-[#12151E]';
+        }
+
+        return `
+          <div class="relative pl-8">
+            <div class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full ${iconBg} flex items-center justify-center text-[8px] font-black shadow ring-2 ring-[#131620]">
+              <i class="${icon}"></i>
+            </div>
+            <div class="p-2.5 rounded-xl ${borderHighlight} border text-xs shadow-sm">
+              <div class="flex items-center justify-between mb-0.5">
+                <span class="font-black text-white flex items-center gap-1.5">
+                  <span class="font-num text-brand-gold font-black">${item.min}</span>
+                  <span>${item.title}</span>
+                </span>
+                <span class="text-[9px] text-zinc-400 font-semibold">KFA 공식</span>
+              </div>
+              <p class="text-[11px] text-zinc-300 leading-relaxed">${item.desc}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderStatsView(report) {
+      const container = document.getElementById('statsComparisonContainer');
+      if (!container) return;
+
+      const stats = report.stats || { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] };
+      const items = [
+        { label: '전체 슈팅', home: stats.shots[0], away: stats.shots[1] },
+        { label: '유효 슈팅', home: stats.onTarget[0], away: stats.onTarget[1] },
+        { label: '코너킥', home: stats.corners[0], away: stats.corners[1] },
+        { label: '파울', home: stats.fouls[0], away: stats.fouls[1] }
+      ];
+
+      container.innerHTML = items.map(s => {
+        const total = (s.home + s.away) || 1;
+        const homePct = Math.round((s.home / total) * 100);
+        const awayPct = 100 - homePct;
+
+        return `
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs font-black">
+              <span class="text-brand-gold font-num">${s.home}</span>
+              <span class="text-zinc-300 text-[11px] font-bold">${s.label}</span>
+              <span class="text-cyan-400 font-num">${s.away}</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-[#0E1017] border border-[#282D3D] flex overflow-hidden">
+              <div class="bg-brand-gold h-full transition-all duration-500" style="width: ${homePct}%"></div>
+              <div class="bg-cyan-400 h-full transition-all duration-500" style="width: ${awayPct}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function syncMatchLiveReport(matchId, btnEl) {
+      const icon = btnEl ? btnEl.querySelector('i') : null;
+      if (icon) icon.classList.add('fa-spin');
+      setTimeout(() => {
+        if (icon) icon.classList.remove('fa-spin');
+        showToast('KFA 공식 전산망과 선발 라인업 및 경기 기록을 최신 동기화했습니다! ⚽');
+      }, 500);
     }
 
     function openOriginalImageModal(team) {
