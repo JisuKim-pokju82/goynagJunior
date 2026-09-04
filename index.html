@@ -182,100 +182,89 @@
           </div>
           <div class="min-w-0">
             <div class="text-[11px] sm:text-xs font-black text-white flex items-center gap-1 leading-tight flex-wrap">
-              <span>KFA 공식 전산 연동</span>
-              <span class="text-[8px] bg-blue-500 text-white font-black px-1 py-0.2 rounded shrink-0">최우선 기준</span>
+              <span>KFA & 실시간 기상 통합 연동</span>
+              <span class="text-[8px] bg-blue-500 text-white font-black px-1 py-0.2 rounded shrink-0">자동 동기화</span>
             </div>
             <p id="lastSyncTime" class="text-[9px] text-zinc-400 font-medium truncate mt-0.5">방금 전 연동 완료 (60초 자동체크)</p>
           </div>
         </div>
 
-        <button id="masterSyncBtn" onclick="syncAllMatches(true)" class="px-2.5 py-1.5 rounded-xl bg-blue-500/20 hover:bg-brand-gold hover:text-black text-brand-gold text-[11px] font-black flex items-center gap-1 transition active:scale-95 border border-blue-400/40 shadow-sm shrink-0">
+        <button id="masterSyncBtn" onclick="syncAllMatches(true)" class="px-2.5 py-1.5 rounded-xl bg-blue-500/20 hover:bg-brand-gold hover:text-black text-brand-gold text-[11px] font-black flex items-center gap-1.5 transition active:scale-95 border border-blue-400/40 shadow-sm shrink-0">
           <i class="fa-solid fa-arrows-rotate text-[10px]" id="masterSyncIcon"></i>
-          <span>동기화</span>
+          <span>KFA·날씨 동기화</span>
         </button>
       </div>
 
       <div class="p-2.5 rounded-xl bg-[#0E1017]/80 border border-[#282D3D] text-[10.5px] text-zinc-300 leading-snug">
-        본 일정은 <strong class="text-white">대한축구협회(JoinKFA) 공식 배정</strong>을 최우선 기준으로 자동 반영합니다. 우천·폭염 등 현장 변동 시 <strong>KFA 공식 데이터로 즉시 자동 갱신</strong>됩니다.
+        본 일정은 <strong class="text-white">대한축구협회(JoinKFA) 공식 배정 및 경주 현지 실시간 기상</strong>을 최우선 기준으로 자동 반영합니다. 우천·폭염 등 현장 변동 시 <strong>KFA 공식 데이터로 즉시 자동 갱신</strong>됩니다.
       </div>
     </div>
 
-    <!-- GYEONGJU TOURNAMENT LIVE WEATHER WIDGET -->
-    <div class="rounded-2xl bg-gradient-to-r from-sky-950/60 via-[#161922] to-amber-950/40 p-3 border border-sky-500/30 shadow-md space-y-2">
-      <div class="flex items-center justify-between gap-2">
-        <div class="flex items-center gap-2.5 min-w-0">
-          <div id="liveWeatherIconBox" class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-base ring-1 ring-amber-500/30 shrink-0">
-            <i id="liveWeatherIcon" class="fa-solid fa-sun animate-pulse"></i>
-          </div>
-          <div class="min-w-0">
-            <div class="text-xs font-black text-white flex items-center gap-1.5 flex-wrap">
-              <span>경주 실시간 기상</span>
-              <span id="liveWeatherTemp" class="text-brand-gold font-num font-black text-sm">--°C</span>
-              <span id="liveWeatherBadge" class="text-[9px] bg-emerald-500/20 text-emerald-400 font-bold px-1.5 py-0.2 rounded border border-emerald-500/30 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 실시간 LIVE
-              </span>
-            </div>
-            <p id="liveWeatherDesc" class="text-[10px] text-zinc-300 mt-0.5 truncate">
-              체감 --°C · 습도 --% · 실시간 기상청 연동중...
-            </p>
-          </div>
+    <!-- ==================== MAIN MATCH SCHEDULE CONTAINER (HIGHLIGHTED CORE MODULE) ==================== -->
+    <section id="tab-section" class="relative rounded-3xl bg-[#11141D] p-3 sm:p-4 border-2 border-yellow-500/60 shadow-[0_0_30px_rgba(234,179,8,0.14)] ring-1 ring-yellow-400/30 space-y-3.5">
+      <!-- Core Module Header -->
+      <div class="flex items-center justify-between px-1 pb-0.5">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse ring-4 ring-yellow-400/20"></span>
+          <h2 class="text-sm font-black text-white flex items-center gap-1.5">
+            <span>고양주니어FC 경기 일정</span>
+            <span class="text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm">CORE</span>
+          </h2>
         </div>
-        
-        <div class="flex items-center gap-1 shrink-0">
-          <button onclick="fetchGyeongjuWeather(true)" class="p-1.5 rounded-xl bg-[#1E222E] hover:bg-yellow-400 hover:text-black text-brand-gold text-xs border border-[#3A4259] active:scale-95 transition" title="날씨 새로고침">
-            <i id="weatherRefreshIcon" class="fa-solid fa-arrows-rotate text-[10px]"></i>
+        <button type="button" onclick="toggleFinalSimulation()" class="px-2 py-1 rounded-lg bg-yellow-400/10 hover:bg-yellow-400/20 text-brand-gold border border-yellow-500/30 text-[10px] font-black flex items-center gap-1 active:scale-95 transition">
+          <i class="fa-solid fa-flask text-[9px]"></i> <span id="simBtnText">본선 발표 미리보기</span>
+        </button>
+      </div>
+
+      <!-- TOURNAMENT STAGE SELECTOR (2차 화랑대기 예선 vs 본선 토너먼트) -->
+      <div>
+        <div class="p-1 rounded-2xl bg-[#12151E] border border-yellow-500/40 grid grid-cols-2 gap-1 shadow-lg">
+          <button type="button" onclick="switchStage('prelim')" id="stageBtn-prelim" class="stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition">
+            <i class="fa-regular fa-calendar-check text-sm"></i>
+            <span>2차 예선 리그</span>
+            <span class="text-[9px] bg-black/30 text-black font-black px-1.5 py-0.2 rounded">진행중</span>
           </button>
-          <a href="https://search.naver.com/search.naver?query=경주+날씨" target="_blank" class="px-2 py-1.5 rounded-xl bg-[#1E222E] hover:bg-yellow-400 hover:text-black text-brand-gold text-[10.5px] font-bold border border-yellow-500/30 transition active:scale-95 flex items-center gap-1">
-            <i class="fa-solid fa-cloud-sun text-[10px]"></i> 상보
-          </a>
+          <button type="button" onclick="switchStage('final')" id="stageBtn-final" class="stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition">
+            <i class="fa-solid fa-trophy text-sm text-yellow-400"></i>
+            <span>본선 토너먼트</span>
+            <span class="text-[9px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.2 rounded border border-red-500/30">대진 미정</span>
+          </button>
         </div>
       </div>
-      
-      <!-- Tournament Weather Note -->
-      <div class="px-2.5 py-1.5 rounded-xl bg-[#0E1017]/80 border border-[#282D3D] text-[10px] text-zinc-400 flex items-center justify-between">
-        <span>대회 기간: <strong class="text-zinc-200">24~29°C</strong> (오전 쾌적 / 오후 수분보충 필수)</span>
-        <span id="weatherSyncTime" class="text-zinc-500 text-[9px]">기상청 연동중...</span>
+
+      <!-- UNIFIED TAB SELECTOR (U-10 -> U-11 -> U-12 -> 전체일정 -> 조순위) -->
+      <div>
+        <div class="p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-5 gap-1 shadow-md">
+          <!-- Tab 1: U-10 -->
+          <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow">
+            <span id="tabBadge-u10" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
+            <span class="text-xs">U-10</span>
+          </button>
+          <!-- Tab 2: U-11 -->
+          <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+            <span id="tabBadge-u11" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
+            <span class="text-xs">U-11</span>
+          </button>
+          <!-- Tab 3: U-12 -->
+          <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+            <span id="tabBadge-u12" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
+            <span class="text-xs">U-12</span>
+          </button>
+          <!-- Tab 4: 전체일정 -->
+          <button onclick="switchTab('all')" id="btn-all" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+            <span id="tabBadge-all" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
+            <span class="text-xs">전체일정</span>
+          </button>
+          <!-- Tab 5: 조순위 -->
+          <button onclick="switchTab('standings')" id="btn-standings" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+            <span id="tabBadge-standings" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
+            <span class="text-xs">조순위🏆</span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- TAB SELECTOR (U-10 -> U-11 -> U-12 -> 전체일정 -> 2차리그·조순위) -->
-    <div id="tab-section" class="pt-1">
-      <div class="p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-5 gap-1 shadow-md">
-        
-        <!-- Tab 1: U-10 -->
-        <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow">
-          <span class="text-[8px] opacity-80 leading-none mb-0.5">옐로우</span>
-          <span class="text-xs">U-10</span>
-        </button>
-
-        <!-- Tab 2: U-11 -->
-        <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[8px] opacity-80 leading-none mb-0.5">와인팀</span>
-          <span class="text-xs">U-11</span>
-        </button>
-
-        <!-- Tab 3: U-12 -->
-        <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[8px] opacity-80 leading-none mb-0.5">대표팀</span>
-          <span class="text-xs">U-12</span>
-        </button>
-
-        <!-- Tab 4: 전체일정 -->
-        <button onclick="switchTab('u13')" id="btn-u13" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[8px] opacity-80 leading-none mb-0.5">전체일정</span>
-          <span class="text-xs">일정</span>
-        </button>
-
-        <!-- Tab 5: 2차리그 & 조순위 -->
-        <button onclick="switchTab('league')" id="btn-league" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[8px] opacity-80 leading-none mb-0.5">2차리그</span>
-          <span class="text-xs">조순위🏆</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- ==================== TAB 1: U-10 (옐로우) ==================== -->
-    <div id="pane-u10" class="tab-pane active space-y-3.5" style="display: block !important;">
+    <!-- ==================== PRELIM PANE 1: U-10 (옐로우) ==================== -->
+    <div id="pane-prelim-u10" class="match-pane active space-y-3.5" style="display: block !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
@@ -288,15 +277,17 @@
 
       <!-- MATCH 1: U-10 vs 부평유소년 블랙 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">1</span>
-            <span class="font-bold text-white">9월 6일 (일) 09:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-sun text-amber-400"></i> 24°C 맑음
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 6일 (일) 09:00</div>
+              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>24°C 맑음</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천5A</span>
@@ -361,15 +352,17 @@
 
       <!-- MATCH 2: U-10 vs 남양주 BEST -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">2</span>
-            <span class="font-bold text-white">9월 7일 (월) 09:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-cloud-sun text-amber-300"></i> 25°C 구름조금
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 7일 (월) 09:00</div>
+              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원3A</span>
@@ -439,15 +432,17 @@
 
       <!-- MATCH 3: U-10 vs 대구 TDN 레드 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">3</span>
-            <span class="font-bold text-white">9월 8일 (화) 09:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-sun text-amber-400"></i> 24°C 맑음
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 8일 (화) 09:00</div>
+              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>24°C 맑음</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천3B</span>
@@ -510,8 +505,8 @@
       </div>
     </div>
 
-    <!-- ==================== TAB 2: U-11 (와인) ==================== -->
-    <div id="pane-u11" class="tab-pane space-y-3.5" style="display: none !important;">
+    <!-- ==================== PRELIM PANE 2: U-11 (와인) ==================== -->
+    <div id="pane-prelim-u11" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
@@ -524,15 +519,17 @@
 
       <!-- MATCH 1: U-11 vs 부평유소년 레드 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">1</span>
-            <span class="font-bold text-white">9월 6일 (일) 09:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-sun text-amber-400"></i> 24°C 맑음
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 6일 (일) 11:30</div>
+              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>27°C 맑음·더위</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천4A</span>
@@ -587,7 +584,7 @@
             <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천4A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
               <i class="fa-brands fa-youtube text-red-500"></i> 라이브
             </a>
-            <button onclick="addToCalendar('고양주니어 U-11 vs 부평유소년 레드', '2026-09-06T09:00:00', '2026-09-06T10:00:00', '경주 알천4A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+            <button onclick="addToCalendar('고양주니어 U-11 vs 부평유소년 레드', '2026-09-06T11:30:00', '2026-09-06T12:30:00', '경주 알천4A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
               <i class="fa-regular fa-bell text-brand-gold"></i> 알림
             </button>
           </div>
@@ -596,15 +593,17 @@
 
       <!-- MATCH 2: U-11 vs 염기훈 주니어 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">2</span>
-            <span class="font-bold text-white">9월 7일 (월) 09:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-cloud-sun text-amber-300"></i> 25°C 구름조금
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 7일 (월) 11:30</div>
+              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>28°C 구름조금</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원2A</span>
@@ -661,7 +660,7 @@
             <a href="https://www.youtube.com/results?search_query=2026+화랑대기+축구공원2A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
               <i class="fa-brands fa-youtube text-red-500"></i> 라이브
             </a>
-            <button onclick="addToCalendar('고양주니어 U-11 vs 염기훈 주니어', '2026-09-07T09:00:00', '2026-09-07T10:00:00', '경주 축구공원 2A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+            <button onclick="addToCalendar('고양주니어 U-11 vs 염기훈 주니어', '2026-09-07T11:30:00', '2026-09-07T12:30:00', '경주 축구공원 2A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
               <i class="fa-regular fa-bell text-brand-gold"></i> 알림
             </button>
           </div>
@@ -670,18 +669,20 @@
 
       <!-- MATCH 3: U-11 vs 대구 TDN 블루 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">3</span>
-            <span class="font-bold text-white">9월 8일 (화) 09:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-sun text-amber-400"></i> 24°C 맑음
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 8일 (화) 11:30</div>
+              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>27°C 맑음</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천2B</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천1A</span>
           </div>
         </div>
 
@@ -741,8 +742,8 @@
       </div>
     </div>
 
-    <!-- ==================== TAB 3: U-12 (대표팀) ==================== -->
-    <div id="pane-u12" class="tab-pane space-y-3.5" style="display: none !important;">
+    <!-- ==================== PRELIM PANE 3: U-12 (대표팀) ==================== -->
+    <div id="pane-prelim-u12" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
@@ -755,15 +756,17 @@
 
       <!-- MATCH 1: U-12 vs 속초시 체육회 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">1</span>
-            <span class="font-bold text-white">9월 7일 (월) 16:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-amber-950/70 text-amber-300 text-[10px] font-bold border border-amber-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-sun text-amber-400"></i> 29°C 맑음·더위
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 7일 (월) 16:00</div>
+              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>29°C 맑음·더위</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">축구공원4B</span>
@@ -827,15 +830,17 @@
 
       <!-- MATCH 2: U-12 vs 세종 공공SC -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">2</span>
-            <span class="font-bold text-white">9월 8일 (화) 16:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-cloud-sun text-amber-300"></i> 28°C 구름조금
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 8일 (화) 16:00</div>
+              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>28°C 구름조금</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
             <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">시민운동장 B</span>
@@ -900,15 +905,17 @@
 
       <!-- MATCH 3: U-12 vs 서울 K리거 강용FC -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">3</span>
-            <span class="font-bold text-white">9월 9일 (수) 16:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-cloud text-sky-300"></i> 27°C 구름많음
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 9일 (수) 16:00</div>
+              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-cloud text-sky-300"></i> <span>27°C 구름많음</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천3A</span>
@@ -974,15 +981,17 @@
 
       <!-- MATCH 4: U-12 vs 이천유나이티드 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">4</span>
-            <span class="font-bold text-white">9월 10일 (목) 16:00</span>
-            <span class="px-1.5 py-0.5 rounded-md bg-sky-950/70 text-sky-300 text-[10px] font-bold border border-sky-500/30 flex items-center gap-1">
-              <i class="fa-solid fa-sun text-amber-400"></i> 28°C 맑음
-            </span>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">4</span>
+            <div class="min-w-0">
+              <div class="font-black text-white text-[12px] truncate">9월 10일 (목) 16:00</div>
+              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>28°C 맑음</span>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0">
+          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천4B</span>
@@ -1044,8 +1053,8 @@
       </div>
     </div>
 
-    <!-- ==================== TAB 4: 전체 일정 & 종합 ==================== -->
-    <div id="pane-u13" class="tab-pane space-y-3.5" style="display: none !important;">
+    <!-- ==================== PRELIM PANE 4: 전체 일정 & 종합 ==================== -->
+    <div id="pane-prelim-all" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center shadow-lg">
         <h3 class="text-sm font-black text-white">고양주니어FC 화랑대기 전체 타임라인</h3>
         <p class="text-[11px] text-zinc-400 mt-0.5">총 10경기 일정과 장소를 일자별로 한눈에 비교하세요</p>
@@ -1182,8 +1191,8 @@
     </div>
 
 
-    <!-- ==================== TAB 5: 조별 순위표 & 2차 리그 전체 일정 ==================== -->
-    <div id="pane-league" class="tab-pane space-y-4" style="display: none !important;">
+    <!-- ==================== PRELIM PANE 5: 조별 순위표 & 2차 리그 전체 일정 ==================== -->
+    <div id="pane-prelim-standings" class="match-pane space-y-4" style="display: none !important;">
       
       <!-- HEADER BANNER -->
       <div class="rounded-3xl bg-gradient-to-r from-amber-950/60 via-[#191D28] to-amber-900/40 p-4 border border-yellow-500/40 shadow-xl text-center space-y-1">
@@ -1379,7 +1388,7 @@
                 <tr>
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
-                    <span>강원 속초시체육회</span>
+                    <span>경남 양산유나이티드</span>
                   </td>
                   <td>0</td><td>0</td><td>0</td><td>0</td>
                   <td class="font-bold font-num">0</td>
@@ -1387,7 +1396,7 @@
                 <tr>
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
-                    <span>세종 공공SC</span>
+                    <span>경기 이천유나이티드</span>
                   </td>
                   <td>0</td><td>0</td><td>0</td><td>0</td>
                   <td class="font-bold font-num">0</td>
@@ -1395,7 +1404,7 @@
                 <tr>
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
-                    <span>서울 K리거 강용FC</span>
+                    <span>경북 비산초</span>
                   </td>
                   <td>0</td><td>0</td><td>0</td><td>0</td>
                   <td class="font-bold font-num">0</td>
@@ -1403,7 +1412,7 @@
                 <tr>
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">5</span>
-                    <span>경기 이천유나이티드</span>
+                    <span>경북 강구초</span>
                   </td>
                   <td>0</td><td>0</td><td>0</td><td>0</td>
                   <td class="font-bold font-num">0</td>
@@ -1412,47 +1421,205 @@
             </table>
           </div>
         </div>
+      </div>
+    </div>
 
+    <!-- ==================== FINAL PANE 1: U-10 본선 ==================== -->
+    <div id="pane-final-u10" class="match-pane space-y-3.5" style="display: none !important;">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+          <span class="text-sm font-black text-white">U-10 옐로우 2차 본선 토너먼트</span>
+        </div>
+        <span class="text-[10px] bg-yellow-400/10 text-brand-gold px-2 py-0.5 rounded font-bold border border-yellow-500/30">9/11(금)~9/12(토)</span>
       </div>
 
-      <!-- 2ND STAGE (2차 리그 본선 스플릿 안내) -->
-      <div class="rounded-3xl bg-gradient-to-b from-[#1C1F2B] to-[#12151E] border border-yellow-500/40 p-4 shadow-xl space-y-3">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-xl bg-brand-gold text-black flex items-center justify-center text-sm font-black shadow">
-            <i class="fa-solid fa-sitemap"></i>
+      <div id="final-u10-content">
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-yellow-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-yellow-400/10 text-brand-gold flex items-center justify-center text-xl ring-1 ring-yellow-400/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
           </div>
           <div>
-            <h4 class="text-xs font-black text-white">화랑대기 2차 스플릿 리그 운영 안내</h4>
-            <p class="text-[10px] text-zinc-400">1차 조별리그 성적에 따라 2차 본선 조 재편성</p>
-          </div>
-        </div>
-
-        <div class="space-y-2 text-xs">
-          <div class="p-3 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] space-y-1">
-            <div class="flex items-center justify-between font-bold">
-              <span class="text-brand-gold font-black">🥇 1차 예선 1위·2위 그룹 (상위 스플릿)</span>
-              <span class="text-[10px] bg-yellow-400/20 text-brand-gold px-1.5 py-0.2 rounded font-black">본선 진출</span>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-yellow-400/15 text-brand-gold text-[10px] font-black border border-yellow-500/30 mb-1.5">
+              KFA 공식 전산망 대기
             </div>
-            <p class="text-[11px] text-zinc-300">각 조 1·2위 팀들이 모여 최종 우승을 겨루는 2차 상위 토너먼트/리그 진행</p>
+            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              9월 10일(목) 1차 예선 4조 경기 종료 후 조순위에 따라 본선 16강 상대팀 및 킥오프 시간이 자동 배정됩니다.
+            </p>
           </div>
-
-          <div class="p-3 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] space-y-1">
-            <div class="flex items-center justify-between font-bold">
-              <span class="text-zinc-300 font-bold">🥈 1차 예선 3위 이하 그룹 (순위 결정 리그)</span>
-              <span class="text-[10px] bg-[#1E222E] text-zinc-400 px-1.5 py-0.2 rounded font-bold">순위전</span>
-            </div>
-            <p class="text-[11px] text-zinc-400">각 조 동일 순위 팀들 간 추가 경험 및 기량 향상을 위한 순위 리그 진행</p>
+          <button type="button" onclick="syncFinalMatch('u10', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>KFA U-10 본선 일정 실시간 동기화</span>
+          </button>
+          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
+            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 16강전 ➔ 9월 12일(토) 8강/4강/결승
           </div>
-        </div>
-
-        <div class="pt-1">
-          <a href="https://www.joinkfa.com" target="_blank" class="w-full py-2.5 rounded-xl bg-brand-gold text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
-            <i class="fa-solid fa-list-check"></i> JoinKFA 2차리그 공식 대진표 실시간 확인
-          </a>
         </div>
       </div>
-
     </div>
+
+    <!-- ==================== FINAL PANE 2: U-11 본선 ==================== -->
+    <div id="pane-final-u11" class="match-pane space-y-3.5" style="display: none !important;">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+          <span class="text-sm font-black text-white">U-11 와인 2차 본선 토너먼트</span>
+        </div>
+        <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-bold border border-red-500/30">9/11(금)~9/12(토)</span>
+      </div>
+
+      <div id="final-u11-content">
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-red-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl ring-1 ring-red-500/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
+          </div>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-400 text-[10px] font-black border border-red-500/30 mb-1.5">
+              KFA 공식 전산망 대기
+            </div>
+            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              9월 10일(목) 1차 예선 종료 후 조순위별 본선 토너먼트 대진표가 KFA 공식 발표 시 실시간 연동됩니다.
+            </p>
+          </div>
+          <button type="button" onclick="syncFinalMatch('u11', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>KFA U-11 본선 일정 실시간 동기화</span>
+          </button>
+          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
+            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 16강전 ➔ 9월 12일(토) 8강/4강/결승
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FINAL PANE 3: U-12 본선 ==================== -->
+    <div id="pane-final-u12" class="match-pane space-y-3.5" style="display: none !important;">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span class="text-sm font-black text-white">U-12 대표팀 2차 본선 토너먼트</span>
+        </div>
+        <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-bold border border-blue-500/30">9/11(금)~9/12(토)</span>
+      </div>
+
+      <div id="final-u12-content">
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-blue-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl ring-1 ring-blue-500/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
+          </div>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-400 text-[10px] font-black border border-blue-500/30 mb-1.5">
+              KFA 공식 전산망 대기
+            </div>
+            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              9월 10일(목) 예선 4경기(이천유나이티드전) 종료 후 본선 진출 대진이 KFA 시스템에 등록됩니다.
+            </p>
+          </div>
+          <button type="button" onclick="syncFinalMatch('u12', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>KFA U-12 본선 일정 실시간 동기화</span>
+          </button>
+          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
+            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 8강/16강 ➔ 9월 12일(토) 4강/결승
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FINAL PANE 4: 전체일정 (토너먼트 대진표) ==================== -->
+    <div id="pane-final-all" class="match-pane space-y-3.5" style="display: none !important;">
+      <div class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center shadow-lg">
+        <h3 class="text-sm font-black text-white">2026 화랑대기 2차 본선 전체일정 (토너먼트 대진표)</h3>
+        <p class="text-[11px] text-zinc-400 mt-0.5">16강 ➔ 8강 ➔ 준결승(4강) ➔ 결승 토너먼트</p>
+      </div>
+
+      <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-yellow-500/40 text-center space-y-3.5 shadow-lg">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-yellow-400/10 text-brand-gold flex items-center justify-center text-xl ring-1 ring-yellow-400/30">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div>
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-yellow-400/15 text-brand-gold text-[10px] font-black border border-yellow-500/30 mb-1.5">
+            전체 대진표 편성 대기
+          </div>
+          <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+          <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+            조별 예선 결과 집계 후 KFA 공식 대진표가 발표되면 인터랙티브 토너먼트 브래킷이 실시간 연동됩니다.
+          </p>
+        </div>
+        <button type="button" onclick="syncFinalMatch('all', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>KFA 본선 전체 토너먼트 대진표 실시간 동기화</span>
+        </button>
+      </div>
+
+      <!-- Visual Bracket Tree Wireframe -->
+      <div class="rounded-2xl bg-[#161922] p-3.5 border border-[#282D3D] space-y-3 shadow-md text-xs">
+        <div class="space-y-1.5">
+          <div class="text-[11px] font-black text-brand-gold flex items-center justify-between">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-yellow-400"></span> 16강전 (9/11 금)</span>
+            <span class="text-[10px] text-zinc-400 font-semibold">각 조 1·2위 진출</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-[#0E1017] border border-[#282D3D] flex justify-between items-center">
+            <span class="font-bold text-white">경기 고양주니어FC</span>
+            <span class="text-[10px] text-brand-gold bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-500/20 font-bold">KFA 대진 배정 대기중</span>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="text-[11px] font-black text-blue-400 flex items-center justify-between">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-400"></span> 8강전 (9/12 토 오전)</span>
+            <span class="text-[10px] text-zinc-400 font-semibold">16강 승리팀</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-[#0E1017] border border-[#282D3D] flex justify-between items-center text-zinc-400">
+            <span>16강 경기 승리팀</span>
+            <span class="text-[10px] text-zinc-500">대진 미정</span>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="text-[11px] font-black text-emerald-400 flex items-center justify-between">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> 준결승 및 결승전 (9/12 토 오후)</span>
+            <span class="text-[10px] text-zinc-400 font-semibold">우승 트로피 결정전</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-[#0E1017] border border-[#282D3D] flex justify-between items-center text-zinc-300">
+            <span class="text-brand-gold font-bold">🏆 2026 화랑대기 챔피언 결정전</span>
+            <span class="text-[10px] text-zinc-400 font-bold">경주시민운동장</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FINAL PANE 5: 본선 스플릿 조순위표 ==================== -->
+    <div id="pane-final-standings" class="match-pane space-y-3.5" style="display: none !important;">
+      <div class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center shadow-lg">
+        <h3 class="text-sm font-black text-white">2차 본선 리그 / 스플릿 조순위</h3>
+        <p class="text-[11px] text-zinc-400 mt-0.5">각 조 순위별 본선 스플릿 리그 성적표</p>
+      </div>
+
+      <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-emerald-500/40 text-center space-y-3.5 shadow-lg">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl ring-1 ring-emerald-500/30">
+          <i class="fa-solid fa-list-ol"></i>
+        </div>
+        <div>
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[10px] font-black border border-emerald-500/30 mb-1.5">
+            본선 조순위 집계 대기
+          </div>
+          <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+          <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+            KFA 전산망에서 본선 스플릿 조편성이 확정되면 실시간 승점, 득실, 순위가 연동되어 표시됩니다.
+          </p>
+        </div>
+        <button type="button" onclick="syncFinalMatch('standings', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+          <i class="fa-solid fa-arrows-rotate"></i>
+          <span>KFA 본선 조순위 실시간 동기화</span>
+        </button>
+      </div>
+    </div>
+    </section> <!-- /#tab-section Highlighted Core Container -->
+
     <!-- LIVE NEWS & YOUTUBE SECTION -->
     <section class="space-y-3">
       <div class="flex items-center justify-between px-1">
@@ -2113,12 +2280,15 @@
       const icon = document.getElementById('masterSyncIcon');
       if (icon) icon.classList.add('fa-spin');
       
+      // Concurrently fetch fresh Gyeongju live weather
+      fetchGyeongjuWeather(false);
+
       // Sync/Fetch fresh KFA data for all matches
       setTimeout(() => {
         if (icon) icon.classList.remove('fa-spin');
         updateSyncTimestamp();
         if (isManual) {
-          showToast('KFA 공식 전산망 기준 경기 일정·구장·스코어 동기화 완료! ⚽');
+          showToast('KFA 경기 일정·스코어 및 경주 날씨 통합 동기화 완료! ⚽🌤️');
         }
       }, 600);
     }
@@ -2181,33 +2351,358 @@
       }
     }
 
-    function switchTab(team) {
-      const tabs = ['u10', 'u11', 'u12', 'u13', 'league'];
+    // ==================== UNIFIED STAGE & TAB SWITCHER ====================
+    let currentStage = 'prelim'; // 'prelim' | 'final'
+    let currentTab = 'u10';      // 'u10' | 'u11' | 'u12' | 'all' | 'standings'
+    let isFinalSimulation = false;
+
+    const ALL_STAGE_KEYS = ['prelim', 'final'];
+    const ALL_TAB_KEYS = ['u10', 'u11', 'u12', 'all', 'standings'];
+
+    function switchStage(stage) {
+      currentStage = stage;
       
-      tabs.forEach(t => {
-        const p = document.getElementById('pane-' + t);
-        const b = document.getElementById('btn-' + t);
-        if (p) {
-          p.style.setProperty('display', 'none', 'important');
-          p.classList.remove('active');
+      const prelimBtn = document.getElementById('stageBtn-prelim');
+      const finalBtn = document.getElementById('stageBtn-final');
+
+      if (stage === 'prelim') {
+        if (prelimBtn) {
+          prelimBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition';
         }
-        if (b) {
-          b.classList.remove('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
-          b.classList.add('text-zinc-400', 'font-bold');
+        if (finalBtn) {
+          finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition';
+        }
+        // Update tab badges
+        ALL_TAB_KEYS.forEach(t => {
+          const badge = document.getElementById('tabBadge-' + t);
+          if (badge) badge.innerText = '예선';
+        });
+      } else {
+        if (finalBtn) {
+          finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition';
+        }
+        if (prelimBtn) {
+          prelimBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition';
+        }
+        // Update tab badges
+        ALL_TAB_KEYS.forEach(t => {
+          const badge = document.getElementById('tabBadge-' + t);
+          if (badge) badge.innerText = '본선';
+        });
+      }
+
+      renderActivePane();
+    }
+
+    function switchTab(tabKey) {
+      currentTab = tabKey;
+      renderActivePane();
+    }
+
+    function renderActivePane() {
+      // 1. Update Tab Button Styles
+      ALL_TAB_KEYS.forEach(t => {
+        const btn = document.getElementById('btn-' + t);
+        if (btn) {
+          if (t === currentTab) {
+            btn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow';
+          } else {
+            btn.className = 'tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold';
+          }
         }
       });
 
-      const activePane = document.getElementById('pane-' + team);
-      const activeBtn = document.getElementById('btn-' + team);
+      // 2. Toggle All 10 Match Panes
+      ALL_STAGE_KEYS.forEach(s => {
+        ALL_TAB_KEYS.forEach(t => {
+          const pane = document.getElementById(`pane-${s}-${t}`);
+          if (pane) {
+            if (s === currentStage && t === currentTab) {
+              pane.style.setProperty('display', 'block', 'important');
+              pane.classList.add('active');
+            } else {
+              pane.style.setProperty('display', 'none', 'important');
+              pane.classList.remove('active');
+            }
+          }
+        });
+      });
+    }
+
+    // Toggle Simulation of KFA Final Tournament Release
+    function toggleFinalSimulation() {
+      isFinalSimulation = !isFinalSimulation;
+      const simText = document.getElementById('simBtnText');
       
-      if (activePane) {
-        activePane.style.setProperty('display', 'block', 'important');
-        activePane.classList.add('active');
+      if (isFinalSimulation) {
+        if (simText) simText.innerText = '대진 대기 상태로 복귀';
+        renderSimulatedFinals();
+        showToast('KFA 본선 대진 발표 시뮬레이션 적용 완료! 🏆');
+      } else {
+        if (simText) simText.innerText = '본선 발표 미리보기';
+        renderDefaultFinalsWaiting();
+        showToast('본선 대진 대기중 기본 상태로 전환되었습니다.');
       }
-      if (activeBtn) {
-        activeBtn.classList.remove('text-zinc-400', 'font-bold');
-        activeBtn.classList.add('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
-      }
+    }
+
+    function syncFinalMatch(type, btnEl) {
+      const icon = btnEl ? btnEl.querySelector('i') : null;
+      if (icon) icon.classList.add('fa-spin');
+      setTimeout(() => {
+        if (icon) icon.classList.remove('fa-spin');
+        showToast('KFA 전산망 연동 완료: 현재 예선 진행중으로 본선 일정 확정 시 자동 반영됩니다. ⚽');
+      }, 600);
+    }
+
+    function renderDefaultFinalsWaiting() {
+      document.getElementById('final-u10-content').innerHTML = `
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-yellow-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-yellow-400/10 text-brand-gold flex items-center justify-center text-xl ring-1 ring-yellow-400/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
+          </div>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-yellow-400/15 text-brand-gold text-[10px] font-black border border-yellow-500/30 mb-1.5">
+              KFA 공식 전산망 대기
+            </div>
+            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              9월 10일(목) 1차 예선 4조 경기 종료 후 조순위에 따라 본선 16강 상대팀 및 킥오프 시간이 자동 배정됩니다.
+            </p>
+          </div>
+          <button type="button" onclick="syncFinalMatch('u10', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>KFA U-10 본선 일정 실시간 동기화</span>
+          </button>
+          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
+            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 16강전 ➔ 9월 12일(토) 8강/4강/결승
+          </div>
+        </div>
+      `;
+      document.getElementById('final-u11-content').innerHTML = `
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-red-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl ring-1 ring-red-500/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
+          </div>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-400 text-[10px] font-black border border-red-500/30 mb-1.5">
+              KFA 공식 전산망 대기
+            </div>
+            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              9월 10일(목) 1차 예선 종료 후 조순위별 본선 토너먼트 대진표가 KFA 공식 발표 시 실시간 연동됩니다.
+            </p>
+          </div>
+          <button type="button" onclick="syncFinalMatch('u11', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>KFA U-11 본선 일정 실시간 동기화</span>
+          </button>
+          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
+            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 16강전 ➔ 9월 12일(토) 8강/4강/결승
+          </div>
+        </div>
+      `;
+      document.getElementById('final-u12-content').innerHTML = `
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-blue-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl ring-1 ring-blue-500/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
+          </div>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-400 text-[10px] font-black border border-blue-500/30 mb-1.5">
+              KFA 공식 전산망 대기
+            </div>
+            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              9월 10일(목) 예선 4경기(이천유나이티드전) 종료 후 본선 진출 대진이 KFA 시스템에 등록됩니다.
+            </p>
+          </div>
+          <button type="button" onclick="syncFinalMatch('u12', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>KFA U-12 본선 일정 실시간 동기화</span>
+          </button>
+          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
+            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 8강/16강 ➔ 9월 12일(토) 4강/결승
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSimulatedFinals() {
+      // U-10 Final Match Card Simulation
+      document.getElementById('final-u10-content').innerHTML = `
+        <div class="rounded-2xl bg-[#161922] border border-yellow-500/60 overflow-hidden shadow-xl">
+          <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">16강</span>
+              <div class="min-w-0">
+                <div class="font-black text-white text-[12px] truncate">9월 11일 (금) 09:00</div>
+                <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
+                  <i class="fa-solid fa-sun text-amber-400"></i> <span>26°C 맑음</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천1A</span>
+            </div>
+          </div>
+          <div class="p-3.5">
+            <div class="grid grid-cols-5 items-center gap-1">
+              <div class="col-span-2 text-center">
+                <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
+                  <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+                </div>
+                <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+                <span class="text-[10px] text-brand-gold font-bold">(예선 1위 진출)</span>
+              </div>
+              <div class="col-span-1 text-center flex flex-col items-center justify-center">
+                <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner">
+                  0 : 0
+                </div>
+                <span class="text-[9px] text-emerald-400 font-bold mt-1">본선 16강</span>
+              </div>
+              <div class="col-span-2 text-center">
+                <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#082F49] border-2 border-sky-400 p-1 shadow-md flex items-center justify-center">
+                  <span class="text-[11px] font-black text-sky-200">부산 해운대</span>
+                </div>
+                <div class="text-[12px] font-bold text-zinc-200 leading-tight">부산 해운대FC</div>
+                <span class="text-[10px] text-sky-400 font-bold">(타조 2위)</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+              <button onclick="openLineupModal('final_u10_1')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40">
+                <i class="fa-solid fa-users"></i> 라인업
+              </button>
+              <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+              </a>
+              <a href="https://www.youtube.com/results?search_query=2026+화랑대기+본선+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+              </a>
+              <button onclick="addToCalendar('고양주니어 U-10 본선 16강', '2026-09-11T09:00:00', '2026-09-11T10:00:00', '경주 알천1A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // U-11 Final Match Card Simulation
+      document.getElementById('final-u11-content').innerHTML = `
+        <div class="rounded-2xl bg-[#161922] border border-red-500/60 overflow-hidden shadow-xl">
+          <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-red-600 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">16강</span>
+              <div class="min-w-0">
+                <div class="font-black text-white text-[12px] truncate">9월 11일 (금) 10:00</div>
+                <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
+                  <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>27°C 구름조금</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black border border-red-500/30">축구공원1A</span>
+            </div>
+          </div>
+          <div class="p-3.5">
+            <div class="grid grid-cols-5 items-center gap-1">
+              <div class="col-span-2 text-center">
+                <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
+                  <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+                </div>
+                <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+                <span class="text-[10px] text-brand-gold font-bold">(U-11 와인)</span>
+              </div>
+              <div class="col-span-1 text-center flex flex-col items-center justify-center">
+                <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner">
+                  0 : 0
+                </div>
+                <span class="text-[9px] text-emerald-400 font-bold mt-1">본선 16강</span>
+              </div>
+              <div class="col-span-2 text-center">
+                <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#450A0A] border-2 border-red-500 p-1 shadow-md flex items-center justify-center">
+                  <span class="text-[11px] font-black text-red-200">포항스틸러스</span>
+                </div>
+                <div class="text-[12px] font-bold text-zinc-200 leading-tight">경북 포항스틸러스</div>
+                <span class="text-[10px] text-red-400 font-bold">(원정)</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+              <button onclick="openLineupModal('final_u11_1')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40">
+                <i class="fa-solid fa-users"></i> 라인업
+              </button>
+              <a href="https://map.kakao.com/?q=경주축구공원" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+              </a>
+              <a href="https://www.youtube.com/results?search_query=2026+화랑대기+본선+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+              </a>
+              <button onclick="addToCalendar('고양주니어 U-11 본선 16강', '2026-09-11T10:00:00', '2026-09-11T11:00:00', '경주 축구공원 1A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // U-12 Final Match Card Simulation
+      document.getElementById('final-u12-content').innerHTML = `
+        <div class="rounded-2xl bg-[#161922] border border-blue-500/60 overflow-hidden shadow-xl">
+          <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">8강</span>
+              <div class="min-w-0">
+                <div class="font-black text-white text-[12px] truncate">9월 11일 (금) 16:00</div>
+                <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
+                  <i class="fa-solid fa-sun text-amber-400"></i> <span>29°C 맑음·더위</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">시민운동장 A</span>
+            </div>
+          </div>
+          <div class="p-3.5">
+            <div class="grid grid-cols-5 items-center gap-1">
+              <div class="col-span-2 text-center">
+                <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20" onclick="openTeamModal('goyang')">
+                  <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+                </div>
+                <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+                <span class="text-[10px] text-brand-gold font-bold">(U-12 대표팀)</span>
+              </div>
+              <div class="col-span-1 text-center flex flex-col items-center justify-center">
+                <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner">
+                  0 : 0
+                </div>
+                <span class="text-[9px] text-emerald-400 font-bold mt-1">본선 8강</span>
+              </div>
+              <div class="col-span-2 text-center">
+                <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#172554] border-2 border-blue-400 p-1 shadow-md flex items-center justify-center">
+                  <span class="text-[11px] font-black text-blue-200">FC서울 U12</span>
+                </div>
+                <div class="text-[12px] font-bold text-zinc-200 leading-tight">서울 FC서울</div>
+                <span class="text-[10px] text-blue-400 font-bold">(원정)</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+              <button onclick="openLineupModal('final_u12_1')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40">
+                <i class="fa-solid fa-users"></i> 라인업
+              </button>
+              <a href="https://map.kakao.com/?q=경주시민운동장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+              </a>
+              <a href="https://www.youtube.com/results?search_query=2026+화랑대기+본선+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+              </a>
+              <button onclick="addToCalendar('고양주니어 U-12 본선 8강', '2026-09-11T16:00:00', '2026-09-11T17:00:00', '경주시민운동장 A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259]">
+                <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
     }
 
     function showToast(msg) {
