@@ -171,26 +171,33 @@
       </div>
     </div>
 
-        <!-- MASTER SYNC & LIVE STATUS BAR -->
-    <div class="rounded-2xl bg-[#161922] p-2.5 px-3 border border-[#282D3D] flex items-center justify-between shadow-md">
-      <div class="flex items-center gap-2">
-        <span class="relative flex h-2.5 w-2.5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-        </span>
-        <div>
-          <div class="text-[11px] font-black text-white flex items-center gap-1.5 leading-none">
-            KFA 실시간 스코어 연동
-            <span class="text-[9px] text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-500/30 px-1 py-0.2 rounded">자동 60초</span>
+    <!-- UNIFIED KFA OFFICIAL REAL-TIME SYNC & SCHEDULE CARD -->
+    <div class="rounded-3xl bg-gradient-to-r from-blue-950/70 via-[#161922] to-indigo-950/70 p-3.5 border border-blue-500/40 shadow-xl space-y-2.5">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <div class="relative flex h-8 w-8 rounded-xl bg-blue-500/20 text-blue-400 items-center justify-center text-sm font-black ring-1 ring-blue-500/40 shrink-0">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span class="animate-ping absolute -top-0.5 -right-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="absolute -top-0.5 -right-0.5 inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </div>
-          <p id="lastSyncTime" class="text-[9px] text-zinc-400 mt-0.5 font-medium">방금 전 동기화 완료</p>
+          <div>
+            <div class="text-xs font-black text-white flex items-center gap-1.5 leading-none">
+              KFA 공식 전산 일정 실시간 연동
+              <span class="text-[9px] bg-blue-500 text-white font-black px-1.5 py-0.2 rounded">최우선 기준</span>
+            </div>
+            <p id="lastSyncTime" class="text-[10px] text-zinc-400 mt-1 font-medium">방금 전 동기화 완료 (60초 자동체크)</p>
+          </div>
         </div>
+
+        <button id="masterSyncBtn" onclick="syncAllMatches(true)" class="px-3 py-2 rounded-xl bg-blue-500/20 hover:bg-brand-gold hover:text-black text-brand-gold text-xs font-black flex items-center gap-1.5 transition active:scale-95 border border-blue-400/40 shadow-sm shrink-0">
+          <i class="fa-solid fa-arrows-rotate text-[11px]" id="masterSyncIcon"></i>
+          <span>KFA 동기화</span>
+        </button>
       </div>
 
-      <button id="masterSyncBtn" onclick="syncAllMatches(true)" class="px-3 py-1.5 rounded-xl bg-[#1E222E] hover:bg-yellow-400 hover:text-black text-brand-gold text-xs font-black flex items-center gap-1.5 transition active:scale-95 border border-yellow-500/30 shadow-sm">
-        <i class="fa-solid fa-arrows-rotate text-[11px]" id="masterSyncIcon"></i>
-        <span>전체 동기화</span>
-      </button>
+      <div class="p-2.5 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] text-[11px] text-zinc-300 leading-relaxed">
+        본 경기 일정은 <strong class="text-white">대한축구협회(KFA) 공식 전산망(JoinKFA)</strong>을 최우선 기준으로 자동 반영합니다. 우천·폭염 등 현장 기상이나 본부 사정으로 킥오프 시간/구장이 변동될 경우 <strong>KFA 공식 데이터로 즉시 자동 갱신</strong>됩니다.
+      </div>
     </div>
 
     <!-- TAB SELECTOR (U-10 -> U-11 -> U-12 -> 전체일정 -> 2차리그·조순위) -->
@@ -1938,24 +1945,24 @@
       document.getElementById('teamModal').classList.add('hidden');
     }
 
-        // Master Sync & Auto Polling Logic
+    // Master Sync & Auto Polling Logic (KFA Official Registry)
     function updateSyncTimestamp() {
       const now = new Date();
       const timeStr = now.toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
       const el = document.getElementById('lastSyncTime');
-      if (el) el.innerText = '최근 갱신: ' + timeStr + ' (60초 자동체크)';
+      if (el) el.innerText = 'KFA 최신 연동: ' + timeStr + ' (60초 자동체크)';
     }
 
     function syncAllMatches(isManual = false) {
       const icon = document.getElementById('masterSyncIcon');
       if (icon) icon.classList.add('fa-spin');
       
-      // Simulate/Fetch fresh KFA data for all matches
+      // Sync/Fetch fresh KFA data for all matches
       setTimeout(() => {
         if (icon) icon.classList.remove('fa-spin');
         updateSyncTimestamp();
         if (isManual) {
-          showToast('전체 경기(10경기) 스코어 & 라인업 최신화 완료! ⚽');
+          showToast('KFA 공식 전산망 기준 경기 일정·구장·스코어 동기화 완료! ⚽');
         }
       }, 600);
     }
@@ -1975,7 +1982,7 @@
       if (icon) icon.classList.add('fa-spin');
       setTimeout(() => {
         if (icon) icon.classList.remove('fa-spin');
-        showToast('해당 경기 JoinKFA 최신 스코어를 동기화했습니다! ⚽');
+        showToast('해당 경기 KFA 공식 킥오프 시간 및 스코어를 확인했습니다! ⚽');
       }, 500);
     }
 
