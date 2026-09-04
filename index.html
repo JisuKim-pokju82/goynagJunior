@@ -171,32 +171,32 @@
       </div>
     </div>
 
-    <!-- UNIFIED KFA OFFICIAL REAL-TIME SYNC & SCHEDULE CARD -->
-    <div class="rounded-3xl bg-gradient-to-r from-blue-950/70 via-[#161922] to-indigo-950/70 p-3.5 border border-blue-500/40 shadow-xl space-y-2.5">
+    <!-- UNIFIED KFA OFFICIAL REAL-TIME SYNC & SCHEDULE CARD (MOBILE-OPTIMIZED) -->
+    <div class="rounded-2xl bg-gradient-to-r from-blue-950/70 via-[#161922] to-indigo-950/70 p-3 border border-blue-500/40 shadow-xl space-y-2">
       <div class="flex items-center justify-between gap-2">
-        <div class="flex items-center gap-2.5">
-          <div class="relative flex h-8 w-8 rounded-xl bg-blue-500/20 text-blue-400 items-center justify-center text-sm font-black ring-1 ring-blue-500/40 shrink-0">
+        <div class="flex items-center gap-2 min-w-0">
+          <div class="relative flex h-7 w-7 rounded-lg bg-blue-500/20 text-blue-400 items-center justify-center text-xs font-black ring-1 ring-blue-500/40 shrink-0">
             <i class="fa-solid fa-shield-halved"></i>
-            <span class="animate-ping absolute -top-0.5 -right-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="absolute -top-0.5 -right-0.5 inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span class="animate-ping absolute -top-0.5 -right-0.5 inline-flex h-2 w-2 rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="absolute -top-0.5 -right-0.5 inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
           </div>
-          <div>
-            <div class="text-xs font-black text-white flex items-center gap-1.5 leading-none">
-              KFA 공식 전산 일정 실시간 연동
-              <span class="text-[9px] bg-blue-500 text-white font-black px-1.5 py-0.2 rounded">최우선 기준</span>
+          <div class="min-w-0">
+            <div class="text-[11px] sm:text-xs font-black text-white flex items-center gap-1 leading-tight flex-wrap">
+              <span>KFA 공식 전산 연동</span>
+              <span class="text-[8px] bg-blue-500 text-white font-black px-1 py-0.2 rounded shrink-0">최우선 기준</span>
             </div>
-            <p id="lastSyncTime" class="text-[10px] text-zinc-400 mt-1 font-medium">방금 전 동기화 완료 (60초 자동체크)</p>
+            <p id="lastSyncTime" class="text-[9px] text-zinc-400 font-medium truncate mt-0.5">방금 전 연동 완료 (60초 자동체크)</p>
           </div>
         </div>
 
-        <button id="masterSyncBtn" onclick="syncAllMatches(true)" class="px-3 py-2 rounded-xl bg-blue-500/20 hover:bg-brand-gold hover:text-black text-brand-gold text-xs font-black flex items-center gap-1.5 transition active:scale-95 border border-blue-400/40 shadow-sm shrink-0">
-          <i class="fa-solid fa-arrows-rotate text-[11px]" id="masterSyncIcon"></i>
-          <span>KFA 동기화</span>
+        <button id="masterSyncBtn" onclick="syncAllMatches(true)" class="px-2.5 py-1.5 rounded-xl bg-blue-500/20 hover:bg-brand-gold hover:text-black text-brand-gold text-[11px] font-black flex items-center gap-1 transition active:scale-95 border border-blue-400/40 shadow-sm shrink-0">
+          <i class="fa-solid fa-arrows-rotate text-[10px]" id="masterSyncIcon"></i>
+          <span>동기화</span>
         </button>
       </div>
 
-      <div class="p-2.5 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] text-[11px] text-zinc-300 leading-relaxed">
-        본 경기 일정은 <strong class="text-white">대한축구협회(KFA) 공식 전산망(JoinKFA)</strong>을 최우선 기준으로 자동 반영합니다. 우천·폭염 등 현장 기상이나 본부 사정으로 킥오프 시간/구장이 변동될 경우 <strong>KFA 공식 데이터로 즉시 자동 갱신</strong>됩니다.
+      <div class="p-2.5 rounded-xl bg-[#0E1017]/80 border border-[#282D3D] text-[10.5px] text-zinc-300 leading-snug">
+        본 일정은 <strong class="text-white">대한축구협회(JoinKFA) 공식 배정</strong>을 최우선 기준으로 자동 반영합니다. 우천·폭염 등 현장 변동 시 <strong>KFA 공식 데이터로 즉시 자동 갱신</strong>됩니다.
       </div>
     </div>
 
