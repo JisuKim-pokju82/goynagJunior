@@ -1777,7 +1777,15 @@
 
         <!-- Live Comment Stream List -->
         <div class="space-y-2 pt-1" id="cheerCommentsList">
-          <!-- Dynamically populated comments -->
+          <!-- Dynamically populated comments (first 5 then Load More) -->
+        </div>
+
+        <!-- Load More / Expand Button -->
+        <div id="cheerMoreBtnContainer" class="pt-1 text-center">
+          <button type="button" onclick="toggleCheerComments()" id="cheerMoreBtn" class="w-full py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold text-xs font-bold flex items-center justify-center gap-1.5 border border-[#3A4259] active:scale-95 transition">
+            <span id="cheerMoreText">응원글 더 보기</span>
+            <i id="cheerMoreIcon" class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -2299,18 +2307,28 @@
         `D-${days} <span class="text-xs text-zinc-300 font-semibold">${hours}h ${minutes}m ${seconds}s</span>`;
     }
 
-    // Cheer Rolling Comments System
+    // Cheer Rolling Comments System (Default 5 items + Load More)
     const DEFAULT_COMMENTS = [
       { author: '동하 응원단 ⚽', text: '고양주니어 화이팅! 동하도 멋진 골 가자! 🔥', time: '방금 전' },
       { author: '7번 학부모 ❤️', text: '부상 없이 즐겁게 뛰고 멋진 추억 만들자!', time: '5분 전' },
       { author: '코칭스태프 🏆', text: '옐로우, 와인, 대표팀 모두 전승 우승 가자!', time: '12분 전' },
-      { author: '고양 서포터즈 🥇', text: '중산의 자랑 고양주니어 끝까지 응원합니다!', time: '30분 전' }
+      { author: '고양 서포터즈 🥇', text: '중산의 자랑 고양주니어 끝까지 응원합니다!', time: '30분 전' },
+      { author: '10번 동하 화이팅', text: '그라운드에서 마음껏 기량을 펼치고 멋진 활약 기대해!', time: '1시간 전' },
+      { author: 'U-10 옐로우 맘', text: '첫 전국대회 떨지 말고 신나게 뛰고 오자 얘들아!', time: '2시간 전' },
+      { author: 'U-11 와인 파이팅', text: '서로 믿고 패스하며 원팀으로 승리하자!', time: '3시간 전' },
+      { author: 'U-12 대표팀 캡틴', text: '마지막 화랑대기 후회 없이 불태우고 전승 가자!', time: '5시간 전' },
+      { author: '일산 축구사랑', text: '부상 없이 건강하게 멋진 트로피 들고 돌아오자!', time: '어제' }
     ];
+
+    let isCheerExpanded = false;
 
     function getStoredComments() {
       try {
         const stored = localStorage.getItem('goyang_cheer_comments');
-        if (stored) return JSON.parse(stored);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
       } catch (e) {}
       return DEFAULT_COMMENTS;
     }
@@ -2321,12 +2339,23 @@
       } catch (e) {}
     }
 
+    function toggleCheerComments() {
+      isCheerExpanded = !isCheerExpanded;
+      renderCheerComments();
+    }
+
     function renderCheerComments() {
       const container = document.getElementById('cheerCommentsList');
+      const moreBtnContainer = document.getElementById('cheerMoreBtnContainer');
+      const moreText = document.getElementById('cheerMoreText');
+      const moreIcon = document.getElementById('cheerMoreIcon');
       if (!container) return;
-      const comments = getStoredComments();
       
-      container.innerHTML = comments.slice(0, 10).map(c => `
+      const comments = getStoredComments();
+      const displayCount = isCheerExpanded ? comments.length : 5;
+      const visibleComments = comments.slice(0, displayCount);
+      
+      container.innerHTML = visibleComments.map(c => `
         <div class="p-2.5 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] flex items-center justify-between gap-2 shadow-sm">
           <div class="flex items-center gap-2 overflow-hidden">
             <span class="px-2 py-0.5 rounded-lg bg-yellow-400/15 text-brand-gold font-bold text-[10px] shrink-0 border border-yellow-500/20">
@@ -2341,6 +2370,22 @@
           </span>
         </div>
       `).join('');
+
+      if (moreBtnContainer) {
+        if (comments.length <= 5) {
+          moreBtnContainer.style.display = 'none';
+        } else {
+          moreBtnContainer.style.display = 'block';
+          if (isCheerExpanded) {
+            if (moreText) moreText.innerText = '접기 (5개만 보기)';
+            if (moreIcon) moreIcon.className = 'fa-solid fa-chevron-up text-[10px]';
+          } else {
+            const remain = comments.length - 5;
+            if (moreText) moreText.innerText = `응원글 더 보기 (${remain}개 더)`;
+            if (moreIcon) moreIcon.className = 'fa-solid fa-chevron-down text-[10px]';
+          }
+        }
+      }
     }
 
     function submitCheerComment(event) {
