@@ -1668,12 +1668,12 @@
       </div>
     </section>
 
-    <!-- ACCOMMODATION (선수단 공식 숙소) -->
+    <!-- ACCOMMODATION (선수숙소) -->
     <section id="lodging-section" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="text-sm font-black text-white flex items-center gap-1.5">
           <span class="w-2 h-4 bg-amber-400 rounded-sm"></span>
-          고양주니어 선수단 공식 숙소
+          고양주니어 선수숙소
         </h2>
         <span class="text-[11px] text-brand-gold font-bold bg-yellow-400/10 border border-yellow-500/30 px-2 py-0.5 rounded-full">
           보문단지 인근
@@ -1748,7 +1748,7 @@
             버튼을 눌러 우리 멋진 고양주니어 선수들에게 파이팅 에너지를 선물해주세요!
           </div>
           <div class="flex items-center justify-center gap-3 pt-1">
-            <button id="cheerBtn" onclick="sendCheer()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-sm flex items-center gap-2 shadow-lg active:scale-90 transition transform duration-150 border border-yellow-500/50">
+            <button type="button" id="cheerBtn" onclick="sendCheer(event)" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-sm flex items-center gap-2 shadow-lg active:scale-90 transition transform duration-150 border border-yellow-500/50 cursor-pointer">
               <i class="fa-solid fa-heart text-red-600 text-lg" id="heartIcon"></i>
               <span>파이팅 보내기!</span>
               <span id="cheerCount" class="font-num bg-black text-yellow-300 px-2.5 py-0.5 rounded-full text-xs ml-1">1,248</span>
@@ -1822,7 +1822,7 @@
 
       <button onclick="scrollToSection('lodging-section')" class="flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold gap-0.5 active:scale-95 transition">
         <i class="fa-solid fa-hotel text-base text-amber-400"></i>
-        <span class="text-[10px]">공식숙소</span>
+        <span class="text-[10px]">선수숙소</span>
       </button>
 
       <button onclick="scrollToSection('cheer-section')" class="flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold gap-0.5 active:scale-95 transition">
@@ -2229,23 +2229,48 @@
       }
     }
 
-    let cheerCount = 1248;
-    function sendCheer() {
-      cheerCount++;
-      document.getElementById('cheerCount').innerText = cheerCount.toLocaleString();
-      const heart = document.getElementById('heartIcon');
-      heart.style.transform = 'scale(1.3)';
-      setTimeout(() => heart.style.transform = 'scale(1)', 200);
+    let cheerCount = parseInt(localStorage.getItem('goyang_cheer_count') || '1248', 10);
+    
+    function initCheerCount() {
+      const countEl = document.getElementById('cheerCount');
+      if (countEl) countEl.innerText = cheerCount.toLocaleString();
+    }
 
-      if (window.confetti) {
-        confetti({
-          particleCount: 25,
-          spread: 50,
-          origin: { y: 0.8 },
-          colors: ['#FFD200', '#EF4444', '#3B82F6']
-        });
+    function sendCheer(e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
       }
+      cheerCount++;
+      try {
+        localStorage.setItem('goyang_cheer_count', cheerCount.toString());
+      } catch (err) {}
+
+      const countEl = document.getElementById('cheerCount');
+      if (countEl) countEl.innerText = cheerCount.toLocaleString();
+      
+      const heart = document.getElementById('heartIcon');
+      if (heart) {
+        heart.style.transform = 'scale(1.4)';
+        setTimeout(() => heart.style.transform = 'scale(1)', 200);
+      }
+
+      // Safe Confetti trigger (no page navigation)
+      try {
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 40,
+            spread: 70,
+            origin: { y: 0.8 },
+            colors: ['#FFD200', '#EF4444', '#3B82F6', '#10B981']
+          });
+        }
+      } catch (err) {
+        console.warn(err);
+      }
+      
       showToast('고양주니어 선수들에게 파이팅을 보냈습니다! ⚽🔥');
+      return false;
     }
 
     function addToCalendar(title, startIso, endIso, location) {
@@ -2349,8 +2374,9 @@
       showToast('소중한 응원 메시지가 등록되었습니다! ⚽💌');
     }
 
-    // Initialize comments on load
+    // Initialize on load
     window.addEventListener('DOMContentLoaded', () => {
+      initCheerCount();
       renderCheerComments();
     });
 
