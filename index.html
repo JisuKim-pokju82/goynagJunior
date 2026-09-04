@@ -1295,21 +1295,33 @@
         <span class="text-[11px] text-orange-400 font-bold">선수단 든든 보양식</span>
       </div>
 
-      <!-- GPS Live Location Button -->
-      <div class="rounded-2xl bg-gradient-to-r from-orange-950/40 via-[#161922] to-amber-950/40 p-3 border border-orange-500/30 flex items-center justify-between shadow-md">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm">
-            <i class="fa-solid fa-location-crosshairs animate-pulse"></i>
-          </div>
-          <div>
-            <div class="text-xs font-black text-white">내 현재 위치 주변 맛집 찾기</div>
-            <p class="text-[10px] text-zinc-400">GPS 기반으로 바로 앞 식당/카페 검색</p>
+      <!-- GPS Live Location Direct Finder (모바일 팝업 차단 100% 해결) -->
+      <div class="rounded-2xl bg-gradient-to-b from-orange-950/50 to-[#161922] p-3.5 border border-orange-500/40 shadow-lg space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm ring-1 ring-orange-500/30 shrink-0">
+              <i class="fa-solid fa-location-crosshairs animate-pulse"></i>
+            </div>
+            <div>
+              <div class="text-xs font-black text-white flex items-center gap-1.5">
+                내 주변 실시간 맛집 탐색
+                <span class="text-[9px] bg-orange-500 text-white px-1.5 py-0.2 rounded font-black">GPS 연동</span>
+              </div>
+              <p class="text-[10px] text-zinc-400 mt-0.5">현재 계신 위치(구장/숙소/이동중) 바로 앞 맛집 자동 검색</p>
+            </div>
           </div>
         </div>
-        <button onclick="findNearbyFood()" class="px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-400 text-white text-xs font-black flex items-center gap-1 shadow active:scale-95 transition shrink-0">
-          <span>위치 탐색</span>
-          <i class="fa-solid fa-chevron-right text-[10px]"></i>
-        </button>
+
+        <div class="grid grid-cols-2 gap-2 pt-0.5">
+          <a href="https://m.map.kakao.com/actions/searchView?q=%EB%A7%9B%EC%A7%91" target="_blank" class="py-2 px-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+            <i class="fa-solid fa-utensils text-[11px]"></i>
+            <span>카카오맵 주변맛집</span>
+          </a>
+          <a href="https://m.map.naver.com/search2/search.naver?query=%EB%A7%9B%EC%A7%91" target="_blank" class="py-2 px-2.5 rounded-xl bg-green-500 text-white text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+            <i class="fa-solid fa-map-location-dot text-[11px]"></i>
+            <span>네이버지도 주변맛집</span>
+          </a>
+        </div>
       </div>
 
       <!-- Curated Best Restaurants Grid (북군동 & 보문단지 명소) -->
