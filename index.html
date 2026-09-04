@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ko" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>고양주니어FC | 2026 화랑대기 전국 유소년 축구대회</title>
+  
+  <meta name="description" content="고양시 NO.1 축구교실 고양주니어FC 2026 화랑대기 전국 유소년 축구대회 U-10, U-11, U-12 전 경기 일정, KFA 실시간 스코어, 선발 라인업, 라이브 중계" />
+  <meta property="og:title" content="고양주니어FC | 2026 화랑대기 공식 일정 & KFA 실시간 결과" />
+  <meta property="og:description" content="고양주니어FC 학부모님 및 서포터즈를 위한 실시간 경기 일정, KFA 스코어, 경기장 길찾기 안내" />
+  <meta name="theme-color" content="#0E1017" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#FFD200',
+              goldHover: '#E5BD00',
+              bgMain: '#0E1017',
+              bgCard: '#161922',
+              bgCardLight: '#1E222E',
+              border: '#282D3D',
+              borderLight: '#3A4259',
+            }
+          },
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+            display: ['Black Han Sans', 'sans-serif'],
+            num: ['Montserrat', 'Pretendard', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Noto Sans KR', -apple-system, sans-serif;
+      background-color: #0E1017;
+      color: #F3F4F6;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-num { font-family: 'Montserrat', sans-serif; }
+    .title-font { font-family: 'Black Han Sans', sans-serif; }
+    
+    .glass-header {
+      background: rgba(14, 16, 23, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    
+    .tab-pane {
+      display: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tab-pane.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .emblem-box {
+      transition: transform 0.2s ease;
+    }
+    .emblem-box:hover {
+      transform: scale(1.05);
+    }
+
+    .safe-bottom {
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col bg-[#0E1017] text-slate-100 antialiased selection:bg-yellow-400 selection:text-black">
+
+  <!-- TOP APP BAR -->
+  <header class="sticky top-0 z-40 w-full glass-header border-b border-[#282D3D] shadow-sm">
+    <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2.5 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="w-9 h-9 rounded-full bg-brand-gold p-0.5 shadow flex items-center justify-center overflow-hidden ring-2 ring-yellow-400/30">
+          <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어 로고" class="w-full h-full object-cover rounded-full bg-black" />
+        </div>
+        <div>
+          <div class="text-[13px] font-black tracking-tight text-white flex items-center gap-1.5 leading-tight">
+            고양주니어FC
+            <span class="text-[9px] bg-brand-gold text-black px-1.5 py-0.2 rounded font-black">NO.1</span>
+          </div>
+          <p class="text-[10px] text-zinc-400 font-medium">2026 화랑대기 공식 일정</p>
+        </div>
+      </div>
+
+      <button onclick="shareKakaoOrUrl()" class="h-8 px-3 rounded-full bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold text-xs font-bold flex items-center gap-1.5 transition active:scale-95 border border-[#3A4259]">
+        <i class="fa-solid fa-arrow-up-from-bracket text-[11px]"></i>
+        <span>공유</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-md mx-auto w-full px-4 pt-3.5 pb-28 space-y-4">
+
+    <!-- HERO HEADER (CLEAN & MODERN) -->
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#191D28] to-[#12151E] border border-[#282D3D] p-4 shadow-xl">
+      <div class="flex items-center justify-between mb-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-yellow-400/10 border border-yellow-500/30 text-[11px] font-bold text-brand-gold">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+          2026 화랑대기 전국 유소년 축구대회
+        </span>
+        <span class="text-[11px] text-zinc-400 font-semibold">경북 경주시</span>
+      </div>
+
+      <div class="text-center my-3">
+        <div class="w-20 h-20 mx-auto mb-2 rounded-full bg-gradient-to-tr from-yellow-500 to-amber-300 p-1 shadow-lg flex items-center justify-center cursor-pointer transform hover:scale-105 transition ring-4 ring-yellow-400/20" onclick="openOriginalImageModal('u10')">
+          <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC 엠블럼" class="w-full h-full object-cover rounded-full bg-black" />
+        </div>
+        <p class="text-[11px] font-black tracking-wider text-brand-gold uppercase">
+          "고양시 NO.1 축구교실" 고양주니어FC 중산점
+        </p>
+        <h1 class="text-2xl font-black title-font tracking-tight text-white mt-0.5">
+          화랑대기 <span class="text-brand-gold">경기 일정 & 스코어</span>
+        </h1>
+        <p class="text-xs text-zinc-400 mt-0.5">선수단과 학부모님을 위한 실시간 일정 및 중계 안내</p>
+      </div>
+
+      <!-- D-Day Timer -->
+      <div class="mt-3 bg-[#0E1017]/80 rounded-2xl p-3 border border-[#282D3D] flex items-center justify-between shadow-inner">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-brand-gold text-black flex items-center justify-center font-black text-sm shadow">
+            <i class="fa-solid fa-stopwatch animate-pulse"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-zinc-400 font-medium">개막전 킥오프 (9/6 일 09:00)</div>
+            <div class="text-xs font-bold text-white">알천구장 첫 경기까지</div>
+          </div>
+        </div>
+        <div id="countdownTimer" class="font-num text-sm font-black text-brand-gold tracking-tight">
+          D-DAY 계산중
+        </div>
+      </div>
+
+      <!-- Quick Nav Buttons -->
+      <div class="grid grid-cols-3 gap-2 mt-3 text-xs">
+        <button onclick="scrollToSection('tab-section')" class="py-2.5 px-1 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex flex-col items-center justify-center gap-1 transition active:scale-95 border border-[#3A4259]">
+          <i class="fa-regular fa-calendar-days text-brand-gold text-sm"></i>
+          <span class="text-[11px]">경기 일정</span>
+        </button>
+        <a href="https://www.youtube.com/results?search_query=화랑대기+전국유소년축구대회+중계" target="_blank" class="py-2.5 px-1 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex flex-col items-center justify-center gap-1 transition active:scale-95 border border-[#3A4259]">
+          <i class="fa-brands fa-youtube text-red-500 text-sm"></i>
+          <span class="text-[11px]">실시간 중계</span>
+        </a>
+        <button onclick="scrollToSection('stadium-section')" class="py-2.5 px-1 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex flex-col items-center justify-center gap-1 transition active:scale-95 border border-[#3A4259]">
+          <i class="fa-solid fa-map-location-dot text-emerald-400 text-sm"></i>
+          <span class="text-[11px]">구장 길찾기</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB SELECTOR (U-10 -> U-11 -> U-12 -> 종합 순차적 배치) -->
+    <div id="tab-section" class="pt-1">
+      <div class="p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-4 gap-1 shadow-md">
+        
+        <!-- Tab 1: U-10 -->
+        <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow">
+          <span class="text-[9px] opacity-80 leading-none mb-0.5">옐로우</span>
+          <span class="text-xs">U-10</span>
+        </button>
+
+        <!-- Tab 2: U-11 -->
+        <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[9px] opacity-80 leading-none mb-0.5">와인팀</span>
+          <span class="text-xs">U-11</span>
+        </button>
+
+        <!-- Tab 3: U-12 -->
+        <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[9px] opacity-80 leading-none mb-0.5">대표팀</span>
+          <span class="text-xs">U-12</span>
+        </button>
+
+        <!-- Tab 4: 종합 -->
+        <button onclick="switchTab('u13')" id="btn-u13" class="tab-btn py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[9px] opacity-80 leading-none mb-0.5">전체일정</span>
+          <span class="text-xs">종합</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 1: U-10 (옐로우) ==================== -->
+    <div id="pane-u10" class="tab-pane active space-y-3.5">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+          <span class="text-sm font-black text-white">U-10 옐로우팀 경기 일정 (3경기)</span>
+        </div>
+        <button onclick="openOriginalImageModal('u10')" class="text-[11px] text-brand-gold bg-yellow-400/10 hover:bg-yellow-400/20 px-2.5 py-1 rounded-lg border border-yellow-500/30 font-bold flex items-center gap-1 active:scale-95 transition">
+          <i class="fa-regular fa-image"></i> 원본표
+        </button>
+      </div>
+
+      <!-- MATCH 1: U-10 vs 부평유소년 블랙 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">1</span>
+            <span class="font-bold text-white">9월 6일 (일) 09:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천5A</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(옐로우)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u10_1">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u10_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-zinc-900 border-2 border-zinc-600 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <path d="M50 10 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="#18181B" stroke="#52525B" stroke-width="3"/>
+                  <circle cx="50" cy="48" r="22" fill="#FFFFFF"/>
+                  <circle cx="50" cy="48" r="18" fill="#18181B"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="900">부평</text>
+                  <text x="50" y="58" text-anchor="middle" fill="#E4E4E7" font-size="8" font-weight="900">BLACK</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">인천 부평유소년</div>
+              <span class="text-[10px] text-zinc-400 font-bold">(블랙)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u10_1')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천5A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-10 vs 부평유소년 블랙', '2026-09-06T09:00:00', '2026-09-06T10:00:00', '경주 알천5A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 2: U-10 vs 남양주 BEST -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">2</span>
+            <span class="font-bold text-white">9월 7일 (월) 09:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원3A</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(홈팀/옐로우)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u10_2">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u10_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-emerald-950/40 border-2 border-emerald-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <polygon points="50,10 90,40 75,90 25,90 10,40" fill="#059669" stroke="#34D399" stroke-width="3"/>
+                  <polygon points="50,22 80,45 68,82 32,82 20,45" fill="#FFFFFF"/>
+                  <text x="50" y="52" text-anchor="middle" fill="#059669" font-size="11" font-weight="900">남양주</text>
+                  <text x="50" y="66" text-anchor="middle" fill="#047857" font-size="9" font-weight="800">BEST</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 남양주 BEST</div>
+              <span class="text-[10px] text-emerald-400 font-bold">(원정)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u10_2')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주축구공원" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+축구공원3A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-10 vs 남양주 BEST', '2026-09-07T09:00:00', '2026-09-07T10:00:00', '경주 축구공원 3A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 3: U-10 vs 대구 TDN 레드 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">3</span>
+            <span class="font-bold text-white">9월 8일 (화) 09:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천3B</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(옐로우)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u10_3">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u10_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-rose-950/40 border-2 border-rose-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <polygon points="50,12 88,32 88,72 50,92 12,72 12,32" fill="#E11D48" stroke="#F43F5E" stroke-width="3"/>
+                  <polygon points="50,22 78,38 78,68 50,82 22,68 22,38" fill="#FFFFFF"/>
+                  <text x="50" y="52" text-anchor="middle" fill="#E11D48" font-size="14" font-weight="900">TDN</text>
+                  <text x="50" y="66" text-anchor="middle" fill="#BE123C" font-size="8" font-weight="800">RED</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">대구 TDN</div>
+              <span class="text-[10px] text-rose-400 font-bold">(레드)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u10_3')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천3B+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-10 vs 대구 TDN 레드', '2026-09-08T09:00:00', '2026-09-08T10:00:00', '경주 알천3B')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: U-11 (와인) ==================== -->
+    <div id="pane-u11" class="tab-pane space-y-3.5">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
+          <span class="text-sm font-black text-white">U-11 와인팀 경기 일정 (3경기)</span>
+        </div>
+        <button onclick="openOriginalImageModal('u11')" class="text-[11px] text-brand-gold bg-yellow-400/10 hover:bg-yellow-400/20 px-2.5 py-1 rounded-lg border border-yellow-500/30 font-bold flex items-center gap-1 active:scale-95 transition">
+          <i class="fa-regular fa-image"></i> 원본표
+        </button>
+      </div>
+
+      <!-- MATCH 1: U-11 vs 부평유소년 레드 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">1</span>
+            <span class="font-bold text-white">9월 6일 (일) 09:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천4A</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(와인)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u11_1">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u11_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-red-950/40 border-2 border-red-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <path d="M50 10 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="#DC2626" stroke="#991B1B" stroke-width="3"/>
+                  <circle cx="50" cy="48" r="22" fill="#FFFFFF"/>
+                  <circle cx="50" cy="48" r="18" fill="#DC2626"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="900">부평</text>
+                  <text x="50" y="58" text-anchor="middle" fill="#FFD200" font-size="8" font-weight="900">RED</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">인천 부평유소년</div>
+              <span class="text-[10px] text-red-400 font-bold">(레드)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u11_1')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천4A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-11 vs 부평유소년 레드', '2026-09-06T09:00:00', '2026-09-06T10:00:00', '경주 알천4A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 2: U-11 vs 염기훈 주니어 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">2</span>
+            <span class="font-bold text-white">9월 7일 (월) 09:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원2A</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(홈팀/와인)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u11_2">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u11_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-blue-950/40 border-2 border-blue-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <circle cx="50" cy="50" r="46" fill="#1E3A8A" stroke="#3B82F6" stroke-width="3"/>
+                  <circle cx="50" cy="50" r="36" fill="#FFFFFF"/>
+                  <path d="M50 25 L65 50 L35 50 Z" fill="#1E3A8A"/>
+                  <text x="50" y="65" text-anchor="middle" fill="#1E3A8A" font-size="10" font-weight="900">염기훈</text>
+                  <text x="50" y="78" text-anchor="middle" fill="#2563EB" font-size="8" font-weight="800">JUNIOR</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 염기훈 주니어</div>
+              <span class="text-[10px] text-blue-400 font-bold">(원정)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u11_2')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주축구공원" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+축구공원2A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-11 vs 염기훈 주니어', '2026-09-07T09:00:00', '2026-09-07T10:00:00', '경주 축구공원 2A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 3: U-11 vs 대구 TDN 블루 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num">3</span>
+            <span class="font-bold text-white">9월 8일 (화) 09:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천2B</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(와인)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u11_3">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u11_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-sky-950/40 border-2 border-sky-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <polygon points="50,12 88,32 88,72 50,92 12,72 12,32" fill="#0284C7" stroke="#38BDF8" stroke-width="3"/>
+                  <polygon points="50,22 78,38 78,68 50,82 22,68 22,38" fill="#FFFFFF"/>
+                  <text x="50" y="52" text-anchor="middle" fill="#0284C7" font-size="14" font-weight="900">TDN</text>
+                  <text x="50" y="66" text-anchor="middle" fill="#0369A1" font-size="8" font-weight="800">BLUE</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">대구 TDN</div>
+              <span class="text-[10px] text-sky-400 font-bold">(블루)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u11_3')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천2B+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-11 vs 대구 TDN 블루', '2026-09-08T09:00:00', '2026-09-08T10:00:00', '경주 알천2B')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 3: U-12 (대표팀) ==================== -->
+    <div id="pane-u12" class="tab-pane space-y-3.5">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <span class="text-sm font-black text-white">U-12 대표팀 경기 일정 (4경기)</span>
+        </div>
+        <button onclick="openOriginalImageModal('u12')" class="text-[11px] text-brand-gold bg-yellow-400/10 hover:bg-yellow-400/20 px-2.5 py-1 rounded-lg border border-yellow-500/30 font-bold flex items-center gap-1 active:scale-95 transition">
+          <i class="fa-regular fa-image"></i> 원본표
+        </button>
+      </div>
+
+      <!-- MATCH 1: U-12 vs 속초시 체육회 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">1</span>
+            <span class="font-bold text-white">9월 7일 (월) 16:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">축구공원4B</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(U-12 대표)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_1">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u12_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-cyan-950/40 border-2 border-cyan-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <circle cx="50" cy="50" r="46" fill="#0891B2" stroke="#22D3EE" stroke-width="3"/>
+                  <circle cx="50" cy="50" r="36" fill="#FFFFFF"/>
+                  <path d="M30 65 Q50 30 70 65 Z" fill="#0891B2"/>
+                  <text x="50" y="78" text-anchor="middle" fill="#0E7490" font-size="10" font-weight="900">속초 체육회</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">강원 속초시 체육회</div>
+              <span class="text-[10px] text-cyan-400 font-bold">(원정)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u12_1')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주축구공원" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+축구공원4B+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-12 vs 속초시 체육회', '2026-09-07T16:00:00', '2026-09-07T17:00:00', '경주 축구공원 4B')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 2: U-12 vs 세종 공공SC -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">2</span>
+            <span class="font-bold text-white">9월 8일 (화) 16:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">시민운동장 B</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(홈팀)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_2">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u12_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-indigo-950/40 border-2 border-indigo-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <path d="M50 12 L86 28 L86 62 C86 78 50 90 50 90 C50 90 14 78 14 62 L14 28 Z" fill="#4F46E5" stroke="#818CF8" stroke-width="3"/>
+                  <circle cx="50" cy="48" r="22" fill="#FFFFFF"/>
+                  <text x="50" y="46" text-anchor="middle" fill="#4F46E5" font-size="10" font-weight="900">세종</text>
+                  <text x="50" y="60" text-anchor="middle" fill="#3730A3" font-size="8" font-weight="800">공공SC</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">세종 공공SC</div>
+              <span class="text-[10px] text-indigo-400 font-bold">(원정)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u12_2')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주시민운동장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+경주시민운동장+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-12 vs 세종 공공SC', '2026-09-08T16:00:00', '2026-09-08T17:00:00', '경주시민운동장 B')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 3: U-12 vs 서울 K리거 강용FC -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">3</span>
+            <span class="font-bold text-white">9월 9일 (수) 16:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천3A</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(U-12 대표)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_3">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u12_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-orange-950/40 border-2 border-orange-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <circle cx="50" cy="50" r="46" fill="#EA580C" stroke="#FB923C" stroke-width="3"/>
+                  <circle cx="50" cy="50" r="36" fill="#FFFFFF"/>
+                  <text x="50" y="44" text-anchor="middle" fill="#EA580C" font-size="10" font-weight="900">K리거</text>
+                  <text x="50" y="58" text-anchor="middle" fill="#111827" font-size="11" font-weight="900">강용FC</text>
+                  <text x="50" y="70" text-anchor="middle" fill="#C2410C" font-size="7" font-weight="800">SEOUL</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">서울 K리거 강용FC</div>
+              <span class="text-[10px] text-orange-400 font-bold">(원정)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u12_3')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천3A+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-12 vs K리거 강용FC', '2026-09-09T16:00:00', '2026-09-09T17:00:00', '경주 알천3A')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH 4: U-12 vs 이천유나이티드 -->
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2 border-b border-[#282D3D] flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num">4</span>
+            <span class="font-bold text-white">9월 10일 (목) 16:00</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천4B</span>
+          </div>
+        </div>
+
+        <div class="p-3.5">
+          <div class="grid grid-cols-5 items-center gap-1">
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20">
+                <img src="https://files.catbox.moe/jy84j0.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
+              </div>
+              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+              <span class="text-[10px] text-brand-gold font-bold">(U-12 대표)</span>
+            </div>
+
+            <div class="col-span-1 text-center flex flex-col items-center justify-center">
+              <div class="font-num text-lg font-black text-brand-gold tracking-tight py-0.5 px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner" id="score-u12_4">
+                0 : 0
+              </div>
+              <button onclick="scrapeMatch('u12_4', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
+            </div>
+
+            <div class="col-span-2 text-center">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-amber-950/40 border-2 border-amber-500/40 p-1 shadow-md">
+                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+                  <polygon points="50,12 86,28 86,65 50,90 14,65 14,28" fill="#CA8A04" stroke="#FBBF24" stroke-width="3"/>
+                  <polygon points="50,22 76,36 76,60 50,80 24,60 24,36" fill="#FFFFFF"/>
+                  <text x="50" y="48" text-anchor="middle" fill="#CA8A04" font-size="11" font-weight="900">이천</text>
+                  <text x="50" y="62" text-anchor="middle" fill="#111827" font-size="8" font-weight="900">UNITED</text>
+                </svg>
+              </div>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 이천유나이티드</div>
+              <span class="text-[10px] text-amber-400 font-bold">(원정)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-1.5 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+            <button onclick="openLineupModal('u12_4')" class="py-1.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1 text-[11px] border border-yellow-500/40 active:scale-95 transition">
+              <i class="fa-solid fa-users"></i> 라인업
+            </button>
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-location-arrow text-emerald-400"></i> 길찾기
+            </a>
+            <a href="https://www.youtube.com/results?search_query=2026+화랑대기+알천4B+고양주니어" target="_blank" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-brands fa-youtube text-red-500"></i> 라이브
+            </a>
+            <button onclick="addToCalendar('고양주니어 U-12 vs 이천유나이티드', '2026-09-10T16:00:00', '2026-09-10T17:00:00', '경주 알천4B')" class="py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1 text-[11px] border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-bell text-brand-gold"></i> 알림
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: 전체 일정 & 종합 ==================== -->
+    <div id="pane-u13" class="tab-pane space-y-3.5">
+      <div class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center shadow-lg">
+        <h3 class="text-sm font-black text-white">고양주니어FC 화랑대기 전체 타임라인</h3>
+        <p class="text-[11px] text-zinc-400 mt-0.5">총 10경기 일정과 장소를 일자별로 한눈에 비교하세요</p>
+      </div>
+
+      <div class="space-y-4 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gradient-to-b before:from-brand-gold before:via-yellow-500/40 before:to-zinc-800">
+        
+        <!-- Day 1 -->
+        <div class="relative pl-8">
+          <div class="absolute left-2 top-1 w-3.5 h-3.5 rounded-full bg-brand-gold border-2 border-[#0E1017] shadow"></div>
+          <div class="text-xs font-black text-brand-gold mb-1.5 flex items-center gap-1.5">
+            <span>9월 6일 (일요일)</span>
+            <span class="text-[10px] bg-yellow-400/10 text-brand-gold px-1.5 py-0.2 rounded font-bold border border-yellow-500/30">개막전</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-yellow-400 font-black">[U-10 옐로우] 09:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">알천5A (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 인천 부평유소년 블랙</div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-red-400 font-black">[U-11 와인] 09:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">알천4A (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 인천 부평유소년 레드</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="relative pl-8">
+          <div class="absolute left-2 top-1 w-3.5 h-3.5 rounded-full bg-brand-gold border-2 border-[#0E1017] shadow"></div>
+          <div class="text-xs font-black text-brand-gold mb-1.5 flex items-center gap-1.5">
+            <span>9월 7일 (월요일)</span>
+            <span class="text-[10px] bg-[#1E222E] text-zinc-300 px-1.5 py-0.2 rounded font-bold">3경기</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-yellow-400 font-black">[U-10 옐로우] 09:00</span>
+                <span class="text-[11px] text-brand-gold font-bold bg-yellow-400/10 px-1.5 py-0.5 rounded border border-yellow-500/20">축구공원3A (HOME)</span>
+              </div>
+              <div class="text-zinc-300">vs 경기 남양주 BEST</div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-red-400 font-black">[U-11 와인] 09:00</span>
+                <span class="text-[11px] text-brand-gold font-bold bg-yellow-400/10 px-1.5 py-0.5 rounded border border-yellow-500/20">축구공원2A (HOME)</span>
+              </div>
+              <div class="text-zinc-300">vs 경기 염기훈 주니어</div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-blue-400 font-black">[U-12 대표] 16:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">축구공원4B (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 강원 속초시 체육회</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="relative pl-8">
+          <div class="absolute left-2 top-1 w-3.5 h-3.5 rounded-full bg-brand-gold border-2 border-[#0E1017] shadow"></div>
+          <div class="text-xs font-black text-brand-gold mb-1.5 flex items-center gap-1.5">
+            <span>9월 8일 (화요일)</span>
+            <span class="text-[10px] bg-[#1E222E] text-zinc-300 px-1.5 py-0.2 rounded font-bold">3경기</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-yellow-400 font-black">[U-10 옐로우] 09:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">알천3B (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 대구 TDN 레드</div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-red-400 font-black">[U-11 와인] 09:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">알천2B (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 대구 TDN 블루</div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-blue-400 font-black">[U-12 대표] 16:00</span>
+                <span class="text-[11px] text-brand-gold font-bold bg-yellow-400/10 px-1.5 py-0.5 rounded border border-yellow-500/20">시민운동장 B (HOME)</span>
+              </div>
+              <div class="text-zinc-300">vs 세종 공공SC</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 4 & 5 -->
+        <div class="relative pl-8">
+          <div class="absolute left-2 top-1 w-3.5 h-3.5 rounded-full bg-brand-gold border-2 border-[#0E1017] shadow"></div>
+          <div class="text-xs font-black text-brand-gold mb-1.5 flex items-center gap-1.5">
+            <span>9월 9일 ~ 9월 10일</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-blue-400 font-black">[U-12] 9/9(수) 16:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">알천3A (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 서울 K리거 강용FC</div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#161922] border border-[#282D3D] text-xs shadow-sm">
+              <div class="flex justify-between items-center font-bold text-white mb-1">
+                <span class="text-blue-400 font-black">[U-12] 9/10(목) 16:00</span>
+                <span class="text-[11px] text-zinc-400 font-semibold">알천4B (AWAY)</span>
+              </div>
+              <div class="text-zinc-300">vs 경기 이천유나이티드</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CHEERING INTERACTION BOX -->
+    <section class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center space-y-3 shadow-lg">
+      <div class="flex items-center justify-center gap-1.5 text-xs font-black text-brand-gold">
+        <i class="fa-solid fa-crown text-yellow-400"></i>
+        <span>고양주니어FC 선수단 응원하기</span>
+      </div>
+      <p class="text-xs text-zinc-300 leading-tight">
+        버튼을 눌러 우리 멋진 선수들에게 파이팅 에너지를 선물해주세요!
+      </p>
+
+      <div class="flex items-center justify-center gap-3 pt-1">
+        <button id="cheerBtn" onclick="sendCheer()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black text-sm flex items-center gap-2 shadow-md active:scale-90 transition transform duration-150 border border-yellow-500/40">
+          <i class="fa-solid fa-heart text-red-600 text-base" id="heartIcon"></i>
+          <span>파이팅 보내기!</span>
+          <span id="cheerCount" class="font-num bg-black text-yellow-300 px-2.5 py-0.5 rounded-full text-xs ml-1">1,248</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- LIVE NEWS & YOUTUBE SECTION -->
+    <section class="space-y-2.5">
+      <div class="flex items-center justify-between px-1">
+        <h2 class="text-sm font-black text-white flex items-center gap-1.5">
+          <span class="w-2 h-4 bg-red-500 rounded-sm"></span>
+          실시간 중계 및 대회 뉴스
+        </h2>
+        <span class="text-[11px] text-red-400 font-bold flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> LIVE
+        </span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2.5">
+        <a href="https://www.youtube.com/results?search_query=화랑대기+유소년축구+중계" target="_blank" class="p-3.5 rounded-2xl bg-[#161922] border border-[#282D3D] hover:border-red-500/40 transition flex flex-col justify-between active:scale-95 shadow-md">
+          <div class="flex items-start justify-between">
+            <div class="w-9 h-9 rounded-xl bg-red-600/20 text-red-500 flex items-center justify-center text-lg">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <span class="text-[9px] bg-red-600 text-white font-black px-1.5 py-0.5 rounded-md">LIVE</span>
+          </div>
+          <div class="mt-3">
+            <div class="text-xs font-black text-white leading-tight flex items-center gap-1">
+              유튜브 중계 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-zinc-500"></i>
+            </div>
+            <p class="text-[10px] text-zinc-400 mt-0.5 leading-tight">iTOP21 구장별 실시간</p>
+          </div>
+        </a>
+
+        <a href="https://search.naver.com/search.naver?where=news&query=화랑대기+유소년축구&sm=tab_opt&sort=1" target="_blank" class="p-3.5 rounded-2xl bg-[#161922] border border-[#282D3D] hover:border-emerald-500/40 transition flex flex-col justify-between active:scale-95 shadow-md">
+          <div class="flex items-start justify-between">
+            <div class="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center text-lg">
+              <i class="fa-regular fa-newspaper"></i>
+            </div>
+            <span class="text-[9px] bg-emerald-600 text-white font-black px-1.5 py-0.5 rounded-md">속보</span>
+          </div>
+          <div class="mt-3">
+            <div class="text-xs font-black text-white leading-tight flex items-center gap-1">
+              화랑대기 뉴스 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-zinc-500"></i>
+            </div>
+            <p class="text-[10px] text-zinc-400 mt-0.5 leading-tight">연맹 & 경주시 공식 속보</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- STADIUM & NAVIGATION DIRECTORY -->
+    <section id="stadium-section" class="space-y-2.5">
+      <div class="flex items-center justify-between px-1">
+        <h2 class="text-sm font-black text-white flex items-center gap-1.5">
+          <span class="w-2 h-4 bg-emerald-400 rounded-sm"></span>
+          경주 경기장 길찾기 (내비게이션)
+        </h2>
+        <span class="text-[11px] text-zinc-400">원클릭 연결</span>
+      </div>
+
+      <div class="space-y-2">
+        <div class="rounded-2xl bg-[#161922] p-3 border border-[#282D3D] flex items-center justify-between gap-2 shadow-sm">
+          <div>
+            <div class="text-xs font-black text-white flex items-center gap-1.5">
+              <span>알천축구장 (1A~5B)</span>
+              <span class="text-[9px] bg-yellow-400/20 text-brand-gold px-1.5 py-0.2 rounded font-bold">U10·11·12</span>
+            </div>
+            <div class="text-[11px] text-zinc-400 mt-0.5">경북 경주시 알천북로 421 (북천변)</div>
+          </div>
+          <div class="flex gap-1.5 shrink-0">
+            <a href="https://map.kakao.com/?q=경주+알천축구장" target="_blank" class="px-2.5 py-1.5 rounded-xl bg-brand-gold text-black text-[11px] font-black hover:bg-yellow-300 transition active:scale-95 shadow">
+              카카오맵
+            </a>
+            <a href="https://map.naver.com/v5/search/경주%20알천축구장" target="_blank" class="px-2.5 py-1.5 rounded-xl bg-green-500 text-white text-[11px] font-black hover:bg-green-400 transition active:scale-95 shadow">
+              네이버지도
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-[#161922] p-3 border border-[#282D3D] flex items-center justify-between gap-2 shadow-sm">
+          <div>
+            <div class="text-xs font-black text-white flex items-center gap-1.5">
+              <span>경주 축구공원 (1A~4B)</span>
+              <span class="text-[9px] bg-yellow-400/20 text-brand-gold px-1.5 py-0.2 rounded font-bold">U10·11·12</span>
+            </div>
+            <div class="text-[11px] text-zinc-400 mt-0.5">경북 경주시 용담로 19-55 (황성공원)</div>
+          </div>
+          <div class="flex gap-1.5 shrink-0">
+            <a href="https://map.kakao.com/?q=경주축구공원" target="_blank" class="px-2.5 py-1.5 rounded-xl bg-brand-gold text-black text-[11px] font-black hover:bg-yellow-300 transition active:scale-95 shadow">
+              카카오맵
+            </a>
+            <a href="https://map.naver.com/v5/search/경주축구공원" target="_blank" class="px-2.5 py-1.5 rounded-xl bg-green-500 text-white text-[11px] font-black hover:bg-green-400 transition active:scale-95 shadow">
+              네이버지도
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-[#161922] p-3 border border-[#282D3D] flex items-center justify-between gap-2 shadow-sm">
+          <div>
+            <div class="text-xs font-black text-white flex items-center gap-1.5">
+              <span>경주시민운동장 B구장</span>
+              <span class="text-[9px] bg-blue-500/20 text-blue-400 px-1.5 py-0.2 rounded font-bold">U12 전용</span>
+            </div>
+            <div class="text-[11px] text-zinc-400 mt-0.5">경북 경주시 용담로 79-41</div>
+          </div>
+          <div class="flex gap-1.5 shrink-0">
+            <a href="https://map.kakao.com/?q=경주시민운동장" target="_blank" class="px-2.5 py-1.5 rounded-xl bg-brand-gold text-black text-[11px] font-black hover:bg-yellow-300 transition active:scale-95 shadow">
+              카카오맵
+            </a>
+            <a href="https://map.naver.com/v5/search/경주시민운동장" target="_blank" class="px-2.5 py-1.5 rounded-xl bg-green-500 text-white text-[11px] font-black hover:bg-green-400 transition active:scale-95 shadow">
+              네이버지도
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATOR FOOTER BADGE -->
+    <footer class="pt-2 pb-6 text-center">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-zinc-900 via-[#1C1D27] to-zinc-900 border border-yellow-500/50 shadow-lg">
+        <div class="w-6 h-6 rounded-full bg-brand-gold text-black flex items-center justify-center text-xs font-black shadow ring-1 ring-yellow-400">
+          ⚽
+        </div>
+        <div class="text-xs font-black text-zinc-100">
+          만든 사람 : <span class="text-brand-gold font-black tracking-wide">고양주니어 U12 김동하 화이팅!</span>
+        </div>
+      </div>
+      <p class="text-[10px] text-zinc-500 mt-2 font-semibold">고양주니어FC 선수단과 학부모님의 승리를 응원합니다!</p>
+    </footer>
+
+  </main>
+
+  <!-- FLOATING BOTTOM APP BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-40 bg-[#12151E]/95 backdrop-blur-md border-t border-[#282D3D] safe-bottom shadow-2xl">
+    <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-around text-xs">
+      <button onclick="scrollToSection('tab-section')" class="flex flex-col items-center justify-center text-brand-gold font-black gap-0.5 active:scale-95 transition">
+        <i class="fa-solid fa-calendar-check text-base"></i>
+        <span class="text-[10px]">경기일정</span>
+      </button>
+
+      <a href="https://www.youtube.com/results?search_query=화랑대기+유소년축구+중계" target="_blank" class="flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold gap-0.5 active:scale-95 transition">
+        <i class="fa-brands fa-youtube text-base text-red-500"></i>
+        <span class="text-[10px]">라이브중계</span>
+      </a>
+
+      <button onclick="scrollToSection('stadium-section')" class="flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold gap-0.5 active:scale-95 transition">
+        <i class="fa-solid fa-location-dot text-base text-emerald-400"></i>
+        <span class="text-[10px]">경기장안내</span>
+      </button>
+
+      <button onclick="shareKakaoOrUrl()" class="flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold gap-0.5 active:scale-95 transition">
+        <i class="fa-solid fa-share-nodes text-base text-brand-gold"></i>
+        <span class="text-[10px]">공유하기</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- LINEUP MODAL -->
+  <div id="lineupModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md" onclick="closeLineupModal()">
+    <div class="relative max-w-sm w-full bg-[#161922] rounded-3xl overflow-hidden shadow-2xl border border-yellow-500/50 p-4" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-center pb-2 border-b border-[#282D3D]">
+        <div>
+          <div class="text-[10px] text-brand-gold font-bold flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            대한축구협회 (JoinKFA) 공식 라인업
+          </div>
+          <h3 id="lineupModalTitle" class="text-sm font-black text-white mt-0.5">선발 라인업 명단</h3>
+        </div>
+        <button onclick="closeLineupModal()" class="w-7 h-7 rounded-full bg-[#1E222E] text-zinc-400 hover:text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="my-3 p-3 rounded-2xl bg-yellow-400/10 border border-yellow-500/30 text-xs">
+        <div class="font-black text-brand-gold flex items-center gap-1.5 mb-1">
+          <i class="fa-solid fa-clock-rotate-left"></i> 라인업 등록 안내
+        </div>
+        <p class="text-zinc-300 text-[11px] leading-relaxed">
+          현재 라인업은 <strong class="text-yellow-300">확정되지 않았으며</strong>, 경기 시작 전 코칭스태프 확정 및 <strong>JoinKFA 공식 등록 즉시 본 페이지에 자동 업데이트</strong>됩니다.
+        </p>
+      </div>
+
+      <div class="p-3 rounded-2xl bg-gradient-to-b from-emerald-900/30 to-[#12151E] border border-emerald-500/30 text-center">
+        <div class="text-[10px] font-black text-emerald-400 mb-1.5 flex items-center justify-center gap-1">
+          <i class="fa-regular fa-futbol"></i> 경기 고양주니어 엔트리 현황
+        </div>
+        <div class="py-2 px-3 rounded-xl bg-black/50 border border-zinc-700/80 text-[11px] text-zinc-300">
+          ⏳ KFA 공식 선발 명단 등록 대기중
+        </div>
+      </div>
+
+      <div class="pt-3">
+        <button onclick="closeLineupModal()" class="w-full py-2.5 rounded-xl bg-brand-gold text-black font-black text-xs hover:bg-yellow-300 transition active:scale-95 shadow">
+          확인 완료
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE MODAL (INLINE POSTERS) -->
+  <div id="imageModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md" onclick="closeImageModal()">
+    <div class="relative max-w-xs w-full bg-[#161922] rounded-3xl overflow-hidden shadow-2xl border border-yellow-500/50 p-3" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-center px-1 py-1 border-b border-[#282D3D] mb-2">
+        <span id="modalTitle" class="text-xs font-bold text-brand-gold">고양주니어 공식 일정표</span>
+        <button onclick="closeImageModal()" class="w-7 h-7 rounded-full bg-[#1E222E] text-zinc-400 hover:text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <img id="modalImg" src="" alt="일정표 이미지" class="w-full h-auto rounded-2xl shadow-sm object-contain max-h-[70vh] mx-auto" />
+      <div class="p-1 pt-2 text-center">
+        <button onclick="closeImageModal()" class="w-full py-2.5 rounded-xl bg-brand-gold text-black font-black text-xs hover:bg-yellow-300 transition active:scale-95">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-black px-4 py-2 rounded-full text-xs font-black shadow-2xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 z-50">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">알림 메시지</span>
+  </div>
+
+  <!-- INLINE DATA & SCRIPTS -->
+  <script>
+    // Embedded Base64 Images Dictionary
+    const INLINE_IMAGES = {
+      logo: 'https://files.catbox.moe/jy84j0.png',
+      u10: 'https://files.catbox.moe/j3suyd.jpg',
+      u11: 'https://files.catbox.moe/andy1l.jpg',
+      u12: 'https://files.catbox.moe/s7k0rq.jpg'
+    };
+
+    function scrapeMatch(matchId, btnEl) {
+      const icon = btnEl.querySelector('i');
+      if (icon) icon.classList.add('fa-spin');
+      setTimeout(() => {
+        if (icon) icon.classList.remove('fa-spin');
+        showToast('해당 경기 JoinKFA 최신 스코어를 동기화했습니다! ⚽');
+      }, 500);
+    }
+
+    function openLineupModal(matchId) {
+      document.getElementById('lineupModal').classList.remove('hidden');
+    }
+
+    function closeLineupModal() {
+      document.getElementById('lineupModal').classList.add('hidden');
+    }
+
+    function openOriginalImageModal(team) {
+      const modal = document.getElementById('imageModal');
+      const img = document.getElementById('modalImg');
+      const title = document.getElementById('modalTitle');
+
+      if (team === 'u10') {
+        img.src = INLINE_IMAGES.u10;
+        title.innerText = '고양주니어 U-10 옐로우 공식 일정표';
+      } else if (team === 'u11') {
+        img.src = INLINE_IMAGES.u11;
+        title.innerText = '고양주니어 U-11 와인 공식 일정표';
+      } else if (team === 'u12') {
+        img.src = INLINE_IMAGES.u12;
+        title.innerText = '고양주니어 U-12 대표팀 공식 일정표';
+      }
+      modal.classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.pageYOffset - 60;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    }
+
+    function switchTab(team) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
+        btn.classList.add('text-zinc-400', 'font-bold');
+      });
+
+      const pane = document.getElementById('pane-' + team);
+      if (pane) pane.classList.add('active');
+
+      const btn = document.getElementById('btn-' + team);
+      if (btn) {
+        btn.classList.add('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
+        btn.classList.remove('text-zinc-400', 'font-bold');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2300);
+    }
+
+    function shareKakaoOrUrl() {
+      if (navigator.share) {
+        navigator.share({
+          title: '고양주니어FC 화랑대기 축구대회 일정',
+          text: '고양주니어FC 2026 화랑대기 U-10, U-11, U-12 전 경기 일정 안내',
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          showToast('웹페이지 링크가 복사되었습니다!');
+        }).catch(() => {
+          showToast('주소창 링크를 복사해주세요.');
+        });
+      }
+    }
+
+    let cheerCount = 1248;
+    function sendCheer() {
+      cheerCount++;
+      document.getElementById('cheerCount').innerText = cheerCount.toLocaleString();
+      const heart = document.getElementById('heartIcon');
+      heart.style.transform = 'scale(1.3)';
+      setTimeout(() => heart.style.transform = 'scale(1)', 200);
+
+      if (window.confetti) {
+        confetti({
+          particleCount: 25,
+          spread: 50,
+          origin: { y: 0.8 },
+          colors: ['#FFD200', '#EF4444', '#3B82F6']
+        });
+      }
+      showToast('고양주니어 선수들에게 파이팅을 보냈습니다! ⚽🔥');
+    }
+
+    function addToCalendar(title, startIso, endIso, location) {
+      const s = startIso.replace(/-|:|\.\d+/g, "");
+      const e = endIso.replace(/-|:|\.\d+/g, "");
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${s}/${e}&details=${encodeURIComponent("고양주니어FC 화랑대기 경기 일정")}&location=${encodeURIComponent(location)}`;
+      window.open(url, '_blank');
+    }
+
+    function updateCountdown() {
+      const matchDate = new Date('2026-09-06T09:00:00+09:00').getTime();
+      const now = new Date().getTime();
+      const diff = matchDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdownTimer').innerHTML = '🔥 대회 진행중!';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('countdownTimer').innerHTML = 
+        `D-${days} <span class="text-xs text-zinc-300 font-semibold">${hours}h ${minutes}m ${seconds}s</span>`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
