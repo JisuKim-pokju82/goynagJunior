@@ -2023,16 +2023,6 @@
         activeBtn.classList.add('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
       }
     }
-      });
-
-      const targetPane = document.getElementById('pane-' + team);
-      if (targetPane) targetPane.classList.add('active');
-
-      const targetBtn = document.getElementById('btn-' + team);
-      if (targetBtn) {
-        targetBtn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow';
-      }
-    }
 
     function showToast(msg) {
       const toast = document.getElementById('toast');
