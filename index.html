@@ -220,16 +220,16 @@
           <span class="text-xs">U-12</span>
         </button>
 
-        <!-- Tab 4: 종합 -->
+        <!-- Tab 4: 전체일정 -->
         <button onclick="switchTab('u13')" id="btn-u13" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[8px] opacity-80 leading-none mb-0.5">타임라인</span>
+          <span class="text-[8px] opacity-80 leading-none mb-0.5">전체일정</span>
           <span class="text-xs">일정</span>
         </button>
 
         <!-- Tab 5: 2차리그 & 조순위 -->
-        <button onclick="switchTab('league')" id="btn-league" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-amber-400 hover:text-white font-bold bg-amber-500/10 border border-amber-500/30">
-          <span class="text-[8px] text-amber-400 leading-none mb-0.5 font-black">2차리그</span>
-          <span class="text-xs font-black">조순위🏆</span>
+        <button onclick="switchTab('league')" id="btn-league" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[8px] opacity-80 leading-none mb-0.5">2차리그</span>
+          <span class="text-xs">조순위🏆</span>
         </button>
       </div>
     </div>
@@ -1573,31 +1573,31 @@
         <span class="text-[11px] text-orange-400 font-bold">선수단 든든 보양식</span>
       </div>
 
-      <!-- GPS Live Location Direct Finder (모바일 팝업 차단 100% 해결) -->
+      <!-- GPS Live Location Direct Finder (현재 위치 기반 음식점 검색) -->
       <div class="rounded-2xl bg-gradient-to-b from-orange-950/50 to-[#161922] p-3.5 border border-orange-500/40 shadow-lg space-y-2.5">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-sm ring-1 ring-orange-500/30 shrink-0">
-              <i class="fa-solid fa-location-crosshairs animate-pulse"></i>
+              <i class="fa-solid fa-utensils animate-pulse"></i>
             </div>
             <div>
               <div class="text-xs font-black text-white flex items-center gap-1.5">
-                내 주변 실시간 맛집 탐색
-                <span class="text-[9px] bg-orange-500 text-white px-1.5 py-0.2 rounded font-black">GPS 연동</span>
+                내 주변 실시간 음식점 검색
+                <span class="text-[9px] bg-orange-500 text-white px-1.5 py-0.2 rounded font-black">내위치 GPS</span>
               </div>
-              <p class="text-[10px] text-zinc-400 mt-0.5">현재 계신 위치(구장/숙소/이동중) 바로 앞 맛집 자동 검색</p>
+              <p class="text-[10px] text-zinc-400 mt-0.5">현재 계신 위치(전국 어디서나) 반경 내 주변 음식점 자동 검색</p>
             </div>
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-2 pt-0.5">
-          <a href="https://m.map.kakao.com/actions/searchView?q=%EB%A7%9B%EC%A7%91" target="_blank" class="py-2 px-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
-            <i class="fa-solid fa-utensils text-[11px]"></i>
-            <span>카카오맵 주변맛집</span>
+          <a href="https://m.map.kakao.com/actions/searchView?q=%EC%9D%8C%EC%8B%9D%EC%A0%90&around=true" target="_blank" class="py-2.5 px-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+            <i class="fa-solid fa-location-arrow text-[11px]"></i>
+            <span>카카오맵 주변 음식점</span>
           </a>
-          <a href="https://m.map.naver.com/search2/search.naver?query=%EB%A7%9B%EC%A7%91" target="_blank" class="py-2 px-2.5 rounded-xl bg-green-500 text-white text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+          <a href="https://m.map.naver.com/search2/search.naver?query=%EC%9D%8C%EC%8B%9D%EC%A0%90" target="_blank" class="py-2.5 px-2 rounded-xl bg-green-500 text-white text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
             <i class="fa-solid fa-map-location-dot text-[11px]"></i>
-            <span>네이버지도 주변맛집</span>
+            <span>네이버지도 주변 음식점</span>
           </a>
         </div>
       </div>
@@ -2001,19 +2001,22 @@
     }
 
     function switchTab(team) {
-      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
-        btn.classList.add('text-zinc-400', 'font-bold');
+      const allTabs = ['u10', 'u11', 'u12', 'u13', 'league'];
+      allTabs.forEach(t => {
+        const pane = document.getElementById('pane-' + t);
+        if (pane) pane.classList.remove('active');
+        const btn = document.getElementById('btn-' + t);
+        if (btn) {
+          btn.className = 'tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold';
+        }
       });
 
-      const pane = document.getElementById('pane-' + team);
-      if (pane) pane.classList.add('active');
+      const targetPane = document.getElementById('pane-' + team);
+      if (targetPane) targetPane.classList.add('active');
 
-      const btn = document.getElementById('btn-' + team);
-      if (btn) {
-        btn.classList.add('active', 'bg-brand-gold', 'text-black', 'shadow', 'font-black');
-        btn.classList.remove('text-zinc-400', 'font-bold');
+      const targetBtn = document.getElementById('btn-' + team);
+      if (targetBtn) {
+        targetBtn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow';
       }
     }
 
