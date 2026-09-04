@@ -3227,11 +3227,48 @@
       }
     }
 
+    // ==================== FIREBASE REALTIME DATABASE CONFIGURATION ====================
+    const FIREBASE_DB_URL = 'https://goyang-78387-default-rtdb.firebaseio.com';
     let cheerCount = parseInt(localStorage.getItem('goyang_cheer_count') || '1248', 10);
-    
+    let cachedComments = [];
+    let isCheerExpanded = false;
+
+    function formatTimeAgo(ts) {
+      if (!ts) return '방금 전';
+      const diff = Date.now() - Number(ts);
+      if (diff < 60000) return '방금 전';
+      const mins = Math.floor(diff / 60000);
+      if (mins < 60) return `${mins}분 전`;
+      const hours = Math.floor(mins / 60);
+      if (hours < 24) return `${hours}시간 전`;
+      const days = Math.floor(hours / 24);
+      if (days === 1) return '어제';
+      if (days < 7) return `${days}일 전`;
+      const d = new Date(Number(ts));
+      return `${d.getMonth() + 1}월 ${d.getDate()}일`;
+    }
+
+    async function fetchFirebaseCheerCount() {
+      try {
+        const res = await fetch(`${FIREBASE_DB_URL}/cheerCount.json`, { cache: 'no-cache' });
+        if (res.ok) {
+          const val = await res.json();
+          if (typeof val === 'number' && val >= cheerCount) {
+            cheerCount = val;
+            try { localStorage.setItem('goyang_cheer_count', cheerCount.toString()); } catch (e) {}
+            const countEl = document.getElementById('cheerCount');
+            if (countEl) countEl.innerText = cheerCount.toLocaleString();
+          }
+        }
+      } catch (err) {
+        // Fallback to local count
+      }
+    }
+
     function initCheerCount() {
       const countEl = document.getElementById('cheerCount');
       if (countEl) countEl.innerText = cheerCount.toLocaleString();
+      fetchFirebaseCheerCount();
     }
 
     function sendCheer(e) {
@@ -3271,6 +3308,16 @@
       fireUltimateConfetti(originX, originY);
       
       showToast('고양주니어 선수들에게 파이팅을 보냈습니다! ⚽🔥');
+
+      // Sync to Firebase in background
+      try {
+        fetch(`${FIREBASE_DB_URL}/cheerCount.json`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(cheerCount)
+        }).catch(() => {});
+      } catch (err) {}
+
       return false;
     }
 
@@ -3373,22 +3420,20 @@
         `D-${days} <span class="text-xs text-zinc-300 font-semibold">${hours}h ${minutes}m ${seconds}s</span>`;
     }
 
-    // Cheer Rolling Comments System (Default 5 items + Load More)
+    // Default Seed Comments for Warm-up
     const DEFAULT_COMMENTS = [
-      { author: '동하 응원단 ⚽', text: '고양주니어 화이팅! 동하도 멋진 골 가자! 🔥', time: '방금 전' },
-      { author: '7번 학부모 ❤️', text: '부상 없이 즐겁게 뛰고 멋진 추억 만들자!', time: '5분 전' },
-      { author: '코칭스태프 🏆', text: '옐로우, 와인, 대표팀 모두 전승 우승 가자!', time: '12분 전' },
-      { author: '고양 서포터즈 🥇', text: '중산의 자랑 고양주니어 끝까지 응원합니다!', time: '30분 전' },
-      { author: '10번 동하 화이팅', text: '그라운드에서 마음껏 기량을 펼치고 멋진 활약 기대해!', time: '1시간 전' },
-      { author: 'U-10 옐로우 맘', text: '첫 전국대회 떨지 말고 신나게 뛰고 오자 얘들아!', time: '2시간 전' },
-      { author: 'U-11 와인 파이팅', text: '서로 믿고 패스하며 원팀으로 승리하자!', time: '3시간 전' },
-      { author: 'U-12 대표팀 캡틴', text: '마지막 화랑대기 후회 없이 불태우고 전승 가자!', time: '5시간 전' },
-      { author: '일산 축구사랑', text: '부상 없이 건강하게 멋진 트로피 들고 돌아오자!', time: '어제' }
+      { author: '동하 응원단 ⚽', text: '고양주니어 화이팅! 동하도 멋진 골 가자! 🔥', timestamp: Date.now() - 60000 },
+      { author: '7번 학부모 ❤️', text: '부상 없이 즐겁게 뛰고 멋진 추억 만들자!', timestamp: Date.now() - 300000 },
+      { author: '코칭스태프 🏆', text: '옐로우, 와인, 대표팀 모두 전승 우승 가자!', timestamp: Date.now() - 720000 },
+      { author: '고양 서포터즈 🥇', text: '중산의 자랑 고양주니어 끝까지 응원합니다!', timestamp: Date.now() - 1800000 },
+      { author: '10번 동하 화이팅', text: '그라운드에서 마음껏 기량을 펼치고 멋진 활약 기대해!', timestamp: Date.now() - 3600000 },
+      { author: 'U-10 옐로우 맘', text: '첫 전국대회 떨지 말고 신나게 뛰고 오자 얘들아!', timestamp: Date.now() - 7200000 },
+      { author: 'U-11 와인 파이팅', text: '서로 믿고 패스하며 원팀으로 승리하자!', timestamp: Date.now() - 10800000 },
+      { author: 'U-12 대표팀 캡틴', text: '마지막 화랑대기 후회 없이 불태우고 전승 가자!', timestamp: Date.now() - 18000000 },
+      { author: '일산 축구사랑', text: '부상 없이 건강하게 멋진 트로피 들고 돌아오자!', timestamp: Date.now() - 86400000 }
     ];
 
-    let isCheerExpanded = false;
-
-    function getStoredComments() {
+    function getLocalComments() {
       try {
         const stored = localStorage.getItem('goyang_cheer_comments');
         if (stored) {
@@ -3399,10 +3444,41 @@
       return DEFAULT_COMMENTS;
     }
 
-    function saveComments(comments) {
+    function saveLocalComments(comments) {
       try {
         localStorage.setItem('goyang_cheer_comments', JSON.stringify(comments));
       } catch (e) {}
+    }
+
+    async function fetchFirebaseComments() {
+      try {
+        const res = await fetch(`${FIREBASE_DB_URL}/comments.json?orderBy="$key"&limitToLast=100`, { cache: 'no-cache' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && typeof data === 'object') {
+            const list = Object.entries(data).map(([key, val]) => ({
+              id: key,
+              author: val.author || '익명 학부모',
+              text: val.text || '',
+              timestamp: val.timestamp || Date.now(),
+              time: formatTimeAgo(val.timestamp)
+            }));
+            list.sort((a, b) => b.timestamp - a.timestamp);
+            if (list.length > 0) {
+              cachedComments = list;
+              saveLocalComments(list);
+              renderCheerComments();
+              return;
+            }
+          }
+        }
+      } catch (err) {
+        // Fallback to local
+      }
+      if (cachedComments.length === 0) {
+        cachedComments = getLocalComments();
+        renderCheerComments();
+      }
     }
 
     function toggleCheerComments() {
@@ -3417,7 +3493,7 @@
       const moreIcon = document.getElementById('cheerMoreIcon');
       if (!container) return;
       
-      const comments = getStoredComments();
+      const comments = cachedComments.length > 0 ? cachedComments : getLocalComments();
       const displayCount = isCheerExpanded ? comments.length : 5;
       const visibleComments = comments.slice(0, displayCount);
       
@@ -3432,7 +3508,7 @@
             </span>
           </div>
           <span class="text-[9px] text-zinc-500 font-semibold shrink-0">
-            ${c.time || '방금 전'}
+            ${c.time || formatTimeAgo(c.timestamp)}
           </span>
         </div>
       `).join('');
@@ -3454,7 +3530,7 @@
       }
     }
 
-    function submitCheerComment(event) {
+    async function submitCheerComment(event) {
       if (event) {
         if (typeof event.preventDefault === 'function') event.preventDefault();
         if (typeof event.stopPropagation === 'function') event.stopPropagation();
@@ -3466,13 +3542,19 @@
       const text = textInput ? textInput.value.trim() : '';
       if (!author || !text) return false;
 
-      const comments = getStoredComments();
-      comments.unshift({
+      const now = Date.now();
+      const newComment = {
+        id: 'local_' + now,
         author: author,
         text: text,
+        timestamp: now,
         time: '방금 전'
-      });
-      saveComments(comments);
+      };
+
+      // Instant optimistic UI update (0ms response)
+      if (cachedComments.length === 0) cachedComments = getLocalComments();
+      cachedComments.unshift(newComment);
+      saveLocalComments(cachedComments);
       renderCheerComments();
 
       if (authorInput) authorInput.value = '';
@@ -3483,13 +3565,45 @@
 
       fireUltimateConfetti();
       showToast('소중한 응원 메시지가 등록되었습니다! ⚽💌');
+
+      // Send to Firebase Cloud Realtime Database in background
+      try {
+        const payload = {
+          author: author,
+          text: text,
+          timestamp: now
+        };
+        const res = await fetch(`${FIREBASE_DB_URL}/comments.json`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.name) {
+            newComment.id = data.name;
+          }
+        }
+      } catch (err) {
+        console.warn('Firebase comment sync error:', err);
+      }
+
       return false;
     }
+
+    // Auto Polling for Cloud Cheering System every 5 seconds
+    setInterval(() => {
+      fetchFirebaseComments();
+      fetchFirebaseCheerCount();
+    }, 5000);
 
     // Initialize on load
     window.addEventListener('DOMContentLoaded', () => {
       initCheerCount();
+      cachedComments = getLocalComments();
       renderCheerComments();
+      fetchFirebaseComments();
+      fetchFirebaseCheerCount();
     });
 
     setInterval(updateCountdown, 1000);
