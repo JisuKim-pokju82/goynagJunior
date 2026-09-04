@@ -198,32 +198,38 @@
       </button>
     </div>
 
-    <!-- TAB SELECTOR (U-10 -> U-11 -> U-12 -> 종합 순차적 배치) -->
+    <!-- TAB SELECTOR (U-10 -> U-11 -> U-12 -> 전체일정 -> 2차리그·조순위) -->
     <div id="tab-section" class="pt-1">
-      <div class="p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-4 gap-1 shadow-md">
+      <div class="p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-5 gap-1 shadow-md">
         
         <!-- Tab 1: U-10 -->
-        <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow">
-          <span class="text-[9px] opacity-80 leading-none mb-0.5">옐로우</span>
+        <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow">
+          <span class="text-[8px] opacity-80 leading-none mb-0.5">옐로우</span>
           <span class="text-xs">U-10</span>
         </button>
 
         <!-- Tab 2: U-11 -->
-        <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[9px] opacity-80 leading-none mb-0.5">와인팀</span>
+        <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[8px] opacity-80 leading-none mb-0.5">와인팀</span>
           <span class="text-xs">U-11</span>
         </button>
 
         <!-- Tab 3: U-12 -->
-        <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[9px] opacity-80 leading-none mb-0.5">대표팀</span>
+        <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[8px] opacity-80 leading-none mb-0.5">대표팀</span>
           <span class="text-xs">U-12</span>
         </button>
 
         <!-- Tab 4: 종합 -->
-        <button onclick="switchTab('u13')" id="btn-u13" class="tab-btn py-2.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-          <span class="text-[9px] opacity-80 leading-none mb-0.5">전체일정</span>
-          <span class="text-xs">종합</span>
+        <button onclick="switchTab('u13')" id="btn-u13" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
+          <span class="text-[8px] opacity-80 leading-none mb-0.5">타임라인</span>
+          <span class="text-xs">일정</span>
+        </button>
+
+        <!-- Tab 5: 2차리그 & 조순위 -->
+        <button onclick="switchTab('league')" id="btn-league" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-amber-400 hover:text-white font-bold bg-amber-500/10 border border-amber-500/30">
+          <span class="text-[8px] text-amber-400 leading-none mb-0.5 font-black">2차리그</span>
+          <span class="text-xs font-black">조순위🏆</span>
         </button>
       </div>
     </div>
@@ -1093,6 +1099,278 @@
       </div>
     </div>
 
+
+    <!-- ==================== TAB 5: 조별 순위표 & 2차 리그 전체 일정 ==================== -->
+    <div id="pane-league" class="tab-pane space-y-4">
+      
+      <!-- HEADER BANNER -->
+      <div class="rounded-3xl bg-gradient-to-r from-amber-950/60 via-[#191D28] to-amber-900/40 p-4 border border-yellow-500/40 shadow-xl text-center space-y-1">
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-yellow-400/20 border border-yellow-500/40 text-[10px] font-black text-brand-gold">
+          <i class="fa-solid fa-trophy"></i> 2026 화랑대기 조별리그 & 2차 스플릿 본선
+        </span>
+        <h3 class="text-base font-black text-white">고양주니어 조별 순위 & 2차리그 일정</h3>
+        <p class="text-xs text-zinc-400">1차 예선 성적 기준 2차 본선리그 진출 및 KFA 전 경기 실시간 결과</p>
+      </div>
+
+      <!-- KFA OFFICIAL LIVE LINK MASTER CARD -->
+      <div class="rounded-2xl bg-[#161922] p-3.5 border border-yellow-500/40 shadow-lg space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-yellow-400/20 text-brand-gold flex items-center justify-center text-sm font-black ring-1 ring-yellow-400/40">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <div class="text-xs font-black text-white flex items-center gap-1.5">
+                JoinKFA 화랑대기 전 경기 실시간 중계·결과
+              </div>
+              <p class="text-[10px] text-zinc-400">대한축구협회 공식 전체 참가팀 1차/2차 리그 전 매치업</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a href="https://www.joinkfa.com" target="_blank" class="py-2 px-3 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            <span>JoinKFA 공식결과</span>
+          </a>
+          <button onclick="syncAllMatches(true)" class="py-2 px-3 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold text-xs font-black flex items-center justify-center gap-1.5 border border-[#3A4259] active:scale-95 transition">
+            <i class="fa-solid fa-rotate text-[10px]"></i>
+            <span>전체결과 새로고침</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- U-10 / U-11 / U-12 STANDINGS ACCORDIONS -->
+      <div class="space-y-3">
+        
+        <!-- 1. U-10 조별 순위표 (4조) -->
+        <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-md">
+          <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between text-xs">
+            <span class="font-black text-white flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+              U-10 옐로우 (예선 4조 순위표)
+            </span>
+            <span class="text-[10px] text-brand-gold font-bold bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-500/20">총 4개팀</span>
+          </div>
+
+          <div class="p-3 overflow-x-auto">
+            <table class="w-full text-center text-xs">
+              <thead>
+                <tr class="text-[10px] text-zinc-400 border-b border-[#282D3D] pb-1">
+                  <th class="py-1.5 font-bold text-left pl-2">순위 / 팀명</th>
+                  <th class="py-1.5 font-bold">경기</th>
+                  <th class="py-1.5 font-bold">승</th>
+                  <th class="py-1.5 font-bold">무</th>
+                  <th class="py-1.5 font-bold">패</th>
+                  <th class="py-1.5 font-bold text-brand-gold">승점</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
+                <tr class="bg-yellow-400/5 font-black text-white">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num">1</span>
+                    <span class="text-brand-gold">경기 고양주니어</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-black text-brand-gold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
+                    <span>인천 부평유소년(블랙)</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
+                    <span>경기 남양주 BEST</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
+                    <span>대구 TDN(레드)</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 2. U-11 조별 순위표 (3조) -->
+        <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-md">
+          <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between text-xs">
+            <span class="font-black text-white flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+              U-11 와인 (예선 3조 순위표)
+            </span>
+            <span class="text-[10px] text-red-400 font-bold bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">총 4개팀</span>
+          </div>
+
+          <div class="p-3 overflow-x-auto">
+            <table class="w-full text-center text-xs">
+              <thead>
+                <tr class="text-[10px] text-zinc-400 border-b border-[#282D3D] pb-1">
+                  <th class="py-1.5 font-bold text-left pl-2">순위 / 팀명</th>
+                  <th class="py-1.5 font-bold">경기</th>
+                  <th class="py-1.5 font-bold">승</th>
+                  <th class="py-1.5 font-bold">무</th>
+                  <th class="py-1.5 font-bold">패</th>
+                  <th class="py-1.5 font-bold text-brand-gold">승점</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
+                <tr class="bg-yellow-400/5 font-black text-white">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num">1</span>
+                    <span class="text-brand-gold">경기 고양주니어</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-black text-brand-gold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
+                    <span>인천 부평유소년(레드)</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
+                    <span>경기 염기훈 주니어</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
+                    <span>대구 TDN(블루)</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. U-12 조별 순위표 (2조) -->
+        <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-md">
+          <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between text-xs">
+            <span class="font-black text-white flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+              U-12 대표 (예선 2조 순위표)
+            </span>
+            <span class="text-[10px] text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">총 5개팀</span>
+          </div>
+
+          <div class="p-3 overflow-x-auto">
+            <table class="w-full text-center text-xs">
+              <thead>
+                <tr class="text-[10px] text-zinc-400 border-b border-[#282D3D] pb-1">
+                  <th class="py-1.5 font-bold text-left pl-2">순위 / 팀명</th>
+                  <th class="py-1.5 font-bold">경기</th>
+                  <th class="py-1.5 font-bold">승</th>
+                  <th class="py-1.5 font-bold">무</th>
+                  <th class="py-1.5 font-bold">패</th>
+                  <th class="py-1.5 font-bold text-brand-gold">승점</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
+                <tr class="bg-yellow-400/5 font-black text-white">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num">1</span>
+                    <span class="text-brand-gold">경기 고양주니어</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-black text-brand-gold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
+                    <span>강원 속초시체육회</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
+                    <span>세종 공공SC</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
+                    <span>서울 K리거 강용FC</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+                <tr>
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">5</span>
+                    <span>경기 이천유나이티드</span>
+                  </td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td class="font-bold font-num">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2ND STAGE (2차 리그 본선 스플릿 안내) -->
+      <div class="rounded-3xl bg-gradient-to-b from-[#1C1F2B] to-[#12151E] border border-yellow-500/40 p-4 shadow-xl space-y-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-brand-gold text-black flex items-center justify-center text-sm font-black shadow">
+            <i class="fa-solid fa-sitemap"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-black text-white">화랑대기 2차 스플릿 리그 운영 안내</h4>
+            <p class="text-[10px] text-zinc-400">1차 조별리그 성적에 따라 2차 본선 조 재편성</p>
+          </div>
+        </div>
+
+        <div class="space-y-2 text-xs">
+          <div class="p-3 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] space-y-1">
+            <div class="flex items-center justify-between font-bold">
+              <span class="text-brand-gold font-black">🥇 1차 예선 1위·2위 그룹 (상위 스플릿)</span>
+              <span class="text-[10px] bg-yellow-400/20 text-brand-gold px-1.5 py-0.2 rounded font-black">본선 진출</span>
+            </div>
+            <p class="text-[11px] text-zinc-300">각 조 1·2위 팀들이 모여 최종 우승을 겨루는 2차 상위 토너먼트/리그 진행</p>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-[#0E1017]/80 border border-[#282D3D] space-y-1">
+            <div class="flex items-center justify-between font-bold">
+              <span class="text-zinc-300 font-bold">🥈 1차 예선 3위 이하 그룹 (순위 결정 리그)</span>
+              <span class="text-[10px] bg-[#1E222E] text-zinc-400 px-1.5 py-0.2 rounded font-bold">순위전</span>
+            </div>
+            <p class="text-[11px] text-zinc-400">각 조 동일 순위 팀들 간 추가 경험 및 기량 향상을 위한 순위 리그 진행</p>
+          </div>
+        </div>
+
+        <div class="pt-1">
+          <a href="https://www.joinkfa.com" target="_blank" class="w-full py-2.5 rounded-xl bg-brand-gold text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+            <i class="fa-solid fa-list-check"></i> JoinKFA 2차리그 공식 대진표 실시간 확인
+          </a>
+        </div>
+      </div>
+
+    </div>
     <!-- CHEERING INTERACTION BOX -->
     <section class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center space-y-3 shadow-lg">
       <div class="flex items-center justify-center gap-1.5 text-xs font-black text-brand-gold">
