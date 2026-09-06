@@ -356,21 +356,28 @@
 
       <!-- MATCH 1: U-10 vs 부평유소년 블랙 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 6일 (일) 09:00</div>
-              <div class="today-weather-badge text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 6일 (일) 09:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u10_1" class="hidden"></span>
+              <span id="status-u10_1" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료 (패)</span>
+
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u10_1" class="hidden"></span>
-            <span id="status-u10_1" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료 (패)</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천5A</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="today-weather-badge text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천5A</span>
+            </div>
           </div>
         </div>
 
@@ -390,6 +397,7 @@
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_1">1 : 6
               </div>
               <span id="result-u10_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700">패배</span>
+
               <button onclick="scrapeMatch('u10_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
               </button>
@@ -427,21 +435,27 @@
 
       <!-- MATCH 2: U-10 vs 남양주 BEST -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 7일 (월) 09:00</div>
-              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 7일 (월) 09:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u10_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
+              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u10_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-            <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원3A</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원3A</span>
+            </div>
           </div>
         </div>
 
@@ -503,21 +517,27 @@
 
       <!-- MATCH 3: U-10 vs 대구 TDN 레드 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 8일 (화) 09:00</div>
-              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-sun text-amber-400"></i> <span>24°C 맑음</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 8일 (화) 09:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u10_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
+              <span id="status-u10_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u10_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
-            <span id="status-u10_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천3B</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>24°C 맑음</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천3B</span>
+            </div>
           </div>
         </div>
 
@@ -586,21 +606,28 @@
 
       <!-- MATCH 1: U-11 vs 부평유소년 레드 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 6일 (일) 09:00</div>
-              <div class="today-weather-badge text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 6일 (일) 09:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u11_1" class="hidden"></span>
+              <span id="status-u11_1" class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40">경기종료 (승)</span>
+
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u11_1" class="hidden"></span>
-            <span id="status-u11_1" class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40">경기종료 (승)</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천4A</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="today-weather-badge text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 구름조금</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천4A</span>
+            </div>
           </div>
         </div>
 
@@ -619,7 +646,8 @@
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u11_1">13 : 0
               </div>
-              <span id="result-u11_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm">승리 ⚽</span>
+              <span id="result-u11_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/40">승리</span>
+
               <button onclick="scrapeMatch('u11_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
               </button>
@@ -656,21 +684,27 @@
 
       <!-- MATCH 2: U-11 vs 염기훈 주니어 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 7일 (월) 09:00</div>
-              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 맑음</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 7일 (월) 09:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u11_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
+              <span id="status-u11_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u11_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-            <span id="status-u11_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원2A</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>25°C 맑음</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원2A</span>
+            </div>
           </div>
         </div>
 
@@ -728,21 +762,27 @@
 
       <!-- MATCH 3: U-11 vs 대구 TDN 블루 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 8일 (화) 09:00</div>
-              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-sun text-amber-400"></i> <span>24°C 맑음</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 8일 (화) 09:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u11_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
+              <span id="status-u11_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u11_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
-            <span id="status-u11_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천2B</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>24°C 맑음</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천2B</span>
+            </div>
           </div>
         </div>
 
@@ -811,21 +851,27 @@
 
       <!-- MATCH 1: U-12 vs 속초시 체육회 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 7일 (월) 16:00</div>
-              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-sun text-amber-400"></i> <span>29°C 맑음·더위</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">1</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 7일 (월) 16:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u12_1" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
+              <span id="status-u12_1" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u12_1" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-            <span id="status-u12_1" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">축구공원4B</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>29°C 맑음·더위</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">축구공원4B</span>
+            </div>
           </div>
         </div>
 
@@ -881,21 +927,27 @@
 
       <!-- MATCH 2: U-12 vs 세종 공공SC -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 8일 (화) 16:00</div>
-              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>28°C 구름조금</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 8일 (화) 16:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u12_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
+              <span id="status-u12_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u12_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
-            <span id="status-u12_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
-            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">시민운동장 B</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-cloud-sun text-amber-300"></i> <span>28°C 구름조금</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">시민운동장 B</span>
+            </div>
           </div>
         </div>
 
@@ -952,21 +1004,27 @@
 
       <!-- MATCH 3: U-12 vs 서울 K리거 강용FC -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 9일 (수) 16:00</div>
-              <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-cloud text-sky-300"></i> <span>27°C 구름많음</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 9일 (수) 16:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u12_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-3</span>
+              <span id="status-u12_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u12_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-3</span>
-            <span id="status-u12_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천3A</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-sky-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-cloud text-sky-300"></i> <span>27°C 구름많음</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천3A</span>
+            </div>
           </div>
         </div>
 
@@ -1024,21 +1082,27 @@
 
       <!-- MATCH 4: U-12 vs 이천유나이티드 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between gap-2 text-xs">
-          <div class="flex items-center gap-2 min-w-0">
-            <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">4</span>
-            <div class="min-w-0">
-              <div class="font-black text-white text-[12px] truncate">9월 10일 (목) 16:00</div>
-              <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-0.5">
-                <i class="fa-solid fa-sun text-amber-400"></i> <span>28°C 맑음</span>
-              </div>
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <!-- Row 1: Match Number, Date & Time, D-Day & Status -->
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-blue-500 text-white font-black text-[11px] flex items-center justify-center font-num shrink-0">4</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 10일 (목) 16:00</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-u12_4" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-4</span>
+              <span id="status-u12_4" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
             </div>
           </div>
-          <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="dday-u12_4" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-4</span>
-            <span id="status-u12_4" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
-            <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
-            <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천4B</span>
+          <!-- Row 2: Weather, Home/Away, Pitch -->
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-amber-300 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-sun text-amber-400"></i> <span>28°C 맑음</span>
+              </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 text-[10px] font-black border border-blue-500/30">알천4B</span>
+            </div>
           </div>
         </div>
 
@@ -2630,6 +2694,9 @@
 
 
     // ==================== DAILY VISITOR TRACKING & D-DAY ENGINE ====================
+    const FIREBASE_DB = window.FIREBASE_DB_URL || 'https://goyang-78387-default-rtdb.firebaseio.com';
+    window.FIREBASE_DB_URL = FIREBASE_DB;
+
     const MATCH_DATES = {
       'u10_1': '2026-09-06',
       'u10_2': '2026-09-07',
@@ -2677,49 +2744,74 @@
 
     // Today Visitor Counter (Firebase Realtime Database)
     function getTodayKeyKST() {
-      const now = new Date();
-      const kstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
-      return kstTime.toISOString().slice(0, 10);
+      try {
+        return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
+      } catch (e) {
+        const d = new Date();
+        const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+        const kst = new Date(utc + (9 * 3600000));
+        return `${kst.getFullYear()}-${String(kst.getMonth() + 1).padStart(2, '0')}-${String(kst.getDate()).padStart(2, '0')}`;
+      }
     }
 
     async function initTodayVisitors() {
       const todayKey = getTodayKeyKST();
-      const storageKey = 'goyang_visitor_' + todayKey;
       const visitorEl = document.getElementById('todayVisitorCount');
 
-      let currentCount = parseInt(localStorage.getItem(storageKey + '_count') || '142', 10);
-      if (visitorEl) visitorEl.innerText = currentCount.toLocaleString();
+      // 1. Initial immediate display from local storage cache
+      let cachedCount = parseInt(localStorage.getItem('goyang_visitor_count_' + todayKey) || '142', 10);
+      if (visitorEl) visitorEl.innerText = cachedCount.toLocaleString();
 
-      const alreadyRecorded = localStorage.getItem(storageKey);
+      // 2. Debounced increment check (15s per session or new tab/reload)
+      const lastVisitKey = 'goyang_last_visit_ts_' + todayKey;
+      const lastVisitTs = parseInt(sessionStorage.getItem(lastVisitKey) || '0', 10);
+      const now = Date.now();
+      const shouldIncrement = (now - lastVisitTs) > 15000;
 
-      try {
-        const res = await fetch(`${FIREBASE_DB_URL}/dailyVisitors/${todayKey}.json`, { cache: 'no-cache' });
-        let serverCount = null;
-        if (res.ok) {
-          serverCount = await res.json();
+      async function syncVisitor(doIncrement = false) {
+        try {
+          const res = await fetch(`${FIREBASE_DB}/dailyVisitors/${todayKey}.json`, { cache: 'no-cache' });
+          let serverCount = null;
+          if (res.ok) {
+            serverCount = await res.json();
+          }
+
+          if (typeof serverCount !== 'number' || isNaN(serverCount) || serverCount < 140) {
+            serverCount = 142;
+          }
+
+          if (doIncrement) {
+            serverCount += 1;
+            sessionStorage.setItem(lastVisitKey, Date.now().toString());
+            try {
+              await fetch(`${FIREBASE_DB}/dailyVisitors/${todayKey}.json`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(serverCount)
+              });
+            } catch (putErr) {
+              console.warn('Visitor PUT error:', putErr);
+            }
+          }
+
+          localStorage.setItem('goyang_visitor_count_' + todayKey, serverCount.toString());
+          if (visitorEl) visitorEl.innerText = serverCount.toLocaleString();
+          return serverCount;
+        } catch (fetchErr) {
+          console.warn('Visitor fetch error:', fetchErr);
+          if (visitorEl) visitorEl.innerText = cachedCount.toLocaleString();
         }
+      }
 
-        if (typeof serverCount !== 'number' || isNaN(serverCount)) {
-          serverCount = 142; // baseline for opening day
-        }
+      await syncVisitor(shouldIncrement);
 
-        if (!alreadyRecorded) {
-          serverCount += 1;
-          try {
-            await fetch(`${FIREBASE_DB_URL}/dailyVisitors/${todayKey}.json`, {
-              method: 'PUT',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(serverCount)
-            });
-            localStorage.setItem(storageKey, 'true');
-          } catch (e) {}
-        }
-
-        currentCount = Math.max(currentCount, serverCount);
-        localStorage.setItem(storageKey + '_count', currentCount.toString());
-        if (visitorEl) visitorEl.innerText = currentCount.toLocaleString();
-      } catch (err) {
-        if (visitorEl) visitorEl.innerText = currentCount.toLocaleString();
+      // 3. Periodic real-time update every 20 seconds
+      if (!window._visitorPollActive) {
+        window._visitorPollActive = true;
+        setInterval(() => syncVisitor(false), 20000);
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') syncVisitor(false);
+        });
       }
     }
 
