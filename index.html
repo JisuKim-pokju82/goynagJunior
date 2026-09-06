@@ -1899,7 +1899,7 @@ id="food-section" class="space-y-3">
         <div class="flex items-center gap-1.5 shrink-0">
           <span id="tmapLiveBadge" class="text-[9px] sm:text-[10px] text-teal-300 font-black bg-teal-500/10 border border-teal-500/30 px-2 py-0.5 rounded-full flex items-center gap-1 whitespace-nowrap">
             <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
-            <span id="tmapSourceText">T맵 실시간 연동</span>
+            <span id="tmapSourceText">T맵 실시간 연동 🟢</span>
           </span>
           <button type="button" onclick="updateIlsanTransit(true)" title="새로고침" class="p-1.5 px-2 rounded-xl bg-[#1E2530] hover:bg-[#283242] text-zinc-300 hover:text-white text-[10px] font-bold border border-white/10 flex items-center gap-1 active:scale-95 transition cursor-pointer">
             <i class="fa-solid fa-arrows-rotate text-teal-400 text-[10px]" id="transitRefreshIcon"></i>
@@ -1921,7 +1921,48 @@ id="food-section" class="space-y-3">
               <span class="text-brand-gold">고양주니어 중산점</span>
             </div>
           </div>
-          <span class="text-[10px] text-zinc-400 font-num shrink-0 font-bold bg-white/5 px-2 py-0.5 rounded-md border border-white/10">345km</span>
+          <span id="transitDistanceHeader" class="text-[10px] text-zinc-400 font-num shrink-0 font-bold bg-white/5 px-2 py-0.5 rounded-md border border-white/10">362km</span>
+        </div>
+
+        <!-- NEW: Real-time Multi-color Traffic Status Bar (녹색/노랑/빨강 전체 교통상황 바) -->
+        <div class="space-y-1.5 p-2.5 rounded-2xl bg-[#0F131C]/95 border border-white/5">
+          <div class="flex items-center justify-between text-[10px] font-bold text-zinc-400">
+            <span class="flex items-center gap-1 text-teal-300">
+              <i class="fa-solid fa-flag text-[9px]"></i> 경주 출발
+            </span>
+            <span class="text-[9px] text-zinc-500 font-medium truncate px-1">
+              상주영천 · 중부내륙 · 수도권순환
+            </span>
+            <span class="flex items-center gap-1 text-amber-300">
+              <i class="fa-solid fa-flag-checkered text-[9px]"></i> 일산 도착
+            </span>
+          </div>
+
+          <!-- Multi-colored Segmented Traffic Bar -->
+          <div id="trafficProgressBar" class="h-2.5 w-full rounded-full bg-zinc-800/80 overflow-hidden flex shadow-inner ring-1 ring-white/5">
+            <div class="h-full bg-emerald-500" style="width: 100%"></div>
+          </div>
+
+          <!-- Traffic Summary & Legend -->
+          <div class="flex items-center justify-between text-[9px] text-zinc-400 pt-0.5">
+            <div class="flex items-center gap-2 font-medium">
+              <span class="text-emerald-400 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+                원활 <span id="pctSmooth">98%</span>
+              </span>
+              <span class="text-amber-400 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block"></span>
+                서행 <span id="pctSlow">2%</span>
+              </span>
+              <span class="text-rose-400 font-bold flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-400 inline-block"></span>
+                정체 <span id="pctCongested">0%</span>
+              </span>
+            </div>
+            <span id="trafficOverallBadge" class="text-[9px] font-black text-teal-300 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.2 rounded">
+              구간 98% 원활 ⚡
+            </span>
+          </div>
         </div>
 
         <!-- Dynamic Time & Arrival Metric Cards -->
@@ -1932,13 +1973,13 @@ id="food-section" class="space-y-3">
               <span class="text-[10px] text-zinc-400 font-bold flex items-center gap-1">
                 <i class="fa-solid fa-hourglass-half text-teal-400"></i> 소요시간
               </span>
-              <span id="trafficBadge" class="text-[9px] px-1.5 py-0.2 rounded font-black border bg-emerald-500/20 text-emerald-300 border-emerald-500/40">원활</span>
+              <span id="trafficBadge" class="text-[9px] px-1.5 py-0.2 rounded font-black border bg-emerald-500/20 text-emerald-300 border-emerald-500/40">T맵 LIVE</span>
             </div>
             <div>
               <div class="flex items-baseline gap-1">
                 <span id="transitDurationMain" class="text-2xl font-black text-white font-num tracking-tight">계산 중...</span>
               </div>
-              <div id="transitDistanceSub" class="text-[10px] text-zinc-400 mt-0.5 font-medium truncate">경주 알천 ➔ 일산 345km</div>
+              <div id="transitDistanceSub" class="text-[10px] text-zinc-400 mt-0.5 font-medium truncate">티맵 실시간 최적 362km</div>
             </div>
           </div>
 
@@ -1965,12 +2006,12 @@ id="food-section" class="space-y-3">
             <span class="font-bold flex items-center gap-1">
               <i class="fa-solid fa-road text-teal-400"></i> 추천 경로
             </span>
-            <span class="text-[10px] text-zinc-400 font-medium truncate">경부 ➔ 중부내륙 ➔ 수도권제1순환</span>
+            <span class="text-[10px] text-zinc-400 font-medium truncate">경부 ➔ 상주영천 ➔ 중부내륙 ➔ 수도권제1순환</span>
           </div>
           <div class="grid grid-cols-3 gap-2 pt-1 text-center text-[10px]">
             <div class="p-1.5 rounded-lg bg-[#161B24] border border-white/5">
-              <div class="text-zinc-400">예상 통행료</div>
-              <div id="transitTollFee" class="text-white font-num font-bold mt-0.5">약 18,200원</div>
+              <div class="text-zinc-400">실시간 통행료</div>
+              <div id="transitTollFee" class="text-white font-num font-bold mt-0.5">21,100원</div>
             </div>
             <div class="p-1.5 rounded-lg bg-[#161B24] border border-white/5">
               <div class="text-zinc-400">예상 유류비</div>
@@ -1978,7 +2019,7 @@ id="food-section" class="space-y-3">
             </div>
             <div class="p-1.5 rounded-lg bg-[#161B24] border border-white/5">
               <div class="text-zinc-400">추천 휴게소</div>
-              <div class="text-teal-300 font-bold mt-0.5">문경 / 괴산</div>
+              <div class="text-teal-300 font-bold mt-0.5">낙동강 / 괴산</div>
             </div>
           </div>
         </div>
@@ -3004,6 +3045,7 @@ id="cheer-section" class="space-y-3">
       const depBadgeEl = document.getElementById('transitDepartureBadge');
       const sourceTextEl = document.getElementById('tmapSourceText');
       const tollFeeEl = document.getElementById('transitTollFee');
+      const distHeaderEl = document.getElementById('transitDistanceHeader');
 
       if (refreshIcon && isManual) refreshIcon.classList.add('fa-spin');
 
@@ -3025,7 +3067,8 @@ id="cheer-section" class="space-y-3">
             endY: TMAP_CONFIG.destination.lat,
             reqCoordType: 'WGS84GEO',
             resCoordType: 'WGS84GEO',
-            searchOption: '0'
+            searchOption: '0',
+            trafficInfo: 'Y'
           });
 
           const apiUrl = `https://apis.openapi.sk.com/tmap/routes?version=1&format=json&appKey=${encodeURIComponent(activeKey)}`;
@@ -3064,6 +3107,7 @@ id="cheer-section" class="space-y-3">
                 const distKm = Math.round(props.totalDistance / 1000);
                 const distEl = document.getElementById('transitDistanceSub');
                 if (distEl) distEl.textContent = `티맵 실시간 최적 ${distKm}km`;
+                if (distHeaderEl) distHeaderEl.textContent = `${distKm}km`;
               }
 
               if (props.totalFare && tollFeeEl) {
@@ -3078,6 +3122,9 @@ id="cheer-section" class="space-y-3">
 
               const curSec = String(now.getSeconds()).padStart(2, '0');
               if (calcTimeEl) calcTimeEl.textContent = `T맵 최신: ${depPeriod} ${depDisplayH}:${depMin}:${curSec}`;
+
+              // Render Real-time Traffic Color Bar
+              renderLiveTrafficBar(data.features, props.totalDistance || 362000);
 
               if (isManual && typeof showToast === 'function') {
                 showToast(`티맵 실시간 경로 반영 완료! (${durH}시간 ${durM}분 소요) 🧭`);
@@ -3096,6 +3143,66 @@ id="cheer-section" class="space-y-3">
       // Fallback: Intelligent Traffic Model
       runFallbackTrafficModel(now, isManual);
       if (refreshIcon) refreshIcon.classList.remove('fa-spin');
+    }
+
+    function renderLiveTrafficBar(features, totalDist) {
+      const lineFeatures = features.filter(f => f.geometry && f.geometry.type === 'LineString');
+      let smoothDist = 0, slowDist = 0, congDist = 0;
+      let barSegments = [];
+
+      lineFeatures.forEach(lf => {
+        const p = lf.properties;
+        if (!p.distance || !p.time) return;
+        const spd = (p.distance / p.time) * 3.6;
+        const isHwy = p.roadType === 0;
+
+        let color = 'bg-emerald-500';
+        let status = '원활';
+        if (isHwy) {
+          if (spd < 45) { color = 'bg-rose-500'; status = '정체'; congDist += p.distance; }
+          else if (spd < 75) { color = 'bg-amber-400'; status = '서행'; slowDist += p.distance; }
+          else { color = 'bg-emerald-500'; status = '원활'; smoothDist += p.distance; }
+        } else {
+          if (spd < 20) { color = 'bg-rose-500'; status = '정체'; congDist += p.distance; }
+          else if (spd < 40) { color = 'bg-amber-400'; status = '서행'; slowDist += p.distance; }
+          else { color = 'bg-emerald-500'; status = '원활'; smoothDist += p.distance; }
+        }
+
+        const pct = Math.max(0.5, (p.distance / totalDist) * 100);
+        barSegments.push(`<div class="h-full ${color} transition-all duration-500" style="width: ${pct}%" title="${p.name || ''} (${Math.round(spd)}km/h - ${status})"></div>`);
+      });
+
+      const barEl = document.getElementById('trafficProgressBar');
+      if (barEl && barSegments.length > 0) {
+        barEl.innerHTML = barSegments.join('');
+      }
+
+      const totalCalculated = (smoothDist + slowDist + congDist) || totalDist;
+      const pctSmooth = Math.round((smoothDist / totalCalculated) * 100);
+      const pctSlow = Math.round((slowDist / totalCalculated) * 100);
+      const pctCong = Math.max(0, 100 - pctSmooth - pctSlow);
+
+      const smoothEl = document.getElementById('pctSmooth');
+      const slowEl = document.getElementById('pctSlow');
+      const congEl = document.getElementById('pctCongested');
+      const overallBadge = document.getElementById('trafficOverallBadge');
+
+      if (smoothEl) smoothEl.textContent = `${pctSmooth}%`;
+      if (slowEl) slowEl.textContent = `${pctSlow}%`;
+      if (congEl) congEl.textContent = `${pctCong}%`;
+
+      if (overallBadge) {
+        if (pctCong >= 15) {
+          overallBadge.textContent = `일부 구간 정체 발생 ⚠️`;
+          overallBadge.className = 'text-[9px] font-black text-rose-300 bg-rose-500/10 border border-rose-500/30 px-1.5 py-0.2 rounded';
+        } else if (pctSlow >= 20) {
+          overallBadge.textContent = `구간 서행 주의 🟡`;
+          overallBadge.className = 'text-[9px] font-black text-amber-300 bg-amber-500/10 border border-amber-500/30 px-1.5 py-0.2 rounded';
+        } else {
+          overallBadge.textContent = `구간 ${pctSmooth}% 원활 ⚡`;
+          overallBadge.className = 'text-[9px] font-black text-teal-300 bg-teal-500/10 border border-teal-500/20 px-1.5 py-0.2 rounded';
+        }
+      }
     }
 
     function runFallbackTrafficModel(now, isManual) {
@@ -3166,6 +3273,16 @@ id="cheer-section" class="space-y-3">
       let curPeriod = curH >= 12 ? '오후' : '오전';
       let curDisplayH = curH > 12 ? curH - 12 : (curH === 0 ? 12 : curH);
       if (calcTimeEl) calcTimeEl.textContent = `기준: ${curPeriod} ${curDisplayH}:${curM}:${curSec}`;
+
+      // Fallback Traffic Bar
+      const barEl = document.getElementById('trafficProgressBar');
+      if (barEl) {
+        if (day === 0 && hour >= 12 && hour <= 20) {
+          barEl.innerHTML = '<div class="h-full bg-emerald-500" style="width: 60%"></div><div class="h-full bg-amber-400" style="width: 25%"></div><div class="h-full bg-rose-500" style="width: 15%"></div>';
+        } else {
+          barEl.innerHTML = '<div class="h-full bg-emerald-500" style="width: 90%"></div><div class="h-full bg-amber-400" style="width: 8%"></div><div class="h-full bg-rose-500" style="width: 2%"></div>';
+        }
+      }
 
       if (isManual && typeof showToast === 'function') {
         showToast('실시간 고속도로 교통정보를 반영하여 계산을 갱신했습니다. 🚗');
