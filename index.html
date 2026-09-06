@@ -1826,8 +1826,7 @@ id="food-section" class="space-y-3">
     </section>
 
     <!-- ACCOMMODATION (선수숙소) -->
-    <section 
-id="lodging-section" class="space-y-3">
+    <section id="lodging-section" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="text-sm font-black text-white flex items-center gap-1.5">
           <span class="w-2 h-4 bg-yellow-400 rounded-sm"></span>
@@ -1843,12 +1842,17 @@ id="lodging-section" class="space-y-3">
               <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/30">공식 숙소</span>
               <span class="text-[11px] text-zinc-400 font-medium">경주시 북군동</span>
             </div>
-            <h3 class="text-base font-black text-white mt-1">경주 둥지펜션</h3>
-            <p class="text-xs text-zinc-300 font-medium mt-0.5">경북 경주시 북군길 54-4</p>
+            <h3 class="text-base font-black text-white mt-1">소래당펜션</h3>
+            <p class="text-xs text-zinc-300 font-medium mt-0.5">경북 경주시 북군길 54-4 (북군동 281-4)</p>
           </div>
-          <button onclick="copyAddress('경북 경주시 북군길 54-4')" class="shrink-0 px-2.5 py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold text-xs font-bold flex items-center gap-1 border border-[#3A4259] active:scale-95 transition">
-            <i class="fa-regular fa-copy"></i> 주소복사
-          </button>
+          <div class="flex flex-col gap-1.5 shrink-0">
+            <a href="tel:010-6815-3567" class="px-2.5 py-1.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 text-xs font-bold flex items-center justify-center gap-1 border border-emerald-500/30 active:scale-95 transition">
+              <i class="fa-solid fa-phone"></i> 전화걸기
+            </a>
+            <button onclick="copyAddress('경북 경주시 북군길 54-4')" class="px-2.5 py-1.5 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold text-xs font-bold flex items-center justify-center gap-1 border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-regular fa-copy"></i> 주소복사
+            </button>
+          </div>
         </div>
 
         <!-- Drive Times to Stadiums -->
@@ -1869,13 +1873,13 @@ id="lodging-section" class="space-y-3">
 
         <!-- Navigation Buttons -->
         <div class="grid grid-cols-3 gap-2 pt-1">
-          <a href="tmap://search?name=경북+경주시+북군길+54-4" onclick="openTmap('경북 경주시 북군길 54-4', event)" class="py-2.5 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-500/40 hover:bg-teal-500 hover:text-white text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+          <a href="tmap://search?name=소래당펜션" onclick="openTmap('경북 경주시 북군길 54-4', event)" class="py-2.5 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-500/40 hover:bg-teal-500 hover:text-white text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
             <i class="fa-solid fa-location-arrow text-[11px]"></i> 티맵
           </a>
-          <a href="https://map.kakao.com/?q=경북+경주시+북군길+54-4" target="_blank" class="py-2.5 rounded-xl bg-[#1E222E] text-zinc-300 border border-[#282D3D] text-xs font-bold flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+          <a href="https://map.kakao.com/?q=경주+소래당펜션" target="_blank" class="py-2.5 rounded-xl bg-[#1E222E] text-zinc-300 border border-[#282D3D] text-xs font-bold flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
             <i class="fa-solid fa-map"></i> 카카오
           </a>
-          <a href="https://map.naver.com/v5/search/경북%20경주시%20북군길%2054-4" target="_blank" class="py-2.5 rounded-xl bg-[#1E222E] text-zinc-300 border border-[#282D3D] text-xs font-bold flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
+          <a href="https://map.naver.com/v5/search/경주%20소래당펜션" target="_blank" class="py-2.5 rounded-xl bg-[#1E222E] text-zinc-300 border border-[#282D3D] text-xs font-bold flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
             <i class="fa-solid fa-map"></i> 네이버
           </a>
         </div>
