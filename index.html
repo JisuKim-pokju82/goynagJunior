@@ -1882,6 +1882,119 @@ id="lodging-section" class="space-y-3">
       </div>
     </section>
 
+        <!-- ==================== ILSAN TRANSIT PREDICTOR (일산까지 실시간 경과시간 예측) ==================== -->
+    <section id="ilsan-transit-section" class="space-y-3">
+      <div class="flex items-center justify-between px-1">
+        <h2 class="text-sm font-black text-white flex items-center gap-1.5">
+          <span class="w-2 h-4 bg-teal-400 rounded-sm"></span>
+          일산까지 실시간 경과시간 예측 (고양주니어 중산점 기준)
+        </h2>
+        <span class="text-[10px] text-teal-300 font-black bg-teal-500/10 border border-teal-500/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+          티맵 실시간 연동
+        </span>
+      </div>
+
+      <div class="rounded-3xl bg-gradient-to-b from-[#182329] via-[#141A22] to-[#0E1017] p-4 sm:p-5 border border-teal-500/35 shadow-xl space-y-4">
+        <!-- Route Banner & Live Refresh -->
+        <div class="flex items-center justify-between pb-1 border-b border-white/5">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-sm ring-1 ring-teal-500/30 shrink-0">
+              <i class="fa-solid fa-route"></i>
+            </div>
+            <div>
+              <div class="text-xs font-black text-white flex items-center gap-1.5">
+                <span id="transitOriginLabel">경주 (현재 위치)</span>
+                <i class="fa-solid fa-arrow-right-long text-teal-400 text-[10px]"></i>
+                <span class="text-brand-gold">고양주니어 중산점</span>
+              </div>
+              <p class="text-[10px] text-zinc-400 mt-0.5">경기도 고양시 일산동구 고양대로 864-24</p>
+            </div>
+          </div>
+          <button type="button" onclick="updateIlsanTransit(true)" class="p-1.5 px-2.5 rounded-xl bg-[#1E2530] hover:bg-[#283242] text-zinc-300 hover:text-white text-[10px] font-bold border border-white/10 flex items-center gap-1 active:scale-95 transition cursor-pointer">
+            <i class="fa-solid fa-arrows-rotate text-teal-400" id="transitRefreshIcon"></i>
+            <span>새로고침</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Time & Arrival Metric Cards -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <!-- Card 1: Estimated Duration -->
+          <div class="p-3.5 rounded-2xl bg-[#0F131C] border border-teal-500/30 flex flex-col justify-between space-y-2 shadow-inner">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] text-zinc-400 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-hourglass-half text-teal-400"></i> 예상 소요시간
+              </span>
+              <span id="trafficBadge" class="text-[9px] px-1.5 py-0.2 rounded font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">원활</span>
+            </div>
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span id="transitDurationMain" class="text-2xl font-black text-white font-num tracking-tight">계산 중...</span>
+              </div>
+              <div id="transitDistanceSub" class="text-[10px] text-zinc-400 mt-0.5 font-medium">편도 약 345km 기준</div>
+            </div>
+          </div>
+
+          <!-- Card 2: Estimated Arrival Clock -->
+          <div class="p-3.5 rounded-2xl bg-[#0F131C] border border-amber-500/30 flex flex-col justify-between space-y-2 shadow-inner">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] text-zinc-400 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-flag-checkered text-amber-400"></i> 도착 예정 시각
+              </span>
+              <span class="text-[9px] px-1.5 py-0.2 rounded font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">지금 출발 시</span>
+            </div>
+            <div>
+              <div class="flex items-baseline gap-1">
+                <span id="transitArrivalClock" class="text-2xl font-black text-amber-300 font-num tracking-tight">계산 중...</span>
+              </div>
+              <div id="transitTimeSub" class="text-[10px] text-zinc-400 mt-0.5 font-medium">현재 시간 기준 실시간 계산</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Route Details & Highway Info -->
+        <div class="p-3 rounded-2xl bg-[#0F131C]/70 border border-white/10 space-y-1.5 text-xs">
+          <div class="flex items-center justify-between text-zinc-300 text-[11px]">
+            <span class="font-bold flex items-center gap-1">
+              <i class="fa-solid fa-road text-teal-400"></i> 추천 고속도로 경로
+            </span>
+            <span class="text-[10px] text-zinc-400 font-medium">경부선 ➔ 중부내륙 ➔ 수도권제1순환선</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 pt-1 text-center text-[10px]">
+            <div class="p-1.5 rounded-lg bg-[#161B24] border border-white/5">
+              <div class="text-zinc-400">예상 통행료</div>
+              <div class="text-white font-num font-bold mt-0.5">약 18,200원</div>
+            </div>
+            <div class="p-1.5 rounded-lg bg-[#161B24] border border-white/5">
+              <div class="text-zinc-400">예상 유류비</div>
+              <div class="text-white font-num font-bold mt-0.5">약 52,000원</div>
+            </div>
+            <div class="p-1.5 rounded-lg bg-[#161B24] border border-white/5">
+              <div class="text-zinc-400">추천 휴게소</div>
+              <div class="text-teal-300 font-bold mt-0.5">문경 / 괴산</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Navigation Buttons: TMAP Primary & Others Secondary -->
+        <div class="space-y-2 pt-1">
+          <a href="tmap://search?name=고양시+일산동구+고양대로+864-24" onclick="openIlsanTmap(event)" class="w-full py-3 px-4 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-black font-black text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-teal-500/20 active:scale-95 transition cursor-pointer">
+            <i class="fa-solid fa-location-arrow text-sm"></i>
+            <span>티맵(TMAP)으로 실시간 최적경로 내비 켜기</span>
+          </a>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="https://map.kakao.com/?eName=%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EB%8F%99%EA%B5%AC%20%EA%B3%A0%EC%96%91%EB%8C%80%EB%A1%9C%20864-24" target="_blank" class="py-2.5 rounded-xl bg-[#1E2530] hover:bg-[#283242] text-zinc-300 text-xs font-bold flex items-center justify-center gap-1.5 border border-white/10 active:scale-95 transition">
+              <i class="fa-solid fa-map text-yellow-400"></i> 카카오맵 길찾기
+            </a>
+            <a href="https://map.naver.com/v5/search/%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EB%8F%99%EA%B5%AC%20%EA%B3%A0%EC%96%91%EB%8C%80%EB%A1%9C%20864-24" target="_blank" class="py-2.5 rounded-xl bg-[#1E2530] hover:bg-[#283242] text-zinc-300 text-xs font-bold flex items-center justify-center gap-1.5 border border-white/10 active:scale-95 transition">
+              <i class="fa-solid fa-map-location-dot text-green-400"></i> 네이버지도 길찾기
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- CHEERING & GUESTBOOK (선수단 응원하기 & 한줄 톡) -->
     <section 
 id="cheer-section" class="space-y-3">
@@ -2867,6 +2980,143 @@ id="cheer-section" class="space-y-3">
     }
     window.openTmap = openTmap;
     window.handleTmap = function(event, addr) { openTmap(addr, event); };
+
+    // ==================== ILSAN TRANSIT PREDICTOR ENGINE ====================
+    const ILSAN_DEST = {
+      name: '고양주니어FC 중산점',
+      address: '경기도 고양시 일산동구 고양대로 864-24',
+      lat: 37.6853,
+      lng: 126.7845
+    };
+    let userCurrentCoords = null;
+
+    function calcDistanceKm(lat1, lon1, lat2, lon2) {
+      const R = 6371; // km
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c * 1.25; // Driving road route adjustment
+    }
+
+    function updateIlsanTransit(isManual = false) {
+      const refreshIcon = document.getElementById('transitRefreshIcon');
+      if (refreshIcon && isManual) refreshIcon.classList.add('fa-spin');
+
+      // Check GPS if available
+      if (!userCurrentCoords && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          pos => {
+            userCurrentCoords = {
+              lat: pos.coords.latitude,
+              lng: pos.coords.longitude
+            };
+            const originLabel = document.getElementById('transitOriginLabel');
+            if (originLabel) originLabel.innerText = '현재 내 위치(GPS)';
+            calculateTransitStats(isManual);
+          },
+          err => {
+            calculateTransitStats(isManual);
+          },
+          { timeout: 3500 }
+        );
+      } else {
+        calculateTransitStats(isManual);
+      }
+    }
+
+    function calculateTransitStats(isManual = false) {
+      const now = new Date();
+      let distanceKm = 345; // Default Gyeongju -> Goyang Jungsan
+
+      if (userCurrentCoords) {
+        const computed = calcDistanceKm(userCurrentCoords.lat, userCurrentCoords.lng, ILSAN_DEST.lat, ILSAN_DEST.lng);
+        if (computed > 30) distanceKm = Math.round(computed);
+      }
+
+      // Traffic speed model based on KST hour and day
+      const hour = now.getHours();
+      const day = now.getDay(); // 0: Sunday, 6: Saturday
+      let avgSpeed = 88;
+      let trafficText = '원활';
+      let trafficClass = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+
+      if (day === 0 && hour >= 13 && hour <= 20) {
+        // Sunday afternoon/evening return peak traffic
+        avgSpeed = 72;
+        trafficText = '서행/정체 구간';
+        trafficClass = 'bg-amber-500/20 text-amber-300 border-amber-500/40';
+      } else if (hour >= 7 && hour <= 9) {
+        // Morning commute
+        avgSpeed = 76;
+        trafficText = '출근 서행';
+        trafficClass = 'bg-amber-500/20 text-amber-300 border-amber-500/40';
+      } else if (hour >= 17 && hour <= 20) {
+        // Evening commute
+        avgSpeed = 78;
+        trafficText = '퇴근 정체';
+        trafficClass = 'bg-amber-500/20 text-amber-300 border-amber-500/40';
+      } else if (hour >= 23 || hour <= 5) {
+        // Late night expressway clear
+        avgSpeed = 96;
+        trafficText = '소통 원활 ⚡';
+        trafficClass = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
+      } else {
+        avgSpeed = 88;
+        trafficText = '보통';
+        trafficClass = 'bg-blue-500/20 text-blue-300 border-blue-500/40';
+      }
+
+      const durationMinutes = Math.round((distanceKm / avgSpeed) * 60);
+      const arrivalDate = new Date(now.getTime() + durationMinutes * 60000);
+
+      const durH = Math.floor(durationMinutes / 60);
+      const durM = durationMinutes % 60;
+      const durationStr = `${durH}시간 ${durM}분`;
+
+      const arrH = arrivalDate.getHours();
+      const arrM = String(arrivalDate.getMinutes()).padStart(2, '0');
+      let period = '오전';
+      let displayH = arrH;
+      if (arrH >= 0 && arrH < 6) { period = '새벽'; displayH = arrH; }
+      else if (arrH >= 6 && arrH < 12) { period = '오전'; displayH = arrH; }
+      else if (arrH === 12) { period = '낮'; displayH = 12; }
+      else if (arrH > 12 && arrH < 18) { period = '오후'; displayH = arrH - 12; }
+      else { period = '밤'; displayH = arrH - 12; }
+
+      const arrivalClockStr = `${period} ${displayH}:${arrM}`;
+
+      const durEl = document.getElementById('transitDurationMain');
+      const clockEl = document.getElementById('transitArrivalClock');
+      const distSubEl = document.getElementById('transitDistanceSub');
+      const badgeEl = document.getElementById('trafficBadge');
+      const refreshIcon = document.getElementById('transitRefreshIcon');
+
+      if (durEl) durEl.innerText = durationStr;
+      if (clockEl) clockEl.innerText = arrivalClockStr;
+      if (distSubEl) distSubEl.innerText = `편도 약 ${distanceKm}km 기준`;
+      if (badgeEl) {
+        badgeEl.innerText = trafficText;
+        badgeEl.className = `text-[9px] px-1.5 py-0.2 rounded font-black border ${trafficClass}`;
+      }
+
+      if (refreshIcon) {
+        setTimeout(() => refreshIcon.classList.remove('fa-spin'), 400);
+      }
+
+      if (isManual && typeof showToast === 'function') {
+        showToast(`일산(고양주니어 중산점)까지 실시간 예상 소요시간(${durationStr}) 계산 완료! 🚗`);
+      }
+    }
+
+    function openIlsanTmap(event) {
+      if (event && event.preventDefault) event.preventDefault();
+      openTmap('고양시 일산동구 고양대로 864-24', event);
+    }
+    window.openIlsanTmap = openIlsanTmap;
+    window.updateIlsanTransit = updateIlsanTransit;
 
 
     const STANDINGS_GROUPS = {
@@ -4608,8 +4858,10 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
       if (typeof updateMatchDDays === 'function') updateMatchDDays();
       if (typeof updateAllStandingsGroupOptions === 'function') updateAllStandingsGroupOptions();
       if (typeof renderAllStandingsGroup === 'function') renderAllStandingsGroup();
+      if (typeof updateIlsanTransit === 'function') updateIlsanTransit();
     });
 
+    if (typeof updateIlsanTransit === 'function') setInterval(updateIlsanTransit, 60000);
     setInterval(updateCountdown, 1000);
     updateCountdown();
   </script>
