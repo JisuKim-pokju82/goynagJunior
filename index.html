@@ -3236,6 +3236,93 @@ const PLAYER_PHOTOS = {
 ;
 
 // ===========================================================================
+// GOYANG JUNIOR MASTER ROSTER & PHOTO REGISTRY (선수 & 지도자 마스터 DB)
+// ===========================================================================
+// 동일 인물은 사진 및 기본 프로필을 자동 매칭하여, 경기별로 중복 크롭 없이 즉시 연동됩니다.
+// 신규 선수/지도자가 등록될 때만 여기에 추가하면 모든 경기에 자동 반영됩니다.
+const GOYANG_MASTER_PLAYERS = {
+  // --- U-11 와인 대표팀 ---
+  "양시우": { num: 9, pos: "FW", team: "U11", heightWeight: "130cm/25kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_9"] },
+  "김민준": { num: 29, pos: "FW", team: "U11", heightWeight: "132cm/32kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_29"] },
+  "박주혁": { num: 14, pos: "MF", team: "U11", heightWeight: "153cm/42kg", isAce: false, isCaptain: true, photo: PLAYER_PHOTOS["u11_14"] },
+  "권은율": { num: 20, pos: "MF", team: "U11", heightWeight: "143cm/30kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_20"] },
+  "이선우": { num: 8, pos: "DF", team: "U11", heightWeight: "134cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_8"] },
+  "임명훈": { num: 17, pos: "DF", team: "U11", heightWeight: "140cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_17"] },
+  "강현우": { num: 30, pos: "DF", team: "U11", heightWeight: "152cm/40kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_30"] },
+  "백정훈": { num: 1, pos: "GK", team: "U11", heightWeight: "160cm/55kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_1"] },
+  "김시훈": { num: 4, pos: "MF", team: "U11", heightWeight: "146cm/35kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_4"] },
+  "이승민": { num: 11, pos: "DF", team: "U11", heightWeight: "135cm/33kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_11"] },
+
+  // --- U-10 옐로우 대표팀 ---
+  "최선우": { num: 16, pos: "FW", team: "U10", heightWeight: "130cm/29kg", isAce: true, isCaptain: true, photo: PLAYER_PHOTOS["u10_16"] },
+  "박한별": { num: 5, pos: "MF", team: "U10", heightWeight: "136cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_5"] },
+  "박승준": { num: 7, pos: "MF", team: "U10", heightWeight: "132cm/30kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_7"] },
+  "진하랑": { num: 22, pos: "MF", team: "U10", heightWeight: "141cm/33kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_22"] },
+  "임현재": { num: 73, pos: "MF", team: "U10", heightWeight: "134cm/28kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_73"] },
+  "김태이": { num: 18, pos: "DF", team: "U10", heightWeight: "141cm/37kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_18"] },
+  "김주한": { num: 27, pos: "DF", team: "U10", heightWeight: "143cm/35kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u10_27"] },
+  "최현우": { num: 12, pos: "GK", team: "U10", heightWeight: "130cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_12"] },
+  "정지훈": { num: 10, pos: "MF", team: "U10", heightWeight: "127cm/27kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_10"] }
+};
+
+const GOYANG_MASTER_COACHES = {
+  "백운찬": { role: "코치", team: "U10", photo: PLAYER_PHOTOS["u10_coach_1"] },
+  "정상훈": { role: "감독", team: "U11", photo: PLAYER_PHOTOS["u11_coach_1"] },
+  "최정원": { role: "코치", team: "U11", photo: PLAYER_PHOTOS["u11_coach_2"] }
+};
+
+// Auto Resolver Functions: 선수 및 지도자 프로필 자동 매칭
+function resolveGoyangPlayer(p, matchAge) {
+  if (!p) return p;
+  const cleanName = (p.name || '').replace(/\s+/g, '');
+  let master = GOYANG_MASTER_PLAYERS[cleanName];
+
+  // 이름 일치 실패 시 등번호와 팀 연령대로 2차 매칭
+  if (!master && p.num) {
+    const ageTag = (matchAge && matchAge.includes('10')) ? 'U10' : (matchAge && matchAge.includes('11')) ? 'U11' : (matchAge && matchAge.includes('12')) ? 'U12' : '';
+    for (const key in GOYANG_MASTER_PLAYERS) {
+      const cand = GOYANG_MASTER_PLAYERS[key];
+      if (cand.num === Number(p.num) && (!ageTag || cand.team === ageTag)) {
+        master = cand;
+        break;
+      }
+    }
+  }
+
+  if (master) {
+    if (!p.photo && master.photo) p.photo = master.photo;
+    if (!p.heightWeight && master.heightWeight) p.heightWeight = master.heightWeight;
+    if (p.isAce === undefined && master.isAce !== undefined) p.isAce = master.isAce;
+    if (p.isCaptain === undefined && master.isCaptain !== undefined) p.isCaptain = master.isCaptain;
+    if (!p.pos && master.pos) p.pos = master.pos;
+    if (!p.num && master.num) p.num = master.num;
+  }
+  return p;
+}
+
+function resolveGoyangCoach(c) {
+  if (!c) return c;
+  const cleanName = (c.name || '').replace(/\s+/g, '');
+  const master = GOYANG_MASTER_COACHES[cleanName];
+  if (master) {
+    if (!c.photo && master.photo) c.photo = master.photo;
+    if (!c.role && master.role) c.role = master.role;
+  }
+  return c;
+}
+
+// 신규 선수 및 코치 등록 헬퍼 (신규 등장 시 1회 등록으로 전 경기 즉시 연동)
+function registerMasterPlayer(name, data) {
+  const cleanName = (name || '').replace(/\s+/g, '');
+  GOYANG_MASTER_PLAYERS[cleanName] = Object.assign(GOYANG_MASTER_PLAYERS[cleanName] || {}, data);
+}
+
+function registerMasterCoach(name, data) {
+  const cleanName = (name || '').replace(/\s+/g, '');
+  GOYANG_MASTER_COACHES[cleanName] = Object.assign(GOYANG_MASTER_COACHES[cleanName] || {}, data);
+}
+
+// ===========================================================================
 // MATCH REPORTS & LINEUP DATABASE
 // ===========================================================================
 const MATCH_REPORTS = {
@@ -3635,11 +3722,16 @@ function setLineupTeamView(teamKey) {
 
 function renderLineupView(report) {
   const isGoyang = (currentLineupTeamView === 'goyang');
-  const starters = (isGoyang ? report.goyangStarters : report.oppStarters) || [];
-  const subs = (isGoyang ? report.goyangSubs : report.oppSubs) || [];
+  const rawStarters = (isGoyang ? report.goyangStarters : report.oppStarters) || [];
+  const rawSubs = (isGoyang ? report.goyangSubs : report.oppSubs) || [];
+  const rawCoaches = (isGoyang && report.coaches) ? report.coaches : [];
+
+  const starters = isGoyang ? rawStarters.map(p => resolveGoyangPlayer(Object.assign({}, p), report.age)) : rawStarters;
+  const subs = isGoyang ? rawSubs.map(p => resolveGoyangPlayer(Object.assign({}, p), report.age)) : rawSubs;
+  const coaches = isGoyang ? rawCoaches.map(c => resolveGoyangCoach(Object.assign({}, c))) : rawCoaches;
+
   const formation = (isGoyang ? report.goyangFormation : report.oppFormation) || '8인제 포메이션';
   const teamName = isGoyang ? report.home.name : report.away.name;
-  const coaches = (isGoyang && report.coaches) ? report.coaches : [];
 
   // Update Pitch Header
   const titleEl = document.getElementById('pitchTeamTitle');
@@ -3818,6 +3910,7 @@ function renderLineupView(report) {
 }
 
 function renderPitchPlayerNode(p, isGoyang, isGk = false) {
+  if (isGoyang && (!p.photo || !p.heightWeight)) p = resolveGoyangPlayer(Object.assign({}, p));
   let badgeStyle = isGoyang ? (p.isAce ? 'bg-brand-gold text-black ring-2 ring-yellow-200 shadow-[0_0_12px_rgba(255,210,0,0.8)]' : 'bg-yellow-400/90 text-black shadow') : 'bg-cyan-400 text-black shadow';
   if (isGk) badgeStyle = 'bg-emerald-300 text-black shadow';
 
