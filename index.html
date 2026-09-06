@@ -343,7 +343,7 @@
             </div>
           </div>
           <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="status-u10_1" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span id="status-u10_1" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-600">경기종료</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천5A</span>
           </div>
@@ -362,7 +362,7 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_1">0 : 0
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_1">1 : 6
               </div>
               <button onclick="scrapeMatch('u10_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
@@ -573,7 +573,7 @@
             </div>
           </div>
           <div class="flex items-center gap-1 shrink-0 flex-wrap justify-end">
-            <span id="status-u11_1" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+            <span id="status-u11_1" class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40">경기종료</span>
             <span class="px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-300 text-[10px] font-bold border border-[#282D3D]">AWAY</span>
             <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천4A</span>
           </div>
@@ -592,7 +592,7 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u11_1">0 : 0
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u11_1">13 : 0
               </div>
               <button onclick="scrapeMatch('u11_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
@@ -2648,18 +2648,59 @@
         title: '경기 고양주니어 vs 인천 부평유소년 블랙',
         date: '9월 6일 (일) 09:00',
         pitch: '알천5A',
-        status: '경기전',
-        score: '0 : 0',
+        status: '경기종료',
+        score: '1 : 6',
         home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
         away: { name: '인천 부평유소년 블랙', teamKey: 'bupyeong_black', isGoyang: false },
-        goyangFormation: '8인제 포메이션 (등록 대기)',
-        goyangStarters: [],
-        goyangSubs: [],
-        oppFormation: '8인제 포메이션 (등록 대기)',
-        oppStarters: [],
-        oppSubs: [],
-        timeline: [],
-        stats: null
+        goyangFormation: '8인제 2-4-1 (지도자: 코치 백운찬)',
+        goyangStarters: [
+          { pos: 'FW', num: 16, name: '최선우', isAce: true, isCaptain: true, heightWeight: '130cm/29kg', note: '주장(C) 선발' },
+          { pos: 'MF', num: 5, name: '박한별', isAce: false, isCaptain: false, heightWeight: '136cm/29kg', note: '선발 미드필더' },
+          { pos: 'MF', num: 7, name: '박승준', isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 미드필더' },
+          { pos: 'MF', num: 22, name: '진하랑', isAce: false, isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
+          { pos: 'MF', num: 73, name: '임현재', isAce: false, isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
+          { pos: 'DF', num: 18, name: '김태이', isAce: false, isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
+          { pos: 'DF', num: 27, name: '김주한', isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 1\' 선제골!' },
+          { pos: 'GK', num: 12, name: '최현우', isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 (KFA 공식 DF/GK)' }
+        ],
+        goyangSubs: [
+          { pos: 'MF', num: 10, name: '정지훈', isAce: false, isCaptain: false, heightWeight: '127cm/27kg', note: '플라잉교체 투입' }
+        ],
+        oppFormation: '8인제 1-3-3 (감독: 오치원 / 코치: 오상록)',
+        oppStarters: [
+          { pos: 'FW', num: 20, name: '이수찬', isCaptain: true, heightWeight: '149cm/39kg', note: '⚽ 2골 멀티골 (34\', 36\') / 주장(C)' },
+          { pos: 'FW', num: 16, name: '양단우', heightWeight: '136cm/36kg', note: '⚽ 1골 (22\')' },
+          { pos: 'FW', num: 19, name: '반승헌', heightWeight: '165cm/47kg', note: '선발 공격' },
+          { pos: 'MF', num: 21, name: '전오윤', heightWeight: '149cm/38kg', note: '⚽ 2골 멀티골 (9\', 30\')' },
+          { pos: 'MF', num: 17, name: '박예건', heightWeight: '132cm/28kg', note: '선발 미드필더' },
+          { pos: 'MF', num: 23, name: '이서찬', heightWeight: '140cm/35kg', note: '선발 미드필더' },
+          { pos: 'DF', num: 14, name: '이시환', heightWeight: '145cm/47kg', note: '⚽ 1골 (31\')' },
+          { pos: 'GK', num: 12, name: '임지후', heightWeight: '132cm/30kg', note: '선발 골키퍼' }
+        ],
+        oppSubs: [
+          { pos: 'MF', num: 22, name: '김도담', heightWeight: '130cm/30kg', note: '플라잉교체 투입' },
+          { pos: 'FW', num: 15, name: '김기원', heightWeight: '125cm/28kg', note: '플라잉교체 투입' }
+        ],
+        timeline: [
+          { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '알천5A 구장에서 U-10 옐로우 1차전 시작' },
+          { min: "1'", type: 'goal', title: '⚽ 김주한 번개 선제골! (1:0)', desc: '경기 시작 1분 만에 김주한(DF, No.27) 환상적인 선제골 작렬!' },
+          { min: "3'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '부평 블랙 김도담(22) 플라잉교체 투입' },
+          { min: "4'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '부평 블랙 김기원(15) 플라잉교체 투입' },
+          { min: "5'", type: 'sub', title: '🔄 고양주니어 선수 교체', desc: '정지훈(MF, No.10) 플라잉교체 출전' },
+          { min: "9'", type: 'goal', title: '⚽ 부평 블랙 동점골 (1:1)', desc: '부평 블랙 전오윤(21) 득점' },
+          { min: "22'", type: 'goal', title: '⚽ 부평 블랙 역전골 (1:2)', desc: '부평 블랙 양단우(16) 득점' },
+          { min: "30'", type: 'goal', title: '⚽ 부평 블랙 추가골 (1:3)', desc: '부평 블랙 전오윤(21) 멀티골 성공' },
+          { min: "31'", type: 'goal', title: '⚽ 부평 블랙 추가골 (1:4)', desc: '부평 블랙 이시환(14) 득점' },
+          { min: "34'", type: 'goal', title: '⚽ 부평 블랙 추가골 (1:5)', desc: '부평 블랙 주장 이수찬(20) 득점' },
+          { min: "36'", type: 'goal', title: '⚽ 부평 블랙 쐐기골 (1:6)', desc: '부평 블랙 이수찬(20) 멀티골 성공' },
+          { min: "40'", type: 'end', title: '🏁 경기 종료 (1:6)', desc: '경기 종료. 1분 만에 선제골을 터뜨리며 투지를 불태운 고양주니어 옐로우!' }
+        ],
+        stats: {
+          shots: [6, 15],
+          onTarget: [4, 11],
+          corners: [2, 5],
+          fouls: [3, 2]
+        }
       },
       'u10_2': {
         age: 'U-10 옐로우',
@@ -2705,18 +2746,60 @@
         title: '경기 고양주니어 vs 인천 부평유소년 레드',
         date: '9월 6일 (일) 09:00',
         pitch: '알천4A',
-        status: '경기전',
-        score: '0 : 0',
+        status: '경기종료',
+        score: '13 : 0',
         home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
         away: { name: '인천 부평유소년 레드', teamKey: 'bupyeong_red', isGoyang: false },
-        goyangFormation: '8인제 포메이션 (등록 대기)',
-        goyangStarters: [],
-        goyangSubs: [],
-        oppFormation: '8인제 포메이션 (등록 대기)',
-        oppStarters: [],
+        goyangFormation: '8인제 3-2-2 (감독: 정상훈 / 코치: 최정원)',
+        goyangStarters: [
+          { pos: 'FW', num: 9, name: '양시우', isAce: true, isCaptain: false, heightWeight: '130cm/25kg', note: '⚽ 2골 (22\', 29\')' },
+          { pos: 'FW', num: 29, name: '김민준', isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '선발 출전' },
+          { pos: 'MF', num: 14, name: '박주혁', isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '주장(C) 선발' },
+          { pos: 'MF', num: 20, name: '권은율', isAce: true, isCaptain: false, heightWeight: '143cm/30kg', note: '⚽ 4골 포트트릭 (2\', 5\', 14\', 20\')' },
+          { pos: 'DF', num: 8, name: '이선우', isAce: false, isCaptain: false, heightWeight: '134cm/29kg', note: '⚽ 2골 (1\', 15\')' },
+          { pos: 'DF', num: 17, name: '임명훈', isAce: false, isCaptain: false, heightWeight: '140cm/35kg', note: '선발 수비' },
+          { pos: 'DF', num: 30, name: '강현우', isAce: false, isCaptain: false, heightWeight: '152cm/40kg', note: '⚽ 2골 (4\', 13\')' },
+          { pos: 'GK', num: 1, name: '백정훈', isAce: true, isCaptain: false, heightWeight: '160cm/55kg', note: '⚽ 1골 (10\') / 무실점' }
+        ],
+        goyangSubs: [
+          { pos: 'MF', num: 4, name: '김시훈', isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '⚽ 1골 (7\') 플라잉교체' },
+          { pos: 'DF', num: 11, name: '이승민', isAce: false, isCaptain: false, heightWeight: '135cm/33kg', note: '플라잉교체 출전' }
+        ],
+        oppFormation: '8인제 포메이션 (코치: 김기영)',
+        oppStarters: [
+          { pos: 'DF', num: 25, name: '민서형', isCaptain: true, heightWeight: '136cm/30kg', note: '주장(C)' },
+          { pos: 'DF', num: 26, name: '이아준', heightWeight: '141cm/29kg', note: '선발' },
+          { pos: 'DF', num: 27, name: '이응민', heightWeight: '125cm/24kg', note: '선발' },
+          { pos: 'MF', num: 24, name: '신지후', heightWeight: '132cm/31kg', note: '선발' },
+          { pos: 'MF', num: 29, name: '최유준', heightWeight: '134cm/28kg', note: '자책골 (19\')' },
+          { pos: 'FW', num: 32, name: 'NGUYEN NGOC HUNG SON', heightWeight: '145cm/38kg', note: '선발' },
+          { pos: 'FW', num: 36, name: '오하명', heightWeight: '137cm/34kg', note: '선발' }
+        ],
         oppSubs: [],
-        timeline: [],
-        stats: null
+        timeline: [
+          { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '알천4A 구장에서 2026 화랑대기 U-11 와인 1차전 시작' },
+          { min: "1'", type: 'goal', title: '⚽ 이선우 선제골 (1:0)', desc: '이선우(DF, No.8) 경기 시작 1분 만에 시원한 선제 득점!' },
+          { min: "1'", type: 'sub', title: '🔄 고양주니어 플라잉교체', desc: '김시훈(4), 이승민(11) 교체 투입' },
+          { min: "2'", type: 'goal', title: '⚽ 권은율 추가골 (2:0)', desc: '권은율(MF, No.20) 빠른 템포의 추가골 작렬' },
+          { min: "4'", type: 'goal', title: '⚽ 강현우 득점 (3:0)', desc: '강현우(DF, No.30) 수비 라인 침투 후 득점 성공' },
+          { min: "5'", type: 'goal', title: '⚽ 권은율 멀티골 (4:0)', desc: '권은율(MF, No.20) 개인 2호골로 스코어 4:0' },
+          { min: "7'", type: 'goal', title: '⚽ 김시훈 득점 (5:0)', desc: '교체 투입된 김시훈(MF, No.4) 완벽한 피니시로 득점!' },
+          { min: "10'", type: 'goal', title: '⚽ 백정훈 골키퍼 득점! (6:0)', desc: '골키퍼 백정훈(GK, No.1) 전방 직접 슈팅으로 골키퍼 득점 원더골 폭발!' },
+          { min: "13'", type: 'goal', title: '⚽ 강현우 멀티골 (7:0)', desc: '강현우(DF, No.30) 오늘 경기 2번째 골 성공' },
+          { min: "14'", type: 'goal', title: '⚽ 권은율 해트트릭! (8:0)', desc: '권은율(MF, No.20) 14분 만에 해트트릭(3골) 대기록!' },
+          { min: "15'", type: 'goal', title: '⚽ 이선우 멀티골 (9:0)', desc: '이선우(DF, No.8) 침착하게 2호골을 터뜨리며 9:0' },
+          { min: "19'", type: 'goal', title: '⚽ 상대 자책골 유도 (10:0)', desc: '고양주니어의 강력한 압박으로 상대 수비 최유준(29) 자책골' },
+          { min: "20'", type: 'goal', title: '⚽ 권은율 포트트릭 4골! (11:0)', desc: '권은율(MF, No.20) 4골 폭발하며 경기 최고의 활약!' },
+          { min: "22'", type: 'goal', title: '⚽ 양시우 득점 (12:0)', desc: '양시우(FW, No.9) 날카로운 슈팅으로 12번째 골' },
+          { min: "29'", type: 'goal', title: '⚽ 양시우 멀티골 (13:0)', desc: '양시우(FW, No.9) 2호골 쐐기포로 13:0 완성' },
+          { min: "40'", type: 'end', title: '🏁 경기 종료 (13:0 완승)', desc: '고양주니어FC U-11 와인 13:0 무실점 완벽한 대승으로 조 1위 질주!' }
+        ],
+        stats: {
+          shots: [28, 2],
+          onTarget: [21, 0],
+          corners: [8, 1],
+          fouls: [2, 3]
+        }
       },
       'u11_2': {
         age: 'U-11 와인',
