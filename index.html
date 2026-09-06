@@ -1256,15 +1256,15 @@
         </div>
       </div>
 
-      <!-- U-10 / U-11 / U-12 STANDINGS ACCORDIONS -->
+            <!-- U-10 / U-11 / U-12 STANDINGS ACCORDIONS -->
       <div class="space-y-3">
         
-        <!-- 1. U-10 조별 순위표 (4조) -->
+        <!-- 1. U-10 조별 순위표 (12조) -->
         <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-md">
           <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between text-xs">
             <span class="font-black text-white flex items-center gap-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-              U-10 옐로우 (예선 4조 순위표)
+              U-10 옐로우 (예선 12조 실시간 순위표)
             </span>
             <span class="text-[10px] text-brand-gold font-bold bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-500/20">총 4개팀</span>
           </div>
@@ -1278,53 +1278,30 @@
                   <th class="py-1.5 font-bold">승</th>
                   <th class="py-1.5 font-bold">무</th>
                   <th class="py-1.5 font-bold">패</th>
+                  <th class="py-1.5 font-bold text-zinc-300">득실</th>
                   <th class="py-1.5 font-bold text-brand-gold">승점</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
+              <tbody id="standings-body-u10" class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
                 <tr class="bg-yellow-400/5 font-black text-white">
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num">1</span>
-                    <span class="text-brand-gold">경기 고양주니어</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-black text-brand-gold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
-                    <span>인천 부평유소년(블랙)</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
-                    <span>경기 남양주 BEST</span>
+                    <span class="text-brand-gold">경기 고양주니어 (옐로우)</span>
                   </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
-                    <span>대구 TDN(레드)</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
+                  <td>1</td><td>0</td><td>0</td><td>1</td><td>-5</td>
+                  <td class="font-black text-brand-gold font-num">0</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 2. U-11 조별 순위표 (3조) -->
+        <!-- 2. U-11 조별 순위표 (11조) -->
         <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-md">
           <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between text-xs">
             <span class="font-black text-white flex items-center gap-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-              U-11 와인 (예선 3조 순위표)
+              U-11 와인 (예선 11조 실시간 순위표)
             </span>
             <span class="text-[10px] text-red-400 font-bold bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">총 4개팀</span>
           </div>
@@ -1338,53 +1315,30 @@
                   <th class="py-1.5 font-bold">승</th>
                   <th class="py-1.5 font-bold">무</th>
                   <th class="py-1.5 font-bold">패</th>
+                  <th class="py-1.5 font-bold text-zinc-300">득실</th>
                   <th class="py-1.5 font-bold text-brand-gold">승점</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
-                <tr class="bg-yellow-400/5 font-black text-white">
+              <tbody id="standings-body-u11" class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
+                <tr class="bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30">
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num">1</span>
-                    <span class="text-brand-gold">경기 고양주니어</span>
+                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num shadow-sm">1</span>
+                    <span class="text-brand-gold">경기 고양주니어 (와인)</span>
                   </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-black text-brand-gold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
-                    <span>인천 부평유소년(레드)</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
-                    <span>경기 염기훈 주니어</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
-                    <span>대구 TDN(블루)</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
+                  <td>1</td><td>1</td><td>0</td><td>0</td><td class="text-emerald-400 font-bold">+13</td>
+                  <td class="font-black text-brand-gold font-num">3</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 3. U-12 조별 순위표 (2조) -->
+        <!-- 3. U-12 조별 순위표 (1부 4조) -->
         <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-md">
           <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between text-xs">
             <span class="font-black text-white flex items-center gap-1.5">
               <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-              U-12 대표 (예선 2조 순위표)
+              U-12 대표 (예선 1부 4조 실시간 순위표)
             </span>
             <span class="text-[10px] text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">총 5개팀</span>
           </div>
@@ -1398,49 +1352,18 @@
                   <th class="py-1.5 font-bold">승</th>
                   <th class="py-1.5 font-bold">무</th>
                   <th class="py-1.5 font-bold">패</th>
+                  <th class="py-1.5 font-bold text-zinc-300">득실</th>
                   <th class="py-1.5 font-bold text-brand-gold">승점</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
+              <tbody id="standings-body-u12" class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
                 <tr class="bg-yellow-400/5 font-black text-white">
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num">1</span>
                     <span class="text-brand-gold">경기 고양주니어</span>
                   </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
+                  <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
                   <td class="font-black text-brand-gold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
-                    <span>강원 속초시 체육회</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
-                    <span>세종 공공SC</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
-                    <span>서울 K리거 강용FC</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
-                </tr>
-                <tr>
-                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
-                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">5</span>
-                    <span>경기 이천유나이티드</span>
-                  </td>
-                  <td>0</td><td>0</td><td>0</td><td>0</td>
-                  <td class="font-bold font-num">0</td>
                 </tr>
               </tbody>
             </table>
@@ -2423,7 +2346,7 @@
       fetchGyeongjuWeather(false);
     }, 600000);
 
-        // ==================== HWARANG DAEGI OFFICIAL SUPABASE SYNC ENGINE ====================
+            // ==================== HWARANG DAEGI OFFICIAL SUPABASE SYNC ENGINE ====================
     const SUPABASE_URL = 'https://dwovfqctnujfbduglcdr.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3b3ZmcWN0bnVqZmJkdWdsY2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MzczNDUsImV4cCI6MjEwMzIxMzM0NX0.VdyFAPZ7DgGRhZd7RbYkeoNqAQuxURzT69gzceh8zCk';
 
@@ -2443,6 +2366,142 @@
       'u12_4': { cat: 'U12', match_no: 328, goyangIsHome: true, name: 'U-12 대표 4경기' }
     };
 
+    // 조별 순위표 실시간 계산 그룹 정의 (전 경기 상대팀 포함)
+    const STANDINGS_GROUPS = {
+      u10: {
+        cat: 'U11',
+        tbodyId: 'standings-body-u10',
+        teams: [
+          { id: 'goyang', name: '경기고양주니어FCU12옐로우', disp: '경기 고양주니어 (옐로우)', isGoyang: true },
+          { id: 'bupyeong', name: '인천부평유소년축구단U12U11블랙', disp: '인천 부평유소년(블랙)', isGoyang: false },
+          { id: 'namyangju', name: '경기남양주BESTFCU12', disp: '경기 남양주 BEST', isGoyang: false },
+          { id: 'tdn', name: '대구TDNU12레드', disp: '대구 TDN(레드)', isGoyang: false }
+        ],
+        matches: [
+          { no: 23, home: '경기남양주BESTFCU12', away: '대구TDNU12레드' },
+          { no: 24, home: '인천부평유소년축구단U12U11블랙', away: '경기고양주니어FCU12옐로우' },
+          { no: 123, home: '대구TDNU12레드', away: '인천부평유소년축구단U12U11블랙' },
+          { no: 124, home: '경기고양주니어FCU12옐로우', away: '경기남양주BESTFCU12' },
+          { no: 223, home: '대구TDNU12레드', away: '경기고양주니어FCU12옐로우' },
+          { no: 224, home: '인천부평유소년축구단U12U11블랙', away: '경기남양주BESTFCU12' }
+        ]
+      },
+      u11: {
+        cat: 'U11',
+        tbodyId: 'standings-body-u11',
+        teams: [
+          { id: 'goyang', name: '경기고양주니어FCU12와인', disp: '경기 고양주니어 (와인)', isGoyang: true },
+          { id: 'bupyeong', name: '인천부평유소년축구단U12U11레드', disp: '인천 부평유소년(레드)', isGoyang: false },
+          { id: 'yeom', name: '경기염기훈주니어축구클럽U12', disp: '경기 염기훈 주니어', isGoyang: false },
+          { id: 'tdn', name: '대구TDNU12블루', disp: '대구 TDN(블루)', isGoyang: false }
+        ],
+        matches: [
+          { no: 21, home: '경기염기훈주니어축구클럽U12', away: '대구TDNU12블루' },
+          { no: 22, home: '인천부평유소년축구단U12U11레드', away: '경기고양주니어FCU12와인' },
+          { no: 121, home: '대구TDNU12블루', away: '인천부평유소년축구단U12U11레드' },
+          { no: 122, home: '경기고양주니어FCU12와인', away: '경기염기훈주니어축구클럽U12' },
+          { no: 221, home: '대구TDNU12블루', away: '경기고양주니어FCU12와인' },
+          { no: 222, home: '경기염기훈주니어축구클럽U12', away: '인천부평유소년축구단U12U11레드' }
+        ]
+      },
+      u12: {
+        cat: 'U12',
+        tbodyId: 'standings-body-u12',
+        teams: [
+          { id: 'goyang', name: '경기고양주니어FCU12', disp: '경기 고양주니어', isGoyang: true },
+          { id: 'sokcho', name: '강원속초시체육회U12', disp: '강원 속초시 체육회', isGoyang: false },
+          { id: 'sejong', name: '세종공공SCU12', disp: '세종 공공SC', isGoyang: false },
+          { id: 'gangyong', name: '서울K리거강용FC', disp: '서울 K리거 강용FC', isGoyang: false },
+          { id: 'icheon', name: '경기이천유나이티드풋볼클럽U12', disp: '경기 이천유나이티드', isGoyang: false }
+        ],
+        matches: [
+          { no: 7, home: '서울K리거강용FC', away: '경기이천유나이티드풋볼클럽U12' },
+          { no: 8, home: '세종공공SCU12', away: '강원속초시체육회U12' },
+          { no: 87, home: '강원속초시체육회U12', away: '경기고양주니어FCU12' },
+          { no: 88, home: '세종공공SCU12', away: '서울K리거강용FC' },
+          { no: 167, home: '경기고양주니어FCU12', away: '세종공공SCU12' },
+          { no: 168, home: '경기이천유나이티드풋볼클럽U12', away: '강원속초시체육회U12' },
+          { no: 247, home: '경기이천유나이티드풋볼클럽U12', away: '세종공공SCU12' },
+          { no: 248, home: '서울K리거강용FC', away: '경기고양주니어FCU12' },
+          { no: 327, home: '강원속초시체육회U12', away: '서울K리거강용FC' },
+          { no: 328, home: '경기고양주니어FCU12', away: '경기이천유나이티드풋볼클럽U12' }
+        ]
+      }
+    };
+
+    function renderGroupStandings(rows) {
+      const map = {};
+      rows.forEach(x => { map[x.cat + '|' + x.match_no] = x; });
+
+      Object.values(STANDINGS_GROUPS).forEach(grp => {
+        const tbody = document.getElementById(grp.tbodyId);
+        if (!tbody) return;
+
+        const teamStats = {};
+        grp.teams.forEach(t => {
+          teamStats[t.name] = { ...t, P: 0, W: 0, D: 0, L: 0, GF: 0, GA: 0, GD: 0, Pts: 0 };
+        });
+
+        grp.matches.forEach(m => {
+          const r = map[grp.cat + '|' + m.no];
+          if (r && r.home_score != null && r.away_score != null) {
+            const hs = parseInt(r.home_score, 10);
+            const as = parseInt(r.away_score, 10);
+            const h = teamStats[m.home];
+            const a = teamStats[m.away];
+            if (h && a) {
+              h.P++; a.P++;
+              h.GF += hs; h.GA += as;
+              a.GF += as; a.GA += hs;
+              if (hs > as) { h.W++; a.L++; h.Pts += 3; }
+              else if (hs < as) { a.W++; h.L++; a.Pts += 3; }
+              else { h.D++; a.D++; h.Pts++; a.Pts++; }
+            }
+          }
+        });
+
+        Object.values(teamStats).forEach(t => { t.GD = t.GF - t.GA; });
+
+        // 정렬: 승점 높은 순 -> 득실 높은 순 -> 다득점 순
+        const sorted = Object.values(teamStats).sort((a, b) => {
+          return (b.Pts - a.Pts) || (b.GD - a.GD) || (b.GF - a.GF);
+        });
+
+        tbody.innerHTML = sorted.map((t, idx) => {
+          const rank = idx + 1;
+          const rankBadge = rank === 1
+            ? `<span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num shadow-sm">1</span>`
+            : `<span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">${rank}</span>`;
+          
+          const rowBg = t.isGoyang
+            ? 'bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30'
+            : 'text-zinc-200';
+          
+          const nameHtml = t.isGoyang
+            ? `<span class="text-brand-gold font-black">${t.disp}</span>`
+            : `<span>${t.disp}</span>`;
+
+          const gdStr = t.GD > 0 ? `+${t.GD}` : `${t.GD}`;
+          const gdClass = t.GD > 0 ? 'text-emerald-400 font-bold' : (t.GD < 0 ? 'text-zinc-400' : 'text-zinc-400');
+
+          return `
+            <tr class="${rowBg} transition">
+              <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                ${rankBadge}
+                ${nameHtml}
+              </td>
+              <td class="font-num">${t.P}</td>
+              <td class="font-num">${t.W}</td>
+              <td class="font-num">${t.D}</td>
+              <td class="font-num">${t.L}</td>
+              <td class="font-num ${gdClass}">${gdStr}</td>
+              <td class="font-black text-brand-gold font-num">${t.Pts}</td>
+            </tr>
+          `;
+        }).join('');
+      });
+    }
+
     async function syncTournamentScores(silent = false) {
       try {
         const url = `${SUPABASE_URL}/rest/v1/match_results?select=stage,cat,phase,match_no,home_score,away_score,status,home_pk,away_pk&stage=eq.stage2`;
@@ -2455,6 +2514,7 @@
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const rows = await res.json();
 
+        // 1. 경기 카드 스코어 및 뱃지 업데이트
         let updatedCount = 0;
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
@@ -2463,7 +2523,6 @@
               const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
               const hasScore = (goyangScore != null && oppScore != null);
 
-              // 1. Update MATCH_REPORTS memory object
               if (typeof MATCH_REPORTS !== 'undefined' && MATCH_REPORTS[key]) {
                 if (hasScore) {
                   MATCH_REPORTS[key].score = `${goyangScore} : ${oppScore}`;
@@ -2475,7 +2534,6 @@
                 }
               }
 
-              // 2. Update Card Score element
               const scoreEl = document.getElementById(`score-${key}`);
               if (scoreEl && hasScore) {
                 scoreEl.textContent = `${goyangScore} : ${oppScore}`;
@@ -2489,7 +2547,6 @@
                 updatedCount++;
               }
 
-              // 3. Update Card Status badge
               const statusEl = document.getElementById(`status-${key}`);
               if (statusEl) {
                 if (r.status === 'fin') {
@@ -2504,7 +2561,10 @@
           }
         });
 
-        // 4. Update modal if currently open
+        // 2. 조별 순위표(Tab 5) 실시간 동적 계산 및 테이블 렌더링
+        renderGroupStandings(rows);
+
+        // 3. 모달 열려있을 시 모달 갱신
         if (typeof activeModalMatchId !== 'undefined' && typeof MATCH_REPORTS !== 'undefined' && MATCH_REPORTS[activeModalMatchId]) {
           const rep = MATCH_REPORTS[activeModalMatchId];
           const mScore = document.getElementById('modalScoreDisplay');
@@ -2532,7 +2592,6 @@
       const icon = document.getElementById('masterSyncIcon');
       if (icon) icon.classList.add('fa-spin');
 
-      // Concurrently fetch weather and live tournament scores
       fetchGyeongjuWeather(false);
       const updatedCount = await syncTournamentScores(false);
 
@@ -2541,7 +2600,7 @@
 
       if (isManual) {
         if (updatedCount >= 0) {
-          showToast(`화랑대기 공식 스코어보드 & 날씨 동기화 완료! ⚽ (업데이트 ${updatedCount}경기)`);
+          showToast(`화랑대기 공식 스코어보드 & 조순위 동기화 완료! ⚽ (업데이트 ${updatedCount}경기)`);
         } else {
           showToast('공식 대회 서버와 일시적 연결 지연입니다. 잠시 후 다시 시도해주세요.');
         }
