@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>2026 ?붾옉?湲??꾧뎅?좎냼?꾩텞援щ???- 怨좎뼇二쇰땲?퀳C</title>
+  <title>2026 화랑대기 전국유소년축구대회 - 고양주니어FC</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -27,18 +27,19 @@
           <i class="fa-solid fa-futbol text-sm"></i>
         </div>
         <div>
-          <h1 class="text-xs font-black tracking-wider text-zinc-400 uppercase">2026 ?붾옉?湲??꾧뎅???/h1>
+          <h1 class="text-xs font-black tracking-wider text-zinc-400 uppercase">2026 화랑대기 전국대회</h1>
           <div class="text-sm font-black text-white flex items-center gap-1.5">
-            <span class="gold-gradient-text">怨좎뼇二쇰땲?퀳C</span>
-            <span class="text-[10px] px-1.5 py-0.2 rounded bg-yellow-400/20 text-yellow-300 font-bold border border-yellow-500/30">寃쎌＜</span>
+            <span class="gold-gradient-text">고양주니어FC</span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded bg-yellow-400/20 text-yellow-300 font-bold border border-yellow-500/30">경주</span>
           </div>
         </div>
       </div>
       <div class="flex items-center gap-2">
         <div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#161922] border border-[#282D3D] text-[10px] text-zinc-400 font-bold">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-          <span>?ㅻ뒛</span>
-          <strong id="todayVisitors" class="text-white">1,248</strong>紐?        </div>
+          <span>오늘</span>
+          <strong id="todayVisitors" class="text-white">1,248</strong>명
+        </div>
         <button onclick="shareKakaoOrUrl()" class="w-8 h-8 rounded-xl bg-[#161922] border border-[#282D3D] text-zinc-300 hover:text-white flex items-center justify-center active:scale-95 transition">
           <i class="fa-solid fa-share-nodes text-xs"></i>
         </button>
@@ -49,115 +50,113 @@
   <!-- MAIN CONTAINER -->
   <main class="max-w-md mx-auto px-3.5 pt-3.5 space-y-4">
 
-    <!-- LIVE D-DAY & CHEER HERO BANNER -->
+    <!-- LIVE D-DAY & HERO BANNER -->
     <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-600/30 via-[#161922] to-yellow-900/20 p-4 border border-yellow-500/30 shadow-xl">
       <div class="flex items-center justify-between">
         <div class="space-y-1">
           <div class="flex items-center gap-1.5">
-            <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/40 text-[10px] font-black animate-pulse">LIVE 寃쎄린 ?덈궡</span>
-            <span class="text-[11px] text-zinc-400 font-bold">9??6??11??/span>
+            <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/40 text-[10px] font-black animate-pulse">LIVE 경기 안내</span>
+            <span class="text-[11px] text-zinc-400 font-bold">9월 6일~11일</span>
           </div>
           <h2 class="text-lg font-black text-white leading-tight">
-            ?밸━瑜??ν븳 李щ????꾩쟾!<br>
-            <span class="gold-gradient-text">?먰? 怨좎뼇二쇰땲???뚯씠??</span>
+            승리를 향한 찬란한 도전!<br>
+            <span class="gold-gradient-text">원팀 고양주니어 파이팅!</span>
           </h2>
         </div>
         <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400/20 to-amber-500/10 border border-yellow-500/30 flex flex-col items-center justify-center text-center shadow-inner">
-          <span class="text-[9px] text-yellow-300 font-bold">??뚭린媛?/span>
-          <span class="text-xs font-black text-white">6?쇨컙</span>
+          <span class="text-[9px] text-yellow-300 font-bold">대회기간</span>
+          <span class="text-xs font-black text-white">6일간</span>
         </div>
       </div>
 
-      <!-- Quick Action Buttons -->
       <div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/5 text-center">
         <button onclick="scrollToSection('tab-section')" class="py-2 px-1 rounded-xl bg-[#12151E] hover:bg-[#1E222E] border border-white/10 text-[11px] font-bold text-zinc-300 flex items-center justify-center gap-1 active:scale-95 transition">
-          <i class="fa-solid fa-calendar-days text-yellow-400"></i> 寃쎄린?쇱젙
+          <i class="fa-solid fa-calendar-days text-yellow-400"></i> 경기일정
         </button>
         <button onclick="scrollToSection('cheer-section')" class="py-2 px-1 rounded-xl bg-[#12151E] hover:bg-[#1E222E] border border-white/10 text-[11px] font-bold text-zinc-300 flex items-center justify-center gap-1 active:scale-95 transition">
-          <i class="fa-solid fa-heart text-red-400"></i> ?묒썝??        </button>
+          <i class="fa-solid fa-heart text-red-400"></i> 응원톡
+        </button>
         <button onclick="scrollToSection('food-section')" class="py-2 px-1 rounded-xl bg-[#12151E] hover:bg-[#1E222E] border border-white/10 text-[11px] font-bold text-zinc-300 flex items-center justify-center gap-1 active:scale-95 transition">
-          <i class="fa-solid fa-utensils text-orange-400"></i> 二쇰?留쏆쭛
+          <i class="fa-solid fa-utensils text-orange-400"></i> 주변맛집
         </button>
       </div>
     </div>
 
-    <!-- STAGE SWITCHER (1李??덉꽑 / 2李?蹂몄꽑) -->
+    <!-- STAGE SWITCHER (1차 예선 / 2차 본선) -->
     <div class="grid grid-cols-2 gap-1.5 p-1 rounded-2xl bg-[#12151E] border border-[#282D3D]">
       <button id="stageBtn-prelim" onclick="switchStage('prelim')" class="py-2.5 rounded-xl font-black text-xs transition active:scale-95 flex items-center justify-center gap-1.5 bg-gradient-to-r from-yellow-400 to-amber-500 text-black shadow-lg shadow-yellow-500/20">
         <i class="fa-solid fa-flag-checkered"></i>
-        <span>1李??덉꽑 議곕퀎由ш렇</span>
+        <span>1차 예선 조별리그</span>
       </button>
       <button id="stageBtn-final" onclick="switchStage('final')" class="py-2.5 rounded-xl font-black text-xs text-zinc-400 hover:text-white transition active:scale-95 flex items-center justify-center gap-1.5">
         <i class="fa-solid fa-trophy"></i>
-        <span>2李?蹂몄꽑 ?좊꼫癒쇳듃</span>
+        <span>2차 본선 토너먼트</span>
       </button>
     </div>
 
-    <!-- TOURNAMENT TABS (U-10 / U-11 / U-12 / 議곗닚?? -->
+    <!-- TOURNAMENT TABS -->
     <section id="tab-section" class="space-y-3">
       <div class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-black">
         <button id="tabBtn-u10" onclick="switchTab('u10')" class="px-3.5 py-2 rounded-xl border border-[#282D3D] bg-[#161922] text-zinc-400 hover:text-white shrink-0 transition active:scale-95">
-          U-10 ?먮줈??        </button>
+          U-10 옐로우
+        </button>
         <button id="tabBtn-u11" onclick="switchTab('u11')" class="px-3.5 py-2 rounded-xl border border-[#282D3D] bg-[#161922] text-zinc-400 hover:text-white shrink-0 transition active:scale-95">
-          U-11 ???        </button>
+          U-11 와인
+        </button>
         <button id="tabBtn-u12" onclick="switchTab('u12')" class="px-3.5 py-2 rounded-xl border border-yellow-400 bg-yellow-400 text-black shadow-md shrink-0 transition active:scale-95">
-          U-12 ???        </button>
+          U-12 대표
+        </button>
         <button id="tabBtn-standings" onclick="switchTab('standings')" class="px-3.5 py-2 rounded-xl border border-[#282D3D] bg-[#161922] text-zinc-400 hover:text-white shrink-0 transition active:scale-95">
-          ?곕━? 議곗닚??        </button>
+          우리팀 조순위
+        </button>
         <button id="tabBtn-all_standings" onclick="switchTab('all_standings')" class="px-3.5 py-2 rounded-xl border border-[#282D3D] bg-[#161922] text-zinc-400 hover:text-white shrink-0 transition active:scale-95">
-          ?ㅻⅨ議??쒖쐞
+          다른조 순위
         </button>
       </div>
 
-      <!-- MATCH CARDS CONTAINER -->
-      <div id="matchCardsContainer" class="space-y-3.5">
-        <!-- Rendered dynamically by JavaScript -->
-      </div>
+      <!-- DYNAMIC MATCH CARDS CONTAINER -->
+      <div id="matchCardsContainer" class="space-y-3.5"></div>
     </section>
 
-    <!-- CHEERING SECTION (?묒썝??& ?섑듃 蹂대궡湲? -->
+    <!-- CHEERING SECTION (응원톡 & 하트 보내기) -->
     <section id="cheer-section" class="rounded-3xl bg-gradient-to-b from-[#161922] to-[#12151E] p-4 border border-[#282D3D] shadow-xl space-y-3.5">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
           <h3 class="text-sm font-black text-white flex items-center gap-1.5">
-            <span>?ㅼ떆媛??좎닔???묒썝??/span>
+            <span>실시간 선수단 응원톡</span>
             <span class="text-[10px] px-2 py-0.2 rounded-full bg-red-500/20 text-red-400 font-bold border border-red-500/30">CLOUD</span>
           </h3>
         </div>
         <div class="text-[11px] text-zinc-400 font-bold flex items-center gap-1">
           <i class="fa-solid fa-heart text-red-500 animate-bounce"></i>
-          <span>珥??묒썝</span>
-          <strong id="cheerCount" class="text-white font-num text-xs">2,840</strong>??        </div>
+          <span>총 응원</span>
+          <strong id="cheerCount" class="text-white font-num text-xs">2,840</strong>회
+        </div>
       </div>
 
-      <!-- Cheer Button with Floating Confetti -->
       <div class="relative text-center">
         <div id="floatingHeartsContainer"></div>
         <button id="cheerBtn" onclick="sendCheer(event)" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 text-white font-black text-sm flex items-center justify-center gap-2 shadow-lg shadow-red-500/30 active:scale-95 transition cursor-pointer">
           <i id="heartIcon" class="fa-solid fa-heart text-base transition-transform"></i>
-          <span>怨좎뼇二쇰땲???묒썝 ?섑듃 蹂대궡湲?(+1)</span>
+          <span>고양주니어 응원 하트 보내기 (+1)</span>
         </button>
       </div>
 
-      <!-- Cheer Comment Form -->
       <form onsubmit="return addCheerComment(event)" class="space-y-2">
         <div class="grid grid-cols-4 gap-2">
-          <input type="text" id="cheerAuthor" placeholder="?묒꽦?? maxlength="10" required class="col-span-1 px-2.5 py-2 rounded-xl bg-[#0B0D14] border border-[#282D3D] text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-400 font-bold">
-          <input type="text" id="cheerText" placeholder="?좎닔?ㅼ뿉寃??섏씠 ?섎뒗 ?쒕쭏?붾? ?④꺼二쇱꽭??" maxlength="50" required class="col-span-3 px-3 py-2 rounded-xl bg-[#0B0D14] border border-[#282D3D] text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-400">
+          <input type="text" id="cheerAuthor" placeholder="작성자" maxlength="10" required class="col-span-1 px-2.5 py-2 rounded-xl bg-[#0B0D14] border border-[#282D3D] text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-400 font-bold">
+          <input type="text" id="cheerText" placeholder="선수들에게 힘이 되는 한마디를 남겨주세요!" maxlength="50" required class="col-span-3 px-3 py-2 rounded-xl bg-[#0B0D14] border border-[#282D3D] text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-400">
         </div>
         <button type="submit" class="w-full py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-yellow-300 font-bold text-xs flex items-center justify-center gap-1 border border-yellow-500/20 active:scale-95 transition">
-          <i class="fa-solid fa-paper-plane text-[10px]"></i> ?묒썝 硫붿떆吏 ?깅줉
+          <i class="fa-solid fa-paper-plane text-[10px]"></i> 응원 메시지 등록
         </button>
       </form>
 
-      <!-- Cheer Comments Feed -->
-      <div id="cheerCommentsList" class="space-y-2 max-h-72 overflow-y-auto no-scrollbar pt-1">
-        <!-- Rendered dynamically -->
-      </div>
+      <div id="cheerCommentsList" class="space-y-2 max-h-72 overflow-y-auto no-scrollbar pt-1"></div>
     </section>
 
-    <!-- LIVE TRANSIT ESTIMATOR TO ILSAN (怨좎뼇 ?쇱궛 蹂듦? ?ㅼ떆媛??뚯슂?쒓컙) -->
+    <!-- LIVE TRANSIT ESTIMATOR TO ILSAN -->
     <section class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] shadow-lg space-y-2.5">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -165,15 +164,15 @@
             <i class="fa-solid fa-car"></i>
           </div>
           <div>
-            <div class="text-xs font-black text-white">寃쎌＜ ??怨좎뼇 ?쇱궛 ?ㅼ떆媛?援먰넻</div>
-            <div class="text-[10px] text-zinc-400">寃쎈?/以묐??대쪠/?섎룄沅뚯젣1?쒗솚 湲곗?</div>
+            <div class="text-xs font-black text-white">경주 ➔ 고양 일산 실시간 교통</div>
+            <div class="text-[10px] text-zinc-400">경부/중부내륙/수도권제1순환 기준</div>
           </div>
         </div>
-        <span id="ilsanTrafficBadge" class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">?먰솢</span>
+        <span id="ilsanTrafficBadge" class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">원활</span>
       </div>
       <div class="flex items-baseline justify-between pt-1">
-        <div class="text-2xl font-black text-white font-num" id="ilsanDurationDisplay">3?쒓컙 45遺?/div>
-        <div class="text-xs text-zinc-400 font-bold" id="ilsanArrivalTime">?덉긽 ?꾩갑 <span class="text-white" id="ilsanArrivalVal">--:--</span></div>
+        <div class="text-2xl font-black text-white font-num" id="ilsanDurationDisplay">3시간 45분</div>
+        <div class="text-xs text-zinc-400 font-bold" id="ilsanArrivalTime">예상 도착 <span class="text-white" id="ilsanArrivalVal">--:--</span></div>
       </div>
       <div class="w-full bg-zinc-800 rounded-full h-1.5 overflow-hidden flex">
         <div id="ilsanBarSmooth" class="bg-emerald-500 h-full" style="width: 75%"></div>
@@ -182,22 +181,22 @@
       </div>
     </section>
 
-    <!-- FOOD & RESTAURANTS (異붿쿇 留쏆쭛) -->
+    <!-- FOOD & RESTAURANTS -->
     <section id="food-section" class="space-y-3">
       <div class="flex items-center justify-between px-1">
         <h3 class="text-sm font-black text-white flex items-center gap-1.5">
           <span class="w-2 h-4 bg-orange-500 rounded-sm"></span>
-          ?좎닔??& ?숇?紐?異붿쿇 留쏆쭛
+          선수단 & 학부모 추천 맛집
         </h3>
-        <span class="text-[11px] text-orange-400 font-bold">寃쎌＜ ???癒밴굅由?/span>
+        <span class="text-[11px] text-orange-400 font-bold">경주 대표 먹거리</span>
       </div>
 
       <div class="grid grid-cols-2 gap-2">
         <a href="https://m.map.kakao.com/actions/searchView?q=%EC%9D%8C%EC%8B%9D%EC%A0%90&around=true" target="_blank" class="py-2.5 px-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
-          <i class="fa-solid fa-location-arrow text-[11px]"></i> 移댁뭅?ㅻ㏊ 二쇰? 留쏆쭛
+          <i class="fa-solid fa-location-arrow text-[11px]"></i> 카카오맵 주변 맛집
         </a>
         <a href="https://m.map.naver.com/search2/search.naver?query=%EC%9D%8C%EC%8B%9D%EC%A0%90" target="_blank" class="py-2.5 px-2 rounded-xl bg-green-500 text-white text-xs font-black flex items-center justify-center gap-1.5 shadow active:scale-95 transition">
-          <i class="fa-solid fa-map-location-dot text-[11px]"></i> ?ㅼ씠踰?二쇰? 留쏆쭛
+          <i class="fa-solid fa-map-location-dot text-[11px]"></i> 네이버 주변 맛집
         </a>
       </div>
 
@@ -205,27 +204,27 @@
         <div class="rounded-2xl bg-[#161922] p-3 border border-[#282D3D] flex flex-col justify-between space-y-2">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-[9px] bg-red-500/20 text-red-300 font-bold px-1.5 py-0.2 rounded">?숈냼 ?꾨낫 3遺?/span>
+              <span class="text-[9px] bg-red-500/20 text-red-300 font-bold px-1.5 py-0.2 rounded">숙소 도보 3분</span>
               <span class="text-[10px] text-amber-400 font-bold"><i class="fa-solid fa-star"></i> 4.8</span>
             </div>
-            <h4 class="text-xs font-black text-white mt-1">?⑥뼇吏?蹂대Ц蹂몄젏</h4>
-            <p class="text-[10px] text-zinc-400 mt-0.5">90???꾪넻 ?쒖슦臾쇳쉶, 移섏쫰遺덇퀬湲?/p>
+            <h4 class="text-xs font-black text-white mt-1">함양집 보문본점</h4>
+            <p class="text-[10px] text-zinc-400 mt-0.5">90년 전통 한우물회, 치즈불고기</p>
           </div>
-          <a href="tmap://search?name=?⑥뼇吏?蹂대Ц蹂몄젏" onclick="openTmap('?⑥뼇吏?蹂대Ц蹂몄젏', event)" class="w-full py-1.5 rounded-xl bg-[#1E222E] text-yellow-300 text-[11px] font-bold flex items-center justify-center gap-1 border border-[#3A4259] active:scale-95 transition">
-            <i class="fa-solid fa-location-arrow text-teal-400 text-[10px]"></i> ?곕㏊
+          <a href="tmap://search?name=함양집+보문본점" onclick="openTmap('함양집 보문본점', event)" class="w-full py-1.5 rounded-xl bg-[#1E222E] text-yellow-300 text-[11px] font-bold flex items-center justify-center gap-1 border border-[#3A4259] active:scale-95 transition">
+            <i class="fa-solid fa-location-arrow text-teal-400 text-[10px]"></i> 티맵
           </a>
         </div>
         <div class="rounded-2xl bg-[#161922] p-3 border border-[#282D3D] flex flex-col justify-between space-y-2">
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-[9px] bg-yellow-500/20 text-yellow-300 font-bold px-1.5 py-0.2 rounded">?숈냼 ?꾨낫 4遺?/span>
+              <span class="text-[9px] bg-yellow-500/20 text-yellow-300 font-bold px-1.5 py-0.2 rounded">숙소 도보 4분</span>
               <span class="text-[10px] text-amber-400 font-bold"><i class="fa-solid fa-star"></i> 4.7</span>
             </div>
-            <h4 class="text-xs font-black text-white mt-1">寃쎌＜ 留룸룎?쒕몢遺</h4>
-            <p class="text-[10px] text-zinc-400 mt-0.5">?대Ъ?쒕몢遺李뚭컻, ?듬뤌吏諛붾쿋??/p>
+            <h4 class="text-xs font-black text-white mt-1">경주 맷돌순두부</h4>
+            <p class="text-[10px] text-zinc-400 mt-0.5">해물순두부찌개, 통돼지바베큐</p>
           </div>
-          <a href="tmap://search?name=寃쎌＜+留룸룎?쒕몢遺" onclick="openTmap('寃쎌＜ 留룸룎?쒕몢遺', event)" class="w-full py-1.5 rounded-xl bg-[#1E222E] text-yellow-300 text-[11px] font-bold flex items-center justify-center gap-1 border border-[#3A4259] active:scale-95 transition">
-            <i class="fa-solid fa-location-arrow text-teal-400 text-[10px]"></i> ?곕㏊
+          <a href="tmap://search?name=경주+맷돌순두부" onclick="openTmap('경주 맷돌순두부', event)" class="w-full py-1.5 rounded-xl bg-[#1E222E] text-yellow-300 text-[11px] font-bold flex items-center justify-center gap-1 border border-[#3A4259] active:scale-95 transition">
+            <i class="fa-solid fa-location-arrow text-teal-400 text-[10px]"></i> 티맵
           </a>
         </div>
       </div>
@@ -236,253 +235,246 @@
   <!-- LINEUP & MATCH REPORT MODAL -->
   <div id="lineupModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
     <div class="w-full max-w-lg bg-[#12151E] rounded-t-3xl sm:rounded-3xl border border-[#282D3D] max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-      <!-- Modal Header -->
       <div class="p-4 border-b border-[#282D3D] flex items-center justify-between bg-[#161922]">
         <div>
-          <span id="modalAgeBadge" class="text-[10px] font-black px-2 py-0.5 rounded bg-yellow-400/20 text-yellow-300 border border-yellow-500/30">U-12 ???/span>
-          <h3 id="modalTitle" class="text-sm font-black text-white mt-1">寃쎄린 ?곸꽭 ?뺣낫</h3>
+          <span id="modalAgeBadge" class="text-[10px] font-black px-2 py-0.5 rounded bg-yellow-400/20 text-yellow-300 border border-yellow-500/30">U-12 대표</span>
+          <h3 id="modalTitle" class="text-sm font-black text-white mt-1">경기 상세 정보</h3>
         </div>
         <button onclick="closeLineupModal()" class="w-8 h-8 rounded-full bg-[#1E222E] text-zinc-400 hover:text-white flex items-center justify-center active:scale-95 transition">
           <i class="fa-solid fa-xmark text-sm"></i>
         </button>
       </div>
 
-      <!-- Scoreboard Banner -->
       <div class="p-3 bg-gradient-to-r from-yellow-950/40 via-[#161922] to-amber-950/40 border-b border-[#282D3D] flex items-center justify-around text-center">
         <div class="w-2/5">
-          <div id="modalHomeName" class="text-xs font-black text-white truncate">寃쎄린 怨좎뼇二쇰땲??/div>
+          <div id="modalHomeName" class="text-xs font-black text-white truncate">경기 고양주니어</div>
         </div>
         <div class="w-1/5">
           <div id="modalScoreDisplay" class="text-lg font-black text-yellow-400 font-num">6 : 0</div>
-          <span id="modalStatusBadge" class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300">寃쎄린醫낅즺</span>
+          <span id="modalStatusBadge" class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-500/20 text-blue-300">경기종료</span>
         </div>
         <div class="w-2/5">
-          <div id="modalAwayName" class="text-xs font-black text-zinc-300 truncate">媛뺤썝 ?띿큹??泥댁쑁??/div>
+          <div id="modalAwayName" class="text-xs font-black text-zinc-300 truncate">강원 속초시 체육회</div>
         </div>
       </div>
 
-      <!-- Sub Tabs: Lineup / Timeline / Stats -->
       <div class="grid grid-cols-3 gap-1 p-2 bg-[#0B0D14] border-b border-[#282D3D] text-xs font-bold text-center">
-        <button id="modalTab-lineup" onclick="setModalSubTab('lineup')" class="py-1.5 rounded-lg bg-yellow-400 text-black font-black transition">?좎닔紐낅떒</button>
-        <button id="modalTab-timeline" onclick="setModalSubTab('timeline')" class="py-1.5 rounded-lg text-zinc-400 hover:text-white transition">寃쎄린??꾨씪??/button>
-        <button id="modalTab-stats" onclick="setModalSubTab('stats')" class="py-1.5 rounded-lg text-zinc-400 hover:text-white transition">寃쎄린湲곕줉</button>
+        <button id="modalTab-lineup" onclick="setModalSubTab('lineup')" class="py-1.5 rounded-lg bg-yellow-400 text-black font-black transition">선수명단</button>
+        <button id="modalTab-timeline" onclick="setModalSubTab('timeline')" class="py-1.5 rounded-lg text-zinc-400 hover:text-white transition">경기타임라인</button>
+        <button id="modalTab-stats" onclick="setModalSubTab('stats')" class="py-1.5 rounded-lg text-zinc-400 hover:text-white transition">경기기록</button>
       </div>
 
-      <!-- Modal Body Content -->
-      <div id="modalBodyContent" class="p-4 overflow-y-auto space-y-4 no-scrollbar flex-1">
-        <!-- Rendered dynamically -->
-      </div>
+      <div id="modalBodyContent" class="p-4 overflow-y-auto space-y-4 no-scrollbar flex-1"></div>
     </div>
   </div>
 
   <!-- TOAST NOTIFICATION -->
   <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2.5 rounded-full bg-zinc-900/90 backdrop-blur-md border border-white/10 text-xs font-bold text-white shadow-2xl items-center gap-2">
     <i class="fa-solid fa-circle-check text-yellow-400"></i>
-    <span id="toastMessage">?뚮┝</span>
+    <span id="toastMessage">알림</span>
   </div>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // --- PLAYER PHOTOS (Compact Thumbnails) ---
+    // --- PLAYER PHOTOS ---
     const PLAYER_PHOTOS = {
-    "u12_77":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1J3WNdzVVa5duVIA9q5PxJ4hvl19rLT3j2x4UAgHLYyck9PT8K5ue9vrK6867mK7iWVQQd34CqVkTfWyPSyzFt2Rn6CobjWIrB1+13Mag/wALdf0rzybWruNzFcXM8H8QCk45qjKZ2fzZplcEZJL7iaHJA1JdD2CwvrbULYT2kqyRk4yOx9DRXnXgrVZLPW44mb9xckRMvbd/Cfz4/GiovcadyK6kDXUpkALFjuyO9Rq8GWBiDZGMAYNavii1On6+ZWhDwTfvFDfdPqPz/mKto1heW4gjCoZFDgImMVw1q3s3ZoqjTd+a5zhniZygiQkrtyDnAx6etKhiXhVBwMcrWnFZ2tqbi4uIyqW7Y4GfM6HI9uaZqOr2l3Zg28Cszkgl1AZMelSqzb0V13Nq0OfqU7YoLyAqPm81ccd8iirvha1bUNbiwCY4CJZD6YPA/E0V1wjdHHFXO71XTbfVbM29yPdWHVD6iuKuPDmrWHypM7QqSR5KZ3Dr9RRRU4impRv2OmDadio9vqTgqbiZV6N8qk/linWnh3Vr29KCFhEuB9omTyxjrwvfr2oorhwyU52ZtU91HeaPpVtpFp5FuMljukc9XPr/APWooor1locp/9k=",
-    "u12_10":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1N3CLlqrPPIT8pCj0xWPqviTT7a6mgaY+ZD8u3acE/WsqDxnayBt8Pl7RnJbr7dKtIls6cyPu/hz64FOW7dW+Ygj0xXLP4304ZEcMrH3IFZVx4tvZpS0LpAv90KDj86ba6kt2PSopFlTcv/6qK8/8N+Jbsa1DFeXDSw3DCEZAABPQ/nx+NFZlp3MqaPGoTyzqkzOxyrggA+2KguLS3niEfkxQDduLRZ3fTk1s+LrFrLW5JBkRXH7xD2/2h+f86qaalhcwb0naR9vzlztEZ+lctSr7PVkQjJyMoafYbfm85iV2g4xz61I9mGGFZUH+yvJq8NHk+3ZZn8sDdnPy9en1p+qvp0EQljLI7sFVUPBPfIP9Kz+sJuy1OmrF290pWtqVubcIw3CVCDt7gjFFa/hqwe91yHqY4GEsh7cdB+Jorpgm1ucsU2dxrOlW+sae9pc5GR8rr95D6ivPIvCGsaTfXJ2efHsHlTINytznleoooqa8U4M3juI0+qL+72Et0JW3cg0xvCOt6peW+I0jjxl5H3Kq89geSaKK4sNFOZctj0fR9Kt9JsxBBlmPMkh6ufU0UUV6hkf/2Q==",
-    "u12_7":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1J3WNdzVWa6LMQpA9uK5Dxdr95Bq5gs5zHHCApULksx7/AErn9UbVps3Es6u20A7ZBn8hVKy3IctbI7u413TYJjHLexK6nnAzj8hVh9atoLcXD3cTwkcEEHP0xXlcum3aFgHDFVySFOPwpsUF1G+13ARl3AnI/Shzg9i3Tmuh7LYX1tqFsLi0kEiE49wfQ0V534L1SWz11ICT9nuTsYEY+b+E/nx+NFRdMSd0Q3MpN3I0mS5Y7sirEFpPKNy2xAxncy4zVrxTay6frck0aYSXEsZ9+4/PmpdL1KW9hVjtWYPtl35PHfHvXnYitKm7IKdHm1Zy10zpO6hXYFuMHpWrYWE7WEcscLOWyTzzn8a3biwt57qGcryhYsB0fIxz9Kiae7S+EIgXyCcKR2FYfWXJe7bTudNSPMrMyYd0d9EGjZJBIvBXBzkUVoaNHNqvifceYIH35PovQfiRRXfQ9+HMcrp8rtc7LVNNg1Sza3uBjurjqh9RXEP4TvLfzlu0aZd5MUkHQggdR26UUU8RTjKLl1NYyexSfT5VXZ9ik46bbggjGR6VpaV4cvpXWUG4iyOkz7lX3Hc0UV5uHXtpcstjWXuq6Ov0XSoNIsFtoSXbrJIw5c+p/wAKKKK9pJJWRz7n/9k=",
-    "u12_6":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD069u4LG1a4uW2ovoMkn0A7muR1Xx2lvETBbsGPChzj86b4ov/ALRq3kjBS2OF5/ixyf6Vg3VvBdTW8twuUics3PWp50mSnzS5SpN4t12aV5o5jGvUqqcLWvonj2+Miw3iJcEDjgKW/HpmqLLZRRSIJGbeckjHH1qCCxtlvUuLcb1EZVj0BJ9vpS9qjapT5I3ueqadqFtqdoLm0kDoTgjup7g+9Fcb4YvDY6skQGIrghGHbPY/0/GiqTuYxldGXMkk18yKjPM7n5R1Jqy+lSxQPLO6qFGSincf8Km8UQyaX4gWePKxTOHUj0PDD/PrVxZlQeVIjsCv3yMhvYeprz61SUJWRVOlF6s424EySiJQwx225rX07T5prPKEIV4w38R781aSyd9Qkj8vZbKqlW3HcSc5XPoMfrSQa7ZrOtuIWRAdqsPUe1L2kpL3FsdE1GStIriG5tb2ASxujeau0kcHkdDRWjpUlzrHiWC3XAt7NhLMB0z2/XA/Oiuqi5TjdnK6ai7I7DV9LttXsWtrkH1Rx1Q+ori9T0HXYZ/M+0zOAu1TAMqAB6dietFFOtBNc3VGkXrYoOusRERhrlS+R88IYjn72Qe361c0vw/q95d+ZOkap/z0aHYSe555P4UUVx0Yqo7M1k7HbaRpVvpNqYoBuZ23SSHq7ep/wooor0kklZGB/9k=",
-    "u12_13":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1KR1jXc1VJLp8FshEHX2+tcd4p8S6jD4gaz0+SMImI1UqGLN3z6dcfhXO3/8Abc8shm3KszBSQQFyevANO6W5F7uyO+PiLSfO8s6hAHz1/wDr1dk1aCziWW5vIvLb7pYjn6Yry0adAEf/AI+WZPvMBiopbaeNFUSF4iNyeZwVHcUvaRehrKlJK6PZbG+tdQt/Ps5kljzglT0PpRXmvgfVXsddSAH/AEe5YRuB/eP3T+fH40Uk7mcXdEd2ym6laULuLEtnrmnW9rJN80Fs5GPvAHH51c8XWr6Vrr3MUWVmIkj44z3H5/zq5b6m11YrcQKHc4+Vm29+fyrgr1XB2SCFK+rZyVxdzwyNG0jHDYGBV7T7ee5svPMTz4b5jjO38K1dTsre5dHwFcSKzMo+8B1B+tSNdNZRxraW4ZD1Az19OKhVnKyitTpqPmVmzNtxGt9AVjCOJFwMYOciitizSbVfFtpCEzBaoJ5WI+6c8DP1Aorqo+/Hm2OV07Pc67V9LttXsWtrkH1Rx1RvUVw58LarplvKiPk+aXWWFSwZcdCOo9fwoop16alG/U1i3sZ7x36bonnvXcZ5S3JHT+nP51e0vRtdvXzFcSxRA8tcwbOPbuaKK5aNNTev6FN2O907TrfT4mWFfnkOZHPVzjFFFFeikkrIzP/Z",
-    "u12_19":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD02+vbewtWuLuQRxrxk9z6D3rKk8S2CkiS5WI4+6w5rnfGUkepaqIJZLkRWvAWMDaWPU8/lXP3lgGtttksok6bpSMY/ClzpEc13ZHV33jO0ibbZKs7/wB9hhf5VWj8cXyTK8trC8GcMFbDfhXH/wBj3i5MhJCYzgdfpUtrplzHcHcx2BM7ff0NDqI1lTlFXPXtO1C21O0W5tJA6E4Pqp7g+9FcH4Pnn03XNhyLe6Ox13Z+b+E/nx+NFCaZnF3RWuZHNzIXHzbjnJ70RCeYExwllX7zdh+NXfFlo1lrDuARFP8AOhA79x+f86msNSSfTxLHEzIjBPLQDK9P8a4q9R09kKnS5m7nL3TyxtgK/wA3IB6rWpptpcy6erxJuYscqTgk+2a059Oha5ikjOyMMTKg53AjjHpzio7m8ktrwW0cAESgAN049f51h7dz0gvM66iUo2ZSgM8V9ErRlHEi8Nweooqx4X+163ryzz5McTB+ecKDwPxNFdtK8o3OR0+V2O61XTbfVLM29wPdXHVD6iuQXw/qmmwzRxBGLTbxKo3ApgZ4wcH/AAoooxFOMoXfQ1g7Mz5l1FIhHJcXjyk/N5Nv9DnOPr+Y9KsWOhatqW/zJrpEZGXdcxbACe49f/rUUVx0Kam7P9DSTsdnoekW+i6elrAS7YG+Rhy59f8A61FFFemkkrIxP//Z",
-    "u12_1":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0+6uYrSAzTsFQfr7CuduteuJXIgYQp2AAJ/OsfxX4sji1eezWISLb4UZPBbHP+H4Vn2evpdwysLSGPywMkt3o5orVi1bsjaa9uA+8zuW9c1cstdvEceaRPH3BGD+dc3bajcxyBrpITEx4+XHFS3euadbXCxNDLkgElCOM01UhLQJQlHVnodpcxXcAmhbKn8wfQ0VxWh+JbC31mGyjMubhhG2VwAx6Z/H+dFD8gTuYV8RLPKkki5EnzBAvzd+4z1qvILdiskkSb0fJMeF3DHfFdBrfh1z4lnlclLOXEilepJ6qPTnn8ani0uwjjKCBDvUg55OPr1rz6+NjTk4NakxuncwZXt/Jy0crIBkZY81ApkhWL7NNbIUy+GUEgn3NbUfh2yNwD5kxQHJQtxVmWx0u4keN1hMq5LbDtYflWCx0IvZs2qz59jHeY3d3btOsTSRyRssmxd5ORjJ70Vb0TRZX8VxRAl7eAicuf7oPAPvkfoaK9GnNVI8yMlc9AvbSO8tzFJweqsOqn1rlL7TrrT5w5t5rj5NokiXI/H0/l70UVjiMPTqe89xsoDVVVeba6BYj/lkeP85H51JpmkTahem7hs57fePmkuFKLyecDqf5UUVy0cNCTe4WO1sbOKyh8uPknlmPVjRRRXpxioqy2Gf/2Q==",
-    "u12_3":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1C4nitojJO6ovTLHHNY+o+I7Kyj3yXCnPRI8MTXN+Nbh9Q1M26XkcUVsdoQ55bHJP8vwrnrSwle7lLMs6xAeWOgfPfn0o5orcUU5OyOr/AOE3s/M+a2mA/vfLU/8Awm0EfKwzSr74HFc7LHM9uqNbRMScFR1/nWS9tNBdywqD5fBABztz2pe1TLnScVc9e06/ttTs0urR9yN2PVT6EetFef8AhC/m0/Xoost9nusRyL2Dfwn8+PxooTTITuindyubqUyA7txz9aieWQIGQH2z0NdTrOlWdrqsk8iljOd6K33R6gCqOp2rThGjjVtq7SnTI68ehrgqV1GfKaUqTT5rnOvcoXJG/wAzHI2gfrVlRKsCuyMVP8fbNOSwRrjaqZlP8BJG33PpW/bFba3FujL8oyRxlvU4qKldR21N5wdRWuYVq7fa4Cq8+YuOe+RRW5plta6jrdr9mi2tE3nTFRgBR0BHTJP8jRXVRfPHmON03F2Ov1Cxhv7fyphyDuRh1U+orj77TdU06R2m33EB+68aZCjPUgc55A/CiinXoxmrvc1hJrQy4ZrWG/eZeZpU+YYP8Of6UuneGtT1HUVu42McO/zBJIrKcdeh6/yoornoU/eavuaTloegaXplvpkBjgXLOd0jnq5/z2ooorvSSVkYN3P/2Q==",
-    "u12_14":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1N3VFy1VmuTn7wX24rl/FeuXVvePDay+UEwAdvXjJwfXtXO3N5rGq20SvOrI7EDkAjg5yBz2qlZbk3bdkd8upWckmxLu3L5xgOuc1aN0YV3yOoQdS2APzryr+zJdgxMN5OAuRke5GabIb9kaGefAiYrhpeDilzxZbpzXQ9csry3voPOtZVkTJUkdiO1FedeDtUk07XIrd3DRXREbgcjcfun+n40Urkp9ytdTsbuQyli245zQoaWJ2jjYqFJZgvAH1rR8W2j2OuPIIwYp/3qA9D/eH5/zrQg1CCaziZU3rL8pCgYTjoRXBXqum7WFTptu9zkZJiSIRAvTG7dx+VaS2VwbWOVbdpEK8EDJ/KrwtIDe7hkRbNuzHfOc569O1T/2kiStE0LIiAkN6Ad6ydaT+BbHRUSmrNmVbv/pcA27XWVcDbg5yKKueG47nWdeSeclljYSuSOgB4H54orspe9G5zezadjuNW0y31Wya3uAR3R16ofUV5/ceGtc0sT7WLxKSUeFN5cHHbqD/AJzRRTrU4yjdmqfQreXqLKql71GyOfIGOlXbDw9rOpRSRTtKkRUoGnTZjnrx1ooriowU5WZT0R3OiaRb6NYLbW+WPWSRvvOfU/4UUUV6aSSsjM//2Q==",
-    "u12_9":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1KR1jXc1U575YkMkkiRIOpYgAVzXizXbq3u5IbWXyhGAqsUyCep5rlLy51TWYoftNyWhXcwAA3cY7D+tUrLVk6t2R3Z8SaUZCBex5Hfbx+eK047790JfNR4iM7sjGPrXlD6YzKjIbkb+mVHFMMd9DE9sbnMaMfl8zA/KlzxZbpzXQ9js7y2vofNtZVlQEqSpzgjtRXmngrVZNN16K3kcGG7YRuAcgMfun8+PxopXJV+pBdzsbuUyli285zUYZ2jaSJWAHVwvA/GtLxbcWWg+KmN5AZorhPNRQOATwc/iDx71VfxZpksJhlgn2EcIEAA9+vWuWoqqfuwbJhFJ3bMuW7Ic7Vk3kdSwx+dW2ULEjSoSCOHZeD+NV7O80qbVRGwlELhVj3Jzu75IPTp+ddBb6xEA0H2f9wq5xgYA9+2KyqSnD7LOipaorXMy2dPtlvsADCVMYHfIorQ8Npb614mV7GLy7a3YSOO3HT8zRXRTXMrnMoNEPxThE2uW6sDj7MMH0+Y1xQ06/NvJPDC8kMQ+eQDgf57+lFFerH+GmS/iIbeSVLuJlJ3B1I+Qnv6V3dp4f17V1kV4VtUlABlIKjHc46n/PSiiuHF04yqRTNKb0Z32g6JaaFp4tbQZJ5kkI+aRvU/4UUUUkrFH/2Q==",
-    "u12_17":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD067uoLK3M9zIscY7n1rGu/E9pEoeKVZBnkIen51keLrtr29NrG+Y4TjaRxuxya5a8tZjFFFGwJO4yEng46HFHNFE3vKyOrk8a2wlxHAzAHrxU0vjeCJFdIJJVzyDgYrgWtJzb+YsicHHfGKfZ2063AWby2R0JAzwTQ5xLcJJHr+maja6pZJdWcm+NuD6qfQjsaK4jwlNLpusom9Rb3OI2jHQN2P58fjRSTT2JTuUrl5DcyF2G4sc8VGhkZtyfMV74yBW1rNvbaf4kkN5CXjuhvt8/dz/EPr3qx5lu+LU+XiRSRGFxkDvxXm1sR7OXLYdKk7817HLvcOvytJGBnO3A5P0pULMFlcAE9Djp7Vo3Oi5v4BGC0T7t7FuUwMj656VcDWmlx+TJsbeMsHGc/wBAKn6wnblV2dNT3o2vYybZn+2QlWOfMXH5iit3TNOs77VYHt42iaFxK4U5Qgc4/PHSiuyjL2keZHH7NxdmdNrGlW2r2JtrkEc7kkX7yN2IrlNQt9V0oqDYveIiYE0Izn8ACR6miinXoQqK8lsaxk1sUTql9nd/Zk5OB8vIzn8PY/p61Pa2F3r8qGTTLm2UfelmOwbf5k/SiiuHDUoym+li5SZ2mm6dDp1v5cOSWOXc9WNFFFeqkoqyMj//2Q==",
-    "u12_8":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1KR1jXcxqpJebQWZlRfciuc8U6rcpdSRwSPEkYCqy9Ce5/pXLXV/qV1aiN53kDSBRGxwfr9KpWW5N7ux3ja5pwcqbyHcDjp/XFXI78eX5oljeLHXIx+deUeTcYZt6YU4JByKej3TK0DuEXaGB3/Kf8aHKJXJI9fs7u3vYfNtpVkTJUlT0PpRXnXg7UpdO1uK3d90N0RG4GcAn7p/Pj8aKkS8yvcyyG7lLqd2455700SMGDKo3LyufWtXxFpnleJnSSYQQXI82M4yWI+8o988/Q006fB9nP2cfNxh5DnJ/pXFVrRpuzFCnK90YpvXKctCATymcfmMZp6SeaFd0GccY7CmyaaGvhCQ4lKGQKR2BweelbtrZW8dmIpY1kI5OQc/h3qJ14xsdVVOUbJmZbOftcG1eRIuMeuRRWlo9pBdeKYrezDmO3AmmJ5C9wM+/FFdNP348yOPka3Ox1nSbbWLL7PcgqVYPFIv3o2HQiuPn0nW7CdTNumhQEZtlO1x2JHUGiilXpxnG7NotoiMzBoyVwx5AIwcenrUtromp32oCVEeCPduMkgK4+nrRRXFhoe9Y0k9Ds9M02302F1hGXkbdLIRy7f57UUUV6iSSsjE//9k=",
-    "u12_4":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0vUb+10yye7vJBHEnfuT2AHc1wWs+MdbnlC2FrJbQnpiMs5HuccfhVvxfdfbtUNuw3Q23AHbdjk/0rFm877O4hmmVyuF+c4BqOdIzcruyGt4v1WFU3XKRygYZXwxJ9SD0q9YeNdat5le7i+1wH7y+XtYfQgY/Osl9Lso42RrSCRxgbmkG6Q9zTrSz8mCSEyOVVzsAYkBcA4o9ombTpezV5M9T03ULbU7JLq0YlG6gjDKfQjsaK4nwncjTtXWMbhHckI4Jzlux/p+NFUnchNPYybjzZL1wdzSM547k1cj0e9ILPtTA4XOWJ9OKf4xsZLHV5ZIyY0uP3kbD1/iH5/zqtaa3vtEa8naEq+N8Y+9jk59jXDWqTi7RHCkt2Zc63fn+T5Rzk8EkH8u9bEekXv2WNo9mccxk4Ip8mrWBliuW4ZQVVzGflB6jOPYVSOpvGLi4trsXGF+6M4BJ4JB/pWftJtX2Nqlp6MktxLHexKQVkWVQQeoORRVnwlaT6jq8LyMXETebI5HocgfnRXbT96Nzm5LOx3WuaPba3pzWl1uXPKSJ96NvUVyFv4YutIsxBJGbra7MJUGd2T3HaiilXpqUdTWLsyq1kjN5Za7x3G8/jxUz+GrzVrQ28MItVcjMrJtOAep9TRRXFQgpz1Lk7HY6DottoenLa25aRuskr43SH1P+FFFFeolYyP/Z"
-}
-;
+      "u12_1":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0+6uYrSAzTsFQfr7CuduteuJXIgYQp2AAJ/OsfxX4sji1eezWISLb4UZPBbHP+H4Vn2evpdwysLSGPywMkt3o5orVi1bsjaa9uA+8zuW9c1cstdvEceaRPH3BGD+dc3bajcxyBrpITEx4+XHFS3euadbXCxNDLkgElCOM01UhLQJQlHVnodpcxXcAmhbKn8wfQ0VxWh+JbC31mGyjMubhhG2VwAx6Z/H+dFD8gTuYV8RLPKkki5EnzBAvzd+4z1qvILdiskkSb0fJMeF3DHfFdBrfh1z4lnlclLOXEilepJ6qPTnn8ani0uwjjKCBDvUg55OPr1rz6+NjTk4NakxuncwZXt/Jy0crIBkZY81ApkhWL7NNbIUy+GUEgn3NbUfh2yNwD5kxQHJQtxVmWx0u4keN1hMq5LbDtYflWCx0IvZs2qz59jHeY3d3btOsTSRyRssmxd5ORjJ70Vb0TRZX8VxRAl7eAicuf7oPAPvkfoaK9GnNVI8yMlc9AvbSO8tzFJweqsOqn1rlL7TrrT5w5t5rj5NokiXI/H0/l70UVjiMPTqe89xsoDVVVeba6BYj/lkeP85H51JpmkTahem7hs57fePmkuFKLyecDqf5UUVy0cNCTe4WO1sbOKyh8uPknlmPVjRRRXpxioqy2Gf/2Q==",
+      "u12_14": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1N3VFy1VmuTn7wX24rl/FeuXVvePDay+UEwAdvXjJwfXtXO3N5rGq20SvOrI7EDkAjg5yBz2qlZbk3bdkd8upWckmxLu3L5xgOuc1aN0YV3yOoQdS2APzryr+zJdgxMN5OAuRke5GabIb9kaGefAiYrhpeDilzxZbpzXQ9csry3voPOtZVkTJUkdiO1FedeDtUk07XIrd3DRXREbgcjcfun+n40Urkp9ytdTsbuQyli245zQoaWJ2jjYqFJZgvAH1rR8W2j2OuPIIwYp/3qA9D/eH5/zrQg1CCaziZU3rL8pCgYTjoRXBXqum7WFTptu9zkZJiSIRAvTG7dx+VaS2VwbWOVbdpEK8EDJ/KrwtIDe7hkRbNuzHfOc569O1T/2kiStE0LIiAkN6Ad6ydaT+BbHRUSmrNmVbv/pcA27XWVcDbg5yKKueG47nWdeSeclljYSuSOgB4H54orspe9G5zezadjuNW0y31Wya3uAR3R16ofUV5/ceGtc0sT7WLxKSUeFN5cHHbqD/AJzRRTrU4yjdmqfQreXqLKql71GyOfIGOlXbDw9rOpRSRTtKkRUoGnTZjnrx1ooriowU5WZT0R3OiaRb6NYLbW+WPWSRvvOfU/4UUUV6aSSsjM//2Q==",
+      "u12_13": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1KR1jXc1VJLp8FshEHX2+tcd4p8S6jD4gaz0+SMImI1UqGLN3z6dcfhXO3/8Abc8shm3KszBSQQFyevANO6W5F7uyO+PiLSfO8s6hAHz1/wDr1dk1aCziWW5vIvLb7pYjn6Yry0adAEf/AI+WZPvMBiopbaeNFUSF4iNyeZwVHcUvaRehrKlJK6PZbG+tdQt/Ps5kljzglT0PpRXmvgfVXsddSAH/AEe5YRuB/eP3T+fH40Uk7mcXdEd2ym6laULuLEtnrmnW9rJN80Fs5GPvAHH51c8XWr6Vrr3MUWVmIkj44z3H5/zq5b6m11YrcQKHc4+Vm29+fyrgr1XB2SCFK+rZyVxdzwyNG0jHDYGBV7T7ee5svPMTz4b5jjO38K1dTsre5dHwFcSKzMo+8B1B+tSNdNZRxraW4ZD1Az19OKhVnKyitTpqPmVmzNtxGt9AVjCOJFwMYOciitizSbVfFtpCEzBaoJ5WI+6c8DP1Aorqo+/Hm2OV07Pc67V9LttXsWtrkH1Rx1RvUVw58LarplvKiPk+aXWWFSwZcdCOo9fwoop16alG/U1i3sZ7x36bonnvXcZ5S3JHT+nP51e0vRtdvXzFcSxRA8tcwbOPbuaKK5aNNTev6FN2O907TrfT4mWFfnkOZHPVzjFFFFeikkrIzP/Z",
+      "u12_10": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1N3CLlqrPPIT8pCj0xWPqviTT7a6mgaY+ZD8u3acE/WsqDxnayBt8Pl7RnJbr7dKtIls6cyPu/hz64FOW7dW+Ygj0xXLP4304ZEcMrH3IFZVx4tvZpS0LpAv90KDj86ba6kt2PSopFlTcv/6qK8/8N+Jbsa1DFeXDSw3DCEZAABPQ/nx+NFZlp3MqaPGoTyzqkzOxyrggA+2KguLS3niEfkxQDduLRZ3fTk1s+LrFrLW5JBkRXH7xD2/2h+f86qaalhcwb0naR9vzlztEZ+lctSr7PVkQjJyMoafYbfm85iV2g4xz61I9mGGFZUH+yvJq8NHk+3ZZn8sDdnPy9en1p+qvp0EQljLI7sFVUPBPfIP9Kz+sJuy1OmrF290pWtqVubcIw3CVCDt7gjFFa/hqwe91yHqY4GEsh7cdB+Jorpgm1ucsU2dxrOlW+sae9pc5GR8rr95D6ivPIvCGsaTfXJ2efHsHlTINytznleoooqa8U4M3juI0+qL+72Et0JW3cg0xvCOt6peW+I0jjxl5H3Kq89geSaKK4sNFOZctj0fR9Kt9JsxBBlmPMkh6ufU0UUV6hkf/2Q==",
+      "u12_77": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1J3WNdzVVa5duVIA9q5PxJ4hvl19rLT3j2x4UAgHLYyck9PT8K5ue9vrK6867mK7iWVQQd34CqVkTfWyPSyzFt2Rn6CobjWIrB1+13Mag/wALdf0rzybWruNzFcXM8H8QCk45qjKZ2fzZplcEZJL7iaHJA1JdD2CwvrbULYT2kqyRk4yOx9DRXnXgrVZLPW44mb9xckRMvbd/Cfz4/GiovcadyK6kDXUpkALFjuyO9Rq8GWBiDZGMAYNavii1On6+ZWhDwTfvFDfdPqPz/mKto1heW4gjCoZFDgImMVw1q3s3ZoqjTd+a5zhniZygiQkrtyDnAx6etKhiXhVBwMcrWnFZ2tqbi4uIyqW7Y4GfM6HI9uaZqOr2l3Zg28Cszkgl1AZMelSqzb0V13Nq0OfqU7YoLyAqPm81ccd8iirvha1bUNbiwCY4CJZD6YPA/E0V1wjdHHFXO71XTbfVbM29yPdWHVD6iuKuPDmrWHypM7QqSR5KZ3Dr9RRRU4impRv2OmDadio9vqTgqbiZV6N8qk/linWnh3Vr29KCFhEuB9omTyxjrwvfr2oorhwyU52ZtU91HeaPpVtpFp5FuMljukc9XPr/APWooor1locp/9k=",
+      "u12_7":   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1J3WNdzVWa6LMQpA9uK5Dxdr95Bq5gs5zHHCApULksx7/AErn9UbVps3Es6u20A7ZBn8hVKy3IctbI7u413TYJjHLexK6nnAzj8hVh9atoLcXD3cTwkcEEHP0xXlcum3aFgHDFVySFOPwpsUF1G+13ARl3AnI/Shzg9i3Tmuh7LYX1tqFsLi0kEiE49wfQ0V534L1SWz11ICT9nuTsYEY+b+E/nx+NFRdMSd0Q3MpN3I0mS5Y7sirEFpPKNy2xAxncy4zVrxTay6frck0aYSXEsZ9+4/PmpdL1KW9hVjtWYPtl35PHfHvXnYitKm7IKdHm1Zy10zpO6hXYFuMHpWrYWE7WEcscLOWyTzzn8a3biwt57qGcyanp+NqfG9I1a8a25c0Tppx5lczo90V7EpjZJFkXAYY70Vq6NC2qeJtxGIEfen/AAHoPxoorvoe/DmOOUOV2Oy1TTYNUs2t7gY7o46ofUVxD+E7y385btGmXeTFJB0IIHUduvFFFPETjGLl1NIRSdiJ9PlVdn2KTjptuCCMZ/P/AOtWlpXhy+ldZQbiLI6TPuVfcd+1FFebh17WXLIfKk7o6/RdKg0iwW2hJdutEjDlz6n/AAooor2kklZHM9z/2Q==",
+      "u12_8":   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1KR1jXcxqpJebQWZlRfciuc8U6rcpdSRwSPEkYCqy9Ce5/pXLXV/qV1aiN53kDSBRGxwfr9KpWW5N7ux3ja5pwcqbyHcDjp/XFXI78eX5oljeLHXIx+deUeTcYZt6YU4JByKej3TK0DuEXaGB3/Kf8aHKJXJI9fs7u3vYfNtpVkTJUlT0PpRXnXg7UpdO1uK3d90N0RG4GcAn7p/Pj8aKkS8yvcyyG7lLqd2455700SMGDKo3LyufWtXxFpnleJnSSYQQXI82M4yWI+8o988/Q006fB9nP2cfNxh5DnJ/pXFVrRpuzFCnK90YpvXKctCATymcfmMZp6SeaFd0GccY7CmyaaGvhCQ4lKGQKR2BweelbtrZW8dmIpY1kI5OQc/h3qJ14xsdVVOUbJmZbOftcG1eRIuMeuRRWlo9pBdeKYrezDmO3AmmJ5C9wM+/FFdNP348yOPka3Ox1nSbbWLL7PcgqVYPFIv3o2HQiuPn0nW7CdTNumhQEZtlO1x2JHUGiilXpxnG7NotoiMzBoyVwx5AIwcenrUtromp32oCVEeCPduMkgK4+nrRRXFhoe9Y0k9Ds9M02302F1hGXkbdLIRy7f57UUUV6iSSsjE//9k=",
+      "u12_19":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD02+vbewtWuLuQRxrxk9z6D3rKk8S2CkiS5WI4+6w5rnfGUkepaqIJZLkRWvAWMDaWPU8/lXP3lgGtttksok6bpSMY/ClzpEc13ZHV33jO0ibbZKs7/wB9hhf5VWj8cXyTK8trC8GcMFbDfhXH/wBj3i5MhJCYzgdfpUtrplzHcHcx2BM7ff0NDqI1lTlFXPXtO1C21O0W5tJA6E4Pqp7g+9FcH4Pnn03XNhyLe6Ox13Z+b+E/nx+NFCaZnF3RWuZHNzIXHzbjnJ70RCeYExwllX7zdh+NXfFlo1lrDuARFP8AOhA79x+f86msNSSfTxLHEzIjBPLQDK9P8a4q9R09kKnS5m7nL3TyxtgK/wA3IB6rWpptpcy6erxJuYscqTgk+2a059Oha5ikjOyMMTKg53AjjHpzio7m8ktrwW0cAESgAN049f51h7dz0gvM66iUo2ZSgM8V9ErRlHEi8Nweooqx4X+163ryzz5McTB+ecKDwPxNFdtK8o3OR0+V2O61XTbfVLM29wPdXHVD6iuQXw/qmmwzRxBGLTbxKo3ApgZ4wcH/AAoooxFOMoXfQ1g7Mz5l1FIhHJcXjyk/N5Nv9DnOPr+Y9KsWOhatqW/zJrpEZGXdcxbACe49f/rUUVx0Kam7P9DSTsdnoekW+i6elrAS7YG+Rhy59f8A61FFFemkkrIxP//Z",
+      "u12_3":   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1C4nitojJO6ovTLHHNY+o+I7Kyj3yXCnPRI8MTXN+Nbh9Q1M26XkcUVsdoQ55bHJP8vwrnrSwle7lLMs6xAeWOgfPfn0o5orcUU5OyOr/AOE3s/M+a2mA/vfLU/8Awm0EfKwzSr74HFc7LHM9uqNbRMScFR1/nWS9tNBdywqD5fBABztz2pe1TLnScVc9e06/ttTs0urR9yN2PVT6EetFef8AhC/m0/Xoost9nusRyL2Dfwn8+PxooTTITuindyubqUyA7txz9aieWQIGQH2z0NdTrOlWdrqsk8iljOd6K33R6gCqOp2rThGjjVtq7SnTI68ehrgqV1GfKaUqTT5rnOvcoXJG/AzHI2gfrVlRKsCuyMVP8fbNOSwRrjaqZlP8BJG33PpW/bFba3FujL8oyRxlvU4qKldR21N5wdRWuYVq7fa4Cq8+YuOe+RRW5plta6jrdr9mi2tE3nTFRgBR0BHTJP8jRXVRfPHmON03F2Ov1Cxhv7fyphyDuRh1U+orj77TdU06R2m33EB+68aZCjPUgc55A/CiinXoxmrvc1hJrQy4ZrWG/eZeZpU+YYP8Of6UuneGtT1HUVu42McO/zBJIrKcdeh6/yoornoU/eavuaTloegaXplvpkBjgXLOd0jnq5/z2ooorvSSVkYN3P/2Q==",
+      "u12_17": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD067uoLK3M9zIscY7n1rGu/E9pEoeKVZBnkIen51keLrtr29NrG+Y4TjaRxuxya5a8tZjFFFGwJO4yEng46HFHNFE3vKyOrk8a2wlxHAzAHrxU0vjeCJFdIJJVzyDgYrgWtJzb+YsicHHfGKfZ2063AWby2R0JAzwTQ5xLcJJHr+maja6pZJdWcm+NuD6qfQjsaK4jwlNLpusom9Rb3OI2jHQN2P58fjRSTT2JTuUrl5DcyF2G4sc8VGhkZtyfMV74yBW1rNvbaf4kkN5CXjuhvt8/dz/EPr3qx5lu+LU+XiRSRGFxkDvxXm1sR7OXLYdKk7817HLvcOvytJGBnO3A5P0pULMFlcAE9Djp7Vo3Oi5v4BGC0T7t7FuUwMj656VcDWmlx+TJsbeMsHGc/wBAKn6wnblV2dNT3o2vYybZn+2QlWOfMXH5iit3TNOs77VYHt42iaFxK4U5Qgc4/PHSiuyjL2keZHH7NxdmdNrGlW2r2JtrkEc7kkX7yN2IrlNQt9V0oqDYveIiYE0Izn8ACR6miinXoQqK8lsaxk1sUTql9nd/Zk5OB8vIzn8PY/p61Pa2F3r8qGTTLm2UfelmOwbf5k/SiiuHDUoym+li5SZ2mm6dDp1v5cOSWOXc9WNFFFeqkoqyMj//2Q==",
+      "u12_4":  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0vUb+10yye7vJBHEnfuT2AHc1wWs+MdbnlC2FrJbQnpiMs5HuccfhVvxfdfbtUNuw3Q23AHbdjk/0rFm877O4hmmVyuF+c4BqOdIzcruyGt4v1WFU3XKRygYZXwxJ9SD0q9YeNdat5le7i+1wH7y+XtYfQgY/Osl9Lso42RrSCRxgbmkG6Q9zTrSz8mCSEyOVVzsAYkBcA4o9ombTpezV5M9T03ULbU7JLq0YlG6gjDKfQjsaK4nwncjTtXWMbhHckI4Jzlux/p+NFUnchNPYybjzZL1wdzSM547k1cj0e9ILPtTA4XOWJ9OKf4xsZLHV5ZIyY0uP3kbD1/iH5/zqtaa3vtEa8naEq+N8Y+9jk59jXDWqTi7RHCkt2Zc63fn+T5Rzk8EkH8u9bEekXv2WNo9mccxk4Ip8mrWBliuW4ZQVVzGflB6jOPYVSOpvGLi4trsXGF+6M4BJ4JB/pWftJtX2Nqlp6MktxLHexKQVkWVQQeoORRVnwlaT6jq8LyMXETebI5HocgfnRXbT96Nzm5LOx3WuaPba3pzWl1uXPKSJ96NvUVyFv4YutIsxBJGbra7MJUGd2T3HaiilXpqUdTWLsyq1kjN5Za7x3G8/jxUz+GrzVrQ28MItVcjMrJtOAep9TRRXFQgpz1Lk7HY6DottoenLa25aRuskr43SH1P+FFFFeolYyP/Z",
+      "u12_6":   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD069u4LG1a4uW2ovoMkn0A7muR1Xx2lvETBbsGPChzj86b4ov/ALRq3kjBS2OF5/ixyf6Vg3VvBdTW8twuUics3PWp50mSnzS5SpN4t12aV5o5jGvUqqcLWvonj2+Miw3iJcEDjgKW/HpmqLLZRRSIJGbeckjHH1qCCxtlvUuLcb1EZVj0BJ9vpS9qjapT5I3ueqadqFtqdoLm0kDoTgjup7g+9Fcb4YvDY6skQGIrghGHbPY/0/GiqTuYxldGXMkk18yKjPM7n5R1Jqy+lSxQPLO6qFGSincf8Km8UQyaX4gWePKxTOHUj0PDD/PrVxZlQeVIjsCv3yMhvYeprz61SUJWRVOlF6s424EySiJQwx225rX07T5prPKEIV4w38R781aSyd9Qkj8vZbKqlW3HcSc5XPoMfrSQa7ZrOtuIWRAdqsPUe1L2kpL3FsdE1GStIriG5tb2ASxujeau0kcHkdDRWjpUlzrHiWC3XAt7NhLMB0z2/XA/Oiuqi5TjdnK6ai7I7DV9LttXsWtrkH1Rx1Q+ori9T0HXYZ/M+0zOAu1TAMqAB6dietFFOtBNc3VGkXrYoOusRERhrlS+R88IYjn72Qe361c0vw/q95d+ZOkap/z0aHYSe555P4UUVx0Yqo7M1k7HbaRpVvpNqYoBuZ23SSHq7ep/wooor0kklZGB/9k=",
+      "u12_9":   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAwICQoJBwwKCQoNDAwOER0TERAQESMZGxUdKiUsKyklKCguNEI4LjE/MigoOk46P0RHSktKLTdRV1FIVkJJSkf/2wBDAQwNDREPESITEyJHMCgwR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0f/wAARCAAoACgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1KR1jXc1U575YkMkkiRIOpYgAVzXizXbq3u5IbWXyhGAqsUyCep5rlLy51TWYoftNyWhXcwAA3cY7D+tUrLVk6t2R3Z8SaUZCBex5Hfbx+eK047790JfNR4iM7sjGPrXlD6YzKjIbkb+mVHFMMd9DE9sbnMaMfl8zA/KlzxZbpzXQ9js7y2vofNtZVlQEqSpzgjtRXmngrVZNN16K3kcGG7YRuAcgMfun8+PxopXJV+pBdzsbuUyli285zUYZ2jaSJWAHVwvA/GtLxbcWWg+KmN5AZorhPNRQOATwc/iDx71VfxZpksJhlgn2EcIEAA9+vWuWoqqfuwbJhFJ3bMuW7Ic7Vk3kdSwx+dW2ULEjSoSCOHZeD+NV7O80qbVRGwlELhVj3Jzu75IPTp+ddBb6xEA0H2f9wq5xgYA9+2KyqSnD7LOipaorXMy2dPtlvsADCVMYHfIorQ8Npb614mV7GLy7a3YSOO3HT8zRXRTXMrnMoNEPxThE2uW6sDj7MMH0+Y1xQ06/NvJPDC8kMQ+eQDgf57+lFFerH+GmS/iIbeSVLuJlJ3B1I+Qnv6V3dp4f17V1kV4VtUlABlIKjHc46n/PSiiuHF04yqRTNKb0Z32g6JaaFp4tbQZJ5kkI+aRvU/4UUUUkrFH/2Q=="
+    };
 
     // --- MATCH REPORTS & TIMELINES ---
     const MATCH_REPORTS = {
       'u10_1': {
-        age: 'U-10 ?먮줈??, stage: '1李??덉꽑 1寃쎄린', title: '怨좎뼇二쇰땲??vs ?몄쿇 遺?됱쑀?뚮뀈 釉붾옓',
-        date: '9??6??09:00', pitch: '?뚯쿇5A', status: '寃쎄린醫낅즺 (??', score: '1 : 6',
-        home: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true }, away: { name: '?몄쿇 遺?됱쑀?뚮뀈 釉붾옓', isGoyang: false },
-        goyangFormation: '8?몄젣 2-4-1 (吏?꾩옄: 諛깆슫李?肄붿튂)',
+        age: 'U-10 옐로우', stage: '1차 예선 1경기', title: '고양주니어 vs 인천 부평유소년 블랙',
+        date: '9월 6일 09:00', pitch: '알천5A', status: '경기종료 (패)', score: '1 : 6',
+        home: { name: '경기 고양주니어', isGoyang: true }, away: { name: '인천 부평유소년 블랙', isGoyang: false },
+        goyangFormation: '8인제 2-4-1 (지도자: 백운찬 코치)',
         goyangStarters: [
-          { pos: 'FW', num: 16, name: '理쒖꽑??, isCaptain: true, note: '二쇱옣(C) ?좊컻' },
-          { pos: 'MF', num: 5, name: '諛뺥븳蹂?, note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 7, name: '諛뺤듅以', note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 22, name: '吏꾪븯??, note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 73, name: '?꾪쁽??, note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'DF', num: 18, name: '源?쒖씠', note: '?좊컻 ?섎퉬' },
-          { pos: 'DF', num: 27, name: '源二쇳븳', note: '??1\' ?좎젣怨?' },
-          { pos: 'GK', num: 12, name: '理쒗쁽??, note: '?좊컻 怨⑦궎?? }
+          { pos: 'FW', num: 16, name: '최선우', isCaptain: true, note: '주장(C) 선발' },
+          { pos: 'MF', num: 5, name: '박한별', note: '선발 미드필더' },
+          { pos: 'MF', num: 7, name: '박승준', note: '선발 미드필더' },
+          { pos: 'MF', num: 22, name: '진하랑', note: '선발 미드필더' },
+          { pos: 'MF', num: 73, name: '임현재', note: '선발 미드필더' },
+          { pos: 'DF', num: 18, name: '김태이', note: '선발 수비' },
+          { pos: 'DF', num: 27, name: '김주한', note: '⚽ 1\' 선제골!' },
+          { pos: 'GK', num: 12, name: '최현우', note: '선발 골키퍼' }
         ],
-        goyangSubs: [{ pos: 'MF', num: 10, name: '?뺤???, note: '?뚮씪?됯탳泥? }],
+        goyangSubs: [{ pos: 'MF', num: 10, name: '정지훈', note: '플라잉교체' }],
         timeline: [
-          { min: "1'", type: 'goal', title: '??源二쇳븳(27) ?좎젣怨?', desc: '寃쎄린 ?쒖옉 1遺?留뚯뿉 源二쇳븳 ?좎닔???섏긽?곸씤 ?좎젣怨? (1-0)' },
-          { min: "50'", type: 'whistle', title: '寃쎄린 醫낅즺', desc: '怨좎뼇二쇰땲??1 : 6 遺?됱쑀?뚮뀈 釉붾옓' }
+          { min: "1'", type: 'goal', title: '⚽ 김주한(27) 선제골!', desc: '경기 시작 1분 만에 김주한 선수의 환상적인 선제골! (1-0)' },
+          { min: "50'", type: 'whistle', title: '경기 종료', desc: '고양주니어 1 : 6 부평유소년 블랙' }
         ],
         stats: { shots: [4, 12], onTarget: [2, 8], corners: [2, 5], fouls: [3, 2] }
       },
       'u10_2': {
-        age: 'U-10 ?먮줈??, stage: '1李??덉꽑 2寃쎄린', title: '怨좎뼇二쇰땲??vs ?⑥뼇二쇳뭼蹂쇳겢??,
-        date: '9??7??11:40', pitch: '?뚯쿇5B', status: '寃쎄린醫낅즺 (臾?', score: '0 : 0',
-        home: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true }, away: { name: '寃쎄린 ?⑥뼇二쇳뭼蹂쇳겢??, isGoyang: false },
-        goyangFormation: '8?몄젣 2-4-1 (吏?꾩옄: 諛깆슫李?肄붿튂)',
+        age: 'U-10 옐로우', stage: '1차 예선 2경기', title: '고양주니어 vs 남양주풋볼클럽',
+        date: '9월 7일 11:40', pitch: '알천5B', status: '경기종료 (무)', score: '0 : 0',
+        home: { name: '경기 고양주니어', isGoyang: true }, away: { name: '경기 남양주풋볼클럽', isGoyang: false },
+        goyangFormation: '8인제 2-4-1 (지도자: 백운찬 코치)',
         goyangStarters: [
-          { pos: 'FW', num: 16, name: '理쒖꽑??, isCaptain: true, note: '二쇱옣(C) ?좊컻' },
-          { pos: 'MF', num: 5, name: '諛뺥븳蹂?, note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 7, name: '諛뺤듅以', note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 22, name: '吏꾪븯??, note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 73, name: '?꾪쁽??, note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'DF', num: 18, name: '源?쒖씠', note: '?좊컻 ?섎퉬' },
-          { pos: 'DF', num: 27, name: '源二쇳븳', note: '?좊컻 ?섎퉬' },
-          { pos: 'GK', num: 12, name: '理쒗쁽??, note: '?좊컻 臾댁떎?? }
+          { pos: 'FW', num: 16, name: '최선우', isCaptain: true, note: '주장(C) 선발' },
+          { pos: 'MF', num: 5, name: '박한별', note: '선발 미드필더' },
+          { pos: 'MF', num: 7, name: '박승준', note: '선발 미드필더' },
+          { pos: 'MF', num: 22, name: '진하랑', note: '선발 미드필더' },
+          { pos: 'MF', num: 73, name: '임현재', note: '선발 미드필더' },
+          { pos: 'DF', num: 18, name: '김태이', note: '선발 수비' },
+          { pos: 'DF', num: 27, name: '김주한', note: '선발 수비' },
+          { pos: 'GK', num: 12, name: '최현우', note: '선발 무실점' }
         ],
-        goyangSubs: [{ pos: 'MF', num: 10, name: '?뺤???, note: '?뚮씪?됯탳泥? }],
+        goyangSubs: [{ pos: 'MF', num: 10, name: '정지훈', note: '플라잉교체' }],
         timeline: [
-          { min: "0'", type: 'whistle', title: '?꾨컲???μ삤??, desc: '?뚯쿇5B 援ъ옣 2李⑥쟾 ?쒖옉' },
-          { min: "50'", type: 'whistle', title: '寃쎄린 醫낅즺 (0:0 臾댁듅遺)', desc: '移섏뿴??怨듬갑 ?앹뿉 0:0 臾댁듅遺 湲곕줉' }
+          { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '알천5B 구장 2차전 시작' },
+          { min: "50'", type: 'whistle', title: '경기 종료 (0:0 무승부)', desc: '치열한 공방 끝에 0:0 무승부 기록' }
         ],
         stats: { shots: [6, 5], onTarget: [3, 2], corners: [3, 2], fouls: [4, 4] }
       },
       'u10_3': {
-        age: 'U-10 ?먮줈??, stage: '1李??덉꽑 3寃쎄린', title: '?ы빆?ㅽ떥?ъ뒪 vs 怨좎뼇二쇰땲??,
-        date: '9??8??(?? 10:20', pitch: '?뚯쿇5B', status: '寃쎄린??, score: '0 : 0',
-        home: { name: '寃쎈턿 ?ы빆?ㅽ떥?ъ뒪', isGoyang: false }, away: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true },
-        goyangFormation: '8?몄젣 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+        age: 'U-10 옐로우', stage: '1차 예선 3경기', title: '포항스틸러스 vs 고양주니어',
+        date: '9월 8일 (화) 10:20', pitch: '알천5B', status: '경기전', score: '0 : 0',
+        home: { name: '경북 포항스틸러스', isGoyang: false }, away: { name: '경기 고양주니어', isGoyang: true },
+        goyangFormation: '8인제 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
       },
       'u11_1': {
-        age: 'U-11 ???, stage: '1李??덉꽑 1寃쎄린', title: '怨좎뼇二쇰땲??vs ?몄쿇 遺?됱쑀?뚮뀈 ?덈뱶',
-        date: '9??6??09:00', pitch: '?뚯쿇4A', status: '寃쎄린醫낅즺 (??', score: '13 : 0',
-        home: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true }, away: { name: '?몄쿇 遺?됱쑀?뚮뀈 ?덈뱶', isGoyang: false },
-        goyangFormation: '8?몄젣 3-2-2 (媛먮룆: ?뺤긽??/ 肄붿튂: 理쒖젙??',
+        age: 'U-11 와인', stage: '1차 예선 1경기', title: '고양주니어 vs 인천 부평유소년 레드',
+        date: '9월 6일 09:00', pitch: '알천4A', status: '경기종료 (승)', score: '13 : 0',
+        home: { name: '경기 고양주니어', isGoyang: true }, away: { name: '인천 부평유소년 레드', isGoyang: false },
+        goyangFormation: '8인제 3-2-2 (감독: 정상훈 / 코치: 최정원)',
         goyangStarters: [
-          { pos: 'FW', num: 9, name: '?묒떆??, note: '??2怨?(22\', 29\')' },
-          { pos: 'FW', num: 29, name: '源誘쇱?', note: '?좊컻 異쒖쟾' },
-          { pos: 'MF', num: 14, name: '諛뺤＜??, isCaptain: true, note: '二쇱옣(C) ?좊컻' },
-          { pos: 'MF', num: 20, name: '沅뚯???, note: '??4怨??ы듃?몃┃ (2\', 5\', 14\', 20\')' },
-          { pos: 'DF', num: 8, name: '?댁꽑??, note: '??2怨?(1\', 15\')' },
-          { pos: 'DF', num: 17, name: '?꾨챸??, note: '?좊컻 ?섎퉬' },
-          { pos: 'DF', num: 30, name: '媛뺥쁽??, note: '??2怨?(4\', 13\')' },
-          { pos: 'GK', num: 1, name: '諛깆젙??, photo: PLAYER_PHOTOS['u12_1'], note: '??1怨?(10\') / 臾댁떎?? }
+          { pos: 'FW', num: 9, name: '양시우', note: '⚽ 2골 (22\', 29\')' },
+          { pos: 'FW', num: 29, name: '김민준', note: '선발 출전' },
+          { pos: 'MF', num: 14, name: '박주혁', isCaptain: true, note: '주장(C) 선발' },
+          { pos: 'MF', num: 20, name: '권은율', note: '⚽ 4골 포트트릭 (2\', 5\', 14\', 20\')' },
+          { pos: 'DF', num: 8, name: '이선우', note: '⚽ 2골 (1\', 15\')' },
+          { pos: 'DF', num: 17, name: '임명훈', note: '선발 수비' },
+          { pos: 'DF', num: 30, name: '강현우', note: '⚽ 2골 (4\', 13\')' },
+          { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u12_1'], note: '⚽ 1골 (10\') / 무실점' }
         ],
         goyangSubs: [
-          { pos: 'MF', num: 4, name: '源?쒗썕', note: '??1怨?(7\') ?뚮씪?됯탳泥? },
-          { pos: 'DF', num: 11, name: '?댁듅誘?, note: '?뚮씪?됯탳泥? }
+          { pos: 'MF', num: 4, name: '김시훈', note: '⚽ 1골 (7\') 플라잉교체' },
+          { pos: 'DF', num: 11, name: '이승민', note: '플라잉교체' }
         ],
         timeline: [
-          { min: "1'", type: 'goal', title: '???댁꽑??8) ?좎젣怨?', desc: '寃쎄린 ?쒖옉 1遺?留뚯뿉 踰쇰씫媛숈? ?좎젣怨? (1-0)' },
-          { min: "2'", type: 'goal', title: '??沅뚯???20) 異붽?怨?', desc: '沅뚯????곗냽 ?앹젏 ??컻 (2-0)' },
-          { min: "50'", type: 'whistle', title: '寃쎄린 醫낅즺 (13:0 ???', desc: '?붾옉?湲?1李⑥쟾 13-0 ?꾨꼍??????μ떇!' }
+          { min: "1'", type: 'goal', title: '⚽ 이선우(8) 선제골!', desc: '경기 시작 1분 만에 벼락같은 선제골! (1-0)' },
+          { min: "2'", type: 'goal', title: '⚽ 권은율(20) 추가골!', desc: '권은율 연속 득점 폭발 (2-0)' },
+          { min: "50'", type: 'whistle', title: '경기 종료 (13:0 대승)', desc: '화랑대기 1차전 13-0 완벽한 대승 장식!' }
         ],
         stats: { shots: [24, 0], onTarget: [18, 0], corners: [8, 0], fouls: [1, 2] }
       },
       'u11_2': {
-        age: 'U-11 ???, stage: '1李??덉꽑 2寃쎄린', title: '怨좎뼇二쇰땲??vs ?쒖슱 ?쒕?臾멸뎄泥?FC',
-        date: '9??7??11:00', pitch: '?뚯쿇4A', status: '寃쎄린醫낅즺 (臾?', score: '0 : 0',
-        home: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true }, away: { name: '?쒖슱 ?쒕?臾멸뎄泥?FC', isGoyang: false },
-        goyangFormation: '8?몄젣 3-2-2', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [8, 4], onTarget: [4, 2], corners: [4, 1], fouls: [3, 4] }
+        age: 'U-11 와인', stage: '1차 예선 2경기', title: '고양주니어 vs 서울 서대문구청 FC',
+        date: '9월 7일 11:00', pitch: '알천4A', status: '경기종료 (무)', score: '0 : 0',
+        home: { name: '경기 고양주니어', isGoyang: true }, away: { name: '서울 서대문구청 FC', isGoyang: false },
+        goyangFormation: '8인제 3-2-2', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [8, 4], onTarget: [4, 2], corners: [4, 1], fouls: [3, 4] }
       },
       'u11_3': {
-        age: 'U-11 ???, stage: '1李??덉꽑 3寃쎄린', title: '?援촄C ?좎냼??vs 怨좎뼇二쇰땲??,
-        date: '9??8??(?? 09:40', pitch: '?뚯쿇4A', status: '寃쎄린??, score: '0 : 0',
-        home: { name: '?援촄C ?좎냼??, isGoyang: false }, away: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true },
-        goyangFormation: '8?몄젣 3-2-2', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+        age: 'U-11 와인', stage: '1차 예선 3경기', title: '대구FC 유소년 vs 고양주니어',
+        date: '9월 8일 (화) 09:40', pitch: '알천4A', status: '경기전', score: '0 : 0',
+        home: { name: '대구FC 유소년', isGoyang: false }, away: { name: '경기 고양주니어', isGoyang: true },
+        goyangFormation: '8인제 3-2-2', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
       },
       'u12_1': {
-        age: 'U-12 ???, stage: '1李??덉꽑 1寃쎄린', title: '媛뺤썝 ?띿큹??泥댁쑁??vs 寃쎄린 怨좎뼇二쇰땲??FC',
-        date: '9??7??(?? 16:00', pitch: '異뺢뎄怨듭썝4B', status: '寃쎄린醫낅즺 (??', score: '6 : 0',
-        home: { name: '媛뺤썝 ?띿큹??泥댁쑁??, isGoyang: false }, away: { name: '寃쎄린 怨좎뼇二쇰땲??FC', isGoyang: true },
-        goyangFormation: '8?몄젣 2-4-1 (媛먮룆: ?뺤긽??/ 肄붿튂: 諛깆슫李? 理쒖젙??',
+        age: 'U-12 대표', stage: '1차 예선 1경기', title: '강원 속초시 체육회 vs 경기 고양주니어 FC',
+        date: '9월 7일 (월) 16:00', pitch: '축구공원4B', status: '경기종료 (승)', score: '6 : 0',
+        home: { name: '강원 속초시 체육회', isGoyang: false }, away: { name: '경기 고양주니어 FC', isGoyang: true },
+        goyangFormation: '8인제 2-4-1 (감독: 정상훈 / 코치: 백운찬, 최정원)',
         goyangStarters: [
-          { pos: 'GK', num: 1, name: '諛깆젙??, photo: PLAYER_PHOTOS['u12_1'], note: '?좊컻 怨⑦궎??/ 50遺??대┛?쒗듃' },
-          { pos: 'GK', num: 14, name: '?뺥븯??, photo: PLAYER_PHOTOS['u12_14'], isCaptain: true, note: '二쇱옣(C) ?좊컻 (GK/?꾨뱶)' },
-          { pos: 'DF', num: 13, name: '?쒗븳寃?, photo: PLAYER_PHOTOS['u12_13'], note: '??1怨?(42\') / ?좊컻 ?섎퉬' },
-          { pos: 'MF', num: 10, name: '源?숉븯', photo: PLAYER_PHOTOS['u12_10'], note: '?좊컻 ?먯씠??誘몃뱶?꾨뜑' },
-          { pos: 'MF', num: 77, name: '瑜섎룄??, photo: PLAYER_PHOTOS['u12_77'], note: '?좊컻 誘몃뱶?꾨뜑' },
-          { pos: 'FW', num: 7, name: '留뱁쁽??, photo: PLAYER_PHOTOS['u12_7'], note: '??1怨?(3\') ?섏긽?곸씤 ?좎젣怨? },
-          { pos: 'FW', num: 8, name: '諛뺤?', photo: PLAYER_PHOTOS['u12_8'], note: '?좊컻 怨듦꺽' },
-          { pos: 'FW', num: 19, name: '沅뚯씠??, photo: PLAYER_PHOTOS['u12_19'], note: '?좊컻 怨듦꺽' }
+          { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u12_1'], note: '선발 골키퍼 / 50분 클린시트' },
+          { pos: 'GK', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], isCaptain: true, note: '주장(C) 선발 (GK/필드)' },
+          { pos: 'DF', num: 13, name: '서한결', photo: PLAYER_PHOTOS['u12_13'], note: '⚽ 1골 (42\') / 선발 수비' },
+          { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], note: '선발 에이스 미드필더' },
+          { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], note: '선발 미드필더' },
+          { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], note: '⚽ 1골 (3\') 환상적인 선제골' },
+          { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], note: '선발 공격' },
+          { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], note: '선발 공격' }
         ],
         goyangSubs: [
-          { pos: 'DF', num: 3, name: '?뺤꽌??, photo: PLAYER_PHOTOS['u12_3'], note: '??1怨?(37\') 援먯껜 ?ъ엯 ?앹젏' },
-          { pos: 'DF', num: 17, name: '源?뺥썑', photo: PLAYER_PHOTOS['u12_17'], note: '??1怨?(35\') 援먯껜 ?ъ엯 ?앹젏' },
-          { pos: 'MF', num: 4, name: '?덉떆??, photo: PLAYER_PHOTOS['u12_4'], note: '?뚮씪?됯탳泥??ъ엯' },
-          { pos: 'MF', num: 6, name: '源?섏썝', photo: PLAYER_PHOTOS['u12_6'], note: '??1怨?(32\') 援먯껜 ?ъ엯 ?앹젏' },
-          { pos: 'FW', num: 9, name: '源?뺥썕', photo: PLAYER_PHOTOS['u12_9'], note: '??1怨?(48\') ?먭린怨? }
+          { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], note: '⚽ 1골 (37\') 교체 투입 득점' },
+          { pos: 'DF', num: 17, name: '김정후', photo: PLAYER_PHOTOS['u12_17'], note: '⚽ 1골 (35\') 교체 투입 득점' },
+          { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], note: '플라잉교체 투입' },
+          { pos: 'MF', num: 6, name: '김래원', photo: PLAYER_PHOTOS['u12_6'], note: '⚽ 1골 (32\') 교체 투입 득점' },
+          { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], note: '⚽ 1골 (48\') 쐐기골' }
         ],
         timeline: [
-          { min: "0'", type: 'whistle', title: '?꾨컲???μ삤??, desc: '異뺢뎄怨듭썝4B 援ъ옣?먯꽌 U-12 ?붾옉?湲?1李⑥쟾 ?쒖옉! ?띿큹?쒖껜?≫쉶 vs 怨좎뼇二쇰땲??FC' },
-          { min: "3'", type: 'goal', title: '??留뱁쁽??7) ?좎젣怨?', desc: '寃쎄린怨좎뼇二쇰땲??FC U12 - 留뱁쁽???좎뭅濡쒖슫 ?뚰뙆 ???섏긽?곸씤 ?좎젣怨??묐젹! (0-1)' },
-          { min: "25'", type: 'whistle', title: '?꾨컲??醫낅즺', desc: '怨좎뼇二쇰땲??1:0 由щ뱶濡??꾨컲??留덈Т由? },
-          { min: "26'", type: 'sub', title: '?꾨컲 ?쒖옉 諛??뚮씪?됯탳泥?, desc: '怨좎뼇二쇰땲???뚮씪?됯탳泥??ъ엯 (源?뺥썕, ?뺤꽌?? 源?뺥썑, ?덉떆?? 源?섏썝)' },
-          { min: "32'", type: 'goal', title: '??源?섏썝(6) 異붽?怨?', desc: '寃쎄린怨좎뼇二쇰땲??FC U12 - 源?섏썝 ?뺢탳???덊똿?쇰줈 異붽?怨??깃났! (0-2)' },
-          { min: "35'", type: 'goal', title: '??源?뺥썑(17) ?곗냽怨?', desc: '寃쎄린怨좎뼇二쇰땲??FC U12 - 源?뺥썑 3踰덉㎏ 怨???컻! (0-3)' },
-          { min: "37'", type: 'goal', title: '???뺤꽌??3) ?앹젏!', desc: '寃쎄린怨좎뼇二쇰땲??FC U12 - ?뺤꽌??媛뺣젰???쏆쑝濡?4:0 (0-4)' },
-          { min: "42'", type: 'goal', title: '???쒗븳寃?13) ?앹젏!', desc: '寃쎄린怨좎뼇二쇰땲??FC U12 - ?쒗븳寃??꾨꼍???앹젏 (0-5)' },
-          { min: "48'", type: 'goal', title: '??源?뺥썕(9) ?먭린怨?', desc: '寃쎄린怨좎뼇二쇰땲??FC U12 - 源?뺥썕 6:0 ????꾩꽦! (0-6)' },
-          { min: "50'+0", type: 'whistle', title: '寃쎄린 醫낅즺 (50\'+0)', desc: '怨좎뼇二쇰땲??FC U12, 6:0 臾댁떎????뱀쑝濡?1李⑥쟾 ?밸━!' }
+          { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '축구공원4B 구장에서 U-12 화랑대기 1차전 시작! 속초시체육회 vs 고양주니어 FC' },
+          { min: "3'", type: 'goal', title: '⚽ 맹현수(7) 선제골!', desc: '경기고양주니어 FC U12 - 맹현수 날카로운 돌파 후 환상적인 선제골 작렬! (0-1)' },
+          { min: "25'", type: 'whistle', title: '전반전 종료', desc: '고양주니어 1:0 리드로 전반전 마무리' },
+          { min: "26'", type: 'sub', title: '후반 시작 및 플라잉교체', desc: '고양주니어 플라잉교체 투입 (김정훈, 정서훈, 김정후, 안시후, 김래원)' },
+          { min: "32'", type: 'goal', title: '⚽ 김래원(6) 추가골!', desc: '경기고양주니어 FC U12 - 김래원 정교한 슈팅으로 추가골 성공! (0-2)' },
+          { min: "35'", type: 'goal', title: '⚽ 김정후(17) 연속골!', desc: '경기고양주니어 FC U12 - 김정후 3번째 골 폭발! (0-3)' },
+          { min: "37'", type: 'goal', title: '⚽ 정서훈(3) 득점!', desc: '경기고양주니어 FC U12 - 정서훈 강력한 슛으로 4:0 (0-4)' },
+          { min: "42'", type: 'goal', title: '⚽ 서한결(13) 득점!', desc: '경기고양주니어 FC U12 - 서한결 완벽한 득점 (0-5)' },
+          { min: "48'", type: 'goal', title: '⚽ 김정훈(9) 쐐기골!', desc: '경기고양주니어 FC U12 - 김정훈 6:0 대승 완성! (0-6)' },
+          { min: "50'+0", type: 'whistle', title: '경기 종료 (50\'+0)', desc: '고양주니어 FC U12, 6:0 무실점 대승으로 1차전 승리!' }
         ],
         stats: { shots: [18, 2], onTarget: [13, 1], corners: [7, 1], fouls: [2, 5] }
       },
       'u12_2': {
-        age: 'U-12 ???, stage: '1李??덉꽑 2寃쎄린', title: '怨좎뼇二쇰땲??vs 寃쎈궓 嫄곗젣???좎냼??,
-        date: '9??8??(?? 17:40', pitch: '異뺢뎄怨듭썝4B', status: '寃쎄린??, score: '0 : 0',
-        home: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true }, away: { name: '寃쎈궓 嫄곗젣???좎냼??, isGoyang: false },
-        goyangFormation: '8?몄젣 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+        age: 'U-12 대표', stage: '1차 예선 2경기', title: '고양주니어 vs 경남 거제시 유소년',
+        date: '9월 8일 (화) 17:40', pitch: '축구공원4B', status: '경기전', score: '0 : 0',
+        home: { name: '경기 고양주니어', isGoyang: true }, away: { name: '경남 거제시 유소년', isGoyang: false },
+        goyangFormation: '8인제 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
       },
       'u12_3': {
-        age: 'U-12 ???, stage: '1李??덉꽑 3寃쎄린', title: '?쒖슱 ?묒쿇FC vs 怨좎뼇二쇰땲??,
-        date: '9??9??(?? 17:40', pitch: '異뺢뎄怨듭썝4B', status: '寃쎄린??, score: '0 : 0',
-        home: { name: '?쒖슱 ?묒쿇FC', isGoyang: false }, away: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true },
-        goyangFormation: '8?몄젣 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+        age: 'U-12 대표', stage: '1차 예선 3경기', title: '서울 양천FC vs 고양주니어',
+        date: '9월 9일 (수) 17:40', pitch: '축구공원4B', status: '경기전', score: '0 : 0',
+        home: { name: '서울 양천FC', isGoyang: false }, away: { name: '경기 고양주니어', isGoyang: true },
+        goyangFormation: '8인제 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
       },
       'u12_4': {
-        age: 'U-12 ???, stage: '1李??덉꽑 4寃쎄린', title: '怨좎뼇二쇰땲??vs 遺???댁슫?FC',
-        date: '9??10??(紐? 17:00', pitch: '異뺢뎄怨듭썝4B', status: '寃쎄린??, score: '0 : 0',
-        home: { name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true }, away: { name: '遺???댁슫?FC', isGoyang: false },
-        goyangFormation: '8?몄젣 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+        age: 'U-12 대표', stage: '1차 예선 4경기', title: '고양주니어 vs 부산 해운대FC',
+        date: '9월 10일 (목) 17:00', pitch: '축구공원4B', status: '경기전', score: '0 : 0',
+        home: { name: '경기 고양주니어', isGoyang: true }, away: { name: '부산 해운대FC', isGoyang: false },
+        goyangFormation: '8인제 2-4-1', goyangStarters: [], goyangSubs: [], timeline: [], stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
       }
     };
 
     // --- MATCH SCHEDULES CONFIG ---
     const MATCH_SCHEDULES = {
-      'u10_1': { datetime: '2026-09-06T09:00:00+09:00', opp: '?몄쿇 遺?됱쑀?뚮뀈 釉붾옓', pitch: '?뚯쿇5A', isHome: true },
-      'u10_2': { datetime: '2026-09-07T11:40:00+09:00', opp: '寃쎄린 ?⑥뼇二쇳뭼蹂쇳겢??, pitch: '?뚯쿇5B', isHome: true },
-      'u10_3': { datetime: '2026-09-08T10:20:00+09:00', opp: '寃쎈턿 ?ы빆?ㅽ떥?ъ뒪', pitch: '?뚯쿇5B', isHome: false },
+      'u10_1': { datetime: '2026-09-06T09:00:00+09:00', opp: '인천 부평유소년 블랙', pitch: '알천5A', isHome: true },
+      'u10_2': { datetime: '2026-09-07T11:40:00+09:00', opp: '경기 남양주풋볼클럽', pitch: '알천5B', isHome: true },
+      'u10_3': { datetime: '2026-09-08T10:20:00+09:00', opp: '경북 포항스틸러스', pitch: '알천5B', isHome: false },
 
-      'u11_1': { datetime: '2026-09-06T09:00:00+09:00', opp: '?몄쿇 遺?됱쑀?뚮뀈 ?덈뱶', pitch: '?뚯쿇4A', isHome: true },
-      'u11_2': { datetime: '2026-09-07T11:00:00+09:00', opp: '?쒖슱 ?쒕?臾멸뎄泥?FC', pitch: '?뚯쿇4A', isHome: true },
-      'u11_3': { datetime: '2026-09-08T09:40:00+09:00', opp: '?援촄C ?좎냼??, pitch: '?뚯쿇4A', isHome: false },
+      'u11_1': { datetime: '2026-09-06T09:00:00+09:00', opp: '인천 부평유소년 레드', pitch: '알천4A', isHome: true },
+      'u11_2': { datetime: '2026-09-07T11:00:00+09:00', opp: '서울 서대문구청 FC', pitch: '알천4A', isHome: true },
+      'u11_3': { datetime: '2026-09-08T09:40:00+09:00', opp: '대구FC 유소년', pitch: '알천4A', isHome: false },
 
-      'u12_1': { datetime: '2026-09-07T16:00:00+09:00', opp: '媛뺤썝 ?띿큹??泥댁쑁??, pitch: '異뺢뎄怨듭썝4B', isHome: false },
-      'u12_2': { datetime: '2026-09-08T17:40:00+09:00', opp: '寃쎈궓 嫄곗젣???좎냼??, pitch: '異뺢뎄怨듭썝4B', isHome: true },
-      'u12_3': { datetime: '2026-09-09T17:40:00+09:00', opp: '?쒖슱 ?묒쿇FC', pitch: '異뺢뎄怨듭썝4B', isHome: false },
-      'u12_4': { datetime: '2026-09-10T17:00:00+09:00', opp: '遺???댁슫?FC', pitch: '異뺢뎄怨듭썝4B', isHome: true }
+      'u12_1': { datetime: '2026-09-07T16:00:00+09:00', opp: '강원 속초시 체육회', pitch: '축구공원4B', isHome: false },
+      'u12_2': { datetime: '2026-09-08T17:40:00+09:00', opp: '경남 거제시 유소년', pitch: '축구공원4B', isHome: true },
+      'u12_3': { datetime: '2026-09-09T17:40:00+09:00', opp: '서울 양천FC', pitch: '축구공원4B', isHome: false },
+      'u12_4': { datetime: '2026-09-10T17:00:00+09:00', opp: '부산 해운대FC', pitch: '축구공원4B', isHome: true }
     };
 
     // --- STANDINGS GROUPS ---
     const STANDINGS_GROUPS = {
-      'u10': { title: 'U-10 1李??덉꽑 4議??쒖쐞', teams: [
-        { rank: 1, name: '?몄쿇 遺?됱쑀?뚮뀈 釉붾옓', p: 2, w: 2, d: 0, l: 0, pts: 6, gf: 11, ga: 1, gd: '+10' },
-        { rank: 2, name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true, p: 2, w: 0, d: 1, l: 1, pts: 1, gf: 1, ga: 6, gd: '-5' },
-        { rank: 3, name: '寃쎄린 ?⑥뼇二쇳뭼蹂쇳겢??, p: 2, w: 0, d: 1, l: 1, pts: 1, gf: 0, ga: 5, gd: '-5' },
-        { rank: 4, name: '寃쎈턿 ?ы빆?ㅽ떥?ъ뒪', p: 0, w: 0, d: 0, l: 0, pts: 0, gf: 0, ga: 0, gd: '0' }
+      'u10': { title: 'U-10 1차 예선 4조 순위', teams: [
+        { rank: 1, name: '인천 부평유소년 블랙', p: 2, w: 2, d: 0, l: 0, pts: 6, gf: 11, ga: 1, gd: '+10' },
+        { rank: 2, name: '경기 고양주니어', isGoyang: true, p: 2, w: 0, d: 1, l: 1, pts: 1, gf: 1, ga: 6, gd: '-5' },
+        { rank: 3, name: '경기 남양주풋볼클럽', p: 2, w: 0, d: 1, l: 1, pts: 1, gf: 0, ga: 5, gd: '-5' },
+        { rank: 4, name: '경북 포항스틸러스', p: 0, w: 0, d: 0, l: 0, pts: 0, gf: 0, ga: 0, gd: '0' }
       ]},
-      'u11': { title: 'U-11 1李??덉꽑 4議??쒖쐞', teams: [
-        { rank: 1, name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true, p: 2, w: 1, d: 1, l: 0, pts: 4, gf: 13, ga: 0, gd: '+13' },
-        { rank: 2, name: '?쒖슱 ?쒕?臾멸뎄泥?FC', p: 2, w: 1, d: 1, l: 0, pts: 4, gf: 4, ga: 1, gd: '+3' },
-        { rank: 3, name: '?援촄C ?좎냼??, p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 1, ga: 4, gd: '-3' },
-        { rank: 4, name: '?몄쿇 遺?됱쑀?뚮뀈 ?덈뱶', p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 0, ga: 13, gd: '-13' }
+      'u11': { title: 'U-11 1차 예선 4조 순위', teams: [
+        { rank: 1, name: '경기 고양주니어', isGoyang: true, p: 2, w: 1, d: 1, l: 0, pts: 4, gf: 13, ga: 0, gd: '+13' },
+        { rank: 2, name: '서울 서대문구청 FC', p: 2, w: 1, d: 1, l: 0, pts: 4, gf: 4, ga: 1, gd: '+3' },
+        { rank: 3, name: '대구FC 유소년', p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 1, ga: 4, gd: '-3' },
+        { rank: 4, name: '인천 부평유소년 레드', p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 0, ga: 13, gd: '-13' }
       ]},
-      'u12': { title: 'U-12 1李??덉꽑 10議??쒖쐞', teams: [
-        { rank: 1, name: '寃쎄린 怨좎뼇二쇰땲??, isGoyang: true, p: 1, w: 1, d: 0, l: 0, pts: 3, gf: 6, ga: 0, gd: '+6' },
-        { rank: 2, name: '?쒖슱 ?묒쿇FC', p: 1, w: 1, d: 0, l: 0, pts: 3, gf: 2, ga: 0, gd: '+2' },
-        { rank: 3, name: '遺???댁슫?FC', p: 0, w: 0, d: 0, l: 0, pts: 0, gf: 0, ga: 0, gd: '0' },
-        { rank: 4, name: '寃쎈궓 嫄곗젣???좎냼??, p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 0, ga: 2, gd: '-2' },
-        { rank: 5, name: '媛뺤썝 ?띿큹??泥댁쑁??, p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 0, ga: 6, gd: '-6' }
+      'u12': { title: 'U-12 1차 예선 10조 순위', teams: [
+        { rank: 1, name: '경기 고양주니어', isGoyang: true, p: 1, w: 1, d: 0, l: 0, pts: 3, gf: 6, ga: 0, gd: '+6' },
+        { rank: 2, name: '서울 양천FC', p: 1, w: 1, d: 0, l: 0, pts: 3, gf: 2, ga: 0, gd: '+2' },
+        { rank: 3, name: '부산 해운대FC', p: 0, w: 0, d: 0, l: 0, pts: 0, gf: 0, ga: 0, gd: '0' },
+        { rank: 4, name: '경남 거제시 유소년', p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 0, ga: 2, gd: '-2' },
+        { rank: 5, name: '강원 속초시 체육회', p: 1, w: 0, d: 0, l: 1, pts: 0, gf: 0, ga: 6, gd: '-6' }
       ]}
     };
 
@@ -491,7 +483,6 @@
     let activeModalMatchId = 'u12_1';
     let currentModalSubTab = 'lineup';
 
-    // --- TAB & STAGE SWITCHER ---
     function switchStage(stage) {
       currentStage = stage;
       const prelimBtn = document.getElementById('stageBtn-prelim');
@@ -531,12 +522,12 @@
             <div class="w-12 h-12 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xl mx-auto">
               <i class="fa-solid fa-trophy animate-bounce"></i>
             </div>
-            <h4 class="text-sm font-black text-white">2李?蹂몄꽑 ?좊꼫癒쇳듃 ?쇱젙 ?湲?以?/h4>
+            <h4 class="text-sm font-black text-white">2차 본선 토너먼트 일정 대기 중</h4>
             <p class="text-xs text-zinc-400 leading-relaxed">
-              9??10??紐? 1李??덉꽑 議곕퀎由ш렇 ?꾨즺 ??KFA 蹂몄꽑 ?ㅽ뵆由??吏꾩씠 ?섏삤??利됱떆 ?ㅼ떆媛??곕룞?⑸땲??
+              9월 10일(목) 1차 예선 조별리그 완료 후 KFA 본선 스플릿 대진이 나오는 즉시 실시간 연동됩니다.
             </p>
             <div class="p-2.5 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
-              ??<strong>蹂몄꽑 ?쇱젙</strong>: 9??11??湲? 16媛?~ 9??12???? 8媛?4媛?寃곗듅
+              ⚽ <strong>본선 일정</strong>: 9월 11일(금) 16강 ~ 9월 12일(토) 8강/4강/결승
             </div>
           </div>`;
         return;
@@ -552,7 +543,6 @@
         return;
       }
 
-      // Render Match Cards for U10, U11, or U12
       const matchKeys = Object.keys(MATCH_SCHEDULES).filter(k => k.startsWith(currentTab));
       let html = '';
 
@@ -569,31 +559,31 @@
         if (now >= kickoff && now < finishTime) isLive = true;
         else if (now >= finishTime || (rep.score && rep.score !== '0 : 0')) isFin = true;
 
-        let statusText = '寃쎄린??;
+        let statusText = '경기전';
         let statusBadgeClass = 'bg-[#1E222E] text-emerald-400 border border-[#282D3D]';
         let resultBadgeHtml = '';
 
         if (isFin) {
-          statusText = rep.status || '寃쎄린醫낅즺';
+          statusText = rep.status || '경기종료';
           statusBadgeClass = 'bg-blue-500/20 text-blue-400 border border-blue-500/30';
-          if (rep.status && rep.status.includes('??)) {
-            resultBadgeHtml = `<span class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-400 border border-blue-500/30">?밸━</span>`;
-          } else if (rep.status && rep.status.includes('臾?)) {
-            resultBadgeHtml = `<span class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-zinc-700 text-zinc-300">臾댁듅遺</span>`;
-          } else if (rep.status && rep.status.includes('??)) {
-            resultBadgeHtml = `<span class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-red-500/20 text-red-400">?⑤같</span>`;
+          if (rep.status && rep.status.includes('승')) {
+            resultBadgeHtml = `<span class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-400 border border-blue-500/30">승리</span>`;
+          } else if (rep.status && rep.status.includes('무')) {
+            resultBadgeHtml = `<span class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-zinc-700 text-zinc-300">무승부</span>`;
+          } else if (rep.status && rep.status.includes('패')) {
+            resultBadgeHtml = `<span class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-red-500/20 text-red-400">패배</span>`;
           }
         } else if (isLive) {
-          statusText = '寃쎄린以?;
+          statusText = '경기중';
           statusBadgeClass = 'bg-red-500 text-white animate-pulse';
         }
 
         const scoreText = (isFin || isLive) ? (rep.score || '0 : 0') : '0 : 0';
         const isHome = sched.isHome;
-        const homeName = isHome ? '寃쎄린 怨좎뼇二쇰땲?? : sched.opp;
-        const awayName = isHome ? sched.opp : '寃쎄린 怨좎뼇二쇰땲??;
+        const homeName = isHome ? '경기 고양주니어' : sched.opp;
+        const awayName = isHome ? sched.opp : '경기 고양주니어';
 
-        const dateStr = sched.datetime.split('T')[0].substring(5).replace('-', '??') + '??;
+        const dateStr = sched.datetime.split('T')[0].substring(5).replace('-', '월 ') + '일';
         const timeStr = sched.datetime.split('T')[1].substring(0, 5);
 
         html += `
@@ -615,7 +605,7 @@
                     <i class="fa-solid fa-shield-halved"></i>
                   </div>
                   <div class="text-xs font-bold text-white truncate">${homeName}</div>
-                  <span class="text-[9px] text-zinc-400">${isHome ? '(??怨좎뼇)' : '(??'}</span>
+                  <span class="text-[9px] text-zinc-400">${isHome ? '(홈/고양)' : '(홈)'}</span>
                 </div>
                 <div class="col-span-1 text-center">
                   <div class="text-xl font-black text-white font-num tracking-tight">${scoreText}</div>
@@ -626,14 +616,16 @@
                     <i class="fa-solid fa-shield-halved"></i>
                   </div>
                   <div class="text-xs font-bold text-white truncate">${awayName}</div>
-                  <span class="text-[9px] text-zinc-400">${!isHome ? '(?먯젙/怨좎뼇)' : '(?먯젙)'}</span>
+                  <span class="text-[9px] text-zinc-400">${!isHome ? '(원정/고양)' : '(원정)'}</span>
                 </div>
               </div>
               <div class="grid grid-cols-2 gap-2 mt-3 pt-2.5 border-t border-[#282D3D] text-xs">
                 <button onclick="openLineupModal('${key}')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-yellow-300 font-bold flex items-center justify-center gap-1.5 border border-yellow-500/40 active:scale-95 transition cursor-pointer">
-                  <i class="fa-solid fa-users text-[11px]"></i> ?쇱씤?끒룰린濡?                </button>
-                <a href="tmap://search?name=寃쎌＜${sched.pitch}" onclick="openTmap('寃쎌＜ ${sched.pitch}', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 border border-[#3A4259] active:scale-95 transition">
-                  <i class="fa-solid fa-location-arrow text-teal-400 text-[10px]"></i> 湲몄갼湲?                </a>
+                  <i class="fa-solid fa-users text-[11px]"></i> 라인업·기록
+                </button>
+                <a href="tmap://search?name=경주${sched.pitch}" onclick="openTmap('경주 ${sched.pitch}', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 border border-[#3A4259] active:scale-95 transition">
+                  <i class="fa-solid fa-location-arrow text-teal-400 text-[10px]"></i> 길찾기
+                </a>
               </div>
             </div>
           </div>`;
@@ -656,7 +648,7 @@
               <table class="w-full text-[11px] text-center">
                 <thead>
                   <tr class="text-zinc-400 border-b border-[#282D3D]">
-                    <th class="py-1 px-1">?쒖쐞</th><th class="py-1 px-2 text-left">?紐?/th><th class="py-1 px-1">寃쎄린</th><th class="py-1 px-1">??/th><th class="py-1 px-1">臾?/th><th class="py-1 px-1">??/th><th class="py-1 px-1 font-bold text-yellow-300">?뱀젏</th><th class="py-1 px-1">?앹떎</th>
+                    <th class="py-1 px-1">순위</th><th class="py-1 px-2 text-left">팀명</th><th class="py-1 px-1">경기</th><th class="py-1 px-1">승</th><th class="py-1 px-1">무</th><th class="py-1 px-1">패</th><th class="py-1 px-1 font-bold text-yellow-300">승점</th><th class="py-1 px-1">득실</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-[#1E222E]">`;
@@ -683,13 +675,12 @@
     function renderAllStandingsPlaceholder(container) {
       container.innerHTML = `
         <div class="rounded-2xl bg-[#161922] p-5 border border-[#282D3D] text-center space-y-3">
-          <div class="text-xs font-black text-white">?붾옉?湲??꾧뎅????ㅻⅨ議??ㅼ떆媛??쒖쐞</div>
-          <p class="text-[11px] text-zinc-400">??쒖텞援ы삊??KFA) 怨듭떇 ?꾩궛留앷낵 ?곕룞?섏뼱 ?쒖쐞媛 ?낅뜲?댄듃?⑸땲??</p>
-          <button onclick="switchTab('standings')" class="px-4 py-2 rounded-xl bg-yellow-400 text-black font-black text-xs shadow active:scale-95 transition">?곕━? 議곗닚??蹂닿린</button>
+          <div class="text-xs font-black text-white">화랑대기 전국대회 다른조 실시간 순위</div>
+          <p class="text-[11px] text-zinc-400">대한축구협회(KFA) 공식 전산망과 연동되어 순위가 업데이트됩니다.</p>
+          <button onclick="switchTab('standings')" class="px-4 py-2 rounded-xl bg-yellow-400 text-black font-black text-xs shadow active:scale-95 transition">우리팀 조순위 보기</button>
         </div>`;
     }
 
-    // --- MODAL LOGIC ---
     function openLineupModal(matchId) {
       activeModalMatchId = matchId;
       const report = MATCH_REPORTS[matchId];
@@ -742,10 +733,10 @@
                 <div>
                   <div class="text-xs font-black text-white flex items-center gap-1">
                     <span>${p.name}</span>
-                    <span class="text-[9px] px-1 rounded bg-zinc-700 text-zinc-300 font-bold">${p.pos} ${p.num}踰?/span>
-                    ${p.isCaptain ? '<span class="text-[9px] px-1 rounded bg-amber-500/30 text-amber-300 font-bold">二쇱옣(C)</span>' : ''}
+                    <span class="text-[9px] px-1 rounded bg-zinc-700 text-zinc-300 font-bold">${p.pos} ${p.num}번</span>
+                    ${p.isCaptain ? '<span class="text-[9px] px-1 rounded bg-amber-500/30 text-amber-300 font-bold">주장(C)</span>' : ''}
                   </div>
-                  <div class="text-[10px] text-zinc-400">${p.note || '?좊컻 異쒖쟾'}</div>
+                  <div class="text-[10px] text-zinc-400">${p.note || '선발 출전'}</div>
                 </div>
               </div>
             </div>`;
@@ -761,9 +752,9 @@
                 <div>
                   <div class="text-xs font-bold text-white flex items-center gap-1">
                     <span>${p.name}</span>
-                    <span class="text-[9px] px-1 rounded bg-zinc-800 text-zinc-400">${p.pos} ${p.num}踰?/span>
+                    <span class="text-[9px] px-1 rounded bg-zinc-800 text-zinc-400">${p.pos} ${p.num}번</span>
                   </div>
-                  <div class="text-[10px] text-zinc-400">${p.note || '援먯껜 ?湲?}</div>
+                  <div class="text-[10px] text-zinc-400">${p.note || '교체 대기'}</div>
                 </div>
               </div>
             </div>`;
@@ -771,12 +762,12 @@
 
         body.innerHTML = `
           <div class="space-y-3">
-            <div class="text-xs font-bold text-yellow-300">${rep.goyangFormation || '怨좎뼇二쇰땲???좎닔??}</div>
+            <div class="text-xs font-bold text-yellow-300">${rep.goyangFormation || '고양주니어 선수단'}</div>
             <div class="space-y-1.5">
-              <div class="text-[11px] font-bold text-zinc-400">?좊컻 紐낅떒 (8?몄젣)</div>
-              ${startersHtml || '<div class="text-xs text-zinc-500">?깅줉???좊컻 紐낅떒???놁뒿?덈떎.</div>'}
+              <div class="text-[11px] font-bold text-zinc-400">선발 명단 (8인제)</div>
+              ${startersHtml || '<div class="text-xs text-zinc-500">등록된 선발 명단이 없습니다.</div>'}
             </div>
-            ${subsHtml ? `<div class="space-y-1.5 pt-2"><div class="text-[11px] font-bold text-zinc-400">援먯껜 紐낅떒</div>${subsHtml}</div>` : ''}
+            ${subsHtml ? `<div class="space-y-1.5 pt-2"><div class="text-[11px] font-bold text-zinc-400">교체 명단</div>${subsHtml}</div>` : ''}
           </div>`;
       } else if (tab === 'timeline') {
         let tHtml = '';
@@ -790,25 +781,25 @@
               </div>
             </div>`;
         });
-        body.innerHTML = `<div class="space-y-2.5">${tHtml || '<div class="text-xs text-zinc-500 text-center py-6">寃쎄린 ?쒖옉 ????꾨씪?몄씠 湲곕줉?⑸땲??</div>'}</div>`;
+        body.innerHTML = `<div class="space-y-2.5">${tHtml || '<div class="text-xs text-zinc-500 text-center py-6">경기 시작 후 타임라인이 기록됩니다.</div>'}</div>`;
       } else if (tab === 'stats') {
         const s = rep.stats || { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] };
         body.innerHTML = `
           <div class="space-y-3 p-2 text-xs">
             <div class="space-y-1">
-              <div class="flex justify-between text-zinc-400 text-[11px]"><span>?덊똿</span><span>${s.shots[0]} : ${s.shots[1]}</span></div>
+              <div class="flex justify-between text-zinc-400 text-[11px]"><span>슈팅</span><span>${s.shots[0]} : ${s.shots[1]}</span></div>
               <div class="w-full bg-zinc-800 rounded-full h-1.5 flex"><div class="bg-yellow-400 h-full" style="width: ${(s.shots[0]+s.shots[1]) ? (s.shots[0]/(s.shots[0]+s.shots[1])*100) : 50}%"></div></div>
             </div>
             <div class="space-y-1">
-              <div class="flex justify-between text-zinc-400 text-[11px]"><span>?좏슚?덊똿</span><span>${s.onTarget[0]} : ${s.onTarget[1]}</span></div>
+              <div class="flex justify-between text-zinc-400 text-[11px]"><span>유효슈팅</span><span>${s.onTarget[0]} : ${s.onTarget[1]}</span></div>
               <div class="w-full bg-zinc-800 rounded-full h-1.5 flex"><div class="bg-yellow-400 h-full" style="width: ${(s.onTarget[0]+s.onTarget[1]) ? (s.onTarget[0]/(s.onTarget[0]+s.onTarget[1])*100) : 50}%"></div></div>
             </div>
             <div class="space-y-1">
-              <div class="flex justify-between text-zinc-400 text-[11px]"><span>肄붾꼫??/span><span>${s.corners[0]} : ${s.corners[1]}</span></div>
+              <div class="flex justify-between text-zinc-400 text-[11px]"><span>코너킥</span><span>${s.corners[0]} : ${s.corners[1]}</span></div>
               <div class="w-full bg-zinc-800 rounded-full h-1.5 flex"><div class="bg-yellow-400 h-full" style="width: ${(s.corners[0]+s.corners[1]) ? (s.corners[0]/(s.corners[0]+s.corners[1])*100) : 50}%"></div></div>
             </div>
             <div class="space-y-1">
-              <div class="flex justify-between text-zinc-400 text-[11px]"><span>?뚯슱</span><span>${s.fouls[0]} : ${s.fouls[1]}</span></div>
+              <div class="flex justify-between text-zinc-400 text-[11px]"><span>파울</span><span>${s.fouls[0]} : ${s.fouls[1]}</span></div>
               <div class="w-full bg-zinc-800 rounded-full h-1.5 flex"><div class="bg-red-400 h-full" style="width: ${(s.fouls[0]+s.fouls[1]) ? (s.fouls[0]/(s.fouls[0]+s.fouls[1])*100) : 50}%"></div></div>
             </div>
           </div>`;
@@ -841,7 +832,7 @@
 
       spawnFloatingBadge();
       fireConfetti();
-      showToast('怨좎뼇二쇰땲???좎닔?ㅼ뿉寃??뚯씠?낆쓣 蹂대깉?듬땲?? ?썩씍截?);
+      showToast('고양주니어 선수들에게 파이팅을 보냈습니다! ⚽❤️');
 
       fetch(`${FIREBASE_DB_URL}/cheerCount.json`, {
         method: 'PUT',
@@ -857,7 +848,7 @@
       if (!container) return;
       const el = document.createElement('div');
       el.className = 'floating-cheer-badge';
-      el.innerText = '+1 ?ㅿ툘';
+      el.innerText = '+1 ❤️';
       el.style.left = `calc(50% + ${Math.random() * 60 - 30}px)`;
       container.appendChild(el);
       setTimeout(() => el.remove(), 1200);
@@ -888,9 +879,9 @@
     }
 
     const DEFAULT_COMMENTS = [
-      { author: '怨좎뼇 ?쒗룷?곗쫰', text: '怨좎뼇二쇰땲??U-12 泥リ꼍湲?6:0 ???異뺥븯?⑸땲??! ?룇', time: '10遺??? },
-      { author: 'U-11 ?숇?紐?, text: '遺???놁씠 ?앷퉴吏 硫뗭쭊 寃쎄린 ?쇱퀜二쇱꽭?? ?붿씠??', time: '25遺??? },
-      { author: '?댄삁 ??, text: '?먰? 怨좎뼇二쇰땲???꾧뎅 ?쒗뙣 媛??! ?쏜윍?, time: '1?쒓컙 ?? }
+      { author: '고양 서포터즈', text: '고양주니어 U-12 첫경기 6:0 대승 축하합니다!! 🏆', time: '10분 전' },
+      { author: 'U-11 학부모', text: '부상 없이 끝까지 멋진 경기 펼쳐주세요! 화이팅!', time: '25분 전' },
+      { author: '열혈 팬', text: '원팀 고양주니어 전국 제패 가자!! ⚽🔥', time: '1시간 전' }
     ];
 
     function getLocalComments() {
@@ -912,7 +903,7 @@
             </div>
             <p class="text-xs text-zinc-200 mt-0.5 leading-snug">${c.text}</p>
           </div>
-          <span class="text-[9px] text-zinc-500 shrink-0 font-num">${c.time || '諛⑷툑 ??}</span>
+          <span class="text-[9px] text-zinc-500 shrink-0 font-num">${c.time || '방금 전'}</span>
         </div>
       `).join('');
     }
@@ -926,7 +917,7 @@
       const newC = {
         author: authorEl.value.trim(),
         text: textEl.value.trim(),
-        time: '諛⑷툑 ??
+        time: '방금 전'
       };
 
       const comments = getLocalComments();
@@ -937,7 +928,7 @@
       textEl.value = '';
       textEl.blur();
       fireConfetti();
-      showToast('?묒썝 硫붿떆吏媛 ?깅줉?섏뿀?듬땲?? ?쏜윊?);
+      showToast('응원 메시지가 등록되었습니다! ⚽💌');
 
       fetch(`${FIREBASE_DB_URL}/comments.json`, {
         method: 'POST',
@@ -948,7 +939,6 @@
       return false;
     }
 
-    // --- UTILITIES ---
     function showToast(msg) {
       const toast = document.getElementById('toastNotification');
       const toastMsg = document.getElementById('toastMessage');
@@ -980,15 +970,15 @@
     function shareKakaoOrUrl() {
       if (navigator.share) {
         navigator.share({
-          title: '2026 ?붾옉?湲??꾧뎅?좎냼?꾩텞援щ???- 怨좎뼇二쇰땲?퀳C',
-          text: '怨좎뼇二쇰땲?퀳C ?붾옉?湲??ㅼ떆媛?寃쎄린 ?쇱젙 諛?寃곌낵!',
+          title: '2026 화랑대기 전국유소년축구대회 - 고양주니어FC',
+          text: '고양주니어FC 화랑대기 실시간 경기 일정 및 결과!',
           url: window.location.href
         }).catch(() => {});
       } else {
         navigator.clipboard.writeText(window.location.href).then(() => {
-          showToast('留곹겕媛 ?대┰蹂대뱶??蹂듭궗?섏뿀?듬땲??');
+          showToast('링크가 클립보드에 복사되었습니다!');
         }).catch(() => {
-          showToast('怨듭쑀 留곹겕: ' + window.location.href);
+          showToast('공유 링크: ' + window.location.href);
         });
       }
     }
@@ -1005,7 +995,6 @@
       if (el) el.textContent = `${arrH}:${arrM}`;
     }
 
-    // --- INIT ---
     window.addEventListener('DOMContentLoaded', () => {
       initCheerCount();
       renderCheerComments();
