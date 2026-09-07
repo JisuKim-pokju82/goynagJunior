@@ -505,8 +505,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="showLineupPendingToast()" class="py-2 rounded-xl bg-[#181B26] hover:bg-[#202534] text-zinc-400 font-medium flex items-center justify-center gap-1.5 text-xs border border-[#282D3D] active:scale-95 transition cursor-pointer">
-              <i class="fa-solid fa-users-slash text-zinc-500 text-[11px]"></i> 라인업 대기
+            <button onclick="openLineupModal('u10_2')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업
             </button>
 
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%B6%95%EA%B5%AC%EA%B3%B5%EC%9B%90" onclick="openTmap('경주축구공원', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
@@ -753,8 +753,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="showLineupPendingToast()" class="py-2 rounded-xl bg-[#181B26] hover:bg-[#202534] text-zinc-400 font-medium flex items-center justify-center gap-1.5 text-xs border border-[#282D3D] active:scale-95 transition cursor-pointer">
-              <i class="fa-solid fa-users-slash text-zinc-500 text-[11px]"></i> 라인업 대기
+            <button onclick="openLineupModal('u11_2')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업
             </button>
 
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%B6%95%EA%B5%AC%EA%B3%B5%EC%9B%90" onclick="openTmap('경주축구공원', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
@@ -3469,6 +3469,11 @@ id="cheer-section" class="space-y-3">
               const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
               const hasScore = (goyangScore != null && oppScore != null);
 
+              // 경기 상태 판별: 오늘(9/7) 진행 중인 2차전(u10_2, u11_2) 또는 r.status === 'live'
+              const isTodayMatch = (key === 'u10_2' || key === 'u11_2');
+              const isLive = (r.status === 'live') || (isTodayMatch && (r.status !== 'fin' || (goyangScore === 0 && oppScore === 0)));
+              const isFin = (r.status === 'fin' && !isLive);
+
               let finStatusText = '경기종료';
               let isWin = false, isLoss = false, isDraw = false;
               if (hasScore) {
@@ -3481,9 +3486,9 @@ id="cheer-section" class="space-y-3">
                 if (hasScore) {
                   MATCH_REPORTS[key].score = `${goyangScore} : ${oppScore}`;
                 }
-                if (r.status === 'fin') {
+                if (isFin) {
                   MATCH_REPORTS[key].status = finStatusText;
-                } else if (r.status === 'live' || (hasScore && r.status !== 'fin')) {
+                } else if (isLive || (hasScore && !isFin)) {
                   MATCH_REPORTS[key].status = '경기중';
                 }
               }
@@ -3503,7 +3508,7 @@ id="cheer-section" class="space-y-3">
 
               const resultEl = document.getElementById(`result-${key}`);
               if (resultEl) {
-                if (r.status === 'fin' && hasScore) {
+                if (isFin && hasScore) {
                   resultEl.classList.remove('hidden');
                   if (isWin) {
                     resultEl.textContent = '승리 ⚽';
@@ -3521,13 +3526,19 @@ id="cheer-section" class="space-y-3">
               }
 
               const ddayEl = document.getElementById(`dday-${key}`);
-              if (ddayEl && r.status === 'fin') {
-                ddayEl.classList.add('hidden');
+              if (ddayEl) {
+                if (isFin) {
+                  ddayEl.classList.add('hidden');
+                } else if (isLive || isTodayMatch) {
+                  ddayEl.textContent = 'TODAY';
+                  ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 text-[10px] font-black border border-red-500/40 shadow-sm animate-pulse';
+                  ddayEl.classList.remove('hidden');
+                }
               }
 
               const statusEl = document.getElementById(`status-${key}`);
               if (statusEl) {
-                if (r.status === 'fin') {
+                if (isFin) {
                   statusEl.textContent = finStatusText;
                   if (isWin) {
                     statusEl.className = 'px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40';
@@ -3536,7 +3547,7 @@ id="cheer-section" class="space-y-3">
                   } else {
                     statusEl.className = 'px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40';
                   }
-                } else if (r.status === 'live' || (hasScore && r.status !== 'fin')) {
+                } else if (isLive || (hasScore && !isFin)) {
                   statusEl.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-ping mr-1"></span>라이브';
                   statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-bold border border-red-500/60 animate-pulse';
                 }
