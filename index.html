@@ -445,7 +445,7 @@
             </div>
             <div class="flex items-center gap-1 shrink-0">
               <span id="dday-u10_2" class="hidden px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40">경기종료 (무)</span>
+              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료 (패)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -473,9 +473,9 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_2">2 : 2
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_2">2 : 4
               </div>
-              <span id="result-u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">무승부</span>
+              <span id="result-u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700">패배</span>
               <button onclick="scrapeMatch('u10_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
               </button>
@@ -3390,7 +3390,7 @@ id="cheer-section" class="space-y-3">
       
       // 9월 7일 완료된 고양주니어 2차전 공식 결과 보정 (서버 지연 대비)
       if (!map['U11|124'] || map['U11|124'].home_score == null) {
-        map['U11|124'] = { cat: 'U11', match_no: 124, home_score: 2, away_score: 2, status: 'fin' };
+        map['U11|124'] = { cat: 'U11', match_no: 124, home_score: 2, away_score: 4, status: 'fin' };
       }
       if (!map['U11|122'] || map['U11|122'].home_score == null) {
         map['U11|122'] = { cat: 'U11', match_no: 122, home_score: 1, away_score: 3, status: 'fin' };
@@ -3941,8 +3941,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 경기 남양주 BEST',
     date: '9월 7일 (월) 09:00',
     pitch: '축구공원3A',
-    status: '경기종료 (무)',
-    score: '2 : 2',
+    status: '경기종료 (패)',
+    score: '2 : 4',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 남양주 BEST', teamKey: 'namyangju_best', isGoyang: false },
     goyangFormation: '8인제 3-3-1 (코치: 백운찬)',
@@ -3968,13 +3968,13 @@ const MATCH_REPORTS = {
       { role: '코치', name: '곽태원' }
     ],
     oppStarters: [
-      { pos: 'FW', num: 13, name: '김태윤', isCaptain: true, heightWeight: '143cm/35kg', note: '⚽ 1골 (26\') / 주장(C)' },
+      { pos: 'FW', num: 13, name: '김태윤', isCaptain: true, heightWeight: '143cm/35kg', note: '⚽ 2골 멀티골 (26\', 32\') / 주장(C)' },
       { pos: 'MF', num: 5, name: '박시준', heightWeight: '140cm/35kg', note: '선발 미드필더' },
       { pos: 'MF', num: 7, name: '김리우', heightWeight: '135cm/29kg', note: '선발 미드필더' },
       { pos: 'MF', num: 11, name: '권도하', heightWeight: '145cm/35kg', note: '⚽ 1골 (7\')' },
       { pos: 'MF', num: 14, name: '김지후', heightWeight: '143cm/35kg', note: '선발 미드필더' },
       { pos: 'MF', num: 19, name: '배은준', heightWeight: '144cm/45kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 25, name: '이서인', heightWeight: '150cm/40kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 25, name: '이서인', heightWeight: '150cm/40kg', note: '⚽ 1골 (28\')' },
       { pos: 'GK', num: 1, name: '김민혁', heightWeight: '140cm/40kg', note: '자책골 (20+2\') / 선발 골키퍼' }
     ],
     oppSubs: [
@@ -3992,13 +3992,15 @@ const MATCH_REPORTS = {
       { min: "5'", type: 'goal', title: '⚽ 김주한 선제골! (1:0)', desc: '김주한(DF, No.27) 환상적인 2경기 연속 골 작렬! 고양주니어 1:0 리드' },
       { min: "7'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (1:1)', desc: '남양주 BEST 권도하(11) 동점골 득점' },
       { min: "20+2'", type: 'goal', title: '⚽ 고양주니어 추가골 유도 (2:1)', desc: '전반 추가시간 고양주니어의 맹공격으로 상대 골키퍼 김민혁(1) 자책골 유도! 2:1 리드' },
-      { min: "26'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (2:2)', desc: '후반 남양주 BEST 주장 김태윤(13) 득점' },
-      { min: "40+2'", type: 'end', title: '🏁 경기 종료 (2:2 무승부)', desc: '치열한 접전 끝에 2:2 무승부로 값진 승점 1점 획득!' }
+      { min: "26'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (2:2)', desc: '후반 남양주 BEST 주장 김태윤(13) 동점골 득점' },
+      { min: "28'", type: 'goal', title: '⚽ 남양주 BEST 역전골 (2:3)', desc: '남양주 BEST 이서인(25) 역전골 득점' },
+      { min: "32'", type: 'goal', title: '⚽ 남양주 BEST 추가골 (2:4)', desc: '남양주 BEST 주장 김태윤(13) 멀티골 성공' },
+      { min: "40+2'", type: 'end', title: '🏁 경기 종료 (2:4)', desc: '경기 종료. 2골을 몰아치며 끝까지 당당히 맞서 싸운 고양주니어 옐로우!' }
     ],
     stats: {
-      shots: [8, 9],
-      onTarget: [5, 6],
-      corners: [3, 4],
+      shots: [8, 12],
+      onTarget: [5, 8],
+      corners: [3, 5],
       fouls: [2, 3]
     }
   },
