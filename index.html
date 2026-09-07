@@ -3496,10 +3496,18 @@ id="cheer-section" class="space-y-3">
               const scoreEl = document.getElementById(`score-${key}`);
               if (scoreEl && hasScore) {
                 scoreEl.textContent = `${goyangScore} : ${oppScore}`;
-                if (goyangScore > oppScore) {
-                  scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
-                } else if (goyangScore === oppScore) {
-                  scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                if (isFin) {
+                  // 경기 종료 후에만 승/패/무에 따른 스코어 하이라이트 스타일 적용
+                  if (goyangScore > oppScore) {
+                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                  } else if (goyangScore === oppScore) {
+                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                  } else {
+                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                  }
+                } else if (isLive || (hasScore && !isFin)) {
+                  // 경기 진행 중일 때는 중립 라이브 스코어 스타일 유지 (승패 강조 X)
+                  scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#12151E] border border-amber-500/40 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                 } else {
                   scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                 }
@@ -3508,6 +3516,7 @@ id="cheer-section" class="space-y-3">
 
               const resultEl = document.getElementById(`result-${key}`);
               if (resultEl) {
+                // 승패(승리/패배/무승부) 뱃지는 반드시 경기 종료(isFin) 시에만 표시!
                 if (isFin && hasScore) {
                   resultEl.classList.remove('hidden');
                   if (isWin) {
@@ -3521,6 +3530,7 @@ id="cheer-section" class="space-y-3">
                     resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
                   }
                 } else {
+                  // 경기 중이거나 경기 전에는 승패 뱃지 숨김
                   resultEl.classList.add('hidden');
                 }
               }
@@ -3548,7 +3558,7 @@ id="cheer-section" class="space-y-3">
                     statusEl.className = 'px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40';
                   }
                 } else if (isLive || (hasScore && !isFin)) {
-                  statusEl.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-ping mr-1"></span>라이브';
+                  statusEl.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-ping mr-1"></span>경기중';
                   statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-bold border border-red-500/60 animate-pulse';
                 }
               }
