@@ -2873,39 +2873,49 @@ id="cheer-section" class="space-y-3">
     const FIREBASE_DB = window.FIREBASE_DB_URL || 'https://goyang-78387-default-rtdb.firebaseio.com';
     window.FIREBASE_DB_URL = FIREBASE_DB;
 
-    const MATCH_DATES = {
-      'u10_1': '2026-09-06',
-      'u10_2': '2026-09-07',
-      'u10_3': '2026-09-08',
-      'u11_1': '2026-09-06',
-      'u11_2': '2026-09-07',
-      'u11_3': '2026-09-08',
-      'u12_1': '2026-09-07',
-      'u12_2': '2026-09-08',
-      'u12_3': '2026-09-09',
-      'u12_4': '2026-09-10'
+    const MATCH_SCHEDULES = {
+      'u10_1': { date: '2026-09-06', time: '09:00', datetime: '2026-09-06T09:00:00+09:00', age: 'U-10 옐로우', label: '1차전' },
+      'u10_2': { date: '2026-09-07', time: '09:00', datetime: '2026-09-07T09:00:00+09:00', age: 'U-10 옐로우', label: '2차전' },
+      'u10_3': { date: '2026-09-08', time: '09:00', datetime: '2026-09-08T09:00:00+09:00', age: 'U-10 옐로우', label: '3차전' },
+      'u11_1': { date: '2026-09-06', time: '09:00', datetime: '2026-09-06T09:00:00+09:00', age: 'U-11 와인', label: '1차전' },
+      'u11_2': { date: '2026-09-07', time: '09:00', datetime: '2026-09-07T09:00:00+09:00', age: 'U-11 와인', label: '2차전' },
+      'u11_3': { date: '2026-09-08', time: '09:00', datetime: '2026-09-08T09:00:00+09:00', age: 'U-11 와인', label: '3차전' },
+      'u12_1': { date: '2026-09-07', time: '16:00', datetime: '2026-09-07T16:00:00+09:00', age: 'U-12 대표', label: '1차전' },
+      'u12_2': { date: '2026-09-08', time: '16:00', datetime: '2026-09-08T16:00:00+09:00', age: 'U-12 대표', label: '2차전' },
+      'u12_3': { date: '2026-09-09', time: '16:00', datetime: '2026-09-09T16:00:00+09:00', age: 'U-12 대표', label: '3차전' },
+      'u12_4': { date: '2026-09-10', time: '16:00', datetime: '2026-09-10T16:00:00+09:00', age: 'U-12 대표', label: '4차전' }
     };
+    const MATCH_DATES = Object.fromEntries(Object.entries(MATCH_SCHEDULES).map(([k, v]) => [k, v.date]));
 
     function updateMatchDDays() {
-      const today = new Date();
-      const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const now = new Date();
+      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-      Object.entries(MATCH_DATES).forEach(([key, dateStr]) => {
+      Object.entries(MATCH_SCHEDULES).forEach(([key, sched]) => {
         const ddayEl = document.getElementById('dday-' + key);
         if (!ddayEl) return;
 
-        const rep = (typeof MATCH_REPORTS !== 'undefined') ? MATCH_REPORTS[key] : null;
-        if (rep && rep.status && rep.status.includes('종료')) {
+        const kickoff = new Date(sched.datetime);
+        const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
+
+        if (now >= finishTime) {
           ddayEl.classList.add('hidden');
           return;
         }
 
-        const parts = dateStr.split('-');
+        if (now >= kickoff && now < finishTime) {
+          ddayEl.textContent = 'TODAY';
+          ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black border border-red-500/40 shadow-sm animate-pulse';
+          ddayEl.classList.remove('hidden');
+          return;
+        }
+
+        const parts = sched.date.split('-');
         const mDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
         const diffDays = Math.round((mDate - todayStart) / (1000 * 60 * 60 * 24));
 
         if (diffDays === 0) {
-          ddayEl.textContent = 'D-DAY';
+          ddayEl.textContent = 'TODAY';
           ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black border border-red-500/40 shadow-sm animate-pulse';
         } else if (diffDays > 0) {
           ddayEl.textContent = 'D-' + diffDays;
@@ -3460,6 +3470,8 @@ id="cheer-section" class="space-y-3">
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const rows = await res.json();
 
+        const now = new Date();
+
         // 1. 경기 카드 스코어 및 뱃지 업데이트 (승/패/무 반영)
         let updatedCount = 0;
         rows.forEach(r => {
@@ -3469,31 +3481,30 @@ id="cheer-section" class="space-y-3">
               const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
               const hasScore = (goyangScore != null && oppScore != null);
 
-              // 경기 상태 판별:
-              // 1) 1차전(9/6) 경기 (u10_1, u11_1): 어제 정상 종료된 경기 -> isFin = true
-              // 2) 2차전(9/7) 경기 (u10_2, u11_2): 오늘(9/7) 경기. 공식 종료(fin) 상태가 아니거나, 0:0 또는 경기 진행 중이면 무조건 isLive = true
-              // 3) 3차전/4차전 (9/8, 9/9): 미래 경기 -> isFin = false, isLive = false (경기전)
-              const isPastMatch = (key === 'u10_1' || key === 'u11_1');
-              const isTodayMatch = (key === 'u10_2' || key === 'u11_2');
-              
+              // 경기 시작 시간 및 1시간 경기 판정
+              const sched = (typeof MATCH_SCHEDULES !== 'undefined') ? MATCH_SCHEDULES[key] : null;
               let isFin = false;
               let isLive = false;
+              let isUpcoming = false;
 
-              if (isPastMatch) {
-                isFin = (r.status === 'fin' || hasScore);
-              } else if (isTodayMatch) {
-                // 오늘 2차전: 실시간 진행 중이므로 절대 '무승부'나 '종료'로 단정하지 않고 '경기중'으로 유지
-                if (r.status === 'fin' && hasScore && (goyangScore > 0 || oppScore > 0)) {
-                  // 실제 유효 스코어가 있고 공식 완료 처리된 경우
-                  isFin = true;
-                } else {
-                  // 경기 진행 중
+              if (sched) {
+                const kickoff = new Date(sched.datetime);
+                const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000); // 킥오프 후 1시간
+
+                if (now < kickoff) {
+                  // 1) 경기 시작 전
+                  isUpcoming = true;
+                } else if (now >= kickoff && now < finishTime) {
+                  // 2) 킥오프 ~ 1시간: 무조건 실시간 '경기중' (승패 표시 절대 없음)
                   isLive = true;
+                } else {
+                  // 3) 킥오프 1시간 후: '경기종료' (승패 판정 활성화)
+                  isFin = true;
                 }
               } else {
-                // 향후 경기
-                if (r.status === 'live') isLive = true;
-                else if (r.status === 'fin') isFin = true;
+                if (r.status === 'fin') isFin = true;
+                else if (r.status === 'live') isLive = true;
+                else isUpcoming = true;
               }
 
               let finStatusText = '경기종료';
@@ -3510,15 +3521,19 @@ id="cheer-section" class="space-y-3">
                 }
                 if (isFin) {
                   MATCH_REPORTS[key].status = finStatusText;
-                } else if (isLive || (hasScore && !isFin)) {
+                } else if (isLive) {
                   MATCH_REPORTS[key].status = '경기중';
+                } else {
+                  MATCH_REPORTS[key].status = '경기전';
                 }
               }
 
               const scoreEl = document.getElementById(`score-${key}`);
-              if (scoreEl && hasScore) {
-                scoreEl.textContent = `${goyangScore} : ${oppScore}`;
-                if (isFin) {
+              if (scoreEl) {
+                if (hasScore) {
+                  scoreEl.textContent = `${goyangScore} : ${oppScore}`;
+                }
+                if (isFin && hasScore) {
                   // 경기 종료 후에만 승/패/무에 따른 스코어 하이라이트 스타일 적용
                   if (goyangScore > oppScore) {
                     scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
@@ -3527,13 +3542,13 @@ id="cheer-section" class="space-y-3">
                   } else {
                     scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                   }
-                } else if (isLive || (hasScore && !isFin)) {
+                } else if (isLive) {
                   // 경기 진행 중일 때는 중립 라이브 스코어 스타일 유지 (승패 강조 X)
                   scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#12151E] border border-amber-500/40 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                 } else {
                   scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                 }
-                updatedCount++;
+                if (hasScore) updatedCount++;
               }
 
               const resultEl = document.getElementById(`result-${key}`);
@@ -3563,7 +3578,7 @@ id="cheer-section" class="space-y-3">
               if (ddayEl) {
                 if (isFin) {
                   ddayEl.classList.add('hidden');
-                } else if (isLive || isTodayMatch) {
+                } else if (isLive) {
                   ddayEl.textContent = 'TODAY';
                   ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 text-[10px] font-black border border-red-500/40 shadow-sm animate-pulse';
                   ddayEl.classList.remove('hidden');
@@ -3581,9 +3596,12 @@ id="cheer-section" class="space-y-3">
                   } else {
                     statusEl.className = 'px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40';
                   }
-                } else if (isLive || (hasScore && !isFin)) {
+                } else if (isLive) {
                   statusEl.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-ping mr-1"></span>경기중';
                   statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-bold border border-red-500/60 animate-pulse';
+                } else {
+                  statusEl.textContent = '경기전';
+                  statusEl.className = 'px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-400 text-[10px] font-bold border border-[#282D3D]';
                 }
               }
             }
@@ -3658,15 +3676,36 @@ id="cheer-section" class="space-y-3">
 
       if (icon) icon.classList.remove('fa-spin');
 
+      const sched = (typeof MATCH_SCHEDULES !== 'undefined') ? MATCH_SCHEDULES[matchId] : null;
       const rep = (typeof MATCH_REPORTS !== 'undefined') ? MATCH_REPORTS[matchId] : null;
-      if (rep && rep.status === '경기종료') {
-        showToast(`[${rep.age}] 공식 경기 종료! 결과: ${rep.score} ⚽`);
-      } else if (rep && rep.status === '경기중') {
-        showToast(`[${rep.age}] 실시간 진행 중! 현재 스코어: ${rep.score} 🔥`);
+      const now = new Date();
+
+      let isLive = false;
+      let isFin = false;
+
+      if (sched) {
+        const kickoff = new Date(sched.datetime);
+        const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
+        if (now >= kickoff && now < finishTime) {
+          isLive = true;
+        } else if (now >= finishTime) {
+          isFin = true;
+        }
       } else if (rep) {
-        showToast(`[${rep.age}] ${rep.date} 경기 전입니다. 킥오프 후 자동 반영됩니다! ⚽`);
+        if (rep.status && rep.status.includes('경기중')) isLive = true;
+        else if (rep.status && rep.status.includes('종료')) isFin = true;
+      }
+
+      const ageLabel = rep ? rep.age : (sched ? sched.age : '고양주니어');
+      const scoreStr = (rep && rep.score) ? rep.score : (document.getElementById(`score-${matchId}`) ? document.getElementById(`score-${matchId}`).textContent.trim() : '0 : 0');
+      const dateStr = rep ? rep.date : (sched ? `${sched.date} ${sched.time}` : '');
+
+      if (isFin) {
+        showToast(`[${ageLabel}] 공식 경기 종료! 결과: ${scoreStr} ⚽`);
+      } else if (isLive) {
+        showToast(`[${ageLabel}] 현재 경기 진행 중! 실시간 스코어: ${scoreStr} 🔥`);
       } else {
-        showToast('해당 경기 공식 스코어 동기화 완료! ⚽');
+        showToast(`[${ageLabel}] ${dateStr} 경기 전입니다. 킥오프 후 자동 반영됩니다! ⚽`);
       }
     }
 
