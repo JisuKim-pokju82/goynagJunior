@@ -3469,10 +3469,32 @@ id="cheer-section" class="space-y-3">
               const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
               const hasScore = (goyangScore != null && oppScore != null);
 
-              // 경기 상태 판별: 오늘(9/7) 진행 중인 2차전(u10_2, u11_2) 또는 r.status === 'live'
+              // 경기 상태 판별:
+              // 1) 1차전(9/6) 경기 (u10_1, u11_1): 어제 정상 종료된 경기 -> isFin = true
+              // 2) 2차전(9/7) 경기 (u10_2, u11_2): 오늘(9/7) 경기. 공식 종료(fin) 상태가 아니거나, 0:0 또는 경기 진행 중이면 무조건 isLive = true
+              // 3) 3차전/4차전 (9/8, 9/9): 미래 경기 -> isFin = false, isLive = false (경기전)
+              const isPastMatch = (key === 'u10_1' || key === 'u11_1');
               const isTodayMatch = (key === 'u10_2' || key === 'u11_2');
-              const isLive = (r.status === 'live') || (isTodayMatch && (r.status !== 'fin' || (goyangScore === 0 && oppScore === 0)));
-              const isFin = (r.status === 'fin' && !isLive);
+              
+              let isFin = false;
+              let isLive = false;
+
+              if (isPastMatch) {
+                isFin = (r.status === 'fin' || hasScore);
+              } else if (isTodayMatch) {
+                // 오늘 2차전: 실시간 진행 중이므로 절대 '무승부'나 '종료'로 단정하지 않고 '경기중'으로 유지
+                if (r.status === 'fin' && hasScore && (goyangScore > 0 || oppScore > 0)) {
+                  // 실제 유효 스코어가 있고 공식 완료 처리된 경우
+                  isFin = true;
+                } else {
+                  // 경기 진행 중
+                  isLive = true;
+                }
+              } else {
+                // 향후 경기
+                if (r.status === 'live') isLive = true;
+                else if (r.status === 'fin') isFin = true;
+              }
 
               let finStatusText = '경기종료';
               let isWin = false, isLoss = false, isDraw = false;
@@ -3530,7 +3552,7 @@ id="cheer-section" class="space-y-3">
                     resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
                   }
                 } else {
-                  // 경기 중이거나 경기 전에는 승패 뱃지 숨김
+                  // 경기 중이거나 경기 전에는 승패 뱃지 무조건 숨김
                   resultEl.classList.add('hidden');
                 }
               }
