@@ -444,8 +444,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 7일 (월) 09:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u10_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+              <span id="dday-u10_2" class="hidden px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
+              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40">경기종료 (무)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -473,9 +473,9 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_2">0 : 0
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_2">2 : 2
               </div>
-              <span id="result-u10_2" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold"></span>
+              <span id="result-u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">무승부</span>
               <button onclick="scrapeMatch('u10_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
               </button>
@@ -696,8 +696,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 7일 (월) 09:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u11_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-              <span id="status-u11_2" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+              <span id="dday-u11_2" class="hidden px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
+              <span id="status-u11_2" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료 (패)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -725,9 +725,9 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u11_2">0 : 0
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u11_2">1 : 3
               </div>
-              <span id="result-u11_2" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold"></span>
+              <span id="result-u11_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700">패배</span>
               <button onclick="scrapeMatch('u11_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
               </button>
@@ -3387,6 +3387,15 @@ id="cheer-section" class="space-y-3">
     function renderGroupStandings(rows) {
       const map = {};
       rows.forEach(x => { map[x.cat + '|' + x.match_no] = x; });
+      
+      // 9월 7일 완료된 고양주니어 2차전 공식 결과 보정 (서버 지연 대비)
+      if (!map['U11|124'] || map['U11|124'].home_score == null) {
+        map['U11|124'] = { cat: 'U11', match_no: 124, home_score: 2, away_score: 2, status: 'fin' };
+      }
+      if (!map['U11|122'] || map['U11|122'].home_score == null) {
+        map['U11|122'] = { cat: 'U11', match_no: 122, home_score: 1, away_score: 3, status: 'fin' };
+      }
+
       window.TOURNAMENT_SCORES_MAP = map;
 
       Object.values(STANDINGS_GROUPS).forEach(grp => {
@@ -3477,8 +3486,18 @@ id="cheer-section" class="space-y-3">
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
             if (mapping.cat === r.cat && mapping.match_no === r.match_no) {
-              const goyangScore = mapping.goyangIsHome ? r.home_score : r.away_score;
-              const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
+              let goyangScore = mapping.goyangIsHome ? r.home_score : r.away_score;
+              let oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
+
+              // DB에 미반영되었거나 0:0일 경우 MATCH_REPORTS의 확정 스코어 반영
+              const rep = (typeof MATCH_REPORTS !== 'undefined') ? MATCH_REPORTS[key] : null;
+              if ((goyangScore == null || (goyangScore === 0 && oppScore === 0 && r.status !== 'live')) && rep && rep.score && rep.score !== '0 : 0') {
+                const parts = rep.score.split(':').map(s => parseInt(s.trim(), 10));
+                if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                  goyangScore = parts[0];
+                  oppScore = parts[1];
+                }
+              }
               const hasScore = (goyangScore != null && oppScore != null);
 
               // 경기 시작 시간 및 1시간 경기 판정
@@ -3922,8 +3941,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 경기 남양주 BEST',
     date: '9월 7일 (월) 09:00',
     pitch: '축구공원3A',
-    status: '경기전',
-    score: '0 : 0',
+    status: '경기종료 (무)',
+    score: '2 : 2',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 남양주 BEST', teamKey: 'namyangju_best', isGoyang: false },
     goyangFormation: '8인제 3-3-1 (코치: 백운찬)',
@@ -3937,11 +3956,11 @@ const MATCH_REPORTS = {
       { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], isAce: false, isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
       { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], isAce: false, isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
       { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], isAce: false, isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
-      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '선발 수비' },
+      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 5\' 선제골! (2경기 연속골)' },
       { pos: 'GK', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 골키퍼' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], isAce: false, isCaptain: false, heightWeight: '127cm/27kg', note: '교체 대기' }
+      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], isAce: false, isCaptain: false, heightWeight: '127cm/27kg', note: '플라잉교체 투입' }
     ],
     oppFormation: '8인제 포메이션 (감독: 김주영 / 코치: 곽태원, 김종헌, 류희헌, 박경환, 박성빈)',
     oppCoaches: [
@@ -3949,24 +3968,39 @@ const MATCH_REPORTS = {
       { role: '코치', name: '곽태원' }
     ],
     oppStarters: [
-      { pos: 'FW', num: 13, name: '김태윤', isCaptain: true, heightWeight: '143cm/35kg', note: '주장(C) 선발' },
+      { pos: 'FW', num: 13, name: '김태윤', isCaptain: true, heightWeight: '143cm/35kg', note: '⚽ 1골 (26\') / 주장(C)' },
       { pos: 'MF', num: 5, name: '박시준', heightWeight: '140cm/35kg', note: '선발 미드필더' },
       { pos: 'MF', num: 7, name: '김리우', heightWeight: '135cm/29kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 11, name: '권도하', heightWeight: '145cm/35kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 11, name: '권도하', heightWeight: '145cm/35kg', note: '⚽ 1골 (7\')' },
       { pos: 'MF', num: 14, name: '김지후', heightWeight: '143cm/35kg', note: '선발 미드필더' },
       { pos: 'MF', num: 19, name: '배은준', heightWeight: '144cm/45kg', note: '선발 미드필더' },
       { pos: 'MF', num: 25, name: '이서인', heightWeight: '150cm/40kg', note: '선발 미드필더' },
-      { pos: 'GK', num: 1, name: '김민혁', heightWeight: '140cm/40kg', note: '선발 골키퍼' }
+      { pos: 'GK', num: 1, name: '김민혁', heightWeight: '140cm/40kg', note: '자책골 (20+2\') / 선발 골키퍼' }
     ],
     oppSubs: [
-      { pos: 'DF', num: 2, name: '장영우', heightWeight: '143cm/43kg', note: '교체 대기' },
-      { pos: 'DF', num: 8, name: '은준기', heightWeight: '138cm/28kg', note: '교체 대기' },
-      { pos: 'MF', num: 4, name: '박준서', heightWeight: '145cm/35kg', note: '교체 대기' },
-      { pos: 'MF', num: 9, name: '강우준', heightWeight: '140cm/34kg', note: '교체 대기' },
-      { pos: 'FW', num: 3, name: '이예성', heightWeight: '135cm/28kg', note: '교체 대기' }
+      { pos: 'DF', num: 2, name: '장영우', heightWeight: '143cm/43kg', note: '플라잉교체 투입' },
+      { pos: 'DF', num: 8, name: '은준기', heightWeight: '138cm/28kg', note: '플라잉교체 투입' },
+      { pos: 'MF', num: 4, name: '박준서', heightWeight: '145cm/35kg', note: '플라잉교체 투입' },
+      { pos: 'MF', num: 9, name: '강우준', heightWeight: '140cm/34kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 3, name: '이예성', heightWeight: '135cm/28kg', note: '플라잉교체 투입' }
     ],
-    timeline: [],
-    stats: null
+    timeline: [
+      { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '축구공원3A 구장에서 U-10 옐로우 2차전 시작' },
+      { min: "1'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '남양주 BEST 은준기(8), 박준서(4), 장영우(2) 플라잉교체 투입' },
+      { min: "2'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '남양주 BEST 강우준(9), 이예성(3) 플라잉교체 투입' },
+      { min: "3'", type: 'sub', title: '🔄 고양주니어 선수 교체', desc: '정지훈(MF, No.10) 플라잉교체 투입' },
+      { min: "5'", type: 'goal', title: '⚽ 김주한 선제골! (1:0)', desc: '김주한(DF, No.27) 환상적인 2경기 연속 골 작렬! 고양주니어 1:0 리드' },
+      { min: "7'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (1:1)', desc: '남양주 BEST 권도하(11) 동점골 득점' },
+      { min: "20+2'", type: 'goal', title: '⚽ 고양주니어 추가골 유도 (2:1)', desc: '전반 추가시간 고양주니어의 맹공격으로 상대 골키퍼 김민혁(1) 자책골 유도! 2:1 리드' },
+      { min: "26'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (2:2)', desc: '후반 남양주 BEST 주장 김태윤(13) 득점' },
+      { min: "40+2'", type: 'end', title: '🏁 경기 종료 (2:2 무승부)', desc: '치열한 접전 끝에 2:2 무승부로 값진 승점 1점 획득!' }
+    ],
+    stats: {
+      shots: [8, 9],
+      onTarget: [5, 6],
+      corners: [3, 4],
+      fouls: [2, 3]
+    }
   },
   'u10_3': {
     age: 'U-10 옐로우',
@@ -4058,8 +4092,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 경기 염기훈 주니어',
     date: '9월 7일 (월) 09:00',
     pitch: '축구공원2A',
-    status: '경기전',
-    score: '0 : 0',
+    status: '경기종료 (패)',
+    score: '1 : 3',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 염기훈 주니어', teamKey: 'yeom_junior', isGoyang: false },
     goyangFormation: '8인제 4-2-1 (코치: 최정원)',
@@ -4068,7 +4102,7 @@ const MATCH_REPORTS = {
     ],
     goyangStarters: [
       { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: true, isCaptain: false, heightWeight: '130cm/25kg', note: '선발 공격' },
-      { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '주장(C) 선발' },
+      { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '⚽ 1골 만회골 (36\') / 주장(C)' },
       { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: true, isCaptain: false, heightWeight: '143cm/30kg', note: '선발 미드필더' },
       { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], isAce: false, isCaptain: false, heightWeight: '134cm/29kg', note: '선발 수비' },
       { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], isAce: false, isCaptain: false, heightWeight: '135cm/33kg', note: '선발 수비' },
@@ -4077,16 +4111,16 @@ const MATCH_REPORTS = {
       { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: false, heightWeight: '160cm/55kg', note: '선발 골키퍼' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '교체 대기' },
-      { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '교체 대기' }
+      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '플라잉교체 투입' }
     ],
     oppFormation: '8인제 포메이션 (감독: 정민우)',
     oppCoaches: [
       { role: '감독', name: '정민우' }
     ],
     oppStarters: [
-      { pos: 'FW', num: 3, name: '이휘준', heightWeight: '140cm/32kg', note: '선발 공격' },
-      { pos: 'FW', num: 12, name: '이하준', heightWeight: '144cm/34kg', note: '선발 공격' },
+      { pos: 'FW', num: 3, name: '이휘준', heightWeight: '140cm/32kg', note: '⚽ 1골 (4\')' },
+      { pos: 'FW', num: 12, name: '이하준', heightWeight: '144cm/34kg', note: '⚽ 2골 멀티골 (14\', 35\')' },
       { pos: 'FW', num: 13, name: '노은찬', heightWeight: '144cm/34kg', note: '선발 공격' },
       { pos: 'MF', num: 16, name: '조은성', heightWeight: '140cm/33kg', note: '선발 미드필더' },
       { pos: 'DF', num: 8, name: '조우주', isCaptain: true, heightWeight: '141cm/38kg', note: '주장(C) 선발' },
@@ -4095,15 +4129,32 @@ const MATCH_REPORTS = {
       { pos: 'GK', num: 1, name: '민주원', heightWeight: '143cm/40kg', note: '선발 골키퍼' }
     ],
     oppSubs: [
-      { pos: 'DF', num: 15, name: '김주원', heightWeight: '148cm/37kg', note: '교체 대기' },
-      { pos: 'DF', num: 19, name: '장건율', heightWeight: '148cm/38kg', note: '교체 대기' },
-      { pos: 'MF', num: 6, name: '이도윤', heightWeight: '138cm/37kg', note: '교체 대기' },
-      { pos: 'MF', num: 21, name: '원동훈', heightWeight: '143cm/34kg', note: '교체 대기' },
-      { pos: 'FW', num: 14, name: '배진호', heightWeight: '140cm/30kg', note: '교체 대기' },
-      { pos: 'FW', num: 77, name: '한지온', heightWeight: '147cm/37kg', note: '교체 대기' }
+      { pos: 'DF', num: 15, name: '김주원', heightWeight: '148cm/37kg', note: '플라잉교체 투입' },
+      { pos: 'DF', num: 19, name: '장건율', heightWeight: '148cm/38kg', note: '플라잉교체 투입' },
+      { pos: 'MF', num: 6, name: '이도윤', heightWeight: '138cm/37kg', note: '플라잉교체 투입' },
+      { pos: 'MF', num: 21, name: '원동훈', heightWeight: '143cm/34kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 14, name: '배진호', heightWeight: '140cm/30kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 77, name: '한지온', heightWeight: '147cm/37kg', note: '플라잉교체 투입' }
     ],
-    timeline: [],
-    stats: null
+    timeline: [
+      { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '축구공원2A 구장에서 U-11 와인 2차전 시작' },
+      { min: "1'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '염기훈 주니어 배진호(14), 이도윤(6) 플라잉교체 투입' },
+      { min: "2'", type: 'sub', title: '🔄 고양주니어 선수 교체', desc: '김민준(FW, No.29) 플라잉교체 투입' },
+      { min: "3'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '염기훈 주니어 한지온(77), 김주원(15) 플라잉교체 투입' },
+      { min: "3'", type: 'sub', title: '🔄 고양주니어 선수 교체', desc: '김시훈(MF, No.4) 플라잉교체 투입' },
+      { min: "4'", type: 'goal', title: '⚽ 염기훈 주니어 선제골 (0:1)', desc: '염기훈 주니어 이휘준(3) 득점' },
+      { min: "5'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '염기훈 주니어 장건율(19), 원동훈(21) 플라잉교체 투입' },
+      { min: "14'", type: 'goal', title: '⚽ 염기훈 주니어 추가골 (0:2)', desc: '염기훈 주니어 이하준(12) 득점' },
+      { min: "35'", type: 'goal', title: '⚽ 염기훈 주니어 쐐기골 (0:3)', desc: '염기훈 주니어 이하준(12) 멀티골 성공' },
+      { min: "36'", type: 'goal', title: '⚽ 박주혁 주장 만회골! (1:3)', desc: '주장 박주혁(MF, No.14) 포기하지 않는 환상적인 만회골 작렬!' },
+      { min: "40+1'", type: 'end', title: '🏁 경기 종료 (1:3)', desc: '경기 종료. 끝까지 최선을 다해 만회골을 터뜨린 고양주니어 와인!' }
+    ],
+    stats: {
+      shots: [7, 12],
+      onTarget: [5, 8],
+      corners: [2, 5],
+      fouls: [3, 2]
+    }
   },
   'u11_3': {
     age: 'U-11 와인',
