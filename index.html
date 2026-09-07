@@ -3552,8 +3552,10 @@ id="cheer-section" class="space-y-3">
                     resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
                   }
                 } else {
-                  // 경기 중이거나 경기 전에는 승패 뱃지 무조건 숨김
-                  resultEl.classList.add('hidden');
+                  // 경기 중이거나 경기 전에는 승패 뱃지 내용 완전 초기화 & 무조건 숨김
+                  resultEl.textContent = '';
+                  resultEl.innerHTML = '';
+                  resultEl.className = 'hidden';
                 }
               }
 
