@@ -3842,12 +3842,45 @@ const MATCH_REPORTS = {
     score: '0 : 0',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 남양주 BEST', teamKey: 'namyangju_best', isGoyang: false },
-    goyangFormation: '8인제 포메이션 (등록 대기)',
-    goyangStarters: [],
-    goyangSubs: [],
-    oppFormation: '8인제 포메이션 (등록 대기)',
-    oppStarters: [],
-    oppSubs: [],
+    goyangFormation: '8인제 3-3-1 (코치: 백운찬)',
+    coaches: [
+      { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] }
+    ],
+    goyangStarters: [
+      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isAce: true, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 공격' },
+      { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], isAce: false, isCaptain: false, heightWeight: '136cm/29kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 7, name: '박승준', photo: PLAYER_PHOTOS['u10_7'], isAce: true, isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' },
+      { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], isAce: false, isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], isAce: false, isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
+      { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], isAce: false, isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
+      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '선발 수비' },
+      { pos: 'GK', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 골키퍼' }
+    ],
+    goyangSubs: [
+      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], isAce: false, isCaptain: false, heightWeight: '127cm/27kg', note: '교체 대기' }
+    ],
+    oppFormation: '8인제 포메이션 (감독: 김주영 / 코치: 곽태원, 김종헌, 류희헌, 박경환, 박성빈)',
+    oppCoaches: [
+      { role: '감독', name: '김주영' },
+      { role: '코치', name: '곽태원' }
+    ],
+    oppStarters: [
+      { pos: 'FW', num: 13, name: '김태윤', isCaptain: true, heightWeight: '143cm/35kg', note: '주장(C) 선발' },
+      { pos: 'MF', num: 5, name: '박시준', heightWeight: '140cm/35kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 7, name: '김리우', heightWeight: '135cm/29kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 11, name: '권도하', heightWeight: '145cm/35kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 14, name: '김지후', heightWeight: '143cm/35kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 19, name: '배은준', heightWeight: '144cm/45kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 25, name: '이서인', heightWeight: '150cm/40kg', note: '선발 미드필더' },
+      { pos: 'GK', num: 1, name: '김민혁', heightWeight: '140cm/40kg', note: '선발 골키퍼' }
+    ],
+    oppSubs: [
+      { pos: 'DF', num: 2, name: '장영우', heightWeight: '143cm/43kg', note: '교체 대기' },
+      { pos: 'DF', num: 8, name: '은준기', heightWeight: '138cm/28kg', note: '교체 대기' },
+      { pos: 'MF', num: 4, name: '박준서', heightWeight: '145cm/35kg', note: '교체 대기' },
+      { pos: 'MF', num: 9, name: '강우준', heightWeight: '140cm/34kg', note: '교체 대기' },
+      { pos: 'FW', num: 3, name: '이예성', heightWeight: '135cm/28kg', note: '교체 대기' }
+    ],
     timeline: [],
     stats: null
   },
@@ -3945,12 +3978,46 @@ const MATCH_REPORTS = {
     score: '0 : 0',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 염기훈 주니어', teamKey: 'yeom_junior', isGoyang: false },
-    goyangFormation: '8인제 포메이션 (등록 대기)',
-    goyangStarters: [],
-    goyangSubs: [],
-    oppFormation: '8인제 포메이션 (등록 대기)',
-    oppStarters: [],
-    oppSubs: [],
+    goyangFormation: '8인제 4-2-1 (코치: 최정원)',
+    coaches: [
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangStarters: [
+      { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: true, isCaptain: false, heightWeight: '130cm/25kg', note: '선발 공격' },
+      { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '주장(C) 선발' },
+      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: true, isCaptain: false, heightWeight: '143cm/30kg', note: '선발 미드필더' },
+      { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], isAce: false, isCaptain: false, heightWeight: '134cm/29kg', note: '선발 수비' },
+      { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], isAce: false, isCaptain: false, heightWeight: '135cm/33kg', note: '선발 수비' },
+      { pos: 'DF', num: 17, name: '임명훈', photo: PLAYER_PHOTOS['u11_17'], isAce: false, isCaptain: false, heightWeight: '140cm/35kg', note: '선발 수비' },
+      { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], isAce: false, isCaptain: false, heightWeight: '152cm/40kg', note: '선발 수비' },
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: false, heightWeight: '160cm/55kg', note: '선발 골키퍼' }
+    ],
+    goyangSubs: [
+      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '교체 대기' },
+      { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '교체 대기' }
+    ],
+    oppFormation: '8인제 포메이션 (감독: 정민우)',
+    oppCoaches: [
+      { role: '감독', name: '정민우' }
+    ],
+    oppStarters: [
+      { pos: 'FW', num: 3, name: '이휘준', heightWeight: '140cm/32kg', note: '선발 공격' },
+      { pos: 'FW', num: 12, name: '이하준', heightWeight: '144cm/34kg', note: '선발 공격' },
+      { pos: 'FW', num: 13, name: '노은찬', heightWeight: '144cm/34kg', note: '선발 공격' },
+      { pos: 'MF', num: 16, name: '조은성', heightWeight: '140cm/33kg', note: '선발 미드필더' },
+      { pos: 'DF', num: 8, name: '조우주', isCaptain: true, heightWeight: '141cm/38kg', note: '주장(C) 선발' },
+      { pos: 'DF', num: 17, name: '김서준', heightWeight: '140cm/28kg', note: '선발 수비' },
+      { pos: 'DF', num: 55, name: '황예준', heightWeight: '156cm/47kg', note: '선발 수비' },
+      { pos: 'GK', num: 1, name: '민주원', heightWeight: '143cm/40kg', note: '선발 골키퍼' }
+    ],
+    oppSubs: [
+      { pos: 'DF', num: 15, name: '김주원', heightWeight: '148cm/37kg', note: '교체 대기' },
+      { pos: 'DF', num: 19, name: '장건율', heightWeight: '148cm/38kg', note: '교체 대기' },
+      { pos: 'MF', num: 6, name: '이도윤', heightWeight: '138cm/37kg', note: '교체 대기' },
+      { pos: 'MF', num: 21, name: '원동훈', heightWeight: '143cm/34kg', note: '교체 대기' },
+      { pos: 'FW', num: 14, name: '배진호', heightWeight: '140cm/30kg', note: '교체 대기' },
+      { pos: 'FW', num: 77, name: '한지온', heightWeight: '147cm/37kg', note: '교체 대기' }
+    ],
     timeline: [],
     stats: null
   },
@@ -4167,7 +4234,7 @@ function renderLineupView(report) {
   const isGoyang = (currentLineupTeamView === 'goyang');
   const rawStarters = (isGoyang ? report.goyangStarters : report.oppStarters) || [];
   const rawSubs = (isGoyang ? report.goyangSubs : report.oppSubs) || [];
-  const rawCoaches = (isGoyang && report.coaches) ? report.coaches : [];
+  const rawCoaches = isGoyang ? (report.coaches || []) : (report.oppCoaches || []);
 
   const starters = isGoyang ? rawStarters.map(p => resolveGoyangPlayer(Object.assign({}, p), report.age)) : rawStarters;
   const subs = isGoyang ? rawSubs.map(p => resolveGoyangPlayer(Object.assign({}, p), report.age)) : rawSubs;
@@ -4185,18 +4252,18 @@ function renderLineupView(report) {
   // Coaches Banner
   const coachBannerEl = document.getElementById('lineupCoachesBanner');
   if (coachBannerEl) {
-    if (isGoyang && coaches && coaches.length > 0) {
+    if (coaches && coaches.length > 0) {
       coachBannerEl.className = "p-2 px-3 rounded-xl bg-[#161922] border border-[#282D3D] flex items-center justify-between shadow-sm";
       coachBannerEl.innerHTML = `
         <div class="flex items-center gap-1.5 text-xs text-zinc-300 font-bold">
-          <i class="fa-solid fa-id-badge text-brand-gold text-xs"></i>
+          <i class="fa-solid fa-id-badge ${isGoyang ? 'text-brand-gold' : 'text-cyan-400'} text-xs"></i>
           <span>지도자</span>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 flex-wrap">
           ${coaches.map(c => `
             <div class="flex items-center gap-1.5">
-              <img src="${c.photo}" alt="${c.name}" class="w-6 h-6 rounded-full object-cover border border-yellow-400/60 shadow">
-              <span class="text-[11px] text-zinc-200 font-bold">${c.role} <span class="text-brand-gold font-black">${c.name}</span></span>
+              ${c.photo ? `<img src="${c.photo}" alt="${c.name}" class="w-6 h-6 rounded-full object-cover border ${isGoyang ? 'border-yellow-400/60' : 'border-cyan-400/60'} shadow">` : `<div class="w-5 h-5 rounded-full bg-[#1E222E] text-zinc-300 flex items-center justify-center text-[10px] font-bold border border-white/10"><i class="fa-solid fa-user-tie"></i></div>`}
+              <span class="text-[11px] text-zinc-200 font-bold">${c.role} <span class="${isGoyang ? 'text-brand-gold' : 'text-cyan-400'} font-black">${c.name}</span></span>
             </div>
           `).join('')}
         </div>
