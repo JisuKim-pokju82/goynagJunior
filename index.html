@@ -1004,8 +1004,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="showLineupPendingToast()" class="py-2 rounded-xl bg-[#181B26] hover:bg-[#202534] text-zinc-400 font-medium flex items-center justify-center gap-1.5 text-xs border border-[#282D3D] active:scale-95 transition cursor-pointer">
-              <i class="fa-solid fa-users-slash text-zinc-500 text-[11px]"></i> 라인업 대기
+            <button onclick="openLineupModal('u12_2')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm">
+<i class="fa-solid fa-users text-[11px]"></i> 라인업
             </button>
 
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%8B%9C%EB%AF%BC%EC%9A%B4%EB%8F%99%EC%9E%A5" onclick="openTmap('경주시민운동장', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
@@ -4339,17 +4339,60 @@ const MATCH_REPORTS = {
     stage: '1차 예선 2경기',
     title: '경기 고양주니어 vs 세종 공공SC',
     date: '9월 8일 (화) 16:00',
-    pitch: '시민운동장 B',
+    pitch: '경주시민B',
     status: '경기전',
     score: '0 : 0',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '세종 공공SC', teamKey: 'sejong_sc', isGoyang: false },
-    goyangFormation: '8인제 포메이션 (등록 대기)',
-    goyangStarters: [],
-    goyangSubs: [],
-    oppFormation: '8인제 포메이션 (등록 대기)',
-    oppStarters: [],
-    oppSubs: [],
+    goyangFormation: '8인제 2-4-1 (지도자: 정상훈 감독, 백운찬/최정원 코치)',
+    coaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangStarters: [
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
+      { pos: 'MF', num: 4, name: '안시후', isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 10, name: '김동하', isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 77, name: '류도혁', isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 7, name: '맹현수', isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
+      { pos: 'FW', num: 8, name: '박준', isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 공격' },
+      { pos: 'FW', num: 9, name: '김정훈', isAce: true, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
+      { pos: 'FW', num: 19, name: '권이안', isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '선발 공격' }
+    ],
+    goyangSubs: [
+      { pos: 'GK', num: 14, name: '정하율', isAce: false, isCaptain: false, heightWeight: '140cm/40kg', note: '후보 골키퍼' },
+      { pos: 'DF', num: 3, name: '정서훈', isAce: false, isCaptain: false, heightWeight: '162cm/43kg', note: '후보 수비' },
+      { pos: 'DF', num: 13, name: '서한결', isAce: false, isCaptain: false, heightWeight: '162cm/55kg', note: '후보 수비' },
+      { pos: 'DF', num: 17, name: '김정후', isAce: false, isCaptain: false, heightWeight: '150cm/40kg', note: '후보 수비' },
+      { pos: 'MF', num: 6, name: '김래원', isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '후보 미드필더' }
+    ],
+    oppFormation: '8인제 포메이션 (감독: 이성운 / 코치: 김유정, 최종영)',
+    oppCoaches: [
+      { role: '감독', name: '이성운' },
+      { role: '코치', name: '김유정' },
+      { role: '코치', name: '최종영' }
+    ],
+    oppStarters: [
+      { pos: 'GK', num: 99, name: '고도현', isCaptain: false, heightWeight: '145cm/30kg', note: '선발 골키퍼' },
+      { pos: 'DF', num: 5, name: '이도원', isCaptain: false, heightWeight: '145cm/30kg', note: '선발 수비' },
+      { pos: 'MF', num: 6, name: '이건희', isCaptain: false, heightWeight: '140cm/30kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 7, name: '김연수', isCaptain: true, heightWeight: '145cm/35kg', note: '선발 미드필더 / 주장(C)' },
+      { pos: 'MF', num: 8, name: '김정헌', isCaptain: false, heightWeight: '150cm/40kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 15, name: '유아성', isCaptain: false, heightWeight: '140cm/30kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 17, name: '반영준', isCaptain: false, heightWeight: '140cm/30kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 77, name: '박승찬', isCaptain: false, heightWeight: '140cm/30kg', note: '선발 공격' }
+    ],
+    oppSubs: [
+      { pos: 'GK', num: 1, name: '박상현', heightWeight: '150cm/40kg', note: '후보 골키퍼' },
+      { pos: 'GK', num: 31, name: '권시온', heightWeight: '140cm/30kg', note: '후보 골키퍼' },
+      { pos: 'DF', num: 2, name: '원치율', heightWeight: '138cm/30kg', note: '후보 수비' },
+      { pos: 'DF', num: 4, name: '최시완', heightWeight: '140cm/30kg', note: '후보 수비' },
+      { pos: 'DF', num: 11, name: '고혁승', heightWeight: '140cm/30kg', note: '후보 수비' },
+      { pos: 'DF', num: 13, name: '최현준', heightWeight: '140cm/30kg', note: '후보 수비' },
+      { pos: 'FW', num: 9, name: '이준희', heightWeight: '145cm/35kg', note: '후보 공격' },
+      { pos: 'FW', num: 10, name: '김도운', heightWeight: '140cm/30kg', note: '후보 공격' }
+    ],
     timeline: [],
     stats: null
   },
