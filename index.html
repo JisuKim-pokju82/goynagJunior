@@ -445,8 +445,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 7일 (월) 09:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u10_2" class="hidden px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-1</span>
-              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40">경기종료 (무)</span>
+              <span id="dday-u10_2" class="hidden"></span>
+              <span id="status-u10_2" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료 (패)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -474,9 +474,8 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_2">2 : 2
-              </div>
-              <span id="result-u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">무승부</span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u10_2">2 : 4</div>
+              <span id="result-u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700">패배</span>
               <button onclick="scrapeMatch('u10_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
               </button>
@@ -484,7 +483,7 @@
 
             <!-- Opponent: 남양주 BEST FC -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#064E3B] border-2 border-emerald-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('namyangju_best')">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#064E3B] border-2 border-emerald-400 p-1 shadow-md flex items-center justify-center" onclick="openTeamModal('daegu_tdn')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
                   <!-- Crown / Shield Emblem -->
                   <path d="M50 8 L86 24 L86 58 C86 78 50 94 50 94 C50 94 14 78 14 58 L14 24 Z" fill="#047857" stroke="#34D399" stroke-width="3"/>
@@ -528,8 +527,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 8일 (화) 09:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u10_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
-              <span id="status-u10_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+              <span id="dday-u10_3" class="hidden"></span>
+              <span id="status-u10_3" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료 (패)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -778,8 +777,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 8일 (화) 09:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u11_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
-              <span id="status-u11_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+              <span id="dday-u11_3" class="hidden"></span>
+              <span id="status-u11_3" class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40">경기종료 (승)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -810,10 +809,6 @@
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u11_3">4 : 0
               </div>
               <span id="result-u11_3" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/40">승리</span>
-
-              <button onclick="scrapeMatch('u11_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
-                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
-              </button>
             </div>
 
             <!-- Opponent: 대구 TDN 블루 -->
@@ -947,8 +942,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 8일 (화) 16:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u12_2" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-2</span>
-              <span id="status-u12_2" class="px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse">경기중</span>
+              <span id="dday-u12_2" class="hidden"></span>
+              <span id="status-u12_2" class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40">경기종료 (승)</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -976,11 +971,8 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u12_2">2 : 0</div>
-              <span id="result-u12_2" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold"></span>
-              <button onclick="scrapeMatch('u12_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition">
-                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
-              </button>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-u12_2">3 : 0</div>
+              <span id="result-u12_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/40">승리</span>
             </div>
 
             <!-- Opponent: 세종 공공SC -->
@@ -1237,15 +1229,39 @@
                 </tr>
               </thead>
               <tbody id="standings-body-u10" class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
-                <tr class="bg-yellow-400/5 font-black text-white">
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num shadow-sm">1</span>
+                    <span>대구 TDN (레드)</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">3</td><td class="font-num">0</td><td class="font-num">0</td><td class="font-num text-emerald-400 font-bold">+18</td>
+                  <td class="font-black text-brand-gold font-num">9</td>
+                </tr>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
+                    <span>인천 부평유소년 (블랙)</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">1</td><td class="font-num">0</td><td class="font-num">2</td><td class="font-num text-zinc-400">+3</td>
+                  <td class="font-black text-brand-gold font-num">3</td>
+                </tr>
+                <tr class="transition">
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
+                    <span>경기 남양주 BEST</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">1</td><td class="font-num">0</td><td class="font-num">2</td><td class="font-num text-zinc-400">-10</td>
+                  <td class="font-black text-brand-gold font-num">3</td>
+                </tr>
+                <tr class="bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30 transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
                     <span class="text-brand-gold">경기 고양주니어 (옐로우)</span>
                   </td>
-                  <td>1</td><td>0</td><td>0</td><td>1</td><td>-5</td>
-                  <td class="font-black text-brand-gold font-num">0</td>
+                  <td class="font-num">3</td><td class="font-num">1</td><td class="font-num">0</td><td class="font-num">2</td><td class="font-num text-zinc-400">-11</td>
+                  <td class="font-black text-brand-gold font-num">3</td>
                 </tr>
-              </tbody>
+</tbody>
             </table>
           </div>
         </div>
@@ -1274,15 +1290,39 @@
                 </tr>
               </thead>
               <tbody id="standings-body-u11" class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
-                <tr class="bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30">
+                <tr class="transition">
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num shadow-sm">1</span>
+                    <span>경기 염기훈 주니어</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">3</td><td class="font-num">0</td><td class="font-num">0</td><td class="font-num text-emerald-400 font-bold">+14</td>
+                  <td class="font-black text-brand-gold font-num">9</td>
+                </tr>
+                <tr class="bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30 transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
                     <span class="text-brand-gold">경기 고양주니어 (와인)</span>
                   </td>
-                  <td>1</td><td>1</td><td>0</td><td>0</td><td class="text-emerald-400 font-bold">+13</td>
+                  <td class="font-num">3</td><td class="font-num">2</td><td class="font-num">0</td><td class="font-num">1</td><td class="font-num text-emerald-400 font-bold">+15</td>
+                  <td class="font-black text-brand-gold font-num">6</td>
+                </tr>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
+                    <span>대구 TDN (블루)</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">1</td><td class="font-num">0</td><td class="font-num">2</td><td class="font-num text-zinc-400">-1</td>
                   <td class="font-black text-brand-gold font-num">3</td>
                 </tr>
-              </tbody>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
+                    <span>인천 부평유소년 (레드)</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">0</td><td class="font-num">0</td><td class="font-num">3</td><td class="font-num text-zinc-400">-28</td>
+                  <td class="font-black text-brand-gold font-num">0</td>
+                </tr>
+</tbody>
             </table>
           </div>
         </div>
@@ -1311,15 +1351,47 @@
                 </tr>
               </thead>
               <tbody id="standings-body-u12" class="divide-y divide-[#282D3D]/50 text-[11px] font-medium text-zinc-200">
-                <tr class="bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30">
+                <tr class="bg-yellow-400/10 font-black text-white ring-1 ring-yellow-400/30 transition">
                   <td class="py-2 text-left pl-2 flex items-center gap-1.5">
                     <span class="w-4 h-4 rounded bg-brand-gold text-black text-[9px] font-black flex items-center justify-center font-num shadow-sm">1</span>
                     <span class="text-brand-gold">경기 고양주니어</span>
                   </td>
-                  <td>1</td><td>1</td><td>0</td><td>0</td><td class="text-emerald-400 font-bold">+6</td>
+                  <td class="font-num">2</td><td class="font-num">2</td><td class="font-num">0</td><td class="font-num">0</td><td class="font-num text-emerald-400 font-bold">+9</td>
+                  <td class="font-black text-brand-gold font-num">6</td>
+                </tr>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">2</span>
+                    <span>경기 이천유나이티드</span>
+                  </td>
+                  <td class="font-num">2</td><td class="font-num">2</td><td class="font-num">0</td><td class="font-num">0</td><td class="font-num text-emerald-400 font-bold">+7</td>
+                  <td class="font-black text-brand-gold font-num">6</td>
+                </tr>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">3</span>
+                    <span>서울 K리거 강용FC</span>
+                  </td>
+                  <td class="font-num">2</td><td class="font-num">1</td><td class="font-num">0</td><td class="font-num">1</td><td class="font-num text-emerald-400 font-bold">+3</td>
                   <td class="font-black text-brand-gold font-num">3</td>
                 </tr>
-              </tbody>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">4</span>
+                    <span>세종 공공SC</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">1</td><td class="font-num">0</td><td class="font-num">2</td><td class="font-num text-zinc-400">-4</td>
+                  <td class="font-black text-brand-gold font-num">3</td>
+                </tr>
+                <tr class="transition">
+                  <td class="py-2 text-left pl-2 flex items-center gap-1.5">
+                    <span class="w-4 h-4 rounded bg-[#1E222E] text-zinc-300 text-[9px] font-bold flex items-center justify-center font-num">5</span>
+                    <span>강원 속초시 체육회</span>
+                  </td>
+                  <td class="font-num">3</td><td class="font-num">0</td><td class="font-num">0</td><td class="font-num">3</td><td class="font-num text-zinc-400">-15</td>
+                  <td class="font-black text-brand-gold font-num">0</td>
+                </tr>
+</tbody>
             </table>
           </div>
         </div>
@@ -2614,23 +2686,25 @@ id="cheer-section" class="space-y-3">
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3b3ZmcWN0bnVqZmJkdWdsY2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MzczNDUsImV4cCI6MjEwMzIxMzM0NX0.VdyFAPZ7DgGRhZd7RbYkeoNqAQuxURzT69gzceh8zCk';
 
     // 고양주니어FC 2차대회(Stage 2) 10경기 공식 매치 매핑
-    const GOYANG_MATCH_MAP = {
-      'u10_1': { cat: 'U11', match_no: 24, goyangIsHome: false, name: 'U-10 옐로우 1경기' },
-      'u10_2': { cat: 'U11', match_no: 124, goyangIsHome: true, name: 'U-10 옐로우 2경기' },
-      'u10_3': { cat: 'U11', match_no: 223, goyangIsHome: false, name: 'U-10 옐로우 3경기' },
+const GOYANG_MATCH_MAP = {
+      'u10_1': { cat: 'U11', match_no: 24, goyangIsHome: false, name: 'U-10 옐로우 1' },
+      'u10_2': { cat: 'U11', match_no: 124, goyangIsHome: true, name: 'U-10 옐로우 2' },
+      'u10_3': { cat: 'U11', match_no: 223, goyangIsHome: false, name: 'U-10 옐로우 3' },
 
-      'u11_1': { cat: 'U11', match_no: 22, goyangIsHome: false, name: 'U-11 와인 1경기' },
-      'u11_2': { cat: 'U11', match_no: 122, goyangIsHome: true, name: 'U-11 와인 2경기' },
-      'u11_3': { cat: 'U11', match_no: 221, goyangIsHome: false, name: 'U-11 와인 3경기' },
+      'u11_1': { cat: 'U11', match_no: 22, goyangIsHome: false, name: 'U-11  1' },
+      'u11_2': { cat: 'U11', match_no: 122, goyangIsHome: true, name: 'U-11  2' },
+      'u11_3': { cat: 'U11', match_no: 221, goyangIsHome: false, name: 'U-11  3' },
 
-      'u12_1': { cat: 'U12', match_no: 88, goyangIsHome: true, name: 'U-12 대표 1경기' },
-      'u12_2': { cat: 'U12', match_no: 168, goyangIsHome: true, name: 'U-12 대표 2경기' },
-      'u12_3': { cat: 'U12', match_no: 248, goyangIsHome: false, name: 'U-12 대표 3경기' },
-      'u12_4': { cat: 'U12', match_no: 328, goyangIsHome: true, name: 'U-12 대표 4경기' }
+      'u12_1': { cat: 'U12', match_no: 87, goyangIsHome: false, name: 'U-12  1' },
+      'u12_2': { cat: 'U12', match_no: 167, goyangIsHome: true, name: 'U-12  2' },
+      'u12_3': { cat: 'U12', match_no: 249, goyangIsHome: false, name: 'U-12  3' },
+      'u12_4': { cat: 'U12', match_no: 330, goyangIsHome: true, name: 'U-12  4' }
     };
 
     // All Standings Data & Engine
         const ALL_GROUPS_DATA = {"U11":{"11":{"teams":["경기염기훈주니어축구클럽U12","경기고양주니어FCU12와인","인천부평유소년축구단U12U11레드","대구TDNU12블루"],"matches":[{"no":21,"time":"09:00","venue":"축구공원6B","away":"대구TDNU12블루","home":"경기염기훈주니어축구클럽U12"},{"no":22,"time":"09:00","venue":"알천4A","away":"경기고양주니어FCU12와인","home":"인천부평유소년축구단U12U11레드"},{"no":121,"time":"09:00","venue":"축구공원1B","away":"인천부평유소년축구단U12U11레드","home":"대구TDNU12블루"},{"no":122,"time":"09:00","venue":"축구공원2A","away":"경기염기훈주니어축구클럽U12","home":"경기고양주니어FCU12와인"},{"no":221,"time":"09:00","venue":"알천2B","away":"경기고양주니어FCU12와인","home":"대구TDNU12블루"},{"no":222,"time":"09:00","venue":"알천3A","away":"인천부평유소년축구단U12U11레드","home":"경기염기훈주니어축구클럽U12"}]},"41":{"teams":["경기PEC유나이티드","서울신답FCU12그린","경남창원1907풋볼스포츠클럽U12","광주베스트일레븐U12"],"matches":[{"no":81,"time":"12:00","venue":"축구공원2B","away":"광주베스트일레븐U12","home":"경기PEC유나이티드"},{"no":82,"time":"12:00","venue":"축구공원3A","away":"서울신답FCU12그린","home":"경남창원1907풋볼스포츠클럽U12"},{"no":181,"time":"12:00","venue":"알천3B","away":"경남창원1907풋볼스포츠클럽U12","home":"광주베스트일레븐U12"},{"no":182,"time":"12:00","venue":"에어돔","away":"경기PEC유나이티드","home":"서울신답FCU12그린"},{"no":281,"time":"12:00","venue":"알천4A","away":"서울신답FCU12그린","home":"광주베스트일레븐U12"},{"no":282,"time":"12:00","venue":"알천4B","away":"경남창원1907풋볼스포츠클럽U12","home":"경기PEC유나이티드"}]},"45":{"teams":["[연습] 경기이노축구클럽","서울FC서울풀굿코리아U12화이트","경남합천공공스포츠클럽FCU12","경북칠곡유소년축구클럽U12A"],"matches":[{"no":89,"time":"12:00","venue":"알천3B","away":"경북칠곡유소년축구클럽U12A","home":"[연습] 경기이노축구클럽"},{"no":90,"time":"12:00","venue":"에어돔","away":"서울FC서울풀굿코리아U12화이트","home":"경남합천공공스포츠클럽FCU12"},{"no":189,"time":"12:00","venue":"알천4A","away":"경남합천공공스포츠클럽FCU12","home":"경북칠곡유소년축구클럽U12A"},{"no":190,"time":"12:00","venue":"알천4B","away":"[연습] 경기이노축구클럽","home":"서울FC서울풀굿코리아U12화이트"},{"no":289,"time":"12:00","venue":"축구공원2A","away":"서울FC서울풀굿코리아U12화이트","home":"경북칠곡유소년축구클럽U12A"},{"no":290,"time":"12:00","venue":"축구공원2B","away":"경남합천공공스포츠클럽FCU12","home":"[연습] 경기이노축구클럽"}]},"42":{"teams":["경기NYJUTDU12","서울K리거강용FCB","경남창원상남스포츠클럽U12","광주신화유소년축구단2"],"matches":[{"no":83,"time":"12:00","venue":"축구공원3B","away":"광주신화유소년축구단2","home":"경기NYJUTDU12"},{"no":84,"time":"12:00","venue":"알천1A","away":"서울K리거강용FCB","home":"경남창원상남스포츠클럽U12"},{"no":183,"time":"12:00","venue":"축구공원4A","away":"경남창원상남스포츠클럽U12","home":"광주신화유소년축구단2"},{"no":184,"time":"12:00","venue":"축구공원4B","away":"경기NYJUTDU12","home":"서울K리거강용FCB"},{"no":283,"time":"12:00","venue":"알천5A","away":"서울K리거강용FCB","home":"광주신화유소년축구단2"},{"no":284,"time":"12:00","venue":"알천5B","away":"경남창원상남스포츠클럽U12","home":"경기NYJUTDU12"}]},"3":{"teams":["경기안양SCU12","경기일산J프리미어FCU12화이트","인천청라웰리스FCU12","제주대정초"],"matches":[{"no":5,"time":"09:00","venue":"축구공원2A","away":"제주대정초","home":"경기안양SCU12"},{"no":6,"time":"09:00","venue":"축구공원2B","away":"경기일산J프리미어FCU12화이트","home":"인천청라웰리스FCU12"},{"no":105,"time":"09:00","venue":"알천3A","away":"인천청라웰리스FCU12","home":"제주대정초"},{"no":106,"time":"09:00","venue":"알천3B","away":"경기안양SCU12","home":"경기일산J프리미어FCU12화이트"},{"no":205,"time":"09:00","venue":"축구공원6B","away":"경기일산J프리미어FCU12화이트","home":"제주대정초"},{"no":206,"time":"09:00","venue":"알천4A","away":"인천청라웰리스FCU12","home":"경기안양SCU12"}]},"20":{"teams":["경기SC주니어축구클럽U12","서울삼선FCU12","부산동아FCU12","충남천안훈FCU12"],"matches":[{"no":39,"time":"10:00","venue":"알천3B","away":"충남천안훈FCU12","home":"경기SC주니어축구클럽U12"},{"no":40,"time":"10:00","venue":"에어돔","away":"서울삼선FCU12","home":"부산동아FCU12"},{"no":139,"time":"10:00","venue":"알천4A","away":"부산동아FCU12","home":"충남천안훈FCU12"},{"no":140,"time":"10:00","venue":"알천4B","away":"경기SC주니어축구클럽U12","home":"서울삼선FCU12"},{"no":239,"time":"10:00","venue":"축구공원2A","away":"서울삼선FCU12","home":"충남천안훈FCU12"},{"no":240,"time":"10:00","venue":"축구공원2B","away":"부산동아FCU12","home":"경기SC주니어축구클럽U12"}]},"12":{"teams":["경기남양주BESTFCU12","경기고양주니어FCU12옐로우","인천부평유소년축구단U12U11블랙","대구TDNU12레드"],"matches":[{"no":23,"time":"09:00","venue":"알천4B","away":"대구TDNU12레드","home":"경기남양주BESTFCU12"},{"no":24,"time":"09:00","venue":"알천5A","away":"경기고양주니어FCU12옐로우","home":"인천부평유소년축구단U12U11블랙"},{"no":123,"time":"09:00","venue":"축구공원2B","away":"인천부평유소년축구단U12U11블랙","home":"대구TDNU12레드"},{"no":124,"time":"09:00","venue":"축구공원3A","away":"경기남양주BESTFCU12","home":"경기고양주니어FCU12옐로우"},{"no":223,"time":"09:00","venue":"알천3B","away":"경기고양주니어FCU12옐로우","home":"대구TDNU12레드"},{"no":224,"time":"09:00","venue":"에어돔","away":"인천부평유소년축구단U12U11블랙","home":"경기남양주BESTFCU12"}]},"10":{"teams":["경기의왕G스포츠클럽U12","경기화성시U12오렌지","인천YSCU12RED","대구최준기FCU12"],"matches":[{"no":19,"time":"09:00","venue":"축구공원5B","away":"대구최준기FCU12","home":"경기의왕G스포츠클럽U12"},{"no":20,"time":"09:00","venue":"축구공원6A","away":"경기화성시U12오렌지","home":"인천YSCU12RED"},{"no":119,"time":"09:00","venue":"경주시민B","away":"인천YSCU12RED","home":"대구최준기FCU12"},{"no":120,"time":"09:00","venue":"축구공원1A","away":"경기의왕G스포츠클럽U12","home":"경기화성시U12오렌지"},{"no":219,"time":"09:00","venue":"알천1B","away":"경기화성시U12오렌지","home":"대구최준기FCU12"},{"no":220,"time":"09:00","venue":"알천2A","away":"인천YSCU12RED","home":"경기의왕G스포츠클럽U12"}]},"17":{"teams":["경기구리시리틀축구단U12","경기송탄유소년축구클럽U12화이트","부산장산초SCU12","전남전남영광FCU12"],"matches":[{"no":33,"time":"10:00","venue":"축구공원3B","away":"전남전남영광FCU12","home":"경기구리시리틀축구단U12"},{"no":34,"time":"10:00","venue":"알천1A","away":"경기송탄유소년축구클럽U12화이트","home":"부산장산초SCU12"},{"no":133,"time":"10:00","venue":"축구공원4A","away":"부산장산초SCU12","home":"전남전남영광FCU12"},{"no":134,"time":"10:00","venue":"축구공원4B","away":"경기구리시리틀축구단U12","home":"경기송탄유소년축구클럽U12화이트"},{"no":233,"time":"10:00","venue":"알천5A","away":"경기송탄유소년축구클럽U12화이트","home":"전남전남영광FCU12"},{"no":234,"time":"10:00","venue":"알천5B","away":"부산장산초SCU12","home":"경기구리시리틀축구단U12"}]},"44":{"teams":["경기파주유소년축구클럽","서울JP연세FCU12","경남거제주니어축구클럽U12","경북칠곡유소년축구클럽U12B"],"matches":[{"no":87,"time":"12:00","venue":"알천2B","away":"경북칠곡유소년축구클럽U12B","home":"경기파주유소년축구클럽"},{"no":88,"time":"12:00","venue":"알천3A","away":"서울JP연세FCU12","home":"경남거제주니어축구클럽U12"},{"no":187,"time":"12:00","venue":"축구공원6A","away":"경남거제주니어축구클럽U12","home":"경북칠곡유소년축구클럽U12B"},{"no":188,"time":"12:00","venue":"축구공원6B","away":"경기파주유소년축구클럽","home":"서울JP연세FCU12"},{"no":287,"time":"12:00","venue":"축구공원1A","away":"서울JP연세FCU12","home":"경북칠곡유소년축구클럽U12B"},{"no":288,"time":"12:00","venue":"축구공원1B","away":"경남거제주니어축구클럽U12","home":"경기파주유소년축구클럽"}]},"40":{"teams":["[연습] 부산FCYU12","서울신답FCU12화이트","경남김해그릿FCU12","울산울브스FCU12"],"matches":[{"no":79,"time":"12:00","venue":"축구공원1B","away":"울산울브스FCU12","home":"[연습] 부산FCYU12"},{"no":80,"time":"12:00","venue":"축구공원2A","away":"서울신답FCU12화이트","home":"경남김해그릿FCU12"},{"no":179,"time":"12:00","venue":"알천2B","away":"경남김해그릿FCU12","home":"울산울브스FCU12"},{"no":180,"time":"12:00","venue":"알천3A","away":"[연습] 부산FCYU12","home":"서울신답FCU12화이트"},{"no":279,"time":"12:00","venue":"축구공원6A","away":"서울신답FCU12화이트","home":"울산울브스FCU12"},{"no":280,"time":"12:00","venue":"축구공원6B","away":"경남김해그릿FCU12","home":"[연습] 부산FCYU12"}]},"13":{"teams":["경기김포주니어FCU12","경기평택유나이티드U12화이트","부산당감초SCU12","대구대구FCU12"],"matches":[{"no":25,"time":"09:00","venue":"알천5B","away":"대구대구FCU12","home":"경기김포주니어FCU12"},{"no":26,"time":"10:00","venue":"경주시민A","away":"경기평택유나이티드U12화이트","home":"부산당감초SCU12"},{"no":125,"time":"09:00","venue":"축구공원3B","away":"부산당감초SCU12","home":"대구대구FCU12"},{"no":126,"time":"10:00","venue":"알천1A","away":"경기김포주니어FCU12","home":"경기평택유나이티드U12화이트"},{"no":225,"time":"09:00","venue":"축구공원4A","away":"경기평택유나이티드U12화이트","home":"대구대구FCU12"},{"no":226,"time":"10:00","venue":"축구공원4B","away":"부산당감초SCU12","home":"경기김포주니어FCU12"}]},"27":{"teams":["경기김포ONEFCU12","서울UKFCU12","강원SMC유소년클럽","충북AFA청주U12"],"matches":[{"no":53,"time":"11:00","venue":"축구공원1A","away":"충북AFA청주U12","home":"경기김포ONEFCU12"},{"no":54,"time":"11:00","venue":"축구공원1B","away":"서울UKFCU12","home":"강원SMC유소년클럽"},{"no":153,"time":"11:00","venue":"알천2A","away":"강원SMC유소년클럽","home":"충북AFA청주U12"},{"no":154,"time":"11:00","venue":"알천2B","away":"경기김포ONEFCU12","home":"서울UKFCU12"},{"no":253,"time":"11:00","venue":"축구공원5B","away":"서울UKFCU12","home":"충북AFA청주U12"},{"no":254,"time":"11:00","venue":"축구공원6A","away":"강원SMC유소년클럽","home":"경기김포ONEFCU12"}]},"30":{"teams":["경기평택시티즌FCU12","서울충암U12","강원춘천PANASU12","대전화정초"],"matches":[{"no":59,"time":"11:00","venue":"알천1A","away":"대전화정초","home":"경기평택시티즌FCU12"},{"no":60,"time":"11:00","venue":"알천1B","away":"서울충암U12","home":"강원춘천PANASU12"},{"no":159,"time":"11:00","venue":"축구공원4B","away":"강원춘천PANASU12","home":"대전화정초"},{"no":160,"time":"11:00","venue":"축구공원5A","away":"경기평택시티즌FCU12","home":"서울충암U12"},{"no":259,"time":"11:00","venue":"알천5B","away":"서울충암U12","home":"대전화정초"},{"no":260,"time":"11:00","venue":"경주시민A","away":"강원춘천PANASU12","home":"경기평택시티즌FCU12"}]},"18":{"teams":["경기메이저풋볼스킬U12","경기송탄유소년축구클럽U12블랙","부산서구부산서구금정구12","전남해남동초"],"matches":[{"no":35,"time":"10:00","venue":"알천1B","away":"전남해남동초","home":"경기메이저풋볼스킬U12"},{"no":36,"time":"10:00","venue":"알천2A","away":"경기송탄유소년축구클럽U12블랙","home":"부산서구부산서구금정구12"},{"no":135,"time":"10:00","venue":"축구공원5A","away":"부산서구부산서구금정구12","home":"전남해남동초"},{"no":136,"time":"10:00","venue":"축구공원5B","away":"경기메이저풋볼스킬U12","home":"경기송탄유소년축구클럽U12블랙"},{"no":235,"time":"10:00","venue":"경주시민A","away":"경기송탄유소년축구클럽U12블랙","home":"전남해남동초"},{"no":236,"time":"10:00","venue":"경주시민B","away":"부산서구부산서구금정구12","home":"경기메이저풋볼스킬U12"}]},"36":{"teams":["경기라온유나이티드U12","서울NUFCU12","경남김해외동FCU12","세종대왕FCU12"],"matches":[{"no":71,"time":"11:00","venue":"축구공원6B","away":"세종대왕FCU12","home":"경기라온유나이티드U12"},{"no":72,"time":"11:00","venue":"알천4A","away":"서울NUFCU12","home":"경남김해외동FCU12"},{"no":171,"time":"11:00","venue":"축구공원1B","away":"경남김해외동FCU12","home":"세종대왕FCU12"},{"no":172,"time":"11:00","venue":"축구공원2A","away":"경기라온유나이티드U12","home":"서울NUFCU12"},{"no":271,"time":"11:00","venue":"알천2B","away":"서울NUFCU12","home":"세종대왕FCU12"},{"no":272,"time":"11:00","venue":"알천3A","away":"경남김해외동FCU12","home":"경기라온유나이티드U12"}]},"29":{"teams":["경기HRPROFCU12","서울관악FCU12","강원홍천FCU12","대전제일SCU12"],"matches":[{"no":57,"time":"11:00","venue":"축구공원3A","away":"대전제일SCU12","home":"경기HRPROFCU12"},{"no":58,"time":"11:00","venue":"축구공원3B","away":"서울관악FCU12","home":"강원홍천FCU12"},{"no":157,"time":"11:00","venue":"에어돔","away":"강원홍천FCU12","home":"대전제일SCU12"},{"no":158,"time":"11:00","venue":"축구공원4A","away":"경기HRPROFCU12","home":"서울관악FCU12"},{"no":257,"time":"11:00","venue":"알천4B","away":"서울관악FCU12","home":"대전제일SCU12"},{"no":258,"time":"11:00","venue":"알천5A","away":"강원홍천FCU12","home":"경기HRPROFCU12"}]},"23":{"teams":["경기이노축구클럽U12","서울DTFCU12","부산기장SSGFCU12A","충남대천초"],"matches":[{"no":45,"time":"10:00","venue":"축구공원6A","away":"충남대천초","home":"경기이노축구클럽U12"},{"no":46,"time":"10:00","venue":"축구공원6B","away":"서울DTFCU12","home":"부산기장SSGFCU12A"},{"no":145,"time":"10:00","venue":"축구공원1A","away":"부산기장SSGFCU12A","home":"충남대천초"},{"no":146,"time":"10:00","venue":"축구공원1B","away":"경기이노축구클럽U12","home":"서울DTFCU12"},{"no":245,"time":"10:00","venue":"알천2A","away":"서울DTFCU12","home":"충남대천초"},{"no":246,"time":"10:00","venue":"알천2B","away":"부산기장SSGFCU12A","home":"경기이노축구클럽U12"}]},"19":{"teams":["경기의정부축구센터U12","경기이천주니어FC","부산FCYU12","충남성거초"],"matches":[{"no":37,"time":"10:00","venue":"알천2B","away":"충남성거초","home":"경기의정부축구센터U12"},{"no":38,"time":"10:00","venue":"알천3A","away":"경기이천주니어FC","home":"부산FCYU12"},{"no":137,"time":"10:00","venue":"축구공원6A","away":"부산FCYU12","home":"충남성거초"},{"no":138,"time":"10:00","venue":"축구공원6B","away":"경기의정부축구센터U12","home":"경기이천주니어FC"},{"no":237,"time":"10:00","venue":"축구공원1A","away":"경기이천주니어FC","home":"충남성거초"},{"no":238,"time":"10:00","venue":"축구공원1B","away":"부산FCYU12","home":"경기의정부축구센터U12"}]},"1":{"teams":["경기메타시티FCU12","경기용인LFKU12","인천김형일FCU12","전북익산시IDSU12IDS"],"matches":[{"no":1,"time":"09:00","venue":"경주시민A","away":"전북익산시IDSU12IDS","home":"경기메타시티FCU12"},{"no":2,"time":"09:00","venue":"경주시민B","away":"경기용인LFKU12","home":"인천김형일FCU12"},{"no":101,"time":"09:00","venue":"알천1A","away":"인천김형일FCU12","home":"전북익산시IDSU12IDS"},{"no":102,"time":"09:00","venue":"알천1B","away":"경기메타시티FCU12","home":"경기용인LFKU12"},{"no":201,"time":"09:00","venue":"축구공원4B","away":"경기용인LFKU12","home":"전북익산시IDSU12IDS"},{"no":202,"time":"09:00","venue":"축구공원5A","away":"인천김형일FCU12","home":"경기메타시티FCU12"}]},"47":{"teams":["경기용인JFCU12","인천계양구유소년U12","전북이리동풋볼스포츠클럽U12","[연습] 서울DTFCU12"],"matches":[{"no":93,"time":"12:00","venue":"축구공원5A","away":"[연습] 서울DTFCU12","home":"경기용인JFCU12"},{"no":94,"time":"12:00","venue":"축구공원5B","away":"인천계양구유소년U12","home":"전북이리동풋볼스포츠클럽U12"},{"no":193,"time":"12:00","venue":"경주시민A","away":"전북이리동풋볼스포츠클럽U12","home":"[연습] 서울DTFCU12"},{"no":194,"time":"12:00","venue":"경주시민B","away":"경기용인JFCU12","home":"인천계양구유소년U12"},{"no":293,"time":"12:00","venue":"알천1A","away":"인천계양구유소년U12","home":"[연습] 서울DTFCU12"},{"no":294,"time":"12:00","venue":"알천1B","away":"전북이리동풋볼스포츠클럽U12","home":"경기용인JFCU12"}]},"5":{"teams":["경기FC모벤티스U12","경기남양주KJHFCU12b","인천남동유나이티드U12","제주중문초"],"matches":[{"no":9,"time":"09:00","venue":"알천1A","away":"제주중문초","home":"경기FC모벤티스U12"},{"no":10,"time":"09:00","venue":"알천1B","away":"경기남양주KJHFCU12b","home":"인천남동유나이티드U12"},{"no":109,"time":"09:00","venue":"축구공원4B","away":"인천남동유나이티드U12","home":"제주중문초"},{"no":110,"time":"09:00","venue":"축구공원5A","away":"경기FC모벤티스U12","home":"경기남양주KJHFCU12b"},{"no":209,"time":"09:00","venue":"알천5B","away":"경기남양주KJHFCU12b","home":"제주중문초"},{"no":210,"time":"09:00","venue":"경주시민A","away":"인천남동유나이티드U12","home":"경기FC모벤티스U12"}]},"49":{"teams":["경기팀세품U12","인천강화스포츠클럽U12","전북JLFC축구단U12B","[연습] 대구FCCANNON"],"matches":[{"no":97,"time":"12:00","venue":"알천4A","away":"[연습] 대구FCCANNON","home":"경기팀세품U12"},{"no":98,"time":"12:00","venue":"알천4B","away":"인천강화스포츠클럽U12","home":"전북JLFC축구단U12B"},{"no":197,"time":"12:00","venue":"축구공원2A","away":"전북JLFC축구단U12B","home":"[연습] 대구FCCANNON"},{"no":198,"time":"12:00","venue":"축구공원2B","away":"경기팀세품U12","home":"인천강화스포츠클럽U12"},{"no":297,"time":"12:00","venue":"알천3A","away":"인천강화스포츠클럽U12","home":"[연습] 대구FCCANNON"},{"no":298,"time":"12:00","venue":"알천3B","away":"전북JLFC축구단U12B","home":"경기팀세품U12"}]},"4":{"teams":["경기군포유소년U12","경기일산J프리미어FCU12퍼플","인천송도FCU12","제주프로FCU12"],"matches":[{"no":7,"time":"09:00","venue":"축구공원3A","away":"제주프로FCU12","home":"경기군포유소년U12"},{"no":8,"time":"09:00","venue":"축구공원3B","away":"경기일산J프리미어FCU12퍼플","home":"인천송도FCU12"},{"no":107,"time":"09:00","venue":"에어돔","away":"인천송도FCU12","home":"제주프로FCU12"},{"no":108,"time":"09:00","venue":"축구공원4A","away":"경기군포유소년U12","home":"경기일산J프리미어FCU12퍼플"},{"no":207,"time":"09:00","venue":"알천4B","away":"경기일산J프리미어FCU12퍼플","home":"제주프로FCU12"},{"no":208,"time":"09:00","venue":"알천5A","away":"인천송도FCU12","home":"경기군포유소년U12"}]},"8":{"teams":["경기안산그리너스U12","경기연세FCU12블루","인천검단에피립토U12","제주서귀포초레드"],"matches":[{"no":15,"time":"09:00","venue":"에어돔","away":"제주서귀포초레드","home":"경기안산그리너스U12"},{"no":16,"time":"09:00","venue":"축구공원4A","away":"경기연세FCU12블루","home":"인천검단에피립토U12"},{"no":115,"time":"09:00","venue":"알천4B","away":"인천검단에피립토U12","home":"제주서귀포초레드"},{"no":116,"time":"09:00","venue":"알천5A","away":"경기안산그리너스U12","home":"경기연세FCU12블루"},{"no":215,"time":"09:00","venue":"축구공원2B","away":"경기연세FCU12블루","home":"제주서귀포초레드"},{"no":216,"time":"09:00","venue":"축구공원3A","away":"인천검단에피립토U12","home":"경기안산그리너스U12"}]},"26":{"teams":["경기오산시GSCU12","서울영신초","강원속초시체육회U12","충북제천봉양축구센터U12"],"matches":[{"no":51,"time":"11:00","venue":"경주시민A","away":"충북제천봉양축구센터U12","home":"경기오산시GSCU12"},{"no":52,"time":"11:00","venue":"경주시민B","away":"서울영신초","home":"강원속초시체육회U12"},{"no":151,"time":"11:00","venue":"알천1A","away":"강원속초시체육회U12","home":"충북제천봉양축구센터U12"},{"no":152,"time":"11:00","venue":"알천1B","away":"경기오산시GSCU12","home":"서울영신초"},{"no":251,"time":"11:00","venue":"축구공원4B","away":"서울영신초","home":"충북제천봉양축구센터U12"},{"no":252,"time":"11:00","venue":"축구공원5A","away":"강원속초시체육회U12","home":"경기오산시GSCU12"}]},"39":{"teams":["경기여주SDFCU12","서울노원FC한마음U12옐로우","경남거제장승포스포츠클럽U12","울산학성초FCU12"],"matches":[{"no":77,"time":"12:00","venue":"경주시민B","away":"울산학성초FCU12","home":"경기여주SDFCU12"},{"no":78,"time":"12:00","venue":"축구공원1A","away":"서울노원FC한마음U12옐로우","home":"경남거제장승포스포츠클럽U12"},{"no":177,"time":"12:00","venue":"알천1B","away":"경남거제장승포스포츠클럽U12","home":"울산학성초FCU12"},{"no":178,"time":"12:00","venue":"알천2A","away":"경기여주SDFCU12","home":"서울노원FC한마음U12옐로우"},{"no":277,"time":"12:00","venue":"축구공원5A","away":"서울노원FC한마음U12옐로우","home":"울산학성초FCU12"},{"no":278,"time":"12:00","venue":"축구공원5B","away":"경남거제장승포스포츠클럽U12","home":"경기여주SDFCU12"}]},"14":{"teams":["경기FC진건","경기평택유나이티드U12네이비","부산해운대FCU12","전남순천중앙초"],"matches":[{"no":27,"time":"10:00","venue":"경주시민B","away":"전남순천중앙초","home":"경기FC진건"},{"no":28,"time":"10:00","venue":"축구공원1A","away":"경기평택유나이티드U12네이비","home":"부산해운대FCU12"},{"no":127,"time":"10:00","venue":"알천1B","away":"부산해운대FCU12","home":"전남순천중앙초"},{"no":128,"time":"10:00","venue":"알천2A","away":"경기FC진건","home":"경기평택유나이티드U12네이비"},{"no":227,"time":"10:00","venue":"축구공원5A","away":"경기평택유나이티드U12네이비","home":"전남순천중앙초"},{"no":228,"time":"10:00","venue":"축구공원5B","away":"부산해운대FCU12","home":"경기FC진건"}]},"37":{"teams":["경기용인FCU12","서울신정축구클럽FCU12","경남양산유나이티드풋볼스포츠클럽U12","울산북구울산웨스트FCU12"],"matches":[{"no":73,"time":"11:00","venue":"알천4B","away":"울산북구울산웨스트FCU12","home":"경기용인FCU12"},{"no":74,"time":"11:00","venue":"알천5A","away":"서울신정축구클럽FCU12","home":"경남양산유나이티드풋볼스포츠클럽U12"},{"no":173,"time":"11:00","venue":"축구공원2B","away":"경남양산유나이티드풋볼스포츠클럽U12","home":"울산북구울산웨스트FCU12"},{"no":174,"time":"11:00","venue":"축구공원3A","away":"경기용인FCU12","home":"서울신정축구클럽FCU12"},{"no":273,"time":"11:00","venue":"알천3B","away":"서울신정축구클럽FCU12","home":"울산북구울산웨스트FCU12"},{"no":274,"time":"11:00","venue":"에어돔","away":"경남양산유나이티드풋볼스포츠클럽U12","home":"경기용인FCU12"}]},"22":{"teams":["경기샤인FCU12","서울잠원초","부산기장SSGFCU12B","충남계성초"],"matches":[{"no":43,"time":"10:00","venue":"축구공원5A","away":"충남계성초","home":"경기샤인FCU12"},{"no":44,"time":"10:00","venue":"축구공원5B","away":"서울잠원초","home":"부산기장SSGFCU12B"},{"no":143,"time":"10:00","venue":"경주시민A","away":"부산기장SSGFCU12B","home":"충남계성초"},{"no":144,"time":"10:00","venue":"경주시민B","away":"경기샤인FCU12","home":"서울잠원초"},{"no":243,"time":"10:00","venue":"알천1A","away":"서울잠원초","home":"충남계성초"},{"no":244,"time":"10:00","venue":"알천1B","away":"부산기장SSGFCU12B","home":"경기샤인FCU12"}]},"28":{"teams":["경기광명FCU12","서울언더플레이FCU12","강원강릉성덕FCU12","충북청주시MSC모던축구클럽"],"matches":[{"no":55,"time":"11:00","venue":"축구공원2A","away":"충북청주시MSC모던축구클럽","home":"경기광명FCU12"},{"no":56,"time":"11:00","venue":"축구공원2B","away":"서울언더플레이FCU12","home":"강원강릉성덕FCU12"},{"no":155,"time":"11:00","venue":"알천3A","away":"강원강릉성덕FCU12","home":"충북청주시MSC모던축구클럽"},{"no":156,"time":"11:00","venue":"알천3B","away":"경기광명FCU12","home":"서울언더플레이FCU12"},{"no":255,"time":"11:00","venue":"축구공원6B","away":"서울언더플레이FCU12","home":"충북청주시MSC모던축구클럽"},{"no":256,"time":"11:00","venue":"알천4A","away":"강원강릉성덕FCU12","home":"경기광명FCU12"}]},"25":{"teams":["경기오산시오산세교FCU12","서울전농초","강원강릉온리원FCU12","충북청주연세FCU12축구클럽"],"matches":[{"no":49,"time":"10:00","venue":"알천5A","away":"충북청주연세FCU12축구클럽","home":"경기오산시오산세교FCU12"},{"no":50,"time":"10:00","venue":"알천5B","away":"서울전농초","home":"강원강릉온리원FCU12"},{"no":149,"time":"10:00","venue":"축구공원3A","away":"강원강릉온리원FCU12","home":"충북청주연세FCU12축구클럽"},{"no":150,"time":"10:00","venue":"축구공원3B","away":"경기오산시오산세교FCU12","home":"서울전농초"},{"no":249,"time":"10:00","venue":"에어돔","away":"서울전농초","home":"충북청주연세FCU12축구클럽"},{"no":250,"time":"10:00","venue":"축구공원4A","away":"강원강릉온리원FCU12","home":"경기오산시오산세교FCU12"}]},"9":{"teams":["경기김신욱FCU12","경기화성시U12화이트","인천YSCU12BLUE","대구SOOFCU12"],"matches":[{"no":17,"time":"09:00","venue":"축구공원4B","away":"대구SOOFCU12","home":"경기김신욱FCU12"},{"no":18,"time":"09:00","venue":"축구공원5A","away":"경기화성시U12화이트","home":"인천YSCU12BLUE"},{"no":117,"time":"09:00","venue":"알천5B","away":"인천YSCU12BLUE","home":"대구SOOFCU12"},{"no":118,"time":"09:00","venue":"경주시민A","away":"경기김신욱FCU12","home":"경기화성시U12화이트"},{"no":217,"time":"09:00","venue":"축구공원3B","away":"경기화성시U12화이트","home":"대구SOOFCU12"},{"no":218,"time":"09:00","venue":"알천1A","away":"인천YSCU12BLUE","home":"경기김신욱FCU12"}]},"33":{"teams":["경기파주웨일즈FCU12","서울송파구JD풋볼아카데미","강원춘천HYUNFCU12","세종공공SCU12"],"matches":[{"no":65,"time":"11:00","venue":"에어돔","away":"세종공공SCU12","home":"경기파주웨일즈FCU12"},{"no":66,"time":"11:00","venue":"축구공원4A","away":"서울송파구JD풋볼아카데미","home":"강원춘천HYUNFCU12"},{"no":165,"time":"11:00","venue":"알천4B","away":"강원춘천HYUNFCU12","home":"세종공공SCU12"},{"no":166,"time":"11:00","venue":"알천5A","away":"경기파주웨일즈FCU12","home":"서울송파구JD풋볼아카데미"},{"no":265,"time":"11:00","venue":"축구공원2B","away":"서울송파구JD풋볼아카데미","home":"세종공공SCU12"},{"no":266,"time":"11:00","venue":"축구공원3A","away":"강원춘천HYUNFCU12","home":"경기파주웨일즈FCU12"}]},"15":{"teams":["경기김포FCU12","경기더베스트2010U12레드","부산동구동구FCU12","전남목포FCU12"],"matches":[{"no":29,"time":"10:00","venue":"축구공원1B","away":"전남목포FCU12","home":"경기김포FCU12"},{"no":30,"time":"10:00","venue":"축구공원2A","away":"경기더베스트2010U12레드","home":"부산동구동구FCU12"},{"no":129,"time":"10:00","venue":"알천2B","away":"부산동구동구FCU12","home":"전남목포FCU12"},{"no":130,"time":"10:00","venue":"알천3A","away":"경기김포FCU12","home":"경기더베스트2010U12레드"},{"no":229,"time":"10:00","venue":"축구공원6A","away":"경기더베스트2010U12레드","home":"전남목포FCU12"},{"no":230,"time":"10:00","venue":"축구공원6B","away":"부산동구동구FCU12","home":"경기김포FCU12"}]},"34":{"teams":["경기이천유나이티드풋볼클럽U12","서울SNFC","강원원주태장초화이트","세종솔FCU12"],"matches":[{"no":67,"time":"11:00","venue":"축구공원4B","away":"세종솔FCU12","home":"경기이천유나이티드풋볼클럽U12"},{"no":68,"time":"11:00","venue":"축구공원5A","away":"서울SNFC","home":"강원원주태장초화이트"},{"no":167,"time":"11:00","venue":"알천5B","away":"강원원주태장초화이트","home":"세종솔FCU12"},{"no":168,"time":"11:00","venue":"경주시민A","away":"경기이천유나이티드풋볼클럽U12","home":"서울SNFC"},{"no":267,"time":"11:00","venue":"축구공원3B","away":"서울SNFC","home":"세종솔FCU12"},{"no":268,"time":"11:00","venue":"알천1A","away":"강원원주태장초화이트","home":"경기이천유나이티드풋볼클럽U12"}]},"21":{"teams":["경기화성시DTIFCU12","서울강남주니어FCU12","부산남구맥스FC","충남천안라이온스U12"],"matches":[{"no":41,"time":"10:00","venue":"축구공원4A","away":"충남천안라이온스U12","home":"경기화성시DTIFCU12"},{"no":42,"time":"10:00","venue":"축구공원4B","away":"서울강남주니어FCU12","home":"부산남구맥스FC"},{"no":141,"time":"10:00","venue":"알천5A","away":"부산남구맥스FC","home":"충남천안라이온스U12"},{"no":142,"time":"10:00","venue":"알천5B","away":"경기화성시DTIFCU12","home":"서울강남주니어FCU12"},{"no":241,"time":"10:00","venue":"축구공원3A","away":"서울강남주니어FCU12","home":"충남천안라이온스U12"},{"no":242,"time":"10:00","venue":"축구공원3B","away":"부산남구맥스FC","home":"경기화성시DTIFCU12"}]},"24":{"teams":["경기오포ACTU12","서울JNFCU12","부산강서FCU12","충북교현초"],"matches":[{"no":47,"time":"10:00","venue":"알천4A","away":"충북교현초","home":"경기오포ACTU12"},{"no":48,"time":"10:00","venue":"알천4B","away":"서울JNFCU12","home":"부산강서FCU12"},{"no":147,"time":"10:00","venue":"축구공원2A","away":"부산강서FCU12","home":"충북교현초"},{"no":148,"time":"10:00","venue":"축구공원2B","away":"경기오포ACTU12","home":"서울JNFCU12"},{"no":247,"time":"10:00","venue":"알천3A","away":"서울JNFCU12","home":"충북교현초"},{"no":248,"time":"10:00","venue":"알천3B","away":"부산강서FCU12","home":"경기오포ACTU12"}]},"46":{"teams":["경기포천유나이티드U12","서울FC서울풀굿코리아U12레드","경남창원축구센터U12","체코TrebicU12[60350]"],"matches":[{"no":91,"time":"12:00","venue":"축구공원4A","away":"체코TrebicU12[60350]","home":"경기포천유나이티드U12"},{"no":92,"time":"12:00","venue":"축구공원4B","away":"서울FC서울풀굿코리아U12레드","home":"경남창원축구센터U12"},{"no":191,"time":"12:00","venue":"알천5A","away":"경남창원축구센터U12","home":"체코TrebicU12[60350]"},{"no":192,"time":"12:00","venue":"알천5B","away":"경기포천유나이티드U12","home":"서울FC서울풀굿코리아U12레드"},{"no":291,"time":"12:00","venue":"축구공원3A","away":"서울FC서울풀굿코리아U12레드","home":"체코TrebicU12[60350]"},{"no":292,"time":"12:00","venue":"축구공원3B","away":"경남창원축구센터U12","home":"경기포천유나이티드U12"}]},"16":{"teams":["경기양주시유소년축구클럽","경기더베스트2010U12하이트","부산구포FCU12","전남장흥FCU12"],"matches":[{"no":31,"time":"10:00","venue":"축구공원2B","away":"전남장흥FCU12","home":"경기양주시유소년축구클럽"},{"no":32,"time":"10:00","venue":"축구공원3A","away":"경기더베스트2010U12하이트","home":"부산구포FCU12"},{"no":131,"time":"10:00","venue":"알천3B","away":"부산구포FCU12","home":"전남장흥FCU12"},{"no":132,"time":"10:00","venue":"에어돔","away":"경기양주시유소년축구클럽","home":"경기더베스트2010U12하이트"},{"no":231,"time":"10:00","venue":"알천4A","away":"경기더베스트2010U12하이트","home":"전남장흥FCU12"},{"no":232,"time":"10:00","venue":"알천4B","away":"부산구포FCU12","home":"경기양주시유소년축구클럽"}]},"35":{"teams":["경기김포PNCFCU12","서울GWFCU12","강원원주태장초오렌지","[연습] 경기의정부신곡사커스포츠클럽U12"],"matches":[{"no":69,"time":"11:00","venue":"축구공원5B","away":"[연습] 경기의정부신곡사커스포츠클럽U12","home":"경기김포PNCFCU12"},{"no":70,"time":"11:00","venue":"축구공원6A","away":"서울GWFCU12","home":"강원원주태장초오렌지"},{"no":169,"time":"11:00","venue":"경주시민B","away":"강원원주태장초오렌지","home":"[연습] 경기의정부신곡사커스포츠클럽U12"},{"no":170,"time":"11:00","venue":"축구공원1A","away":"경기김포PNCFCU12","home":"서울GWFCU12"},{"no":269,"time":"11:00","venue":"알천1B","away":"서울GWFCU12","home":"[연습] 경기의정부신곡사커스포츠클럽U12"},{"no":270,"time":"11:00","venue":"알천2A","away":"강원원주태장초오렌지","home":"경기김포PNCFCU12"}]},"32":{"teams":["경기의정부신곡사커스포츠클럽U12","서울강남구킵플레잉FC","강원강원특별자치도민프로축구단U12","대전중앙FC스포츠클럽U12A"],"matches":[{"no":63,"time":"11:00","venue":"알천3A","away":"대전중앙FC스포츠클럽U12A","home":"경기의정부신곡사커스포츠클럽U12"},{"no":64,"time":"11:00","venue":"알천3B","away":"서울강남구킵플레잉FC","home":"강원강원특별자치도민프로축구단U12"},{"no":163,"time":"11:00","venue":"축구공원6B","away":"강원강원특별자치도민프로축구단U12","home":"대전중앙FC스포츠클럽U12A"},{"no":164,"time":"11:00","venue":"알천4A","away":"경기의정부신곡사커스포츠클럽U12","home":"서울강남구킵플레잉FC"},{"no":263,"time":"11:00","venue":"축구공원1B","away":"서울강남구킵플레잉FC","home":"대전중앙FC스포츠클럽U12A"},{"no":264,"time":"11:00","venue":"축구공원2A","away":"강원강원특별자치도민프로축구단U12","home":"경기의정부신곡사커스포츠클럽U12"}]},"7":{"teams":["경기안산시U12","경기연세FCU12옐로","인천FC석남서U12","제주서귀포초화이트"],"matches":[{"no":13,"time":"09:00","venue":"알천3A","away":"제주서귀포초화이트","home":"경기안산시U12"},{"no":14,"time":"09:00","venue":"알천3B","away":"경기연세FCU12옐로","home":"인천FC석남서U12"},{"no":113,"time":"09:00","venue":"축구공원6B","away":"인천FC석남서U12","home":"제주서귀포초화이트"},{"no":114,"time":"09:00","venue":"알천4A","away":"경기안산시U12","home":"경기연세FCU12옐로"},{"no":213,"time":"09:00","venue":"축구공원1B","away":"경기연세FCU12옐로","home":"제주서귀포초화이트"},{"no":214,"time":"09:00","venue":"축구공원2A","away":"인천FC석남서U12","home":"경기안산시U12"}]},"43":{"teams":["경기부천FCDREAMU12","서울K리거강용FCA","경남통영FCU12","광주신화유소년축구단1"],"matches":[{"no":85,"time":"12:00","venue":"알천1B","away":"광주신화유소년축구단1","home":"경기부천FCDREAMU12"},{"no":86,"time":"12:00","venue":"알천2A","away":"서울K리거강용FCA","home":"경남통영FCU12"},{"no":185,"time":"12:00","venue":"축구공원5A","away":"경남통영FCU12","home":"광주신화유소년축구단1"},{"no":186,"time":"12:00","venue":"축구공원5B","away":"경기부천FCDREAMU12","home":"서울K리거강용FCA"},{"no":285,"time":"12:00","venue":"경주시민A","away":"서울K리거강용FCA","home":"광주신화유소년축구단1"},{"no":286,"time":"12:00","venue":"경주시민B","away":"경남통영FCU12","home":"경기부천FCDREAMU12"}]},"48":{"teams":["경기이천FCU12","인천미추홀유나이티드U12","전북고창풋볼스포츠클럽U12","[연습] 경남양산유나이티드풋볼스포츠클럽U12"],"matches":[{"no":95,"time":"12:00","venue":"축구공원6A","away":"[연습] 경남양산유나이티드풋볼스포츠클럽U12","home":"경기이천FCU12"},{"no":96,"time":"12:00","venue":"축구공원6B","away":"인천미추홀유나이티드U12","home":"전북고창풋볼스포츠클럽U12"},{"no":195,"time":"12:00","venue":"축구공원1A","away":"전북고창풋볼스포츠클럽U12","home":"[연습] 경남양산유나이티드풋볼스포츠클럽U12"},{"no":196,"time":"12:00","venue":"축구공원1B","away":"경기이천FCU12","home":"인천미추홀유나이티드U12"},{"no":295,"time":"12:00","venue":"알천2A","away":"인천미추홀유나이티드U12","home":"[연습] 경남양산유나이티드풋볼스포츠클럽U12"},{"no":296,"time":"12:00","venue":"알천2B","away":"전북고창풋볼스포츠클럽U12","home":"경기이천FCU12"}]},"2":{"teams":["경기아미U12","경기이천시세계로풋볼클럽U12","인천동구청유소년축구단U12","전북익산시IDSU12드림"],"matches":[{"no":3,"time":"09:00","venue":"축구공원1A","away":"전북익산시IDSU12드림","home":"경기아미U12"},{"no":4,"time":"09:00","venue":"축구공원1B","away":"경기이천시세계로풋볼클럽U12","home":"인천동구청유소년축구단U12"},{"no":103,"time":"09:00","venue":"알천2A","away":"인천동구청유소년축구단U12","home":"전북익산시IDSU12드림"},{"no":104,"time":"09:00","venue":"알천2B","away":"경기아미U12","home":"경기이천시세계로풋볼클럽U12"},{"no":203,"time":"09:00","venue":"축구공원5B","away":"경기이천시세계로풋볼클럽U12","home":"전북익산시IDSU12드림"},{"no":204,"time":"09:00","venue":"축구공원6A","away":"인천동구청유소년축구단U12","home":"경기아미U12"}]},"38":{"teams":["[연습] 경기SC주니어축구클럽U12","서울노원FC한마음U12화이트","경남밀양밀성풋볼스포츠클럽U12","울산HDFCU12"],"matches":[{"no":75,"time":"11:00","venue":"알천5B","away":"울산HDFCU12","home":"[연습] 경기SC주니어축구클럽U12"},{"no":76,"time":"12:00","venue":"경주시민A","away":"서울노원FC한마음U12화이트","home":"경남밀양밀성풋볼스포츠클럽U12"},{"no":175,"time":"11:00","venue":"축구공원3B","away":"경남밀양밀성풋볼스포츠클럽U12","home":"울산HDFCU12"},{"no":176,"time":"12:00","venue":"알천1A","away":"[연습] 경기SC주니어축구클럽U12","home":"서울노원FC한마음U12화이트"},{"no":275,"time":"11:00","venue":"축구공원4A","away":"서울노원FC한마음U12화이트","home":"울산HDFCU12"},{"no":276,"time":"12:00","venue":"축구공원4B","away":"경남밀양밀성풋볼스포츠클럽U12","home":"[연습] 경기SC주니어축구클럽U12"}]},"50":{"teams":["경기향남포커스FCU12","인천만수북FCU12","전북JLFC축구단U12A","[연습] 대구TDNU12"],"matches":[{"no":99,"time":"12:00","venue":"알천5A","away":"[연습] 대구TDNU12","home":"경기향남포커스FCU12"},{"no":100,"time":"12:00","venue":"알천5B","away":"인천만수북FCU12","home":"전북JLFC축구단U12A"},{"no":199,"time":"12:00","venue":"축구공원3A","away":"전북JLFC축구단U12A","home":"[연습] 대구TDNU12"},{"no":200,"time":"12:00","venue":"축구공원3B","away":"경기향남포커스FCU12","home":"인천만수북FCU12"},{"no":299,"time":"12:00","venue":"에어돔","away":"인천만수북FCU12","home":"[연습] 대구TDNU12"},{"no":300,"time":"12:00","venue":"축구공원4A","away":"전북JLFC축구단U12A","home":"경기향남포커스FCU12"}]},"6":{"teams":["경기월드클래스축구센터U12","경기남양주KJHFCU12a","인천리틀코리아FCU12","제주SKU12"],"matches":[{"no":11,"time":"09:00","venue":"알천2A","away":"제주SKU12","home":"경기월드클래스축구센터U12"},{"no":12,"time":"09:00","venue":"알천2B","away":"경기남양주KJHFCU12a","home":"인천리틀코리아FCU12"},{"no":111,"time":"09:00","venue":"축구공원5B","away":"인천리틀코리아FCU12","home":"제주SKU12"},{"no":112,"time":"09:00","venue":"축구공원6A","away":"경기월드클래스축구센터U12","home":"경기남양주KJHFCU12a"},{"no":211,"time":"09:00","venue":"경주시민B","away":"경기남양주KJHFCU12a","home":"제주SKU12"},{"no":212,"time":"09:00","venue":"축구공원1A","away":"인천리틀코리아FCU12","home":"경기월드클래스축구센터U12"}]},"31":{"teams":["경기TPSAFCU12","서울남강FCU12","강원동해FCU12","대전중앙FC스포츠클럽U12B"],"matches":[{"no":61,"time":"11:00","venue":"알천2A","away":"대전중앙FC스포츠클럽U12B","home":"경기TPSAFCU12"},{"no":62,"time":"11:00","venue":"알천2B","away":"서울남강FCU12","home":"강원동해FCU12"},{"no":161,"time":"11:00","venue":"축구공원5B","away":"강원동해FCU12","home":"대전중앙FC스포츠클럽U12B"},{"no":162,"time":"11:00","venue":"축구공원6A","away":"경기TPSAFCU12","home":"서울남강FCU12"},{"no":261,"time":"11:00","venue":"경주시민B","away":"서울남강FCU12","home":"대전중앙FC스포츠클럽U12B"},{"no":262,"time":"11:00","venue":"축구공원1A","away":"강원동해FCU12","home":"경기TPSAFCU12"}]}},"U12":{"11":{"teams":["경기FC진건","경기용인LFKU12","서울영신초","경남통영FCU12","제주프로FCU12"],"matches":[{"no":21,"time":"16:00","venue":"축구공원6B","away":"경기용인LFKU12","home":"서울영신초"},{"no":22,"time":"16:00","venue":"알천4A","away":"경남통영FCU12","home":"제주프로FCU12"},{"no":101,"time":"16:00","venue":"축구공원2B","away":"경기FC진건","home":"경남통영FCU12"},{"no":102,"time":"16:00","venue":"축구공원3A","away":"서울영신초","home":"제주프로FCU12"},{"no":181,"time":"16:00","venue":"축구공원4A","away":"제주프로FCU12","home":"경기FC진건"},{"no":182,"time":"16:00","venue":"축구공원4B","away":"경남통영FCU12","home":"경기용인LFKU12"},{"no":261,"time":"16:00","venue":"경주시민A","away":"제주프로FCU12","home":"경기용인LFKU12"},{"no":262,"time":"16:00","venue":"경주시민B","away":"경기FC진건","home":"서울영신초"},{"no":341,"time":"16:00","venue":"알천2A","away":"서울영신초","home":"경남통영FCU12"},{"no":342,"time":"16:00","venue":"알천2B","away":"경기용인LFKU12","home":"경기FC진건"}]},"3":{"teams":["경기고양시신정FCU12","경기오산시오산세교FCU12","서울JNFCU12","강원속초SCFCU12","세종솔FCU12"],"matches":[{"no":5,"time":"16:00","venue":"축구공원2A","away":"경기오산시오산세교FCU12","home":"서울JNFCU12"},{"no":6,"time":"16:00","venue":"축구공원2B","away":"강원속초SCFCU12","home":"세종솔FCU12"},{"no":85,"time":"16:00","venue":"에어돔","away":"경기고양시신정FCU12","home":"강원속초SCFCU12"},{"no":86,"time":"16:00","venue":"축구공원4A","away":"서울JNFCU12","home":"세종솔FCU12"},{"no":165,"time":"16:00","venue":"알천5B","away":"세종솔FCU12","home":"경기고양시신정FCU12"},{"no":166,"time":"16:00","venue":"경주시민A","away":"강원속초SCFCU12","home":"경기오산시오산세교FCU12"},{"no":245,"time":"16:00","venue":"알천1B","away":"세종솔FCU12","home":"경기오산시오산세교FCU12"},{"no":246,"time":"16:00","venue":"알천2A","away":"경기고양시신정FCU12","home":"서울JNFCU12"},{"no":325,"time":"16:00","venue":"축구공원6A","away":"서울JNFCU12","home":"강원속초SCFCU12"},{"no":326,"time":"16:00","venue":"축구공원6B","away":"경기오산시오산세교FCU12","home":"경기고양시신정FCU12"}]},"20":{"teams":["경기의왕G스포츠클럽U12","경기TPSAFCU12","서울JP연세FCU12JP","부산장산초SCU12","울산북구울산웨스트FCU12"],"matches":[{"no":39,"time":"17:10","venue":"알천3B","away":"경기TPSAFCU12","home":"서울JP연세FCU12JP"},{"no":40,"time":"17:10","venue":"에어돔","away":"부산장산초SCU12","home":"울산북구울산웨스트FCU12"},{"no":119,"time":"17:10","venue":"알천5A","away":"경기의왕G스포츠클럽U12","home":"부산장산초SCU12"},{"no":120,"time":"17:10","venue":"알천5B","away":"서울JP연세FCU12JP","home":"울산북구울산웨스트FCU12"},{"no":199,"time":"17:10","venue":"알천1A","away":"울산북구울산웨스트FCU12","home":"경기의왕G스포츠클럽U12"},{"no":200,"time":"17:10","venue":"알천1B","away":"부산장산초SCU12","home":"경기TPSAFCU12"},{"no":279,"time":"17:10","venue":"축구공원5B","away":"울산북구울산웨스트FCU12","home":"경기TPSAFCU12"},{"no":280,"time":"17:10","venue":"축구공원6A","away":"경기의왕G스포츠클럽U12","home":"서울JP연세FCU12JP"},{"no":359,"time":"17:10","venue":"축구공원1B","away":"서울JP연세FCU12JP","home":"부산장산초SCU12"},{"no":360,"time":"17:10","venue":"축구공원2A","away":"경기TPSAFCU12","home":"경기의왕G스포츠클럽U12"}]},"12":{"teams":["경기남양주BESTFCU12","경기김포FCU12","서울FC서울풀굿코리아U12","경남창원상남스포츠클럽U12","충남계성초"],"matches":[{"no":23,"time":"16:00","venue":"알천4B","away":"경기김포FCU12","home":"서울FC서울풀굿코리아U12"},{"no":24,"time":"16:00","venue":"알천5A","away":"경남창원상남스포츠클럽U12","home":"충남계성초"},{"no":103,"time":"16:00","venue":"축구공원3B","away":"경기남양주BESTFCU12","home":"경남창원상남스포츠클럽U12"},{"no":104,"time":"16:00","venue":"알천1A","away":"서울FC서울풀굿코리아U12","home":"충남계성초"},{"no":183,"time":"16:00","venue":"축구공원5A","away":"충남계성초","home":"경기남양주BESTFCU12"},{"no":184,"time":"16:00","venue":"축구공원5B","away":"경남창원상남스포츠클럽U12","home":"경기김포FCU12"},{"no":263,"time":"16:00","venue":"축구공원1A","away":"충남계성초","home":"경기김포FCU12"},{"no":264,"time":"16:00","venue":"축구공원1B","away":"경기남양주BESTFCU12","home":"서울FC서울풀굿코리아U12"},{"no":343,"time":"16:00","venue":"알천3A","away":"서울FC서울풀굿코리아U12","home":"경남창원상남스포츠클럽U12"},{"no":344,"time":"16:00","venue":"알천3B","away":"경기김포FCU12","home":"경기남양주BESTFCU12"}]},"10":{"teams":["[연습] 추후확정","경기스토피아FC포텐셜U12","서울UKFCU12","경남양산유나이티드풋볼스포츠클럽U12","제주대정초"],"matches":[{"no":19,"time":"16:00","venue":"축구공원5B","away":"경기스토피아FC포텐셜U12","home":"서울UKFCU12"},{"no":20,"time":"16:00","venue":"축구공원6A","away":"경남양산유나이티드풋볼스포츠클럽U12","home":"제주대정초"},{"no":99,"time":"16:00","venue":"축구공원1B","away":"[연습] 추후확정","home":"경남양산유나이티드풋볼스포츠클럽U12"},{"no":100,"time":"16:00","venue":"축구공원2A","away":"서울UKFCU12","home":"제주대정초"},{"no":179,"time":"16:00","venue":"알천3B","away":"제주대정초","home":"[연습] 추후확정"},{"no":180,"time":"16:00","venue":"에어돔","away":"경남양산유나이티드풋볼스포츠클럽U12","home":"경기스토피아FC포텐셜U12"},{"no":259,"time":"16:00","venue":"알천5A","away":"제주대정초","home":"경기스토피아FC포텐셜U12"},{"no":260,"time":"16:00","venue":"알천5B","away":"[연습] 추후확정","home":"서울UKFCU12"},{"no":339,"time":"16:00","venue":"알천1A","away":"서울UKFCU12","home":"경남양산유나이티드풋볼스포츠클럽U12"},{"no":340,"time":"16:00","venue":"알천1B","away":"경기스토피아FC포텐셜U12","home":"[연습] 추후확정"}]},"17":{"teams":["경기안산시U12","경기샤인FCU12","서울관악FCU12","경남김해그릿FCU12","울산학성초FCU12"],"matches":[{"no":33,"time":"17:10","venue":"축구공원3B","away":"경기샤인FCU12","home":"서울관악FCU12"},{"no":34,"time":"17:10","venue":"알천1A","away":"경남김해그릿FCU12","home":"울산학성초FCU12"},{"no":113,"time":"17:10","venue":"축구공원5A","away":"경기안산시U12","home":"경남김해그릿FCU12"},{"no":114,"time":"17:10","venue":"축구공원5B","away":"서울관악FCU12","home":"울산학성초FCU12"},{"no":193,"time":"17:10","venue":"축구공원1A","away":"울산학성초FCU12","home":"경기안산시U12"},{"no":194,"time":"17:10","venue":"축구공원1B","away":"경남김해그릿FCU12","home":"경기샤인FCU12"},{"no":273,"time":"17:10","venue":"알천3A","away":"울산학성초FCU12","home":"경기샤인FCU12"},{"no":274,"time":"17:10","venue":"알천3B","away":"경기안산시U12","home":"서울관악FCU12"},{"no":353,"time":"17:10","venue":"알천4B","away":"서울관악FCU12","home":"경남김해그릿FCU12"},{"no":354,"time":"17:10","venue":"알천5A","away":"경기샤인FCU12","home":"경기안산시U12"}]},"40":{"teams":["경기라온유나이티드U12","서울남강FCU12","강원동해FCU12","대구대구FCU12","[연습] 전북익산시IDSU12"],"matches":[{"no":79,"time":"19:30","venue":"축구공원1B","away":"서울남강FCU12","home":"강원동해FCU12"},{"no":80,"time":"19:30","venue":"축구공원2A","away":"대구대구FCU12","home":"[연습] 전북익산시IDSU12"},{"no":159,"time":"19:30","venue":"알천3B","away":"경기라온유나이티드U12","home":"대구대구FCU12"},{"no":160,"time":"19:30","venue":"에어돔","away":"강원동해FCU12","home":"[연습] 전북익산시IDSU12"},{"no":239,"time":"19:30","venue":"알천5A","away":"[연습] 전북익산시IDSU12","home":"경기라온유나이티드U12"},{"no":240,"time":"19:30","venue":"알천5B","away":"대구대구FCU12","home":"서울남강FCU12"},{"no":319,"time":"19:30","venue":"알천1A","away":"[연습] 전북익산시IDSU12","home":"서울남강FCU12"},{"no":320,"time":"19:30","venue":"알천1B","away":"경기라온유나이티드U12","home":"강원동해FCU12"},{"no":399,"time":"19:30","venue":"축구공원5B","away":"강원동해FCU12","home":"대구대구FCU12"},{"no":400,"time":"19:30","venue":"축구공원6A","away":"서울남강FCU12","home":"경기라온유나이티드U12"}]},"13":{"teams":["경기의정부신곡사커스포츠클럽U12","경기오포ACTU12","서울강남구킵플레잉FC","경남김해외동FCU12","충남천안라이온스U12"],"matches":[{"no":25,"time":"16:00","venue":"알천5B","away":"경기오포ACTU12","home":"서울강남구킵플레잉FC"},{"no":26,"time":"17:10","venue":"경주시민A","away":"경남김해외동FCU12","home":"충남천안라이온스U12"},{"no":105,"time":"16:00","venue":"알천1B","away":"경기의정부신곡사커스포츠클럽U12","home":"경남김해외동FCU12"},{"no":106,"time":"17:10","venue":"알천2A","away":"서울강남구킵플레잉FC","home":"충남천안라이온스U12"},{"no":185,"time":"16:00","venue":"축구공원6A","away":"충남천안라이온스U12","home":"경기의정부신곡사커스포츠클럽U12"},{"no":186,"time":"17:10","venue":"축구공원6B","away":"경남김해외동FCU12","home":"경기오포ACTU12"},{"no":265,"time":"16:00","venue":"축구공원2A","away":"충남천안라이온스U12","home":"경기오포ACTU12"},{"no":266,"time":"17:10","venue":"축구공원2B","away":"경기의정부신곡사커스포츠클럽U12","home":"서울강남구킵플레잉FC"},{"no":345,"time":"16:00","venue":"에어돔","away":"서울강남구킵플레잉FC","home":"경남김해외동FCU12"},{"no":346,"time":"17:10","venue":"축구공원4A","away":"경기오포ACTU12","home":"경기의정부신곡사커스포츠클럽U12"}]},"27":{"teams":["경기연세FCU12","경기남양주KJHFCU12A","인천청라웰리스FCU12","부산FCYU12","충북교현초"],"matches":[{"no":53,"time":"18:20","venue":"축구공원1A","away":"경기남양주KJHFCU12A","home":"인천청라웰리스FCU12"},{"no":54,"time":"18:20","venue":"축구공원1B","away":"부산FCYU12","home":"충북교현초"},{"no":133,"time":"18:20","venue":"알천3A","away":"경기연세FCU12","home":"부산FCYU12"},{"no":134,"time":"18:20","venue":"알천3B","away":"인천청라웰리스FCU12","home":"충북교현초"},{"no":213,"time":"18:20","venue":"알천4B","away":"충북교현초","home":"경기연세FCU12"},{"no":214,"time":"18:20","venue":"알천5A","away":"부산FCYU12","home":"경기남양주KJHFCU12A"},{"no":293,"time":"18:20","venue":"축구공원3B","away":"충북교현초","home":"경기남양주KJHFCU12A"},{"no":294,"time":"18:20","venue":"알천1A","away":"경기연세FCU12","home":"인천청라웰리스FCU12"},{"no":373,"time":"18:20","venue":"축구공원5A","away":"인천청라웰리스FCU12","home":"부산FCYU12"},{"no":374,"time":"18:20","venue":"축구공원5B","away":"경기남양주KJHFCU12A","home":"경기연세FCU12"}]},"30":{"teams":["경기용인FCU12","경기평택유나이티드U12화이트","인천동구청유소년축구단U12","전남목포FCU12","광주신화유소년축구단"],"matches":[{"no":59,"time":"18:20","venue":"알천1A","away":"경기평택유나이티드U12화이트","home":"인천동구청유소년축구단U12"},{"no":60,"time":"18:20","venue":"알천1B","away":"전남목포FCU12","home":"광주신화유소년축구단"},{"no":139,"time":"18:20","venue":"축구공원5B","away":"경기용인FCU12","home":"전남목포FCU12"},{"no":140,"time":"18:20","venue":"축구공원6A","away":"인천동구청유소년축구단U12","home":"광주신화유소년축구단"},{"no":219,"time":"18:20","venue":"축구공원1B","away":"광주신화유소년축구단","home":"경기용인FCU12"},{"no":220,"time":"18:20","venue":"축구공원2A","away":"전남목포FCU12","home":"경기평택유나이티드U12화이트"},{"no":299,"time":"18:20","venue":"알천3B","away":"광주신화유소년축구단","home":"경기평택유나이티드U12화이트"},{"no":300,"time":"18:20","venue":"에어돔","away":"경기용인FCU12","home":"인천동구청유소년축구단U12"},{"no":379,"time":"18:20","venue":"알천5A","away":"인천동구청유소년축구단U12","home":"전남목포FCU12"},{"no":380,"time":"18:20","venue":"알천5B","away":"경기평택유나이티드U12화이트","home":"경기용인FCU12"}]},"18":{"teams":["경기분당어썸U12","경기AUFCU12","서울FC은평U12","경남창원축구센터U12","울산울브스FCU12"],"matches":[{"no":35,"time":"17:10","venue":"알천1B","away":"경기AUFCU12","home":"서울FC은평U12"},{"no":36,"time":"17:10","venue":"알천2A","away":"경남창원축구센터U12","home":"울산울브스FCU12"},{"no":115,"time":"17:10","venue":"축구공원6A","away":"경기분당어썸U12","home":"경남창원축구센터U12"},{"no":116,"time":"17:10","venue":"축구공원6B","away":"서울FC은평U12","home":"울산울브스FCU12"},{"no":195,"time":"17:10","venue":"축구공원2A","away":"울산울브스FCU12","home":"경기분당어썸U12"},{"no":196,"time":"17:10","venue":"축구공원2B","away":"경남창원축구센터U12","home":"경기AUFCU12"},{"no":275,"time":"17:10","venue":"에어돔","away":"울산울브스FCU12","home":"경기AUFCU12"},{"no":276,"time":"17:10","venue":"축구공원4A","away":"경기분당어썸U12","home":"서울FC은평U12"},{"no":355,"time":"17:10","venue":"알천5B","away":"서울FC은평U12","home":"경남창원축구센터U12"},{"no":356,"time":"17:10","venue":"경주시민A","away":"경기AUFCU12","home":"경기분당어썸U12"}]},"36":{"teams":["경기이노축구클럽U12","서울DTFCU12","강원춘천HYUNFCU12","전남해남동초","경북칠곡유소년축구클럽U12"],"matches":[{"no":71,"time":"18:20","venue":"축구공원6B","away":"서울DTFCU12","home":"강원춘천HYUNFCU12"},{"no":72,"time":"18:20","venue":"알천4A","away":"전남해남동초","home":"경북칠곡유소년축구클럽U12"},{"no":151,"time":"18:20","venue":"축구공원2B","away":"경기이노축구클럽U12","home":"전남해남동초"},{"no":152,"time":"18:20","venue":"축구공원3A","away":"강원춘천HYUNFCU12","home":"경북칠곡유소년축구클럽U12"},{"no":231,"time":"18:20","venue":"축구공원4A","away":"경북칠곡유소년축구클럽U12","home":"경기이노축구클럽U12"},{"no":232,"time":"18:20","venue":"축구공원4B","away":"전남해남동초","home":"서울DTFCU12"},{"no":311,"time":"18:20","venue":"경주시민A","away":"경북칠곡유소년축구클럽U12","home":"서울DTFCU12"},{"no":312,"time":"18:20","venue":"경주시민B","away":"경기이노축구클럽U12","home":"강원춘천HYUNFCU12"},{"no":391,"time":"18:20","venue":"알천2A","away":"강원춘천HYUNFCU12","home":"전남해남동초"},{"no":392,"time":"18:20","venue":"알천2B","away":"서울DTFCU12","home":"경기이노축구클럽U12"}]},"29":{"teams":["경기안양SCU12","경기어정FCU12R","인천부평초FCU12","부산강서FCU12","광주베스트일레븐U12"],"matches":[{"no":57,"time":"18:20","venue":"축구공원3A","away":"경기어정FCU12R","home":"인천부평초FCU12"},{"no":58,"time":"18:20","venue":"축구공원3B","away":"부산강서FCU12","home":"광주베스트일레븐U12"},{"no":137,"time":"18:20","venue":"축구공원4B","away":"경기안양SCU12","home":"부산강서FCU12"},{"no":138,"time":"18:20","venue":"축구공원5A","away":"인천부평초FCU12","home":"광주베스트일레븐U12"},{"no":217,"time":"18:20","venue":"경주시민B","away":"광주베스트일레븐U12","home":"경기안양SCU12"},{"no":218,"time":"18:20","venue":"축구공원1A","away":"부산강서FCU12","home":"경기어정FCU12R"},{"no":297,"time":"18:20","venue":"알천2B","away":"광주베스트일레븐U12","home":"경기어정FCU12R"},{"no":298,"time":"18:20","venue":"알천3A","away":"경기안양SCU12","home":"인천부평초FCU12"},{"no":377,"time":"18:20","venue":"알천4A","away":"인천부평초FCU12","home":"부산강서FCU12"},{"no":378,"time":"18:20","venue":"알천4B","away":"경기어정FCU12R","home":"경기안양SCU12"}]},"23":{"teams":["경기SC주니어축구클럽U12","경기진건초블루","인천김형일FCU12","부산구포FCU12","전북이리동풋볼스포츠클럽U12"],"matches":[{"no":45,"time":"17:10","venue":"축구공원6A","away":"경기진건초블루","home":"인천김형일FCU12"},{"no":46,"time":"17:10","venue":"축구공원6B","away":"부산구포FCU12","home":"전북이리동풋볼스포츠클럽U12"},{"no":125,"time":"17:10","venue":"축구공원2A","away":"경기SC주니어축구클럽U12","home":"부산구포FCU12"},{"no":126,"time":"17:10","venue":"축구공원2B","away":"인천김형일FCU12","home":"전북이리동풋볼스포츠클럽U12"},{"no":205,"time":"17:10","venue":"에어돔","away":"전북이리동풋볼스포츠클럽U12","home":"경기SC주니어축구클럽U12"},{"no":206,"time":"17:10","venue":"축구공원4A","away":"부산구포FCU12","home":"경기진건초블루"},{"no":285,"time":"17:10","venue":"알천5B","away":"전북이리동풋볼스포츠클럽U12","home":"경기진건초블루"},{"no":286,"time":"17:10","venue":"경주시민A","away":"경기SC주니어축구클럽U12","home":"인천김형일FCU12"},{"no":365,"time":"17:10","venue":"알천1B","away":"인천김형일FCU12","home":"부산구포FCU12"},{"no":366,"time":"17:10","venue":"알천2A","away":"경기진건초블루","home":"경기SC주니어축구클럽U12"}]},"19":{"teams":["경기의정부축구센터U12","경기메이저풋볼스킬U12","서울JP연세FCU12MST","부산기장SSGFCU12","울산HDFCU12"],"matches":[{"no":37,"time":"17:10","venue":"알천2B","away":"경기메이저풋볼스킬U12","home":"서울JP연세FCU12MST"},{"no":38,"time":"17:10","venue":"알천3A","away":"부산기장SSGFCU12","home":"울산HDFCU12"},{"no":117,"time":"17:10","venue":"알천4A","away":"경기의정부축구센터U12","home":"부산기장SSGFCU12"},{"no":118,"time":"17:10","venue":"알천4B","away":"서울JP연세FCU12MST","home":"울산HDFCU12"},{"no":197,"time":"17:10","venue":"축구공원3A","away":"울산HDFCU12","home":"경기의정부축구센터U12"},{"no":198,"time":"17:10","venue":"축구공원3B","away":"부산기장SSGFCU12","home":"경기메이저풋볼스킬U12"},{"no":277,"time":"17:10","venue":"축구공원4B","away":"울산HDFCU12","home":"경기메이저풋볼스킬U12"},{"no":278,"time":"17:10","venue":"축구공원5A","away":"경기의정부축구센터U12","home":"서울JP연세FCU12MST"},{"no":357,"time":"17:10","venue":"경주시민B","away":"서울JP연세FCU12MST","home":"부산기장SSGFCU12"},{"no":358,"time":"17:10","venue":"축구공원1A","away":"경기메이저풋볼스킬U12","home":"경기의정부축구센터U12"}]},"1":{"teams":["경기평택시티즌FCU12","경기용인JFCU12","서울GWFCU12","강원SMC유소년클럽","대구TDNU12"],"matches":[{"no":1,"time":"16:00","venue":"경주시민A","away":"경기용인JFCU12","home":"서울GWFCU12"},{"no":2,"time":"16:00","venue":"경주시민B","away":"강원SMC유소년클럽","home":"대구TDNU12"},{"no":81,"time":"16:00","venue":"알천2A","away":"경기평택시티즌FCU12","home":"강원SMC유소년클럽"},{"no":82,"time":"16:00","venue":"알천2B","away":"서울GWFCU12","home":"대구TDNU12"},{"no":161,"time":"16:00","venue":"축구공원6B","away":"대구TDNU12","home":"경기평택시티즌FCU12"},{"no":162,"time":"16:00","venue":"알천4A","away":"강원SMC유소년클럽","home":"경기용인JFCU12"},{"no":241,"time":"16:00","venue":"축구공원2B","away":"대구TDNU12","home":"경기용인JFCU12"},{"no":242,"time":"16:00","venue":"축구공원3A","away":"경기평택시티즌FCU12","home":"서울GWFCU12"},{"no":321,"time":"16:00","venue":"축구공원4A","away":"서울GWFCU12","home":"강원SMC유소년클럽"},{"no":322,"time":"16:00","venue":"축구공원4B","away":"경기용인JFCU12","home":"경기평택시티즌FCU12"}]},"5":{"teams":["경기군포유소년U12","경기김신욱FCU12","서울광장초","강원강원특별자치도민프로축구단U12","세종대왕FCU12"],"matches":[{"no":9,"time":"16:00","venue":"알천1A","away":"경기김신욱FCU12","home":"서울광장초"},{"no":10,"time":"16:00","venue":"알천1B","away":"강원강원특별자치도민프로축구단U12","home":"세종대왕FCU12"},{"no":89,"time":"16:00","venue":"축구공원5B","away":"경기군포유소년U12","home":"강원강원특별자치도민프로축구단U12"},{"no":90,"time":"16:00","venue":"축구공원6A","away":"서울광장초","home":"세종대왕FCU12"},{"no":169,"time":"16:00","venue":"축구공원1B","away":"세종대왕FCU12","home":"경기군포유소년U12"},{"no":170,"time":"16:00","venue":"축구공원2A","away":"강원강원특별자치도민프로축구단U12","home":"경기김신욱FCU12"},{"no":249,"time":"16:00","venue":"알천3B","away":"세종대왕FCU12","home":"경기김신욱FCU12"},{"no":250,"time":"16:00","venue":"에어돔","away":"경기군포유소년U12","home":"서울광장초"},{"no":329,"time":"16:00","venue":"알천5A","away":"서울광장초","home":"강원강원특별자치도민프로축구단U12"},{"no":330,"time":"16:00","venue":"알천5B","away":"경기김신욱FCU12","home":"경기군포유소년U12"}]},"4":{"teams":["경기고양주니어FCU12","경기이천유나이티드풋볼클럽U12","서울K리거강용FC","강원속초시체육회U12","세종공공SCU12"],"matches":[{"no":7,"time":"16:00","venue":"축구공원3A","away":"경기이천유나이티드풋볼클럽U12","home":"서울K리거강용FC"},{"no":8,"time":"16:00","venue":"축구공원3B","away":"강원속초시체육회U12","home":"세종공공SCU12"},{"no":87,"time":"16:00","venue":"축구공원4B","away":"경기고양주니어FCU12","home":"강원속초시체육회U12"},{"no":88,"time":"16:00","venue":"축구공원5A","away":"서울K리거강용FC","home":"세종공공SCU12"},{"no":167,"time":"16:00","venue":"경주시민B","away":"세종공공SCU12","home":"경기고양주니어FCU12"},{"no":168,"time":"16:00","venue":"축구공원1A","away":"강원속초시체육회U12","home":"경기이천유나이티드풋볼클럽U12"},{"no":247,"time":"16:00","venue":"알천2B","away":"세종공공SCU12","home":"경기이천유나이티드풋볼클럽U12"},{"no":248,"time":"16:00","venue":"알천3A","away":"경기고양주니어FCU12","home":"서울K리거강용FC"},{"no":327,"time":"16:00","venue":"알천4A","away":"서울K리거강용FC","home":"강원속초시체육회U12"},{"no":328,"time":"16:00","venue":"알천4B","away":"경기이천유나이티드풋볼클럽U12","home":"경기고양주니어FCU12"}]},"8":{"teams":["경기파주유소년축구클럽","경기양주KSAFCU12","서울송파구JD풋볼아카데미","경남창원1907풋볼스포츠클럽U12","제주중문초"],"matches":[{"no":15,"time":"16:00","venue":"에어돔","away":"경기양주KSAFCU12","home":"서울송파구JD풋볼아카데미"},{"no":16,"time":"16:00","venue":"축구공원4A","away":"경남창원1907풋볼스포츠클럽U12","home":"제주중문초"},{"no":95,"time":"16:00","venue":"알천5B","away":"경기파주유소년축구클럽","home":"경남창원1907풋볼스포츠클럽U12"},{"no":96,"time":"16:00","venue":"경주시민A","away":"서울송파구JD풋볼아카데미","home":"제주중문초"},{"no":175,"time":"16:00","venue":"알천1B","away":"제주중문초","home":"경기파주유소년축구클럽"},{"no":176,"time":"16:00","venue":"알천2A","away":"경남창원1907풋볼스포츠클럽U12","home":"경기양주KSAFCU12"},{"no":255,"time":"16:00","venue":"축구공원6A","away":"제주중문초","home":"경기양주KSAFCU12"},{"no":256,"time":"16:00","venue":"축구공원6B","away":"경기파주유소년축구클럽","home":"서울송파구JD풋볼아카데미"},{"no":335,"time":"16:00","venue":"축구공원2A","away":"서울송파구JD풋볼아카데미","home":"경남창원1907풋볼스포츠클럽U12"},{"no":336,"time":"16:00","venue":"축구공원2B","away":"경기양주KSAFCU12","home":"경기파주유소년축구클럽"}]},"26":{"teams":["경기김포PNCFCU12","경기남양주KJHFCU12B","인천미추홀유나이티드U12","부산인터풋볼아카데미U12","충북청주연세FCU12축구클럽"],"matches":[{"no":51,"time":"18:20","venue":"경주시민A","away":"경기남양주KJHFCU12B","home":"인천미추홀유나이티드U12"},{"no":52,"time":"18:20","venue":"경주시민B","away":"부산인터풋볼아카데미U12","home":"충북청주연세FCU12축구클럽"},{"no":131,"time":"18:20","venue":"알천2A","away":"경기김포PNCFCU12","home":"부산인터풋볼아카데미U12"},{"no":132,"time":"18:20","venue":"알천2B","away":"인천미추홀유나이티드U12","home":"충북청주연세FCU12축구클럽"},{"no":211,"time":"18:20","venue":"축구공원6B","away":"충북청주연세FCU12축구클럽","home":"경기김포PNCFCU12"},{"no":212,"time":"18:20","venue":"알천4A","away":"부산인터풋볼아카데미U12","home":"경기남양주KJHFCU12B"},{"no":291,"time":"18:20","venue":"축구공원2B","away":"충북청주연세FCU12축구클럽","home":"경기남양주KJHFCU12B"},{"no":292,"time":"18:20","venue":"축구공원3A","away":"경기김포PNCFCU12","home":"인천미추홀유나이티드U12"},{"no":371,"time":"18:20","venue":"축구공원4A","away":"인천미추홀유나이티드U12","home":"부산인터풋볼아카데미U12"},{"no":372,"time":"18:20","venue":"축구공원4B","away":"경기남양주KJHFCU12B","home":"경기김포PNCFCU12"}]},"39":{"teams":["경기향남FCU12","서울전농초","강원홍천FCU12","대구최준기FCU12","[연습] 경북경주화랑FCU12"],"matches":[{"no":77,"time":"19:30","venue":"경주시민B","away":"서울전농초","home":"강원홍천FCU12"},{"no":78,"time":"19:30","venue":"축구공원1A","away":"대구최준기FCU12","home":"[연습] 경북경주화랑FCU12"},{"no":157,"time":"19:30","venue":"알천2B","away":"경기향남FCU12","home":"대구최준기FCU12"},{"no":158,"time":"19:30","venue":"알천3A","away":"강원홍천FCU12","home":"[연습] 경북경주화랑FCU12"},{"no":237,"time":"19:30","venue":"알천4A","away":"[연습] 경북경주화랑FCU12","home":"경기향남FCU12"},{"no":238,"time":"19:30","venue":"알천4B","away":"대구최준기FCU12","home":"서울전농초"},{"no":317,"time":"19:30","venue":"축구공원3A","away":"[연습] 경북경주화랑FCU12","home":"서울전농초"},{"no":318,"time":"19:30","venue":"축구공원3B","away":"경기향남FCU12","home":"강원홍천FCU12"},{"no":397,"time":"19:30","venue":"축구공원4B","away":"강원홍천FCU12","home":"대구최준기FCU12"},{"no":398,"time":"19:30","venue":"축구공원5A","away":"서울전농초","home":"경기향남FCU12"}]},"14":{"teams":["경기SSJFCU12","경기HRPROFCU12","서울강남주니어FCU12","경남거제주니어축구클럽U12","충남성거초"],"matches":[{"no":27,"time":"17:10","venue":"경주시민B","away":"경기HRPROFCU12","home":"서울강남주니어FCU12"},{"no":28,"time":"17:10","venue":"축구공원1A","away":"경남거제주니어축구클럽U12","home":"충남성거초"},{"no":107,"time":"17:10","venue":"알천2B","away":"경기SSJFCU12","home":"경남거제주니어축구클럽U12"},{"no":108,"time":"17:10","venue":"알천3A","away":"서울강남주니어FCU12","home":"충남성거초"},{"no":187,"time":"17:10","venue":"알천4A","away":"충남성거초","home":"경기SSJFCU12"},{"no":188,"time":"17:10","venue":"알천4B","away":"경남거제주니어축구클럽U12","home":"경기HRPROFCU12"},{"no":267,"time":"17:10","venue":"축구공원3A","away":"충남성거초","home":"경기HRPROFCU12"},{"no":268,"time":"17:10","venue":"축구공원3B","away":"경기SSJFCU12","home":"서울강남주니어FCU12"},{"no":347,"time":"17:10","venue":"축구공원4B","away":"서울강남주니어FCU12","home":"경남거제주니어축구클럽U12"},{"no":348,"time":"17:10","venue":"축구공원5A","away":"경기HRPROFCU12","home":"경기SSJFCU12"}]},"37":{"teams":["경기안산그리너스U12","서울노원FC한마음U12","강원강릉성덕FCU12","대구SOOFCU12","[연습] 서울강남주니어FCU12"],"matches":[{"no":73,"time":"18:20","venue":"알천4B","away":"서울노원FC한마음U12","home":"강원강릉성덕FCU12"},{"no":74,"time":"18:20","venue":"알천5A","away":"대구SOOFCU12","home":"[연습] 서울강남주니어FCU12"},{"no":153,"time":"18:20","venue":"축구공원3B","away":"경기안산그리너스U12","home":"대구SOOFCU12"},{"no":154,"time":"18:20","venue":"알천1A","away":"강원강릉성덕FCU12","home":"[연습] 서울강남주니어FCU12"},{"no":233,"time":"18:20","venue":"축구공원5A","away":"[연습] 서울강남주니어FCU12","home":"경기안산그리너스U12"},{"no":234,"time":"18:20","venue":"축구공원5B","away":"대구SOOFCU12","home":"서울노원FC한마음U12"},{"no":313,"time":"18:20","venue":"축구공원1A","away":"[연습] 서울강남주니어FCU12","home":"서울노원FC한마음U12"},{"no":314,"time":"18:20","venue":"축구공원1B","away":"경기안산그리너스U12","home":"강원강릉성덕FCU12"},{"no":393,"time":"18:20","venue":"알천3A","away":"강원강릉성덕FCU12","home":"대구SOOFCU12"},{"no":394,"time":"18:20","venue":"알천3B","away":"서울노원FC한마음U12","home":"경기안산그리너스U12"}]},"22":{"teams":["경기용인YSFCU12","경기진건초레드","인천남동유나이티드U12","부산동구동구FCU12","전북익산시IDSU12"],"matches":[{"no":43,"time":"17:10","venue":"축구공원5A","away":"경기진건초레드","home":"인천남동유나이티드U12"},{"no":44,"time":"17:10","venue":"축구공원5B","away":"부산동구동구FCU12","home":"전북익산시IDSU12"},{"no":123,"time":"17:10","venue":"축구공원1A","away":"경기용인YSFCU12","home":"부산동구동구FCU12"},{"no":124,"time":"17:10","venue":"축구공원1B","away":"인천남동유나이티드U12","home":"전북익산시IDSU12"},{"no":203,"time":"17:10","venue":"알천3A","away":"전북익산시IDSU12","home":"경기용인YSFCU12"},{"no":204,"time":"17:10","venue":"알천3B","away":"부산동구동구FCU12","home":"경기진건초레드"},{"no":283,"time":"17:10","venue":"알천4B","away":"전북익산시IDSU12","home":"경기진건초레드"},{"no":284,"time":"17:10","venue":"알천5A","away":"경기용인YSFCU12","home":"인천남동유나이티드U12"},{"no":363,"time":"17:10","venue":"축구공원3B","away":"인천남동유나이티드U12","home":"부산동구동구FCU12"},{"no":364,"time":"17:10","venue":"알천1A","away":"경기진건초레드","home":"경기용인YSFCU12"}]},"28":{"teams":["경기구리시리틀축구단U12","경기어정FCU12B","인천만수북FCU12","부산서구부산서구금정구12","충북제천봉양축구센터U12"],"matches":[{"no":55,"time":"18:20","venue":"축구공원2A","away":"경기어정FCU12B","home":"인천만수북FCU12"},{"no":56,"time":"18:20","venue":"축구공원2B","away":"부산서구부산서구금정구12","home":"충북제천봉양축구센터U12"},{"no":135,"time":"18:20","venue":"에어돔","away":"경기구리시리틀축구단U12","home":"부산서구부산서구금정구12"},{"no":136,"time":"18:20","venue":"축구공원4A","away":"인천만수북FCU12","home":"충북제천봉양축구센터U12"},{"no":215,"time":"18:20","venue":"알천5B","away":"충북제천봉양축구센터U12","home":"경기구리시리틀축구단U12"},{"no":216,"time":"18:20","venue":"경주시민A","away":"부산서구부산서구금정구12","home":"경기어정FCU12B"},{"no":295,"time":"18:20","venue":"알천1B","away":"충북제천봉양축구센터U12","home":"경기어정FCU12B"},{"no":296,"time":"18:20","venue":"알천2A","away":"경기구리시리틀축구단U12","home":"인천만수북FCU12"},{"no":375,"time":"18:20","venue":"축구공원6A","away":"인천만수북FCU12","home":"부산서구부산서구금정구12"},{"no":376,"time":"18:20","venue":"축구공원6B","away":"경기어정FCU12B","home":"경기구리시리틀축구단U12"}]},"25":{"teams":["경기김포주니어FCU12","경기화성시U12오렌지","인천강화스포츠클럽U12","부산동아FCU12","충북AFA청주U12"],"matches":[{"no":49,"time":"17:10","venue":"알천5A","away":"경기화성시U12오렌지","home":"인천강화스포츠클럽U12"},{"no":50,"time":"17:10","venue":"알천5B","away":"부산동아FCU12","home":"충북AFA청주U12"},{"no":129,"time":"17:10","venue":"알천1A","away":"경기김포주니어FCU12","home":"부산동아FCU12"},{"no":130,"time":"17:10","venue":"알천1B","away":"인천강화스포츠클럽U12","home":"충북AFA청주U12"},{"no":209,"time":"17:10","venue":"축구공원5B","away":"충북AFA청주U12","home":"경기김포주니어FCU12"},{"no":210,"time":"17:10","venue":"축구공원6A","away":"부산동아FCU12","home":"경기화성시U12오렌지"},{"no":289,"time":"17:10","venue":"축구공원1B","away":"충북AFA청주U12","home":"경기화성시U12오렌지"},{"no":290,"time":"17:10","venue":"축구공원2A","away":"경기김포주니어FCU12","home":"인천강화스포츠클럽U12"},{"no":369,"time":"17:10","venue":"알천3B","away":"인천강화스포츠클럽U12","home":"부산동아FCU12"},{"no":370,"time":"17:10","venue":"에어돔","away":"경기화성시U12오렌지","home":"경기김포주니어FCU12"}]},"9":{"teams":["경기광명FCU12","경기염기훈주니어축구클럽U12","서울언더플레이FCU12","경남밀양밀성풋볼스포츠클럽U12","제주SKU12"],"matches":[{"no":17,"time":"16:00","venue":"축구공원4B","away":"경기염기훈주니어축구클럽U12","home":"서울언더플레이FCU12"},{"no":18,"time":"16:00","venue":"축구공원5A","away":"경남밀양밀성풋볼스포츠클럽U12","home":"제주SKU12"},{"no":97,"time":"16:00","venue":"경주시민B","away":"경기광명FCU12","home":"경남밀양밀성풋볼스포츠클럽U12"},{"no":98,"time":"16:00","venue":"축구공원1A","away":"서울언더플레이FCU12","home":"제주SKU12"},{"no":177,"time":"16:00","venue":"알천2B","away":"제주SKU12","home":"경기광명FCU12"},{"no":178,"time":"16:00","venue":"알천3A","away":"경남밀양밀성풋볼스포츠클럽U12","home":"경기염기훈주니어축구클럽U12"},{"no":257,"time":"16:00","venue":"알천4A","away":"제주SKU12","home":"경기염기훈주니어축구클럽U12"},{"no":258,"time":"16:00","venue":"알천4B","away":"경기광명FCU12","home":"서울언더플레이FCU12"},{"no":337,"time":"16:00","venue":"축구공원3A","away":"서울언더플레이FCU12","home":"경남밀양밀성풋볼스포츠클럽U12"},{"no":338,"time":"16:00","venue":"축구공원3B","away":"경기염기훈주니어축구클럽U12","home":"경기광명FCU12"}]},"33":{"teams":["경기FC신곡","경기기흥퍼시픽FCU121","인천YSCU12","전남진도초","대전화정초"],"matches":[{"no":65,"time":"18:20","venue":"에어돔","away":"경기기흥퍼시픽FCU121","home":"인천YSCU12"},{"no":66,"time":"18:20","venue":"축구공원4A","away":"전남진도초","home":"대전화정초"},{"no":145,"time":"18:20","venue":"알천5B","away":"경기FC신곡","home":"전남진도초"},{"no":146,"time":"18:20","venue":"경주시민A","away":"인천YSCU12","home":"대전화정초"},{"no":225,"time":"18:20","venue":"알천1B","away":"대전화정초","home":"경기FC신곡"},{"no":226,"time":"18:20","venue":"알천2A","away":"전남진도초","home":"경기기흥퍼시픽FCU121"},{"no":305,"time":"18:20","venue":"축구공원6A","away":"대전화정초","home":"경기기흥퍼시픽FCU121"},{"no":306,"time":"18:20","venue":"축구공원6B","away":"경기FC신곡","home":"인천YSCU12"},{"no":385,"time":"18:20","venue":"축구공원2A","away":"인천YSCU12","home":"전남진도초"},{"no":386,"time":"18:20","venue":"축구공원2B","away":"경기기흥퍼시픽FCU121","home":"경기FC신곡"}]},"15":{"teams":["경기화성시DTIFCU12","경기비앤씨FCU12","서울NUFCU12","경남합천공공스포츠클럽FCU12","충남천안훈FCU12"],"matches":[{"no":29,"time":"17:10","venue":"축구공원1B","away":"경기비앤씨FCU12","home":"서울NUFCU12"},{"no":30,"time":"17:10","venue":"축구공원2A","away":"경남합천공공스포츠클럽FCU12","home":"충남천안훈FCU12"},{"no":109,"time":"17:10","venue":"알천3B","away":"경기화성시DTIFCU12","home":"경남합천공공스포츠클럽FCU12"},{"no":110,"time":"17:10","venue":"에어돔","away":"서울NUFCU12","home":"충남천안훈FCU12"},{"no":189,"time":"17:10","venue":"알천5A","away":"충남천안훈FCU12","home":"경기화성시DTIFCU12"},{"no":190,"time":"17:10","venue":"알천5B","away":"경남합천공공스포츠클럽FCU12","home":"경기비앤씨FCU12"},{"no":269,"time":"17:10","venue":"알천1A","away":"충남천안훈FCU12","home":"경기비앤씨FCU12"},{"no":270,"time":"17:10","venue":"알천1B","away":"경기화성시DTIFCU12","home":"서울NUFCU12"},{"no":349,"time":"17:10","venue":"축구공원5B","away":"서울NUFCU12","home":"경남합천공공스포츠클럽FCU12"},{"no":350,"time":"17:10","venue":"축구공원6A","away":"경기비앤씨FCU12","home":"경기화성시DTIFCU12"}]},"34":{"teams":["경기김포ONEFCU12","경기송탄유소년축구클럽U12","인천리틀코리아FCU12","전남순천중앙초","대전중앙FC스포츠클럽U12"],"matches":[{"no":67,"time":"18:20","venue":"축구공원4B","away":"경기송탄유소년축구클럽U12","home":"인천리틀코리아FCU12"},{"no":68,"time":"18:20","venue":"축구공원5A","away":"전남순천중앙초","home":"대전중앙FC스포츠클럽U12"},{"no":147,"time":"18:20","venue":"경주시민B","away":"경기김포ONEFCU12","home":"전남순천중앙초"},{"no":148,"time":"18:20","venue":"축구공원1A","away":"인천리틀코리아FCU12","home":"대전중앙FC스포츠클럽U12"},{"no":227,"time":"18:20","venue":"알천2B","away":"대전중앙FC스포츠클럽U12","home":"경기김포ONEFCU12"},{"no":228,"time":"18:20","venue":"알천3A","away":"전남순천중앙초","home":"경기송탄유소년축구클럽U12"},{"no":307,"time":"18:20","venue":"알천4A","away":"대전중앙FC스포츠클럽U12","home":"경기송탄유소년축구클럽U12"},{"no":308,"time":"18:20","venue":"알천4B","away":"경기김포ONEFCU12","home":"인천리틀코리아FCU12"},{"no":387,"time":"18:20","venue":"축구공원3A","away":"인천리틀코리아FCU12","home":"전남순천중앙초"},{"no":388,"time":"18:20","venue":"축구공원3B","away":"경기송탄유소년축구클럽U12","home":"경기김포ONEFCU12"}]},"21":{"teams":["경기아미U12","[연습] 서울충암U12","인천계양구유소년U12","부산당감초SCU12","전북JLFC축구단U12"],"matches":[{"no":41,"time":"17:10","venue":"축구공원4A","away":"[연습] 서울충암U12","home":"인천계양구유소년U12"},{"no":42,"time":"17:10","venue":"축구공원4B","away":"부산당감초SCU12","home":"전북JLFC축구단U12"},{"no":121,"time":"17:10","venue":"경주시민A","away":"경기아미U12","home":"부산당감초SCU12"},{"no":122,"time":"17:10","venue":"경주시민B","away":"인천계양구유소년U12","home":"전북JLFC축구단U12"},{"no":201,"time":"17:10","venue":"알천2A","away":"전북JLFC축구단U12","home":"경기아미U12"},{"no":202,"time":"17:10","venue":"알천2B","away":"부산당감초SCU12","home":"[연습] 서울충암U12"},{"no":281,"time":"17:10","venue":"축구공원6B","away":"전북JLFC축구단U12","home":"[연습] 서울충암U12"},{"no":282,"time":"17:10","venue":"알천4A","away":"경기아미U12","home":"인천계양구유소년U12"},{"no":361,"time":"17:10","venue":"축구공원2B","away":"인천계양구유소년U12","home":"부산당감초SCU12"},{"no":362,"time":"17:10","venue":"축구공원3A","away":"[연습] 서울충암U12","home":"경기아미U12"}]},"24":{"teams":["경기이천주니어FC","경기화성시U12화이트","인천부평유소년축구단U12","부산해운대FCU12","전북고창풋볼스포츠클럽U12"],"matches":[{"no":47,"time":"17:10","venue":"알천4A","away":"경기화성시U12화이트","home":"인천부평유소년축구단U12"},{"no":48,"time":"17:10","venue":"알천4B","away":"부산해운대FCU12","home":"전북고창풋볼스포츠클럽U12"},{"no":127,"time":"17:10","venue":"축구공원3A","away":"경기이천주니어FC","home":"부산해운대FCU12"},{"no":128,"time":"17:10","venue":"축구공원3B","away":"인천부평유소년축구단U12","home":"전북고창풋볼스포츠클럽U12"},{"no":207,"time":"17:10","venue":"축구공원4B","away":"전북고창풋볼스포츠클럽U12","home":"경기이천주니어FC"},{"no":208,"time":"17:10","venue":"축구공원5A","away":"부산해운대FCU12","home":"경기화성시U12화이트"},{"no":287,"time":"17:10","venue":"경주시민B","away":"전북고창풋볼스포츠클럽U12","home":"경기화성시U12화이트"},{"no":288,"time":"17:10","venue":"축구공원1A","away":"경기이천주니어FC","home":"인천부평유소년축구단U12"},{"no":367,"time":"17:10","venue":"알천2B","away":"인천부평유소년축구단U12","home":"부산해운대FCU12"},{"no":368,"time":"17:10","venue":"알천3A","away":"경기화성시U12화이트","home":"경기이천주니어FC"}]},"16":{"teams":["경기일산J프리미어FCU12","경기부천FCDREAMU12","서울SNFC","경남거제장승포스포츠클럽U12","충남홍성군홍성내포축구교실"],"matches":[{"no":31,"time":"17:10","venue":"축구공원2B","away":"경기부천FCDREAMU12","home":"서울SNFC"},{"no":32,"time":"17:10","venue":"축구공원3A","away":"경남거제장승포스포츠클럽U12","home":"충남홍성군홍성내포축구교실"},{"no":111,"time":"17:10","venue":"축구공원4A","away":"경기일산J프리미어FCU12","home":"경남거제장승포스포츠클럽U12"},{"no":112,"time":"17:10","venue":"축구공원4B","away":"서울SNFC","home":"충남홍성군홍성내포축구교실"},{"no":191,"time":"17:10","venue":"경주시민A","away":"충남홍성군홍성내포축구교실","home":"경기일산J프리미어FCU12"},{"no":192,"time":"17:10","venue":"경주시민B","away":"경남거제장승포스포츠클럽U12","home":"경기부천FCDREAMU12"},{"no":271,"time":"17:10","venue":"알천2A","away":"충남홍성군홍성내포축구교실","home":"경기부천FCDREAMU12"},{"no":272,"time":"17:10","venue":"알천2B","away":"경기일산J프리미어FCU12","home":"서울SNFC"},{"no":351,"time":"17:10","venue":"축구공원6B","away":"서울SNFC","home":"경남거제장승포스포츠클럽U12"},{"no":352,"time":"17:10","venue":"알천4A","away":"경기부천FCDREAMU12","home":"경기일산J프리미어FCU12"}]},"35":{"teams":["경기FC모벤티스U12","서울신답FCU12","인천FMSFCU12","전남장흥FCU12","경북DUFCU12"],"matches":[{"no":69,"time":"18:20","venue":"축구공원5B","away":"서울신답FCU12","home":"인천FMSFCU12"},{"no":70,"time":"18:20","venue":"축구공원6A","away":"전남장흥FCU12","home":"경북DUFCU12"},{"no":149,"time":"18:20","venue":"축구공원1B","away":"경기FC모벤티스U12","home":"전남장흥FCU12"},{"no":150,"time":"18:20","venue":"축구공원2A","away":"인천FMSFCU12","home":"경북DUFCU12"},{"no":229,"time":"18:20","venue":"알천3B","away":"경북DUFCU12","home":"경기FC모벤티스U12"},{"no":230,"time":"18:20","venue":"에어돔","away":"전남장흥FCU12","home":"서울신답FCU12"},{"no":309,"time":"18:20","venue":"알천5A","away":"경북DUFCU12","home":"서울신답FCU12"},{"no":310,"time":"18:20","venue":"알천5B","away":"경기FC모벤티스U12","home":"인천FMSFCU12"},{"no":389,"time":"18:20","venue":"알천1A","away":"인천FMSFCU12","home":"전남장흥FCU12"},{"no":390,"time":"18:20","venue":"알천1B","away":"서울신답FCU12","home":"경기FC모벤티스U12"}]},"32":{"teams":["경기양주시유소년축구클럽","경기기흥퍼시픽FCU122","인천FC석남서U12","전남보성군전남보성FCU12","대전제일SCU12"],"matches":[{"no":63,"time":"18:20","venue":"알천3A","away":"경기기흥퍼시픽FCU122","home":"인천FC석남서U12"},{"no":64,"time":"18:20","venue":"알천3B","away":"전남보성군전남보성FCU12","home":"대전제일SCU12"},{"no":143,"time":"18:20","venue":"알천4B","away":"경기양주시유소년축구클럽","home":"전남보성군전남보성FCU12"},{"no":144,"time":"18:20","venue":"알천5A","away":"인천FC석남서U12","home":"대전제일SCU12"},{"no":223,"time":"18:20","venue":"축구공원3B","away":"대전제일SCU12","home":"경기양주시유소년축구클럽"},{"no":224,"time":"18:20","venue":"알천1A","away":"전남보성군전남보성FCU12","home":"경기기흥퍼시픽FCU122"},{"no":303,"time":"18:20","venue":"축구공원5A","away":"대전제일SCU12","home":"경기기흥퍼시픽FCU122"},{"no":304,"time":"18:20","venue":"축구공원5B","away":"경기양주시유소년축구클럽","home":"인천FC석남서U12"},{"no":383,"time":"18:20","venue":"축구공원1A","away":"인천FC석남서U12","home":"전남보성군전남보성FCU12"},{"no":384,"time":"18:20","venue":"축구공원1B","away":"경기기흥퍼시픽FCU122","home":"경기양주시유소년축구클럽"}]},"7":{"teams":["경기월드클래스축구센터U12","경기하남유티디에프씨U12","서울잠원초","강원원주태장초오렌지","제주서귀포초"],"matches":[{"no":13,"time":"16:00","venue":"알천3A","away":"경기하남유티디에프씨U12","home":"서울잠원초"},{"no":14,"time":"16:00","venue":"알천3B","away":"강원원주태장초오렌지","home":"제주서귀포초"},{"no":93,"time":"16:00","venue":"알천4B","away":"경기월드클래스축구센터U12","home":"강원원주태장초오렌지"},{"no":94,"time":"16:00","venue":"알천5A","away":"서울잠원초","home":"제주서귀포초"},{"no":173,"time":"16:00","venue":"축구공원3B","away":"제주서귀포초","home":"경기월드클래스축구센터U12"},{"no":174,"time":"16:00","venue":"알천1A","away":"강원원주태장초오렌지","home":"경기하남유티디에프씨U12"},{"no":253,"time":"16:00","venue":"축구공원5A","away":"제주서귀포초","home":"경기하남유티디에프씨U12"},{"no":254,"time":"16:00","venue":"축구공원5B","away":"경기월드클래스축구센터U12","home":"서울잠원초"},{"no":333,"time":"16:00","venue":"축구공원1A","away":"서울잠원초","home":"강원원주태장초오렌지"},{"no":334,"time":"16:00","venue":"축구공원1B","away":"경기하남유티디에프씨U12","home":"경기월드클래스축구센터U12"}]},"2":{"teams":["경기파주웨일즈FCU12","경기오산시GSCU12","서울신정축구클럽FCU12","강원춘천PANASU12","세종세종시티FCU12"],"matches":[{"no":3,"time":"16:00","venue":"축구공원1A","away":"경기오산시GSCU12","home":"서울신정축구클럽FCU12"},{"no":4,"time":"16:00","venue":"축구공원1B","away":"강원춘천PANASU12","home":"세종세종시티FCU12"},{"no":83,"time":"16:00","venue":"알천3A","away":"경기파주웨일즈FCU12","home":"강원춘천PANASU12"},{"no":84,"time":"16:00","venue":"알천3B","away":"서울신정축구클럽FCU12","home":"세종세종시티FCU12"},{"no":163,"time":"16:00","venue":"알천4B","away":"세종세종시티FCU12","home":"경기파주웨일즈FCU12"},{"no":164,"time":"16:00","venue":"알천5A","away":"강원춘천PANASU12","home":"경기오산시GSCU12"},{"no":243,"time":"16:00","venue":"축구공원3B","away":"세종세종시티FCU12","home":"경기오산시GSCU12"},{"no":244,"time":"16:00","venue":"알천1A","away":"경기파주웨일즈FCU12","home":"서울신정축구클럽FCU12"},{"no":323,"time":"16:00","venue":"축구공원5A","away":"서울신정축구클럽FCU12","home":"강원춘천PANASU12"},{"no":324,"time":"16:00","venue":"축구공원5B","away":"경기오산시GSCU12","home":"경기파주웨일즈FCU12"}]},"38":{"teams":["경기군포팀원FCU12","서울충암U12","강원강릉온리원FCU12","대구샬롬코리아사커스쿨U12","[연습] 서울삼선FCU12"],"matches":[{"no":75,"time":"18:20","venue":"알천5B","away":"서울충암U12","home":"강원강릉온리원FCU12"},{"no":76,"time":"19:30","venue":"경주시민A","away":"대구샬롬코리아사커스쿨U12","home":"[연습] 서울삼선FCU12"},{"no":155,"time":"18:20","venue":"알천1B","away":"경기군포팀원FCU12","home":"대구샬롬코리아사커스쿨U12"},{"no":156,"time":"19:30","venue":"알천2A","away":"강원강릉온리원FCU12","home":"[연습] 서울삼선FCU12"},{"no":235,"time":"18:20","venue":"축구공원6A","away":"[연습] 서울삼선FCU12","home":"경기군포팀원FCU12"},{"no":236,"time":"19:30","venue":"축구공원6B","away":"대구샬롬코리아사커스쿨U12","home":"서울충암U12"},{"no":315,"time":"18:20","venue":"축구공원2A","away":"[연습] 서울삼선FCU12","home":"서울충암U12"},{"no":316,"time":"19:30","venue":"축구공원2B","away":"경기군포팀원FCU12","home":"강원강릉온리원FCU12"},{"no":395,"time":"18:20","venue":"에어돔","away":"강원강릉온리원FCU12","home":"대구샬롬코리아사커스쿨U12"},{"no":396,"time":"19:30","venue":"축구공원4A","away":"서울충암U12","home":"경기군포팀원FCU12"}]},"6":{"teams":["경기메타시티FCU12","경기더베스트2010U12","서울삼선FCU12","강원원주태장초화이트","세종YSFCU12"],"matches":[{"no":11,"time":"16:00","venue":"알천2A","away":"경기더베스트2010U12","home":"서울삼선FCU12"},{"no":12,"time":"16:00","venue":"알천2B","away":"강원원주태장초화이트","home":"세종YSFCU12"},{"no":91,"time":"16:00","venue":"축구공원6B","away":"경기메타시티FCU12","home":"강원원주태장초화이트"},{"no":92,"time":"16:00","venue":"알천4A","away":"서울삼선FCU12","home":"세종YSFCU12"},{"no":171,"time":"16:00","venue":"축구공원2B","away":"세종YSFCU12","home":"경기메타시티FCU12"},{"no":172,"time":"16:00","venue":"축구공원3A","away":"강원원주태장초화이트","home":"경기더베스트2010U12"},{"no":251,"time":"16:00","venue":"축구공원4A","away":"세종YSFCU12","home":"경기더베스트2010U12"},{"no":252,"time":"16:00","venue":"축구공원4B","away":"경기메타시티FCU12","home":"서울삼선FCU12"},{"no":331,"time":"16:00","venue":"경주시민A","away":"서울삼선FCU12","home":"강원원주태장초화이트"},{"no":332,"time":"16:00","venue":"경주시민B","away":"경기더베스트2010U12","home":"경기메타시티FCU12"}]},"31":{"teams":["경기PEC유나이티드","경기평택유나이티드U12네이비","인천송도FCU12","전남전남영광FCU12","광주거점FCU12"],"matches":[{"no":61,"time":"18:20","venue":"알천2A","away":"경기평택유나이티드U12네이비","home":"인천송도FCU12"},{"no":62,"time":"18:20","venue":"알천2B","away":"전남전남영광FCU12","home":"광주거점FCU12"},{"no":141,"time":"18:20","venue":"축구공원6B","away":"경기PEC유나이티드","home":"전남전남영광FCU12"},{"no":142,"time":"18:20","venue":"알천4A","away":"인천송도FCU12","home":"광주거점FCU12"},{"no":221,"time":"18:20","venue":"축구공원2B","away":"광주거점FCU12","home":"경기PEC유나이티드"},{"no":222,"time":"18:20","venue":"축구공원3A","away":"전남전남영광FCU12","home":"경기평택유나이티드U12네이비"},{"no":301,"time":"18:20","venue":"축구공원4A","away":"광주거점FCU12","home":"경기평택유나이티드U12네이비"},{"no":302,"time":"18:20","venue":"축구공원4B","away":"경기PEC유나이티드","home":"인천송도FCU12"},{"no":381,"time":"18:20","venue":"경주시민A","away":"인천송도FCU12","home":"전남전남영광FCU12"},{"no":382,"time":"18:20","venue":"경주시민B","away":"경기평택유나이티드U12네이비","home":"경기PEC유나이티드"}]}}};
+
+    // ==================== ALL GROUPS DATA MASTER REGISTRY ====================
 
     // ==================== ALL STANDINGS ENGINE (U11: 50 groups, U12: 40 groups) ====================
     let currentAllStandingsCat = 'U11';
@@ -2703,7 +2777,7 @@ id="cheer-section" class="space-y-3">
       currentAllStandingsGroup = String(gNo);
       const select = document.getElementById('allStandingsGroupSelect');
       if (select) select.value = currentAllStandingsGroup;
-      updateAllStandingsGroupOptions();
+            updateAllStandingsGroupOptions();
       renderAllStandingsGroup();
     }
 
@@ -2762,7 +2836,8 @@ id="cheer-section" class="space-y-3">
       grp.teams.forEach(tName => {
         statsMap[tName] = {
           name: tName,
-          played: 0,          won: 0,
+          played: 0,
+          won: 0,
           drawn: 0,
           lost: 0,
           gf: 0,
@@ -2883,7 +2958,7 @@ id="cheer-section" class="space-y-3">
                 '<span>·</span>' +
                 '<span class="text-zinc-300 font-bold">' + matchDate + '</span>' +
                 '<span>·</span>' +
-                '<span>' + m.venue + '</span>' +
+                '<span>' + (m.venue || '?뚯쿇援ъ옣') + '</span>' +
                 '<span>·</span>' +
                 '<span class="text-zinc-400 font-medium">' + m.time + '</span>' +
                 (isLive ? '<span class="text-[9px] text-red-400 font-black animate-pulse ml-1">LIVE</span>' : '') +
@@ -3454,13 +3529,14 @@ id="cheer-section" class="space-y-3">
       
       // 9월 7일 완료된 고양주니어 2차전 공식 결과 보정 (서버 지연 대비)
       if (!map['U11|124'] || map['U11|124'].home_score == null) {
-        map['U11|124'] = { cat: 'U11', match_no: 124, home_score: 2, away_score: 2, status: 'fin' };
+        map['U11|124'] = { cat: 'U11', match_no: 124, home_score: 2, away_score: 4, status: '경기종료 (패)' };
       }
       if (!map['U11|122'] || map['U11|122'].home_score == null) {
         map['U11|122'] = { cat: 'U11', match_no: 122, home_score: 1, away_score: 3, status: 'fin' };
       }
 
       window.TOURNAMENT_SCORES_MAP = map;
+      window.TOURNAMENT_SCORES_ROWS = rows;
 
       Object.values(STANDINGS_GROUPS).forEach(grp => {
         const tbody = document.getElementById(grp.tbodyId);
@@ -3531,9 +3607,14 @@ id="cheer-section" class="space-y-3">
       });
     }
 
+        async function syncAllMatches(silent = false) {
+      return await syncTournamentScores(silent);
+    }
+    window.syncAllMatches = syncAllMatches;
+
     async function syncTournamentScores(silent = false) {
       try {
-        const url = `${SUPABASE_URL}/rest/v1/match_results?select=stage,cat,phase,match_no,home_score,away_score,status,home_pk,away_pk&stage=eq.stage2`;
+        const url = `${SUPABASE_URL}/rest/v1/match_results?select=stage,cat,phase,match_no,home_score,away_score,status,home_pk,away_pk&stage=eq.stage2&limit=2000`;
         const res = await fetch(url, {
           headers: {
             'apikey': SUPABASE_KEY,
@@ -3545,56 +3626,46 @@ id="cheer-section" class="space-y-3">
 
         const now = new Date();
 
-        // 1. 경기 카드 스코어 및 뱃지 업데이트 (승/패/무 반영)
+        // 1. 경기 카드 스코어 및 뱃지 실시간 조회성 업데이트 (공식 대회 DB 100% 동기화)
         let updatedCount = 0;
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
             if (mapping.cat === r.cat && mapping.match_no === r.match_no) {
-              let goyangScore = mapping.goyangIsHome ? r.home_score : r.away_score;
-              let oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
+              const goyangScore = mapping.goyangIsHome ? r.home_score : r.away_score;
+              const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
+              const hasScore = (goyangScore != null && oppScore != null && goyangScore !== '' && oppScore !== '');
 
-              // MATCH_REPORTS에 유효한 스코어가 있으면 우선 반영
-              const rep = (typeof MATCH_REPORTS !== 'undefined') ? MATCH_REPORTS[key] : null;
-              if (rep && rep.score && rep.score !== '0 : 0') {
-                const parts = rep.score.split(':').map(s => parseInt(s.trim(), 10));
-                if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
-                  goyangScore = parts[0];
-                  oppScore = parts[1];
-                }
-              }
-              const hasScore = (goyangScore != null && oppScore != null);
-
-              // 경기 시작 시간 및 1시간 경기 판정
+              // 경기 시작 시간 및 경기 상태 판정
               const sched = (typeof MATCH_SCHEDULES !== 'undefined') ? MATCH_SCHEDULES[key] : null;
               let isFin = false;
               let isLive = false;
               let isUpcoming = false;
 
-              if (sched) {
+              if (r.status === 'fin') {
+                isFin = true;
+              } else if (r.status === 'live') {
+                isLive = true;
+              } else if (sched) {
                 const kickoff = new Date(sched.datetime);
-                const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000); // 킥오프 후 1시간
-
+                const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
                 if (now < kickoff) {
-                  // 1) 경기 시작 전
                   isUpcoming = true;
                 } else if (now >= kickoff && now < finishTime) {
-                  // 2) 킥오프 ~ 1시간: 무조건 실시간 '경기중' (승패 표시 절대 없음)
                   isLive = true;
                 } else {
-                  // 3) 킥오프 1시간 후: '경기종료' (승패 판정 활성화)
                   isFin = true;
                 }
               } else {
-                if (r.status === 'fin') isFin = true;
-                else if (r.status === 'live') isLive = true;
-                else isUpcoming = true;
+                isUpcoming = true;
               }
 
               let finStatusText = '경기종료';
               let isWin = false, isLoss = false, isDraw = false;
               if (hasScore) {
-                if (goyangScore > oppScore) { isWin = true; finStatusText = '경기종료 (승)'; }
-                else if (goyangScore < oppScore) { isLoss = true; finStatusText = '경기종료 (패)'; }
+                const gVal = parseInt(goyangScore, 10);
+                const oVal = parseInt(oppScore, 10);
+                if (gVal > oVal) { isWin = true; finStatusText = '경기종료 (승)'; }
+                else if (gVal < oVal) { isLoss = true; finStatusText = '경기종료 (패)'; }
                 else { isDraw = true; finStatusText = '경기종료 (무)'; }
               }
 
@@ -3617,16 +3688,16 @@ id="cheer-section" class="space-y-3">
                   scoreEl.textContent = `${goyangScore} : ${oppScore}`;
                 }
                 if (isFin && hasScore) {
-                  // 경기 종료 후에만 승/패/무에 따른 스코어 하이라이트 스타일 적용
-                  if (goyangScore > oppScore) {
+                  const gVal = parseInt(goyangScore, 10);
+                  const oVal = parseInt(oppScore, 10);
+                  if (gVal > oVal) {
                     scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
-                  } else if (goyangScore === oppScore) {
+                  } else if (gVal === oVal) {
                     scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                   } else {
                     scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                   }
                 } else if (isLive) {
-                  // 경기 진행 중일 때는 중립 라이브 스코어 스타일 유지 (승패 강조 X)
                   scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#12151E] border border-amber-500/40 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                 } else {
                   scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
@@ -3634,9 +3705,26 @@ id="cheer-section" class="space-y-3">
                 if (hasScore) updatedCount++;
               }
 
+              const statusEl = document.getElementById(`status-${key}`);
+              const ddayEl = document.getElementById(`dday-${key}`);
+              if (statusEl) {
+                if (isFin) {
+                  statusEl.textContent = finStatusText;
+                  statusEl.className = isWin
+                    ? "px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm"
+                    : (isLoss
+                      ? "px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-400 text-[10px] font-bold border border-[#282D3D]"
+                      : "px-2 py-0.5 rounded-md bg-amber-950/70 text-amber-300 text-[10px] font-bold border border-amber-500/40");
+                  if (ddayEl) ddayEl.classList.add('hidden');
+                } else if (isLive) {
+                  statusEl.textContent = '경기중';
+                  statusEl.className = "px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse";
+                  if (ddayEl) ddayEl.classList.add('hidden');
+                }
+              }
+
               const resultEl = document.getElementById(`result-${key}`);
               if (resultEl) {
-                // 승패(승리/패배/무승부) 뱃지는 반드시 경기 종료(isFin) 시에만 표시!
                 if (isFin && hasScore) {
                   resultEl.classList.remove('hidden');
                   if (isWin) {
@@ -3650,106 +3738,33 @@ id="cheer-section" class="space-y-3">
                     resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
                   }
                 } else {
-                  // 경기 중이거나 경기 전에는 승패 뱃지 내용 완전 초기화 & 무조건 숨김
                   resultEl.textContent = '';
                   resultEl.innerHTML = '';
                   resultEl.className = 'hidden';
-                }
-              }
-
-              const ddayEl = document.getElementById(`dday-${key}`);
-              if (ddayEl) {
-                if (isFin) {
-                  ddayEl.classList.add('hidden');
-                } else if (isLive) {
-                  ddayEl.textContent = 'TODAY';
-                  ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-300 text-[10px] font-black border border-red-500/40 shadow-sm animate-pulse';
-                  ddayEl.classList.remove('hidden');
-                }
-              }
-
-              const statusEl = document.getElementById(`status-${key}`);
-              if (statusEl) {
-                if (isFin) {
-                  statusEl.textContent = finStatusText;
-                  if (isWin) {
-                    statusEl.className = 'px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-bold border border-blue-500/40';
-                  } else if (isLoss) {
-                    statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
-                  } else {
-                    statusEl.className = 'px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40';
-                  }
-                } else if (isLive) {
-                  statusEl.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-red-500 animate-ping mr-1"></span>경기중';
-                  statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-bold border border-red-500/60 animate-pulse';
-                } else {
-                  statusEl.textContent = '경기전';
-                  statusEl.className = 'px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-400 text-[10px] font-bold border border-[#282D3D]';
                 }
               }
             }
           }
         });
 
-        // 2. 조별 순위표(Tab 4 & 5) 실시간 동적 계산 및 테이블 렌더링
+        // 2. 탭별 조순위표(Standings) 실시간 자동 갱신
         renderGroupStandings(rows);
-        if (typeof renderAllStandingsGroup === 'function') {
+        if (typeof renderAllStandingsGroup === 'function') renderAllStandingsGroup();
+
+        // 3. 전체 조순위 모달 갱신
+        allStandingsRowsCache = rows;
+        if (!document.getElementById('allStandingsModal').classList.contains('hidden')) {
           renderAllStandingsGroup();
         }
 
-        // 3. 모달 열려있을 시 모달 갱신
-        if (typeof activeModalMatchId !== 'undefined' && typeof MATCH_REPORTS !== 'undefined' && MATCH_REPORTS[activeModalMatchId]) {
-          const rep = MATCH_REPORTS[activeModalMatchId];
-          const mScore = document.getElementById('modalScoreDisplay');
-          const mStatus = document.getElementById('modalStatusBadge');
-          if (mScore && rep.score) mScore.textContent = rep.score;
-          if (mStatus && rep.status) {
-            mStatus.textContent = rep.status;
-            if (rep.status.includes('승')) {
-              mStatus.className = 'mt-1 text-[9px] bg-blue-500/20 text-blue-300 font-black px-1.5 py-0.2 rounded border border-blue-500/40 shadow-sm';
-            } else if (rep.status.includes('패')) {
-              mStatus.className = 'mt-1 text-[9px] bg-zinc-800 text-zinc-400 font-bold px-1.5 py-0.2 rounded border border-zinc-700';
-            } else if (rep.status.includes('종료')) {
-              mStatus.className = 'mt-1 text-[9px] bg-zinc-800 text-zinc-300 font-bold px-1.5 py-0.2 rounded border border-zinc-600';
-            } else if (rep.status.includes('라이브') || rep.status.includes('경기중')) {
-              mStatus.className = 'mt-1 text-[9px] bg-red-950/70 text-red-400 font-black px-1.5 py-0.2 rounded border border-red-500/60 animate-pulse';
-            }
-          }
-        }
-
+        updateSyncTimestamp();
         return updatedCount;
       } catch (err) {
-        console.warn('Tournament sync error:', err);
+        console.warn('Sync Tournament Scores Error:', err);
         return -1;
       }
     }
 
-    // Master Sync & Auto Polling Logic (Hwarangdaegi Official Live Sync)
-    function updateSyncTimestamp() {
-      const now = new Date();
-      const timeStr = now.toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const el = document.getElementById('lastSyncTime');
-      if (el) el.innerText = '화랑대기 공식 실시간 연동: ' + timeStr + ' (45초 자동체크)';
-    }
-
-    async function syncAllMatches(isManual = false) {
-      const icon = document.getElementById('masterSyncIcon');
-      if (icon) icon.classList.add('fa-spin');
-
-      fetchGyeongjuWeather(false);
-      const updatedCount = await syncTournamentScores(false);
-
-      if (icon) icon.classList.remove('fa-spin');
-      updateSyncTimestamp();
-
-      if (isManual) {
-        if (updatedCount >= 0) {
-          showToast(`화랑대기 공식 스코어보드 & 조순위 동기화 완료! ⚽ (업데이트 ${updatedCount}경기)`);
-        } else {
-          showToast('공식 대회 서버와 일시적 연결 지연입니다. 잠시 후 다시 시도해주세요.');
-        }
-      }
-    }
 
     async function scrapeMatch(matchId, btnEl) {
       const icon = btnEl ? btnEl.querySelector('i') : null;
@@ -4029,8 +4044,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 경기 남양주 BEST',
     date: '9월 7일 (월) 09:00',
     pitch: '축구공원3A',
-    status: '경기종료 (무)',
-    score: '2 : 2',
+    status: '경기종료 (패)',
+    score: '2 : 4',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 남양주 BEST', teamKey: 'namyangju_best', isGoyang: false },
     goyangFormation: '8인제 3-3-1 (코치: 백운찬)',
@@ -4360,14 +4375,15 @@ const MATCH_REPORTS = {
     }
   },
 
+
   'u12_1': {
     age: 'U-12 대표',
     stage: '1차 예선 1경기',
     title: '경기 고양주니어 vs 강원 속초시 체육회',
     date: '9월 7일 (월) 16:00',
     pitch: '알천3B',
-    status: '경기종료 (패)',
-    score: '1 : 2',
+    status: '경기종료 (승)',
+    score: '6 : 0',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '강원 속초시 체육회', teamKey: 'sokcho', isGoyang: false },
     goyangFormation: '8인제 2-4-1 (지도자: 정상훈 감독, 백운찬/최정원 코치)',
@@ -4377,14 +4393,14 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: true, heightWeight: '160cm/55kg', note: '무실점 클린시트 선방 / 주장(C)' },
       { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
-      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
-      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 공격' },
-      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
-      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '⚽ 1\' 선제골!' }
+      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '⚽ 1골 (22\') / 선발 미드필더' },
+      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '⚽ 1골 (41\') / 선발 미드필더' },
+      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '⚽ 1골 (12\') / 선발 공격' },
+      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '⚽ 1골 (48\') / 선발 공격' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '⚽ 1골 (34\') / 선발 공격' },
+      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '⚽ 1\' 선제골 작렬! / 선발 공격' }
     ],
     goyangSubs: [
       { pos: 'GK', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], isAce: false, isCaptain: false, heightWeight: '140cm/40kg', note: '후보 골키퍼' },
@@ -4401,9 +4417,9 @@ const MATCH_REPORTS = {
     oppStarters: [
       { pos: 'GK', num: 21, name: '신민규', heightWeight: '145cm/35kg', note: '선발 골키퍼' },
       { pos: 'DF', num: 5, name: '최윤혁', heightWeight: '145cm/35kg', note: '선발 수비' },
-      { pos: 'MF', num: 7, name: '김시우', isCaptain: true, heightWeight: '148cm/38kg', note: '주장(C) 선발 / ⚽ 1골 (18\')' },
+      { pos: 'MF', num: 7, name: '김시우', isCaptain: true, heightWeight: '148cm/38kg', note: '주장(C) 선발' },
       { pos: 'MF', num: 10, name: '이도현', heightWeight: '144cm/35kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 11, name: '박준우', heightWeight: '140cm/32kg', note: '선발 미드필더 / ⚽ 1골 (32\')' },
+      { pos: 'MF', num: 11, name: '박준우', heightWeight: '140cm/32kg', note: '선발 미드필더' },
       { pos: 'MF', num: 14, name: '서태웅', heightWeight: '145cm/36kg', note: '선발 미드필더' },
       { pos: 'MF', num: 22, name: '정재윤', heightWeight: '142cm/34kg', note: '선발 미드필더' },
       { pos: 'FW', num: 9, name: '강민서', heightWeight: '150cm/40kg', note: '선발 공격' }
@@ -4416,17 +4432,23 @@ const MATCH_REPORTS = {
     timeline: [
       { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '알천3B 구장에서 U-12 대표팀 1차전 시작' },
       { min: "1'", type: 'goal', title: '⚽ 권이안 번개 선제골! (1:0)', desc: '경기 시작 1분 만에 권이안(FW, No.19) 환상적인 선제골 작렬!' },
-      { min: "18'", type: 'goal', title: '⚽ 속초시 체육회 동점골 (1:1)', desc: '속초시 체육회 김시우(7) 득점' },
-      { min: "32'", type: 'goal', title: '⚽ 속초시 체육회 역전골 (1:2)', desc: '속초시 체육회 박준우(11) 득점' },
-      { min: "40'", type: 'end', title: '🏁 경기 종료 (1:2)', desc: '경기 종료. 1분 만에 선제골을 터뜨리며 투지를 불태운 고양주니어 U-12 대표팀!' }
+      { min: "12'", type: 'goal', title: '⚽ 맹현수 추가골! (2:0)', desc: '맹현수(FW, No.7) 전반 12분 날카로운 슈팅으로 추가골 작렬!' },
+      { min: "22'", type: 'goal', title: '⚽ 김동하 득점! (3:0)', desc: '김동하(MF, No.10) 전반 22분 깔끔한 마무리로 3:0 리드!' },
+      { min: "25'", type: 'whistle', title: '전반전 종료 (3:0 리드)', desc: '고양주니어FC가 압도적인 경기력으로 3:0 앞서며 전반전 종료' },
+      { min: "26'", type: 'whistle', title: '후반전 킥오프', desc: '후반전 경기 시작' },
+      { min: "34'", type: 'goal', title: '⚽ 김정훈 득점! (4:0)', desc: '김정훈(FW, No.9) 후반 34분 골망을 흔들며 4:0!' },
+      { min: "41'", type: 'goal', title: '⚽ 류도혁 득점! (5:0)', desc: '류도혁(MF, No.77) 후반 41분 환상적인 중거리포 득점!' },
+      { min: "48'", type: 'goal', title: '⚽ 박준 쐐기골! (6:0)', desc: '박준(FW, No.8) 후반 48분 승리에 쐐기를 박는 6번째 골 작렬!' },
+      { min: "50'+0'", type: 'end', title: '🏁 경기 종료 (6:0 대승)', desc: '고양주니어FC U-12 대표팀 6:0 무실점 퍼펙트 승리! 주장 백정훈 클린시트 선방!' }
     ],
     stats: {
-      shots: [7, 10],
-      onTarget: [4, 7],
-      corners: [3, 4],
+      shots: [18, 2],
+      onTarget: [12, 1],
+      corners: [7, 1],
       fouls: [2, 3]
     }
-  },
+  }
+,
 
 
 
@@ -4528,7 +4550,7 @@ function openLineupModal(matchId) {
   currentModalSubTab = 'lineup';
   currentLineupTeamView = 'goyang';
 
-  // Update Modal Header & Scoreboard Banner
+  // Update Modal Header & Scoreboard Banner dynamically from live queried card
   const titleEl = document.getElementById('modalMatchTitle');
   const badgeEl = document.getElementById('modalMatchBadge');
   const scoreEl = document.getElementById('modalScoreDisplay');
@@ -4538,18 +4560,24 @@ function openLineupModal(matchId) {
   const awayNameEl = document.getElementById('modalAwayName');
   const awayEmblemEl = document.getElementById('modalAwayEmblem');
 
+  const liveCardScore = document.getElementById(`score-${activeModalMatchId}`);
+  const liveCardStatus = document.getElementById(`status-${activeModalMatchId}`);
+
+  const currentScore = (liveCardScore && liveCardScore.textContent.trim()) ? liveCardScore.textContent.trim() : (report.score || '0 : 0');
+  const currentStatus = (liveCardStatus && liveCardStatus.textContent.trim()) ? liveCardStatus.textContent.trim() : (report.status || '경기전');
+
   if (titleEl) titleEl.innerText = report.title;
   if (badgeEl) badgeEl.innerText = `${report.age} · ${report.stage}`;
-  if (scoreEl) scoreEl.innerText = report.score;
+  if (scoreEl) scoreEl.innerText = currentScore;
   if (statusEl) {
-    statusEl.innerText = report.status;
-    if (report.status && report.status.includes('승')) {
+    statusEl.innerText = currentStatus;
+    if (currentStatus.includes('승')) {
       statusEl.className = 'mt-1 text-[9px] bg-blue-500/20 text-blue-300 font-black px-1.5 py-0.2 rounded border border-blue-500/40 shadow-sm';
-    } else if (report.status && report.status.includes('패')) {
+    } else if (currentStatus.includes('패')) {
       statusEl.className = 'mt-1 text-[9px] bg-zinc-800 text-zinc-400 font-bold px-1.5 py-0.2 rounded border border-zinc-700';
-    } else if (report.status && report.status.includes('종료')) {
+    } else if (currentStatus.includes('종료')) {
       statusEl.className = 'mt-1 text-[9px] bg-zinc-800 text-zinc-300 font-bold px-1.5 py-0.2 rounded border border-zinc-600';
-    } else if (report.status && (report.status.includes('라이브') || report.status.includes('경기중'))) {
+    } else if (currentStatus.includes('라이브') || currentStatus.includes('경기중')) {
       statusEl.className = 'mt-1 text-[9px] bg-red-950/70 text-red-400 font-black px-1.5 py-0.2 rounded border border-red-500/60 animate-pulse';
     } else {
       statusEl.className = 'mt-1 text-[9px] bg-emerald-500/20 text-emerald-400 font-bold px-1.5 py-0.2 rounded border border-emerald-500/30';
@@ -4569,6 +4597,7 @@ function openLineupModal(matchId) {
   setModalSubTab('lineup');
   document.getElementById('lineupModal').classList.remove('hidden');
 }
+
 
 function closeLineupModal() {
   document.getElementById('lineupModal').classList.add('hidden');
