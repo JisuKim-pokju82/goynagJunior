@@ -3607,8 +3607,15 @@ const GOYANG_MATCH_MAP = {
       });
     }
 
-        async function syncAllMatches(silent = false) {
-      return await syncTournamentScores(silent);
+    async function syncAllMatches(isUserClick = false) {
+      const syncBtns = document.querySelectorAll('#masterSyncBtn i, button[onclick*="syncAllMatches"] i');
+      syncBtns.forEach(i => i.classList.add('fa-spin'));
+      const res = await syncTournamentScores(!isUserClick);
+      syncBtns.forEach(i => i.classList.remove('fa-spin'));
+      if (isUserClick) {
+        showToast('🔄 최신 경기결과 및 조순위 동기화 완료!');
+      }
+      return res;
     }
     window.syncAllMatches = syncAllMatches;
 
