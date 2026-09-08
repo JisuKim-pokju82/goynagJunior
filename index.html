@@ -273,8 +273,15 @@
         </div>
       </div>
 
-      <div class="p-2 rounded-xl bg-[#0E1017]/60 border border-[#282D3D] text-[10px] text-zinc-400 leading-snug">
-        대한축구협회(JoinKFA) 경기 일정 및 <strong class="text-zinc-200">경주 현지 기상 관측소 실시간 날씨</strong>가 자동 연동됩니다.
+      <div class="p-2.5 rounded-xl bg-[#0E1017]/70 border border-[#282D3D] text-[10px] text-zinc-400 leading-snug space-y-1.5 shadow-inner">
+        <div class="flex items-center gap-1.5 text-zinc-300">
+          <i class="fa-solid fa-arrows-rotate text-blue-400 text-[10px]"></i>
+          <span>대한축구협회(JoinKFA) 경기 일정 및 <strong class="text-zinc-200">경주 현지 기상 관측소 실시간 날씨</strong>가 자동 연동됩니다.</span>
+        </div>
+        <div class="text-[9.5px] sm:text-[10px] text-amber-300/90 pt-1.5 border-t border-[#282D3D]/60 flex items-start gap-1.5">
+          <i class="fa-solid fa-clock-rotate-left text-amber-400 text-[10px] mt-0.5 shrink-0"></i>
+          <span>경기 결과는 실시간 연동이지만, KFA사이트와 화랑대기 사이트간 데이터 연동시점이 5분~15분정도 차이가 발생됩니다.</span>
+        </div>
       </div>
     </div>
 
@@ -340,6 +347,12 @@
             <span class="text-[9.5px] sm:text-xs font-bold whitespace-nowrap tracking-tighter">다른조</span>
           </button>
         </div>
+      </div>
+
+      <!-- 실시간 결과 연동 시점 안내 배너 (모바일 최적화) -->
+      <div class="px-2.5 py-1.5 sm:py-2 rounded-xl bg-[#0E1017]/90 border border-amber-500/30 text-[10px] sm:text-[11px] text-zinc-300 leading-snug flex items-center gap-2 shadow-inner">
+        <i class="fa-solid fa-clock-rotate-left text-amber-400 text-xs shrink-0"></i>
+        <span>경기 결과는 실시간 연동이지만, KFA사이트와 화랑대기 사이트간 데이터 연동시점이 5분~15분정도 차이가 발생됩니다.</span>
       </div>
 
 
