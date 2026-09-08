@@ -281,38 +281,37 @@
     <!-- ==================== MAIN MATCH SCHEDULE CONTAINER (HIGHLIGHTED CORE MODULE) ==================== -->
     <section id="tab-section" class="relative rounded-3xl bg-[#11141D] p-3 sm:p-4 border-2 border-yellow-500/60 shadow-[0_0_30px_rgba(234,179,8,0.14)] ring-1 ring-yellow-400/30 space-y-3.5">
       <!-- Core Module Header -->
-      <div class="flex items-center justify-between px-1 pb-0.5">
-        <div class="flex items-center gap-2">
-          <span id="tabSectionDot" class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse ring-4 ring-yellow-400/20"></span>
-          <h2 class="text-sm font-black text-white flex items-center gap-1.5">
+      <div class="flex items-center justify-between gap-1 px-0.5 pb-0.5 min-w-0">
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span id="tabSectionDot" class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-brand-gold animate-pulse ring-2 sm:ring-4 ring-yellow-400/20 shrink-0"></span>
+          <h2 class="text-xs sm:text-sm font-black text-white flex items-center gap-1 min-w-0 whitespace-nowrap">
             <span>고양주니어FC 경기 일정</span>
-            <span id="tabSectionBadge" class="text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm">예선 리그</span>
+            <span id="tabSectionBadge" class="text-[8.5px] sm:text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm shrink-0 whitespace-nowrap">예선 리그</span>
           </h2>
         </div>
-        <div class="flex items-center gap-1 px-2 py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-[10px] text-blue-300 font-bold">
+        <div class="flex items-center gap-1 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg bg-blue-500/10 border border-blue-500/30 text-[9px] sm:text-[10px] text-blue-300 font-bold shrink-0 whitespace-nowrap">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>KFA 공식 전산 연동</span>
+          <span>KFA 공식 연동</span>
         </div>
       </div>
 
-            <!-- TOURNAMENT STAGE SELECTOR (예선리그 vs 2차리그/토너먼트) -->
+      <!-- TOURNAMENT STAGE SELECTOR (예선리그 vs 2차리그/토너먼트) -->
       <div>
-        <div class="p-1 rounded-2xl bg-[#12151E] border border-yellow-500/40 grid grid-cols-2 gap-1 shadow-lg">
-          <button type="button" onclick="switchStage('prelim')" id="stageBtn-prelim" class="stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition">
-            <i class="fa-regular fa-calendar-check text-sm"></i>
+        <div class="p-0.5 sm:p-1 rounded-2xl bg-[#12151E] border border-yellow-500/40 grid grid-cols-2 gap-1 shadow-lg">
+          <button type="button" onclick="switchStage('prelim')" id="stageBtn-prelim" class="stage-btn py-2 sm:py-2.5 px-1 rounded-xl text-center flex items-center justify-center gap-1 sm:gap-1.5 font-black text-[11px] sm:text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition whitespace-nowrap min-w-0">
+            <i class="fa-regular fa-calendar-check text-xs sm:text-sm shrink-0"></i>
             <span>예선리그</span>
-            <span class="text-[9px] bg-black/30 text-black font-black px-1.5 py-0.2 rounded">진행중</span>
+            <span class="text-[8.5px] sm:text-[9px] bg-black/30 text-black font-black px-1 sm:px-1.5 py-0.2 rounded shrink-0">진행중</span>
           </button>
-          <button type="button" onclick="switchStage('final')" id="stageBtn-final" class="stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition">
-            <i class="fa-solid fa-trophy text-sm text-yellow-400"></i>
+          <button type="button" onclick="switchStage('final')" id="stageBtn-final" class="stage-btn py-2 sm:py-2.5 px-1 rounded-xl text-center flex items-center justify-center gap-1 sm:gap-1.5 font-bold text-[11px] sm:text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition whitespace-nowrap min-w-0">
+            <i class="fa-solid fa-trophy text-xs sm:text-sm text-yellow-400 shrink-0"></i>
             <span>2차리그/토너먼트</span>
-            <span class="text-[9px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.2 rounded border border-red-500/30">대진 대기</span>
+            <span class="text-[8.5px] sm:text-[9px] bg-red-500/20 text-red-400 font-bold px-1 sm:px-1.5 py-0.2 rounded border border-red-500/30 shrink-0">대진 대기</span>
           </button>
         </div>
       </div>
 
-
-            <!-- UNIFIED TAB SELECTOR (U-10 -> U-11 -> U-12 -> 조순위 -> 다른조순위) -->
+      <!-- UNIFIED TAB SELECTOR (U-10 -> U-11 -> U-12 -> 조순위 -> 다른조순위) -->
       <div>
         <div class="p-0.5 sm:p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-5 gap-0.5 sm:gap-1 shadow-md">
           <!-- Tab 1: U-10 -->
@@ -4985,16 +4984,16 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
 
       if (stage === 'prelim') {
         if (prelimBtn) {
-          prelimBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition';
+          prelimBtn.className = 'stage-btn py-2 sm:py-2.5 px-1 rounded-xl text-center flex items-center justify-center gap-1 sm:gap-1.5 font-black text-[11px] sm:text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition whitespace-nowrap min-w-0';
         }
         if (finalBtn) {
-          finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition';
+          finalBtn.className = 'stage-btn py-2 sm:py-2.5 px-1 rounded-xl text-center flex items-center justify-center gap-1 sm:gap-1.5 font-bold text-[11px] sm:text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition whitespace-nowrap min-w-0';
         }
         if (tabSection) {
           tabSection.className = 'relative rounded-3xl bg-[#11141D] p-3 sm:p-4 border-2 border-yellow-500/60 shadow-[0_0_30px_rgba(234,179,8,0.14)] ring-1 ring-yellow-400/30 space-y-3.5 transition-all duration-300';
         }
         if (sectionBadge) {
-          sectionBadge.className = 'text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm';
+          sectionBadge.className = 'text-[8.5px] sm:text-[9px] bg-gradient-to-r from-yellow-400 to-amber-500 text-black font-black px-1.5 py-0.2 rounded-full shadow-sm shrink-0 whitespace-nowrap';
           sectionBadge.innerText = '예선 리그';
         }
         if (sectionDot) {
@@ -5010,16 +5009,16 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
         });
       } else {
         if (finalBtn) {
-          finalBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-red-500 via-rose-600 to-red-600 text-white shadow-lg shadow-red-500/30 active:scale-95 transition';
+          finalBtn.className = 'stage-btn py-2 sm:py-2.5 px-1 rounded-xl text-center flex items-center justify-center gap-1 sm:gap-1.5 font-black text-[11px] sm:text-xs bg-gradient-to-r from-red-500 via-rose-600 to-red-600 text-white shadow-lg shadow-red-500/30 active:scale-95 transition whitespace-nowrap min-w-0';
         }
         if (prelimBtn) {
-          prelimBtn.className = 'stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition';
+          prelimBtn.className = 'stage-btn py-2 sm:py-2.5 px-1 rounded-xl text-center flex items-center justify-center gap-1 sm:gap-1.5 font-bold text-[11px] sm:text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition whitespace-nowrap min-w-0';
         }
         if (tabSection) {
           tabSection.className = 'relative rounded-3xl bg-[#11141D] p-3 sm:p-4 border-2 border-red-500/60 shadow-[0_0_30px_rgba(239,68,68,0.18)] ring-1 ring-red-400/30 space-y-3.5 transition-all duration-300';
         }
         if (sectionBadge) {
-          sectionBadge.className = 'text-[9px] bg-gradient-to-r from-red-500 to-rose-600 text-white font-black px-1.5 py-0.2 rounded-full shadow-sm';
+          sectionBadge.className = 'text-[8.5px] sm:text-[9px] bg-gradient-to-r from-red-500 to-rose-600 text-white font-black px-1.5 py-0.2 rounded-full shadow-sm shrink-0 whitespace-nowrap';
           sectionBadge.innerText = '2차리그/토너먼트';
         }
         if (sectionDot) {
