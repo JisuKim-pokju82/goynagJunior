@@ -2365,16 +2365,13 @@ id="cheer-section" class="space-y-3">
         </div>
       </div>
 
-      <!-- 3 Modal Sub-Tabs (라인업 / 타임라인 / 기록) -->
-      <div class="p-1.5 bg-[#0E1017] border-b border-[#282D3D] grid grid-cols-3 gap-1">
-        <button id="modalTabBtn-lineup" onclick="setModalSubTab('lineup')" class="py-1.5 rounded-xl text-[11px] font-black text-black bg-brand-gold shadow flex items-center justify-center gap-1 transition">
-          <i class="fa-solid fa-users text-[10px]"></i> <span>라인업 (양팀)</span>
+      <!-- 2 Modal Sub-Tabs (라인업 / 경기 기록) -->
+      <div class="p-1.5 bg-[#0E1017] border-b border-[#282D3D] grid grid-cols-2 gap-1.5">
+        <button id="modalTabBtn-lineup" onclick="setModalSubTab('lineup')" class="py-2 rounded-xl text-xs font-black text-black bg-brand-gold shadow flex items-center justify-center gap-1.5 transition">
+          <i class="fa-solid fa-users text-[11px]"></i> <span>라인업 (양팀)</span>
         </button>
-        <button id="modalTabBtn-timeline" onclick="setModalSubTab('timeline')" class="py-1.5 rounded-xl text-[11px] font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1 transition">
-          <i class="fa-solid fa-clock-rotate-left text-[10px]"></i> <span>경기 기록</span>
-        </button>
-        <button id="modalTabBtn-stats" onclick="setModalSubTab('stats')" class="py-1.5 rounded-xl text-[11px] font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1 transition">
-          <i class="fa-solid fa-chart-simple text-[10px]"></i> <span>경기 통계</span>
+        <button id="modalTabBtn-timeline" onclick="setModalSubTab('timeline')" class="py-2 rounded-xl text-xs font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1.5 transition">
+          <i class="fa-solid fa-clock-rotate-left text-[11px]"></i> <span>경기 기록 (타임라인)</span>
         </button>
       </div>
 
@@ -2458,16 +2455,6 @@ id="cheer-section" class="space-y-3">
 
           <div id="timelineEventsList" class="space-y-2 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-gradient-to-b before:from-brand-gold before:via-emerald-500 before:to-zinc-800">
             <!-- Timeline events injected dynamically -->
-          </div>
-        </div>
-
-        <!-- SUB-TAB 3: STATS (KFA 경기 기록 통계) -->
-        <div id="modalSubPane-stats" class="space-y-3 hidden">
-          <div class="p-3.5 rounded-2xl bg-[#161922] border border-[#282D3D] space-y-3">
-            <h4 class="text-xs font-black text-white text-center">양팀 경기 기록 비교</h4>
-            <div id="statsComparisonContainer" class="space-y-2.5">
-              <!-- Stats bars injected dynamically -->
-            </div>
           </div>
         </div>
 
@@ -3892,64 +3879,93 @@ const PLAYER_PHOTOS = {
 ;
 
 // ===========================================================================
-// GOYANG JUNIOR MASTER ROSTER & PHOTO REGISTRY (선수 & 지도자 마스터 DB)
 // ===========================================================================
-// 동일 인물은 사진 및 기본 프로필을 자동 매칭하여, 경기별로 중복 크롭 없이 즉시 연동됩니다.
-// 신규 선수/지도자가 등록될 때만 여기에 추가하면 모든 경기에 자동 반영됩니다.
-const GOYANG_MASTER_PLAYERS = {
-  // --- U-11 와인 대표팀 ---
-  "양시우": { num: 9, pos: "FW", team: "U11", heightWeight: "130cm/25kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_9"] },
-  "김민준": { num: 29, pos: "FW", team: "U11", heightWeight: "132cm/32kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_29"] },
-  "박주혁": { num: 14, pos: "MF", team: "U11", heightWeight: "153cm/42kg", isAce: false, isCaptain: true, photo: PLAYER_PHOTOS["u11_14"] },
-  "권은율": { num: 20, pos: "MF", team: "U11", heightWeight: "143cm/30kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_20"] },
-  "이선우": { num: 8, pos: "DF", team: "U11", heightWeight: "134cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_8"] },
-  "임명훈": { num: 17, pos: "DF", team: "U11", heightWeight: "140cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_17"] },
-  "강현우": { num: 30, pos: "DF", team: "U11", heightWeight: "152cm/40kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_30"] },
-  "백정훈": { num: 1, pos: "GK", team: "U11", heightWeight: "160cm/55kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_1"] },
-  "김시훈": { num: 4, pos: "MF", team: "U11", heightWeight: "146cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_4"] },
-  "이승민": { num: 11, pos: "DF", team: "U11", heightWeight: "135cm/33kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_11"] },
-
-  // --- U-10 옐로우 대표팀 ---
-  "최선우": { num: 16, pos: "FW", team: "U10", heightWeight: "130cm/29kg", isAce: false, isCaptain: true, photo: PLAYER_PHOTOS["u10_16"] },
-  "박한별": { num: 5, pos: "MF", team: "U10", heightWeight: "136cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_5"] },
-  "박승준": { num: 7, pos: "MF", team: "U10", heightWeight: "132cm/30kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_7"] },
-  "진하랑": { num: 22, pos: "MF", team: "U10", heightWeight: "141cm/33kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_22"] },
-  "임현재": { num: 73, pos: "MF", team: "U10", heightWeight: "134cm/28kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_73"] },
-  "김태이": { num: 18, pos: "DF", team: "U10", heightWeight: "141cm/37kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_18"] },
-  "김주한": { num: 27, pos: "DF", team: "U10", heightWeight: "143cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_27"] },
-  "최현우": { num: 12, pos: "GK", team: "U10", heightWeight: "130cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_12"] },
-  "정지훈": { num: 10, pos: "MF", team: "U10", heightWeight: "127cm/27kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_10"] }
+// GOYANG JUNIOR 학년별 독립 로스터 DB (U-10 / U-11 / U-12 분리 관리)
+// ===========================================================================
+// 등번호가 학년 간에 중복되더라도(예: 1번, 4번, 7번, 10번, 14번 등)
+// 각 학년별로 선수의 고유 사진과 프로필이 100% 독립되어 절대 충돌하지 않습니다.
+const GOYANG_ROSTER = {
+  'U10': {
+    "최선우": { num: 16, pos: "FW", heightWeight: "130cm/29kg", photo: PLAYER_PHOTOS["u10_16"] },
+    "박한별": { num: 5, pos: "MF", heightWeight: "136cm/29kg", photo: PLAYER_PHOTOS["u10_5"] },
+    "박승준": { num: 7, pos: "MF", heightWeight: "132cm/30kg", photo: PLAYER_PHOTOS["u10_7"] },
+    "진하랑": { num: 22, pos: "MF", heightWeight: "141cm/33kg", photo: PLAYER_PHOTOS["u10_22"] },
+    "임현재": { num: 73, pos: "MF", heightWeight: "134cm/28kg", photo: PLAYER_PHOTOS["u10_73"] },
+    "김태이": { num: 18, pos: "DF", heightWeight: "141cm/37kg", photo: PLAYER_PHOTOS["u10_18"] },
+    "김주한": { num: 27, pos: "DF", heightWeight: "143cm/35kg", photo: PLAYER_PHOTOS["u10_27"] },
+    "최현우": { num: 12, pos: "GK", heightWeight: "130cm/29kg", photo: PLAYER_PHOTOS["u10_12"] },
+    "정지훈": { num: 10, pos: "MF", heightWeight: "127cm/27kg", photo: PLAYER_PHOTOS["u10_10"] }
+  },
+  'U11': {
+    "양시우": { num: 9, pos: "FW", heightWeight: "130cm/25kg", photo: PLAYER_PHOTOS["u11_9"] },
+    "김민준": { num: 29, pos: "FW", heightWeight: "132cm/32kg", photo: PLAYER_PHOTOS["u11_29"] },
+    "박주혁": { num: 14, pos: "MF", heightWeight: "153cm/42kg", photo: PLAYER_PHOTOS["u11_14"] },
+    "권은율": { num: 20, pos: "MF", heightWeight: "143cm/30kg", photo: PLAYER_PHOTOS["u11_20"] },
+    "이선우": { num: 8, pos: "DF", heightWeight: "134cm/29kg", photo: PLAYER_PHOTOS["u11_8"] },
+    "임명훈": { num: 17, pos: "DF", heightWeight: "140cm/35kg", photo: PLAYER_PHOTOS["u11_17"] },
+    "강현우": { num: 30, pos: "DF", heightWeight: "152cm/40kg", photo: PLAYER_PHOTOS["u11_30"] },
+    "백정훈": { num: 1, pos: "GK", heightWeight: "160cm/55kg", photo: PLAYER_PHOTOS["u11_1"] },
+    "김시훈": { num: 4, pos: "MF", heightWeight: "146cm/35kg", photo: PLAYER_PHOTOS["u11_4"] },
+    "이승민": { num: 11, pos: "DF", heightWeight: "135cm/33kg", photo: PLAYER_PHOTOS["u11_11"] }
+  },
+  'U12': {
+    "백정훈": { num: 1, pos: "GK", heightWeight: "160cm/55kg", photo: PLAYER_PHOTOS["u11_1"] },
+    "정하율": { num: 14, pos: "DF", heightWeight: "140cm/40kg", photo: PLAYER_PHOTOS["u12_14"] },
+    "서한결": { num: 13, pos: "DF", heightWeight: "162cm/55kg", photo: PLAYER_PHOTOS["u12_13"] },
+    "김동하": { num: 10, pos: "MF", heightWeight: "150cm/38kg", photo: PLAYER_PHOTOS["u12_10"] },
+    "류도혁": { num: 77, pos: "MF", heightWeight: "146cm/38kg", photo: PLAYER_PHOTOS["u12_77"] },
+    "맹현수": { num: 7, pos: "FW", heightWeight: "155cm/40kg", photo: PLAYER_PHOTOS["u12_7"] },
+    "박준": { num: 8, pos: "FW", heightWeight: "132cm/30kg", photo: PLAYER_PHOTOS["u12_8"] },
+    "권이안": { num: 19, pos: "FW", heightWeight: "143cm/33kg", photo: PLAYER_PHOTOS["u12_19"] },
+    "정서훈": { num: 3, pos: "DF", heightWeight: "162cm/43kg", photo: PLAYER_PHOTOS["u12_3"] },
+    "김정후": { num: 17, pos: "DF", heightWeight: "150cm/40kg", photo: PLAYER_PHOTOS["u12_17"] },
+    "안시후": { num: 4, pos: "MF", heightWeight: "146cm/43kg", photo: PLAYER_PHOTOS["u12_4"] },
+    "김래원": { num: 6, pos: "MF", heightWeight: "150cm/38kg", photo: PLAYER_PHOTOS["u12_6"] },
+    "김정훈": { num: 9, pos: "FW", heightWeight: "147cm/43kg", photo: PLAYER_PHOTOS["u12_9"] }
+  }
 };
+
+// 기존 전역 참조 호환용 플랫 맵
+const GOYANG_MASTER_PLAYERS = Object.assign({}, GOYANG_ROSTER['U11'], GOYANG_ROSTER['U10'], GOYANG_ROSTER['U12']);
 
 const GOYANG_MASTER_COACHES = {
-  "백운찬": { role: "코치", team: "U10", photo: PLAYER_PHOTOS["u10_coach_1"] },
-  "정상훈": { role: "감독", team: "U11", photo: PLAYER_PHOTOS["u11_coach_1"] },
-  "최정원": { role: "코치", team: "U11", photo: PLAYER_PHOTOS["u11_coach_2"] }
+  "백운찬": { role: "코치", photo: PLAYER_PHOTOS["u10_coach_1"] },
+  "정상훈": { role: "감독", photo: PLAYER_PHOTOS["u11_coach_1"] },
+  "최정원": { role: "코치", photo: PLAYER_PHOTOS["u11_coach_2"] }
 };
 
-// Auto Resolver Functions: 선수 및 지도자 프로필 자동 매칭
+// 학년별 엄격 격리 리졸버
+// ※ 경기별 고유 기록(isCaptain, isAce, note 등)은 해당 경기 데이터가 100% 우선하며,
+// 마스터에서는 오직 누락된 사진(photo)과 신체조건(heightWeight)만 보완하여 다른 경기를 절대 오염시키지 않습니다.
 function resolveGoyangPlayer(p, matchAge) {
   if (!p) return p;
   const cleanName = (p.name || '').replace(/\s+/g, '');
-  let master = GOYANG_MASTER_PLAYERS[cleanName];
+  
+  // 1. 해당 경기 학년(U10, U11, U12) 엄격 판별
+  let ageKey = 'U11';
+  if (matchAge) {
+    if (matchAge.includes('10')) ageKey = 'U10';
+    else if (matchAge.includes('12')) ageKey = 'U12';
+    else if (matchAge.includes('11')) ageKey = 'U11';
+  }
+  
+  const targetRoster = GOYANG_ROSTER[ageKey] || {};
+  let master = targetRoster[cleanName];
 
-  // 이름 일치 실패 시 등번호와 팀 연령대로 2차 매칭
+  // 2. 이름 매칭 실패 시 해당 학년(ageKey) 내에서만 등번호로 매칭 (다른 학년 침범 원천 차단)
   if (!master && p.num) {
-    const ageTag = (matchAge && matchAge.includes('10')) ? 'U10' : (matchAge && matchAge.includes('11')) ? 'U11' : (matchAge && matchAge.includes('12')) ? 'U12' : '';
-    for (const key in GOYANG_MASTER_PLAYERS) {
-      const cand = GOYANG_MASTER_PLAYERS[key];
-      if (cand.num === Number(p.num) && (!ageTag || cand.team === ageTag)) {
-        master = cand;
+    for (const key in targetRoster) {
+      if (targetRoster[key].num === Number(p.num)) {
+        master = targetRoster[key];
         break;
       }
     }
   }
 
+  // 3. 누락된 사진과 신체조건만 보완 (골 기록, 캡틴 여부 등 경기별 고유 기록은 절대 건드리지 않음)
   if (master) {
     if (!p.photo && master.photo) p.photo = master.photo;
     if (!p.heightWeight && master.heightWeight) p.heightWeight = master.heightWeight;
-    if (p.isAce === undefined && master.isAce !== undefined) p.isAce = master.isAce;
-    if (p.isCaptain === undefined && master.isCaptain !== undefined) p.isCaptain = master.isCaptain;
     if (!p.pos && master.pos) p.pos = master.pos;
     if (!p.num && master.num) p.num = master.num;
   }
@@ -3967,9 +3983,11 @@ function resolveGoyangCoach(c) {
   return c;
 }
 
-// 신규 선수 및 코치 등록 헬퍼 (신규 등장 시 1회 등록으로 전 경기 즉시 연동)
-function registerMasterPlayer(name, data) {
+// 신규 선수 및 코치 등록 헬퍼
+function registerMasterPlayer(name, data, ageKey = 'U11') {
   const cleanName = (name || '').replace(/\s+/g, '');
+  if (!GOYANG_ROSTER[ageKey]) GOYANG_ROSTER[ageKey] = {};
+  GOYANG_ROSTER[ageKey][cleanName] = Object.assign(GOYANG_ROSTER[ageKey][cleanName] || {}, data);
   GOYANG_MASTER_PLAYERS[cleanName] = Object.assign(GOYANG_MASTER_PLAYERS[cleanName] || {}, data);
 }
 
@@ -4618,16 +4636,16 @@ function closeLineupModal() {
 
 function setModalSubTab(tabKey) {
   currentModalSubTab = tabKey;
-  const tabs = ['lineup', 'timeline', 'stats'];
+  const tabs = ['lineup', 'timeline'];
   
   tabs.forEach(t => {
     const btn = document.getElementById('modalTabBtn-' + t);
     const pane = document.getElementById('modalSubPane-' + t);
     if (btn) {
       if (t === tabKey) {
-        btn.className = 'py-1.5 rounded-xl text-[11px] font-black text-black bg-brand-gold shadow flex items-center justify-center gap-1 transition';
+        btn.className = 'py-2 rounded-xl text-xs font-black text-black bg-brand-gold shadow flex items-center justify-center gap-1.5 transition';
       } else {
-        btn.className = 'py-1.5 rounded-xl text-[11px] font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1 transition';
+        btn.className = 'py-2 rounded-xl text-xs font-bold text-zinc-400 hover:text-white bg-transparent flex items-center justify-center gap-1.5 transition';
       }
     }
     if (pane) {
@@ -4644,8 +4662,6 @@ function setModalSubTab(tabKey) {
     renderLineupView(report);
   } else if (tabKey === 'timeline') {
     renderTimelineView(report);
-  } else if (tabKey === 'stats') {
-    renderStatsView(report);
   }
 }
 
