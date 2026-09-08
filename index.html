@@ -3879,25 +3879,25 @@ const PLAYER_PHOTOS = {
 // 신규 선수/지도자가 등록될 때만 여기에 추가하면 모든 경기에 자동 반영됩니다.
 const GOYANG_MASTER_PLAYERS = {
   // --- U-11 와인 대표팀 ---
-  "양시우": { num: 9, pos: "FW", team: "U11", heightWeight: "130cm/25kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_9"] },
+  "양시우": { num: 9, pos: "FW", team: "U11", heightWeight: "130cm/25kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_9"] },
   "김민준": { num: 29, pos: "FW", team: "U11", heightWeight: "132cm/32kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_29"] },
   "박주혁": { num: 14, pos: "MF", team: "U11", heightWeight: "153cm/42kg", isAce: false, isCaptain: true, photo: PLAYER_PHOTOS["u11_14"] },
-  "권은율": { num: 20, pos: "MF", team: "U11", heightWeight: "143cm/30kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_20"] },
+  "권은율": { num: 20, pos: "MF", team: "U11", heightWeight: "143cm/30kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_20"] },
   "이선우": { num: 8, pos: "DF", team: "U11", heightWeight: "134cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_8"] },
   "임명훈": { num: 17, pos: "DF", team: "U11", heightWeight: "140cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_17"] },
   "강현우": { num: 30, pos: "DF", team: "U11", heightWeight: "152cm/40kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_30"] },
-  "백정훈": { num: 1, pos: "GK", team: "U11", heightWeight: "160cm/55kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_1"] },
-  "김시훈": { num: 4, pos: "MF", team: "U11", heightWeight: "146cm/35kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u11_4"] },
+  "백정훈": { num: 1, pos: "GK", team: "U11", heightWeight: "160cm/55kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_1"] },
+  "김시훈": { num: 4, pos: "MF", team: "U11", heightWeight: "146cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_4"] },
   "이승민": { num: 11, pos: "DF", team: "U11", heightWeight: "135cm/33kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u11_11"] },
 
   // --- U-10 옐로우 대표팀 ---
-  "최선우": { num: 16, pos: "FW", team: "U10", heightWeight: "130cm/29kg", isAce: true, isCaptain: true, photo: PLAYER_PHOTOS["u10_16"] },
+  "최선우": { num: 16, pos: "FW", team: "U10", heightWeight: "130cm/29kg", isAce: false, isCaptain: true, photo: PLAYER_PHOTOS["u10_16"] },
   "박한별": { num: 5, pos: "MF", team: "U10", heightWeight: "136cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_5"] },
   "박승준": { num: 7, pos: "MF", team: "U10", heightWeight: "132cm/30kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_7"] },
   "진하랑": { num: 22, pos: "MF", team: "U10", heightWeight: "141cm/33kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_22"] },
   "임현재": { num: 73, pos: "MF", team: "U10", heightWeight: "134cm/28kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_73"] },
   "김태이": { num: 18, pos: "DF", team: "U10", heightWeight: "141cm/37kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_18"] },
-  "김주한": { num: 27, pos: "DF", team: "U10", heightWeight: "143cm/35kg", isAce: true, isCaptain: false, photo: PLAYER_PHOTOS["u10_27"] },
+  "김주한": { num: 27, pos: "DF", team: "U10", heightWeight: "143cm/35kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_27"] },
   "최현우": { num: 12, pos: "GK", team: "U10", heightWeight: "130cm/29kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_12"] },
   "정지훈": { num: 10, pos: "MF", team: "U10", heightWeight: "127cm/27kg", isAce: false, isCaptain: false, photo: PLAYER_PHOTOS["u10_10"] }
 };
@@ -3978,13 +3978,13 @@ const MATCH_REPORTS = {
       { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] }
     ],
     goyangStarters: [
-      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isAce: true, isCaptain: true, heightWeight: '130cm/29kg', note: '주장(C) 선발' },
+      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isAce: false, isCaptain: true, heightWeight: '130cm/29kg', note: '주장(C) 선발' },
       { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], isAce: false, isCaptain: false, heightWeight: '136cm/29kg', note: '선발 미드필더' },
       { pos: 'MF', num: 7, name: '박승준', photo: PLAYER_PHOTOS['u10_7'], isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 미드필더' },
       { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], isAce: false, isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
       { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], isAce: false, isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
       { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], isAce: false, isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
-      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 1\' 선제골!' },
+      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: false, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 1\' 선제골!' },
       { pos: 'GK', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 (KFA 공식 DF/GK)' }
     ],
     goyangSubs: [
@@ -4041,17 +4041,17 @@ const MATCH_REPORTS = {
       { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] }
     ],
     goyangStarters: [
-      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isAce: true, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 공격' },
-      { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], isAce: false, isCaptain: false, heightWeight: '136cm/29kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 7, name: '박승준', photo: PLAYER_PHOTOS['u10_7'], isAce: true, isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' },
-      { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], isAce: false, isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], isAce: false, isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
-      { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], isAce: false, isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
-      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 5\' 선제골! (2경기 연속골)' },
-      { pos: 'GK', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 골키퍼' }
+      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isCaptain: false, heightWeight: '130cm/29kg', note: '선발 공격' },
+      { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], isCaptain: false, heightWeight: '136cm/29kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 7, name: '박승준', photo: PLAYER_PHOTOS['u10_7'], isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' },
+      { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
+      { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
+      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 5\' 선제골! (2경기 연속골)' },
+      { pos: 'GK', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], isCaptain: false, heightWeight: '130cm/29kg', note: '선발 골키퍼' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], isAce: false, isCaptain: false, heightWeight: '127cm/27kg', note: '플라잉교체 투입' }
+      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], isCaptain: false, heightWeight: '127cm/27kg', note: '플라잉교체 투입' }
     ],
     oppFormation: '8인제 포메이션 (감독: 김주영 / 코치: 곽태원, 김종헌, 류희헌, 박경환, 박성빈)',
     oppCoaches: [
@@ -4110,12 +4110,12 @@ const MATCH_REPORTS = {
     goyangStarters: [
       { pos: 'GK', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 골키퍼' },
       { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], isAce: false, isCaptain: false, heightWeight: '141cm/37kg', note: '선발 수비' },
-      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: true, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 2골 멀티골 (16\', 36\')' },
+      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], isAce: false, isCaptain: false, heightWeight: '143cm/35kg', note: '⚽ 2골 멀티골 (16\', 36\')' },
       { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], isAce: false, isCaptain: false, heightWeight: '136cm/29kg', note: '선발 미드필더' },
       { pos: 'MF', num: 7, name: '박승준', photo: PLAYER_PHOTOS['u10_7'], isAce: false, isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' },
       { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], isAce: false, isCaptain: false, heightWeight: '127cm/27kg', note: '선발 미드필더' },
       { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], isAce: false, isCaptain: false, heightWeight: '141cm/33kg', note: '선발 미드필더' },
-      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isAce: true, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 공격' }
+      { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], isAce: false, isCaptain: false, heightWeight: '130cm/29kg', note: '선발 공격' }
     ],
     goyangSubs: [
       { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], isAce: false, isCaptain: false, heightWeight: '134cm/28kg', note: '플라잉교체 출전' }
@@ -4179,17 +4179,17 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: true, isCaptain: false, heightWeight: '130cm/25kg', note: '⚽ 2골 (22\', 29\')' },
+      { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: false, isCaptain: false, heightWeight: '130cm/25kg', note: '⚽ 2골 (22\', 29\')' },
       { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '선발 출전' },
       { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '주장(C) 선발' },
-      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: true, isCaptain: false, heightWeight: '143cm/30kg', note: '⚽ 4골 포트트릭 (2\', 5\', 14\', 20\')' },
+      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: false, isCaptain: false, heightWeight: '143cm/30kg', note: '⚽ 4골 포트트릭 (2\', 5\', 14\', 20\')' },
       { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], isAce: false, isCaptain: false, heightWeight: '134cm/29kg', note: '⚽ 2골 (1\', 15\')' },
       { pos: 'DF', num: 17, name: '임명훈', photo: PLAYER_PHOTOS['u11_17'], isAce: false, isCaptain: false, heightWeight: '140cm/35kg', note: '선발 수비' },
       { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], isAce: false, isCaptain: false, heightWeight: '152cm/40kg', note: '⚽ 2골 (4\', 13\')' },
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: false, heightWeight: '160cm/55kg', note: '⚽ 1골 (10\') / 무실점' }
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: false, heightWeight: '160cm/55kg', note: '⚽ 1골 (10\') / 무실점' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '⚽ 1골 (7\') 플라잉교체' },
+      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: false, isCaptain: false, heightWeight: '146cm/35kg', note: '⚽ 1골 (7\') 플라잉교체' },
       { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], isAce: false, isCaptain: false, heightWeight: '135cm/33kg', note: '플라잉교체 출전' }
     ],
     oppFormation: '8인제 포메이션 (코치: 김기영)',
@@ -4243,17 +4243,17 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: true, isCaptain: false, heightWeight: '130cm/25kg', note: '선발 공격' },
+      { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: false, isCaptain: false, heightWeight: '130cm/25kg', note: '선발 공격' },
       { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '⚽ 1골 만회골 (36\') / 주장(C)' },
-      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: true, isCaptain: false, heightWeight: '143cm/30kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: false, isCaptain: false, heightWeight: '143cm/30kg', note: '선발 미드필더' },
       { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], isAce: false, isCaptain: false, heightWeight: '134cm/29kg', note: '선발 수비' },
       { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], isAce: false, isCaptain: false, heightWeight: '135cm/33kg', note: '선발 수비' },
       { pos: 'DF', num: 17, name: '임명훈', photo: PLAYER_PHOTOS['u11_17'], isAce: false, isCaptain: false, heightWeight: '140cm/35kg', note: '선발 수비' },
       { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], isAce: false, isCaptain: false, heightWeight: '152cm/40kg', note: '선발 수비' },
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: false, heightWeight: '160cm/55kg', note: '선발 골키퍼' }
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: false, heightWeight: '160cm/55kg', note: '선발 골키퍼' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '플라잉교체 투입' },
+      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: false, isCaptain: false, heightWeight: '146cm/35kg', note: '플라잉교체 투입' },
       { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '플라잉교체 투입' }
     ],
     oppFormation: '8인제 포메이션 (감독: 정민우)',
@@ -4314,17 +4314,17 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: false, heightWeight: '160cm/55kg', note: '⚽ 1골 (4\') / 무실점 클린시트' },
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: false, heightWeight: '160cm/55kg', note: '⚽ 1골 (4\') / 무실점 클린시트' },
       { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], isAce: false, isCaptain: false, heightWeight: '134cm/29kg', note: '선발 수비' },
       { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], isAce: false, isCaptain: false, heightWeight: '135cm/33kg', note: '선발 수비' },
       { pos: 'DF', num: 17, name: '임명훈', photo: PLAYER_PHOTOS['u11_17'], isAce: false, isCaptain: false, heightWeight: '140cm/35kg', note: '선발 수비' },
       { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], isAce: false, isCaptain: false, heightWeight: '152cm/40kg', note: '⚽ 1골 (19\') / 철벽 수비' },
       { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isAce: false, isCaptain: true, heightWeight: '153cm/42kg', note: '주장(C) 선발' },
-      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: true, isCaptain: false, heightWeight: '143cm/30kg', note: '⚽ 2골 멀티골 (3\', 10\')' },
+      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], isAce: false, isCaptain: false, heightWeight: '143cm/30kg', note: '⚽ 2골 멀티골 (3\', 10\')' },
       { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], isAce: false, isCaptain: false, heightWeight: '130cm/25kg', note: '선발 공격' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: true, isCaptain: false, heightWeight: '146cm/35kg', note: '플라잉교체 출전' },
+      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], isAce: false, isCaptain: false, heightWeight: '146cm/35kg', note: '플라잉교체 출전' },
       { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], isAce: false, isCaptain: false, heightWeight: '132cm/32kg', note: '플라잉교체 출전' }
     ],
     oppFormation: '8인제 포메이션 (코치: 임민서, 조태근)',
@@ -4380,13 +4380,13 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
       { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '선발 미드필더' },
       { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
       { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
       { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
       { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 공격' },
-      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: true, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
       { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '⚽ 1\' 선제골!' }
     ],
     goyangSubs: [
@@ -4448,13 +4448,13 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: true, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
       { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '선발 미드필더' },
       { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
       { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
       { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
       { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 공격' },
-      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: true, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
       { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '선발 공격' }
     ],
     goyangSubs: [
