@@ -2777,7 +2777,7 @@ const GOYANG_MATCH_MAP = {
       currentAllStandingsGroup = String(gNo);
       const select = document.getElementById('allStandingsGroupSelect');
       if (select) select.value = currentAllStandingsGroup;
-            updateAllStandingsGroupOptions();
+      updateAllStandingsGroupOptions();
       renderAllStandingsGroup();
     }
 
@@ -4089,19 +4089,21 @@ const MATCH_REPORTS = {
     ],
     timeline: [
       { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '축구공원3A 구장에서 U-10 옐로우 2차전 시작' },
-      { min: "1'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '남양주 BEST 은준기(8), 박준서(4), 장영우(2) 플라잉교체 투입' },
+      { min: "1'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '남양주 BEST 박준서(4), 은준기(8), 장영우(2) 플라잉교체 투입' },
       { min: "2'", type: 'sub', title: '🔄 상대팀 선수 교체', desc: '남양주 BEST 강우준(9), 이예성(3) 플라잉교체 투입' },
-      { min: "3'", type: 'sub', title: '🔄 고양주니어 선수 교체', desc: '정지훈(MF, No.10) 플라잉교체 투입' },
-      { min: "5'", type: 'goal', title: '⚽ 김주한 선제골! (1:0)', desc: '김주한(DF, No.27) 환상적인 2경기 연속 골 작렬! 고양주니어 1:0 리드' },
+      { min: "3'", type: 'sub', title: '🔄 고양주니어 선수 교체', desc: '고양주니어 정지훈(MF, No.10) 플라잉교체 투입' },
+      { min: "5'", type: 'goal', title: '⚽ 김주한 선제골! (1:0)', desc: '김주한(DF, No.27) 강력한 슛으로 선제골 작렬! 고양주니어 1:0 리드' },
       { min: "7'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (1:1)', desc: '남양주 BEST 권도하(11) 동점골 득점' },
-      { min: "20+2'", type: 'goal', title: '⚽ 고양주니어 추가골 유도 (2:1)', desc: '전반 추가시간 고양주니어의 맹공격으로 상대 골키퍼 김민혁(1) 자책골 유도! 2:1 리드' },
+      { min: "20+2'", type: 'goal', title: '⚽ 고양주니어 추가골 (상대 자책골, 2:1)', desc: '전반 추가시간 고양주니어의 맹공격으로 남양주 골키퍼 김민혁(1) 자책골 유도! 고양주니어 2:1 리드' },
       { min: "26'", type: 'goal', title: '⚽ 남양주 BEST 동점골 (2:2)', desc: '후반 남양주 BEST 주장 김태윤(13) 득점' },
-      { min: "40+2'", type: 'end', title: '🏁 경기 종료 (2:2 무승부)', desc: '치열한 접전 끝에 2:2 무승부로 값진 승점 1점 획득!' }
+      { min: "28'", type: 'goal', title: '⚽ 남양주 BEST 역전골 (2:3)', desc: '남양주 BEST 이서인(25) 역전골 득점' },
+      { min: "32'", type: 'goal', title: '⚽ 남양주 BEST 추가골 (2:4)', desc: '남양주 BEST 주장 김태윤(13) 멀티골 득점' },
+      { min: "40+2'", type: 'end', title: '🏁 경기 종료 (2:4 패)', desc: '치열한 공방전 끝에 2:4로 경기 종료' }
     ],
     stats: {
-      shots: [8, 9],
-      onTarget: [5, 6],
-      corners: [3, 4],
+      shots: [7, 11],
+      onTarget: [4, 7],
+      corners: [3, 5],
       fouls: [2, 3]
     }
   },
