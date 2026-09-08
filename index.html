@@ -295,52 +295,54 @@
         </div>
       </div>
 
-      <!-- TOURNAMENT STAGE SELECTOR (2차 화랑대기 예선 vs 본선 토너먼트) -->
+            <!-- TOURNAMENT STAGE SELECTOR (예선리그 vs 2차리그/토너먼트) -->
       <div>
         <div class="p-1 rounded-2xl bg-[#12151E] border border-yellow-500/40 grid grid-cols-2 gap-1 shadow-lg">
           <button type="button" onclick="switchStage('prelim')" id="stageBtn-prelim" class="stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-black text-xs bg-gradient-to-r from-yellow-400 to-amber-400 text-black shadow active:scale-95 transition">
             <i class="fa-regular fa-calendar-check text-sm"></i>
-            <span>2차 예선 리그</span>
+            <span>예선리그</span>
             <span class="text-[9px] bg-black/30 text-black font-black px-1.5 py-0.2 rounded">진행중</span>
           </button>
           <button type="button" onclick="switchStage('final')" id="stageBtn-final" class="stage-btn py-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 font-bold text-xs text-zinc-400 hover:text-white bg-transparent active:scale-95 transition">
             <i class="fa-solid fa-trophy text-sm text-yellow-400"></i>
-            <span>본선 토너먼트</span>
-            <span class="text-[9px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.2 rounded border border-red-500/30">대진 미정</span>
+            <span>2차리그/토너먼트</span>
+            <span class="text-[9px] bg-red-500/20 text-red-400 font-bold px-1.5 py-0.2 rounded border border-red-500/30">대진 대기</span>
           </button>
         </div>
       </div>
 
-      <!-- UNIFIED TAB SELECTOR (U-10 -> U-11 -> U-12 -> 조순위 -> 다른조순위) -->
+
+            <!-- UNIFIED TAB SELECTOR (U-10 -> U-11 -> U-12 -> 조순위 -> 다른조순위) -->
       <div>
-        <div class="p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-5 gap-1 shadow-md">
+        <div class="p-0.5 sm:p-1 rounded-2xl bg-[#161922] border border-[#282D3D] grid grid-cols-5 gap-0.5 sm:gap-1 shadow-md">
           <!-- Tab 1: U-10 -->
-          <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow">
-            <span id="tabBadge-u10" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
-            <span class="text-xs">U-10</span>
+          <button onclick="switchTab('u10')" id="btn-u10" class="tab-btn active py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow min-w-0">
+            <span id="tabBadge-u10" class="text-[8px] opacity-80 leading-none mb-0.5 whitespace-nowrap">예선</span>
+            <span class="text-[11px] sm:text-xs font-black whitespace-nowrap">U-10</span>
           </button>
           <!-- Tab 2: U-11 -->
-          <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-            <span id="tabBadge-u11" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
-            <span class="text-xs">U-11</span>
+          <button onclick="switchTab('u11')" id="btn-u11" class="tab-btn py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold min-w-0">
+            <span id="tabBadge-u11" class="text-[8px] opacity-80 leading-none mb-0.5 whitespace-nowrap">예선</span>
+            <span class="text-[11px] sm:text-xs font-black whitespace-nowrap">U-11</span>
           </button>
           <!-- Tab 3: U-12 -->
-          <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-            <span id="tabBadge-u12" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
-            <span class="text-xs">U-12</span>
+          <button onclick="switchTab('u12')" id="btn-u12" class="tab-btn py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold min-w-0">
+            <span id="tabBadge-u12" class="text-[8px] opacity-80 leading-none mb-0.5 whitespace-nowrap">예선</span>
+            <span class="text-[11px] sm:text-xs font-black whitespace-nowrap">U-12</span>
           </button>
           <!-- Tab 4: 조순위 -->
-          <button onclick="switchTab('standings')" id="btn-standings" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-            <span id="tabBadge-standings" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
-            <span class="text-xs">조순위🏆</span>
+          <button onclick="switchTab('standings')" id="btn-standings" class="tab-btn py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold min-w-0">
+            <span id="tabBadge-standings" class="text-[8px] opacity-80 leading-none mb-0.5 whitespace-nowrap">예선</span>
+            <span class="text-[10px] sm:text-xs font-bold whitespace-nowrap">조순위</span>
           </button>
           <!-- Tab 5: 다른조순위 -->
-          <button onclick="switchTab('all_standings')" id="btn-all_standings" class="tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold">
-            <span id="tabBadge-all_standings" class="text-[8px] opacity-80 leading-none mb-0.5">예선</span>
-            <span class="text-xs">다른조순위</span>
+          <button onclick="switchTab('all_standings')" id="btn-all_standings" class="tab-btn py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold min-w-0">
+            <span id="tabBadge-all_standings" class="text-[8px] opacity-80 leading-none mb-0.5 whitespace-nowrap">예선</span>
+            <span class="text-[9.5px] sm:text-xs font-bold whitespace-nowrap tracking-tighter">다른조</span>
           </button>
         </div>
       </div>
+
 
     <!-- ==================== PRELIM PANE 1: U-10 (옐로우) ==================== -->
     <div id="pane-prelim-u10" class="match-pane active space-y-3.5" style="display: block !important;">
@@ -1425,14 +1427,16 @@
     </div>
 
 
-    <!-- ==================== FINAL PANE 1: U-10 본선 ==================== -->
+        <!-- =========================================
+         MATCH PANE 6: U-10 2차 리그 (pane-final-u10)
+         ========================================= -->
     <div id="pane-final-u10" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
-          <span class="text-sm font-black text-white">U-10 옐로우 2차 본선 토너먼트</span>
+          <span class="text-sm font-black text-white">U-10 옐로우 2차 리그</span>
         </div>
-        <span class="text-[10px] bg-yellow-400/10 text-brand-gold px-2 py-0.5 rounded font-bold border border-yellow-500/30">9/11(금)~9/12(토)</span>
+        <span class="text-[10px] bg-yellow-400/10 text-brand-gold px-2 py-0.5 rounded font-bold border border-yellow-500/30">공식 일정 발표 대기</span>
       </div>
 
       <div id="final-u10-content">
@@ -1442,32 +1446,38 @@
           </div>
           <div>
             <div class="inline-block px-2.5 py-0.5 rounded-full bg-yellow-400/15 text-brand-gold text-[10px] font-black border border-yellow-500/30 mb-1.5">
-              KFA 공식 전산망 대기
+              화랑대기 2차 리그 공식 전산망 대기
             </div>
-            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <h4 class="text-sm font-black text-white">2차 리그 경기 일정이 확정되면 업데이트됩니다.</h4>
             <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
-              9월 10일(목) 1차 예선 4조 경기 종료 후 조순위에 따라 본선 16강 상대팀 및 킥오프 시간이 자동 배정됩니다.
+              화랑대기 공식 홈페이지(U11 2차리그 탭)에서 고양주니어 옐로우 경기 일정이 발표되는 즉시 예선과 동일하게 경기 카드, 스코어, 라인업이 자동 연동됩니다.
             </p>
           </div>
-          <button type="button" onclick="syncFinalMatch('u10', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
-            <i class="fa-solid fa-arrows-rotate"></i>
-            <span>KFA U-10 본선 일정 실시간 동기화</span>
-          </button>
-          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
-            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 16강전 ➔ 9월 12일(토) 8강/4강/결승
+          <div class="pt-1 flex flex-col sm:flex-row gap-2">
+            <a href="https://2026hwarang.netlify.app/" target="_blank" class="flex-1 py-2.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold text-xs border border-yellow-500/40 flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              <span>화랑대기 공식 홈페이지 (2차리그) 확인</span>
+            </a>
+            <button type="button" onclick="syncFinalMatch('u10', this)" class="py-2.5 px-4 rounded-xl bg-[#1F2433] hover:bg-[#282F44] text-zinc-300 font-bold text-xs border border-[#2E364F] flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrows-rotate"></i>
+              <span>새로고침</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ==================== FINAL PANE 2: U-11 본선 ==================== -->
+
+        <!-- =========================================
+         MATCH PANE 7: U-11 2차 리그 (pane-final-u11)
+         ========================================= -->
     <div id="pane-final-u11" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
-          <span class="text-sm font-black text-white">U-11 와인 2차 본선 토너먼트</span>
+          <span class="text-sm font-black text-white">U-11 와인 2차 리그</span>
         </div>
-        <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-bold border border-red-500/30">9/11(금)~9/12(토)</span>
+        <span class="text-[10px] bg-red-500/10 text-red-400 px-2 py-0.5 rounded font-bold border border-red-500/30">공식 일정 발표 대기</span>
       </div>
 
       <div id="final-u11-content">
@@ -1477,64 +1487,76 @@
           </div>
           <div>
             <div class="inline-block px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-400 text-[10px] font-black border border-red-500/30 mb-1.5">
-              KFA 공식 전산망 대기
+              화랑대기 2차 리그 공식 전산망 대기
             </div>
-            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <h4 class="text-sm font-black text-white">2차 리그 경기 일정이 확정되면 업데이트됩니다.</h4>
             <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
-              9월 10일(목) 1차 예선 종료 후 조순위별 본선 토너먼트 대진표가 KFA 공식 발표 시 실시간 연동됩니다.
+              화랑대기 공식 홈페이지(U11 2차리그 탭)에서 고양주니어 와인 경기 일정이 발표되는 즉시 예선과 동일하게 경기 카드, 스코어, 라인업이 자동 연동됩니다.
             </p>
           </div>
-          <button type="button" onclick="syncFinalMatch('u11', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
-            <i class="fa-solid fa-arrows-rotate"></i>
-            <span>KFA U-11 본선 일정 실시간 동기화</span>
-          </button>
-          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
-            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 16강전 ➔ 9월 12일(토) 8강/4강/결승
+          <div class="pt-1 flex flex-col sm:flex-row gap-2">
+            <a href="https://2026hwarang.netlify.app/" target="_blank" class="flex-1 py-2.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-rose-300 font-bold text-xs border border-red-500/40 flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              <span>화랑대기 공식 홈페이지 (2차리그) 확인</span>
+            </a>
+            <button type="button" onclick="syncFinalMatch('u11', this)" class="py-2.5 px-4 rounded-xl bg-[#1F2433] hover:bg-[#282F44] text-zinc-300 font-bold text-xs border border-[#2E364F] flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrows-rotate"></i>
+              <span>새로고침</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ==================== FINAL PANE 3: U-12 본선 ==================== -->
+
+        <!-- =========================================
+         MATCH PANE 8: U-12 본선 토너먼트 (pane-final-u12)
+         ========================================= -->
     <div id="pane-final-u12" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-          <span class="text-sm font-black text-white">U-12 대표팀 2차 본선 토너먼트</span>
+          <span class="text-sm font-black text-white">U-12 대표팀 본선 토너먼트</span>
         </div>
-        <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-bold border border-blue-500/30">9/11(금)~9/12(토)</span>
+        <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-bold border border-blue-500/30">공식 대진표 발표 대기</span>
       </div>
 
       <div id="final-u12-content">
         <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-blue-500/40 text-center space-y-3.5 shadow-lg">
           <div class="w-12 h-12 mx-auto rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl ring-1 ring-blue-500/30">
-            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
+            <i class="fa-solid fa-trophy text-yellow-400"></i>
           </div>
           <div>
             <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-400 text-[10px] font-black border border-blue-500/30 mb-1.5">
-              KFA 공식 전산망 대기
+              U12 본선 토너먼트 대진 대기
             </div>
-            <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+            <h4 class="text-sm font-black text-white">예선 경기 종료 후 본선 토너먼트 대진이 확정됩니다.</h4>
             <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
-              9월 10일(목) 예선 4경기(이천유나이티드전) 종료 후 본선 진출 대진이 KFA 시스템에 등록됩니다.
+              화랑대기 공식 홈페이지(U12 토너먼트 탭)에서 고양주니어 U-12 토너먼트 대진이 등록되면 즉시 경기 일정과 토너먼트 매치가 업데이트됩니다.
             </p>
           </div>
-          <button type="button" onclick="syncFinalMatch('u12', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
-            <i class="fa-solid fa-arrows-rotate"></i>
-            <span>KFA U-12 본선 일정 실시간 동기화</span>
-          </button>
-          <div class="p-3 rounded-xl bg-[#0E1017] border border-[#282D3D] text-[11px] text-zinc-300">
-            ⚽ <strong>예상 일정</strong>: 9월 11일(금) 8강/16강 ➔ 9월 12일(토) 4강/결승
+          <div class="pt-1 flex flex-col sm:flex-row gap-2">
+            <a href="https://2026hwarang.netlify.app/" target="_blank" class="flex-1 py-2.5 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 font-bold text-xs border border-blue-500/40 flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              <span>화랑대기 공식 홈페이지 (U12 토너먼트) 확인</span>
+            </a>
+            <button type="button" onclick="syncFinalMatch('u12', this)" class="py-2.5 px-4 rounded-xl bg-[#1F2433] hover:bg-[#282F44] text-zinc-300 font-bold text-xs border border-[#2E364F] flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrows-rotate"></i>
+              <span>새로고침</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ==================== FINAL PANE 5: 본선 스플릿 조순위표 ==================== -->
+
+        <!-- =========================================
+         MATCH PANE 9: 2차 리그 / 토너먼트 조순위 (pane-final-standings)
+         ========================================= -->
     <div id="pane-final-standings" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="rounded-2xl bg-[#161922] p-4 border border-[#282D3D] text-center shadow-lg">
-        <h3 class="text-sm font-black text-white">2차 본선 리그 / 스플릿 조순위</h3>
-        <p class="text-[11px] text-zinc-400 mt-0.5">각 조 순위별 본선 스플릿 리그 성적표</p>
+        <h3 class="text-sm font-black text-white">2차 리그 / 토너먼트 조순위</h3>
+        <p class="text-[11px] text-zinc-400 mt-0.5">각 조 순위별 2차 리그 성적표</p>
       </div>
 
       <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-emerald-500/40 text-center space-y-3.5 shadow-lg">
@@ -1543,63 +1565,98 @@
         </div>
         <div>
           <div class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 text-[10px] font-black border border-emerald-500/30 mb-1.5">
-            본선 조순위 집계 대기
+            2차 리그 조순위 집계 대기
           </div>
-          <h4 class="text-sm font-black text-white">본선 일정 확정이 되면 업데이트됩니다.</h4>
+          <h4 class="text-sm font-black text-white">2차 리그 경기 진행 후 순위가 업데이트됩니다.</h4>
           <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
-            KFA 전산망에서 본선 스플릿 조편성이 확정되면 실시간 승점, 득실, 순위가 연동되어 표시됩니다.
+            화랑대기 2차 리그 조편성이 확정되고 경기가 진행되면 실시간 승점, 득실, 순위가 연동되어 표시됩니다.
           </p>
         </div>
-        <button type="button" onclick="syncFinalMatch('standings', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-400 text-black font-black text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
-          <i class="fa-solid fa-arrows-rotate"></i>
-          <span>KFA 본선 조순위 실시간 동기화</span>
-        </button>
+        <div class="pt-1 flex flex-col sm:flex-row gap-2">
+          <a href="https://2026hwarang.netlify.app/" target="_blank" class="flex-1 py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-bold text-xs border border-emerald-500/40 flex items-center justify-center gap-1.5 active:scale-95 transition">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span>화랑대기 공식 홈페이지 조순위 확인</span>
+          </a>
+          <button type="button" onclick="syncFinalMatch('standings', this)" class="py-2.5 px-4 rounded-xl bg-[#1F2433] hover:bg-[#282F44] text-zinc-300 font-bold text-xs border border-[#2E364F] flex items-center justify-center gap-1.5 active:scale-95 transition">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            <span>새로고침</span>
+          </button>
+        </div>
       </div>
     </div>
-        <!-- ==================== FINAL PANE 5: 본선 다른조순위 (U11 / U12) ==================== -->
+
+
+        <!-- =========================================
+         MATCH PANE 10: 2차 리그 & 토너먼트 전체 순위 (pane-final-all_standings)
+         ========================================= -->
     <div id="pane-final-all_standings" class="match-pane space-y-4" style="display: none !important;">
       
       <!-- HEADER BANNER -->
       <div class="rounded-3xl bg-gradient-to-r from-red-950/70 via-[#161922] to-rose-950/70 p-4 border border-red-500/40 shadow-xl text-center space-y-1">
         <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-red-500/20 border border-red-400/40 text-[10px] font-black text-red-300">
-          <i class="fa-solid fa-trophy"></i> 2026 화랑대기 본선 다른조 순위
+          <i class="fa-solid fa-trophy"></i> 2026 화랑대기 2차 리그 & 토너먼트 전체 순위
         </span>
-        <h3 class="text-base font-black text-white">화랑대기 본선 다른조 순위 & 토너먼트</h3>
-        <p class="text-xs text-zinc-400">U-11 및 U-12 본선 조별 스플릿 리그 및 토너먼트 대진 순위</p>
+        <h3 class="text-base font-black text-white">2차 리그 & 토너먼트 전체 순위표</h3>
+        <p class="text-xs text-zinc-400">U-11 2차 리그 및 U-12 본선 토너먼트 대진 순위</p>
       </div>
 
       <!-- U11 / U12 SUB-CATEGORY SELECTOR -->
-      <div class="grid grid-cols-2 gap-2">
-        <button id="finalAllSubTab-U11" onclick="switchFinalAllCat('U11')" class="py-2.5 rounded-xl text-center font-black text-xs bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-lg shadow-red-500/30 transition active:scale-95 flex items-center justify-center gap-1.5">
-          <i class="fa-solid fa-trophy text-[11px]"></i>
-          <span>U-11 본선 다른조순위</span>
+      <div class="grid grid-cols-2 gap-1.5 sm:gap-2">
+        <button id="finalAllSubTab-U11" onclick="switchFinalAllCat('U11')" class="py-2 sm:py-2.5 px-2 rounded-xl text-center font-black text-[11px] sm:text-xs bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-lg shadow-red-500/30 transition active:scale-95 flex items-center justify-center gap-1 min-w-0 whitespace-nowrap">
+          <i class="fa-solid fa-trophy text-[10px] sm:text-[11px]"></i>
+          <span class="whitespace-nowrap">U-11 2차 다른조</span>
         </button>
-        <button id="finalAllSubTab-U12" onclick="switchFinalAllCat('U12')" class="py-2.5 rounded-xl text-center font-bold text-xs text-zinc-400 hover:text-white bg-[#161922] border border-[#282D3D] transition active:scale-95 flex items-center justify-center gap-1.5">
-          <i class="fa-solid fa-trophy text-[11px]"></i>
-          <span>U-12 본선 다른조순위</span>
+        <button id="finalAllSubTab-U12" onclick="switchFinalAllCat('U12')" class="py-2 sm:py-2.5 px-2 rounded-xl text-center font-bold text-[11px] sm:text-xs text-zinc-400 hover:text-white bg-[#161922] border border-[#282D3D] transition active:scale-95 flex items-center justify-center gap-1 min-w-0 whitespace-nowrap">
+          <i class="fa-solid fa-trophy text-[10px] sm:text-[11px]"></i>
+          <span class="whitespace-nowrap">U-12 본선 토너먼트</span>
         </button>
       </div>
 
-      <!-- NOTICE & PLACEHOLDER CARD -->
-      <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-red-500/40 text-center space-y-3.5 shadow-lg">
-        <div class="w-12 h-12 mx-auto rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl ring-1 ring-red-500/30">
-          <i class="fa-solid fa-sitemap"></i>
-        </div>
-        <div>
-          <div id="finalAllBadge" class="inline-block px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-300 text-[10px] font-black border border-red-500/30 mb-1.5">
-            U-11 본선 대진 편성 대기
+      <div id="finalAllStandings-U11" class="space-y-4">
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-red-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl ring-1 ring-red-500/30">
+            <i class="fa-solid fa-hourglass-half animate-pulse"></i>
           </div>
-          <h4 id="finalAllTitle" class="text-sm font-black text-white">U-11 본선 토너먼트 일정이 확정되면 실시간 업데이트됩니다.</h4>
-          <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
-            예선 조별리그 완료 후 KFA 본선 스플릿 조편성 및 토너먼트 대진 결과가 나오는 즉시 실시간 연동됩니다.
-          </p>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-400 text-[10px] font-black border border-red-500/30 mb-1.5">
+              2차 리그 다른조 순위 집계 대기
+            </div>
+            <h4 class="text-sm font-black text-white">2차 리그 조편성 발표 후 실시간 연동됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              화랑대기 공식 홈페이지(U11 2차리그)에서 발표되는 각 조별 순위와 경기 결과가 자동 반영됩니다.
+            </p>
+          </div>
+          <div class="pt-1">
+            <a href="https://2026hwarang.netlify.app/" target="_blank" class="w-full py-2.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-rose-300 font-bold text-xs border border-red-500/40 flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              <span>화랑대기 공식 홈페이지 확인</span>
+            </a>
+          </div>
         </div>
-        <button type="button" onclick="syncFinalMatch('all', this)" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-red-500 to-rose-600 text-white font-black text-xs flex items-center justify-center gap-2 shadow-lg shadow-red-500/30 active:scale-95 transition">
-          <i class="fa-solid fa-arrows-rotate"></i>
-          <span>KFA 본선 다른조 순위 전산망 동기화</span>
-        </button>
       </div>
 
+      <div id="finalAllStandings-U12" class="space-y-4 hidden">
+        <div class="rounded-2xl bg-[#161922] p-5 border border-dashed border-blue-500/40 text-center space-y-3.5 shadow-lg">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl ring-1 ring-blue-500/30">
+            <i class="fa-solid fa-trophy text-yellow-400"></i>
+          </div>
+          <div>
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-400 text-[10px] font-black border border-blue-500/30 mb-1.5">
+              U-12 본선 토너먼트 대진 대기
+            </div>
+            <h4 class="text-sm font-black text-white">예선 종료 후 토너먼트 대진표가 등록됩니다.</h4>
+            <p class="text-xs text-zinc-400 mt-1 leading-relaxed">
+              화랑대기 공식 홈페이지(U12 토너먼트)에서 발표되는 토너먼트 대진표가 실시간 연동됩니다.
+            </p>
+          </div>
+          <div class="pt-1">
+            <a href="https://2026hwarang.netlify.app/" target="_blank" class="w-full py-2.5 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 font-bold text-xs border border-blue-500/40 flex items-center justify-center gap-1.5 active:scale-95 transition">
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              <span>화랑대기 공식 홈페이지 확인</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     </section> <!-- /#tab-section Highlighted Core Container -->
@@ -4815,7 +4872,7 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
     const ALL_STAGE_KEYS = ['prelim', 'final'];
     const ALL_TAB_KEYS = ['u10', 'u11', 'u12', 'standings', 'all_standings'];
 
-    function switchStage(stage) {
+            function switchStage(stage) {
       currentStage = stage;
       
       const prelimBtn = document.getElementById('stageBtn-prelim');
@@ -4861,7 +4918,7 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
         }
         if (sectionBadge) {
           sectionBadge.className = 'text-[9px] bg-gradient-to-r from-red-500 to-rose-600 text-white font-black px-1.5 py-0.2 rounded-full shadow-sm';
-          sectionBadge.innerText = '본선 토너먼트';
+          sectionBadge.innerText = '2차리그/토너먼트';
         }
         if (sectionDot) {
           sectionDot.className = 'w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse ring-4 ring-red-400/20';
@@ -4870,7 +4927,11 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
         ALL_TAB_KEYS.forEach(t => {
           const badge = document.getElementById('tabBadge-' + t);
           if (badge) {
-            badge.innerText = '본선';
+            if (t === 'u12') {
+              badge.innerText = '토너먼트';
+            } else {
+              badge.innerText = '2차';
+            }
             badge.className = 'text-[8px] font-black text-red-200 leading-none mb-0.5';
           }
         });
@@ -4879,24 +4940,25 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
       renderActivePane();
     }
 
+
     function switchTab(tabKey) {
       currentTab = tabKey;
       renderActivePane();
     }
 
-    function renderActivePane() {
+        function renderActivePane() {
       // 1. Update Tab Button Styles (Yellow for Prelim, Red for Finals)
       ALL_TAB_KEYS.forEach(t => {
         const btn = document.getElementById('btn-' + t);
         if (btn) {
           if (t === currentTab) {
             if (currentStage === 'prelim') {
-              btn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow';
+              btn.className = 'tab-btn active py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-brand-gold text-black font-black shadow min-w-0';
             } else {
-              btn.className = 'tab-btn active py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-rose-600 text-white font-black shadow-lg shadow-red-500/30 ring-1 ring-red-400/50';
+              btn.className = 'tab-btn active py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center bg-gradient-to-r from-red-500 to-rose-600 text-white font-black shadow-lg shadow-red-500/30 ring-1 ring-red-400/50 min-w-0';
             }
           } else {
-            btn.className = 'tab-btn py-2 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold';
+            btn.className = 'tab-btn py-1.5 sm:py-2 px-0.5 rounded-xl text-center transition-all duration-200 flex flex-col items-center justify-center text-zinc-400 hover:text-white font-bold min-w-0';
           }
         }
       });
@@ -4917,6 +4979,7 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
         });
       });
     }
+
 
     function syncFinalMatch(type, btnEl) {
       const icon = btnEl ? btnEl.querySelector('i') : null;
