@@ -2762,8 +2762,7 @@ id="cheer-section" class="space-y-3">
       grp.teams.forEach(tName => {
         statsMap[tName] = {
           name: tName,
-          played: 0,
-          won: 0,
+          played: 0,          won: 0,
           drawn: 0,
           lost: 0,
           gf: 0,
@@ -4429,14 +4428,16 @@ const MATCH_REPORTS = {
     }
   },
 
+
+
   'u12_2': {
     age: 'U-12 대표',
     stage: '1차 예선 2경기',
     title: '경기 고양주니어 vs 세종 공공SC',
     date: '9월 8일 (화) 16:00',
     pitch: '경주시민B',
-    status: '경기중',
-    score: '2 : 0',
+    status: '경기종료 (승)',
+    score: '3 : 0',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '세종 공공SC', teamKey: 'sejong_sc', isGoyang: false },
     goyangFormation: '8인제 2-4-1 (지도자: 정상훈 감독, 백운찬/최정원 코치)',
@@ -4446,10 +4447,10 @@ const MATCH_REPORTS = {
       { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
     ],
     goyangStarters: [
-      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: true, heightWeight: '160cm/55kg', note: '선발 골키퍼 / 주장(C)' },
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: true, heightWeight: '160cm/55kg', note: '무실점 클린시트 선방 / 주장(C)' },
       { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '⚽ 1골 (44\') 쐐기골 / 선발 미드필더' },
+      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '⚽ 2골 멀티골! (7\', 14\') / 선발 미드필더' },
       { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
       { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: false, heightWeight: '132cm/30kg', note: '선발 공격' },
       { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '선발 공격' },
@@ -4488,9 +4489,27 @@ const MATCH_REPORTS = {
       { pos: 'FW', num: 9, name: '이준희', heightWeight: '145cm/35kg', note: '후보 공격' },
       { pos: 'FW', num: 10, name: '김도운', heightWeight: '140cm/30kg', note: '후보 공격' }
     ],
-    timeline: [],
-    stats: null
+    timeline: [
+      { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '경주시민B 구장에서 U-12 대표 1차 예선 2차전 시작' },
+      { min: "7'", type: 'goal', title: '⚽ 류도혁 선제골! (1:0)', desc: '류도혁(MF, No.77) 전반 7분 날카로운 슈팅으로 귀중한 선제골 작렬!' },
+      { min: "14'", type: 'goal', title: '⚽ 류도혁 추가골! (2:0)', desc: '류도혁(MF, No.77) 전반 14분 추가골을 터뜨리며 멀티골 폭발!' },
+      { min: "20'", type: 'sub', title: '🔄 선수 플라잉교체 투입', desc: '고양주니어 서한결(13), 정하율(14) / 세종공공SC 권시온(31), 원치율(2) 교체 투입' },
+      { min: "25'", type: 'whistle', title: '전반전 종료 (2:0 리드)', desc: '류도혁의 연속 멀티골로 고양주니어가 2:0으로 앞선 채 전반전 종료' },
+      { min: "26'", type: 'whistle', title: '후반전 킥오프', desc: '후반전 시작' },
+      { min: "31'", type: 'card', title: '🟨 세종 공공SC 김정헌 경고', desc: '세종 공공SC 김정헌(No.8) 반칙으로 경고(옐로카드) 부여' },
+      { min: "35'", type: 'sub', title: '🔄 선수 플라잉교체 투입', desc: '고양주니어 정서훈(3), 김래원(6), 김정후(17) / 세종공공SC 이준희(9), 최시완(4) 교체 투입' },
+      { min: "44'", type: 'goal', title: '⚽ 김동하 쐐기골! (3:0)', desc: '김동하(MF, No.10) 후반 44분 완벽한 쐐기골 작렬!' },
+      { min: "50'+0'", type: 'end', title: '🏁 경기 종료 (3:0 완승)', desc: '고양주니어FC U-12 3:0 무실점 대승! 류도혁 멀티골, 김동하 쐐기골 및 주장 백정훈 클린시트 선방!' }
+    ],
+    stats: {
+      shots: [14, 3],
+      onTarget: [10, 1],
+      corners: [6, 2],
+      fouls: [3, 4]
+    }
   }
+
+
     };
 
 function showLineupPendingToast() {
