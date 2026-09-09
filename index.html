@@ -3041,8 +3041,7 @@ id="cheer-section" class="space-y-3">
                       }
 
           // Update today's match card badges
-          document.querySelectorAll('.today-weather-badge').forEach(el => {
-            el.innerHTML = `<i class="${meta.icon}"></i> <span>${temp}°C ${meta.label}</span>`;
+          document.querySelectorAll('.today-weather-badge').forEach(el => {            el.innerHTML = `<i class="${meta.icon}"></i> <span>${temp}°C ${meta.label}</span>`;
           });
 
           if (isManual) {
@@ -4167,7 +4166,7 @@ const GOYANG_MATCH_MAP = {
 
         // 3. 전체 조순위 모달 갱신
         allStandingsRowsCache = rows;
-        if (!document.getElementById('allStandingsModal').classList.contains('hidden')) {
+        const smEl = document.getElementById('allStandingsModal'); if (smEl && !smEl.classList.contains('hidden')) {
           renderAllStandingsGroup();
         }
 
@@ -4988,8 +4987,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 서울 K리거 강용FC',
     date: '9월 9일 (수) 16:00',
     pitch: '알천3A',
-    status: '라이브',
-    score: '0 : 0',
+    status: '경기종료 (패)',
+    score: '1 : 4',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '서울 K리거 강용FC', teamKey: 'kangyong', isGoyang: false },
     goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독, 백운찬/최정원 코치)',
@@ -5005,14 +5004,14 @@ const MATCH_REPORTS = {
       { pos: 'MF', num: 6, name: '김래원', photo: PLAYER_PHOTOS['u12_6'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
       { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
       { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
-      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
+      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '⚽ 1골 (16\') / 선발 공격' },
       { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' }
     ],
     goyangSubs: [
-      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], isAce: false, isCaptain: false, heightWeight: '162cm/43kg', note: '후보 수비' },
+      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], isAce: false, isCaptain: false, heightWeight: '162cm/43kg', note: '🔄 플라잉교체 출전' },
       { pos: 'DF', num: 17, name: '김정후', photo: PLAYER_PHOTOS['u12_17'], isAce: false, isCaptain: false, heightWeight: '150cm/40kg', note: '후보 수비' },
-      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '후보 미드필더' },
-      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '후보 공격' },
+      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '🔄 플라잉교체 출전' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '🔄 플라잉교체 출전' },
       { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '후보 공격' }
     ],
     oppFormation: '8인제 포메이션 (감독: 강용 / 코치: 김영욱, 이종훈)',
@@ -5024,33 +5023,42 @@ const MATCH_REPORTS = {
     oppStarters: [
       { pos: 'GK', num: 1, name: '박현서', isCaptain: false, heightWeight: '146cm/32kg', note: '선발 골키퍼' },
       { pos: 'MF', num: 5, name: '박예담', isCaptain: false, heightWeight: '140cm/39kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 8, name: '정은결', isCaptain: false, heightWeight: '133cm/27kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 8, name: '정은결', isCaptain: false, heightWeight: '133cm/27kg', note: '⚽ 1골 (17\') / 선발 미드필더' },
       { pos: 'MF', num: 10, name: '김태건', isCaptain: true, heightWeight: '147cm/40kg', note: '주장(C) 선발' },
       { pos: 'MF', num: 19, name: '고태호', isCaptain: false, heightWeight: '132cm/32kg', note: '선발 미드필더' },
       { pos: 'MF', num: 21, name: '이서호', isCaptain: false, heightWeight: '143cm/35kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 99, name: '문정후', isCaptain: false, heightWeight: '146cm/40kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 99, name: '문정후', isCaptain: false, heightWeight: '146cm/40kg', note: '⚽ 1골 (27\') / 선발 미드필더' },
       { pos: 'FW', num: 14, name: '박시원', isCaptain: false, heightWeight: '149cm/38kg', note: '선발 공격' }
     ],
     oppSubs: [
       { pos: 'GK', num: 42, name: '김도현', heightWeight: '154cm/39kg', note: '후보 골키퍼' },
-      { pos: 'DF', num: 9, name: '이준원', heightWeight: '157cm/49kg', note: '후보 수비' },
+      { pos: 'DF', num: 9, name: '이준원', heightWeight: '157cm/49kg', note: '🔄 플라잉교체 투입' },
       { pos: 'DF', num: 13, name: '박주영', heightWeight: '145cm/43kg', note: '후보 수비' },
       { pos: 'DF', num: 16, name: '최광훈', heightWeight: '144cm/37kg', note: '후보 수비' },
       { pos: 'DF', num: 39, name: '황지안', heightWeight: '134cm/32kg', note: '후보 수비' },
       { pos: 'MF', num: 94, name: '신시우', heightWeight: '162cm/43kg', note: '후보 미드필더' },
-      { pos: 'FW', num: 11, name: '이서빈', heightWeight: '140cm/33kg', note: '후보 공격' },
-      { pos: 'FW', num: 15, name: '이승준', heightWeight: '142cm/37kg', note: '후보 공격' },
+      { pos: 'FW', num: 11, name: '이서빈', heightWeight: '140cm/33kg', note: '⚽ 2골 멀티골 (29\', 45\') / 플라잉교체 투입' },
+      { pos: 'FW', num: 15, name: '이승준', heightWeight: '142cm/37kg', note: '🔄 플라잉교체 투입' },
       { pos: 'FW', num: 17, name: '허선유', heightWeight: '138cm/30kg', note: '후보 공격' },
-      { pos: 'FW', num: 20, name: '박규현', heightWeight: '140cm/32kg', note: '후보 공격' }
+      { pos: 'FW', num: 20, name: '박규현', heightWeight: '140cm/32kg', note: '🔄 플라잉교체 투입' }
     ],
     timeline: [
-      { min: "0'", type: 'whistle', title: '경기 시작 전', desc: '알천3A 구장에서 U-12 대표 1차 예선 3차전 공식 라인업' }
+      { min: "0'", type: 'whistle', title: '전반전 킥오프', desc: '알천3A 구장에서 U-12 대표 3차전 공식 시작' },
+      { min: "1'~15'", type: 'sub', title: '🔄 양 팀 플라잉교체', desc: '고양주니어(정서훈, 김정훈, 안시후) / K리거강용(이승준, 이준원, 이서빈, 박규현) 플라잉교체 투입' },
+      { min: "16'", type: 'goal', title: '⚽ 맹현수 선제골! (1:0)', desc: '맹현수(FW, No.7) 감각적인 슈팅으로 선제골 작렬! 고양주니어 1:0 리드' },
+      { min: "17'", type: 'goal', title: '⚽ K리거강용 동점골 (1:1)', desc: '서울 K리거강용FC 정은결(8) 동점골 득점' },
+      { min: "27'", type: 'goal', title: '⚽ K리거강용 역전골 (1:2)', desc: '서울 K리거강용FC 문정후(99) 역전골 득점' },
+      { min: "29'", type: 'goal', title: '⚽ K리거강용 추가골 (1:3)', desc: '서울 K리거강용FC 이서빈(11) 추가골 득점' },
+      { min: "39'", type: 'card', title: '🟨 고양주니어 지도자 경고', desc: '고양주니어 백운찬 코치 지도자 경고' },
+      { min: "40'", type: 'card', title: '🟥 고양주니어 지도자 퇴장', desc: '고양주니어 백운찬 코치 지도자 경고 누적 퇴장 조치' },
+      { min: "45'", type: 'goal', title: '⚽ K리거강용 쐐기골 (1:4)', desc: '서울 K리거강용FC 이서빈(11) 멀티골 득점' },
+      { min: "50'+0", type: 'end', title: '🏁 경기 종료 (1:4 패)', desc: '치열한 승부 끝에 최종 스코어 1:4로 경기 종료' }
     ],
     stats: {
-      shots: [0, 0],
-      onTarget: [0, 0],
-      corners: [0, 0],
-      fouls: [0, 0]
+      shots: [5, 11],
+      onTarget: [3, 7],
+      corners: [2, 4],
+      fouls: [4, 3]
     }
   }
 
