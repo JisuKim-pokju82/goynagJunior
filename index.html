@@ -1082,8 +1082,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="showLineupPendingToast()" class="py-2 rounded-xl bg-[#181B26] hover:bg-[#202534] text-zinc-400 font-medium flex items-center justify-center gap-1.5 text-xs border border-[#282D3D] active:scale-95 transition cursor-pointer">
-              <i class="fa-solid fa-users-slash text-zinc-500 text-[11px]"></i> 라인업 대기
+            <button onclick="openLineupModal('u12_3')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업
             </button>
 
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%20%EC%95%8C%EC%B2%9C%EC%B6%95%EA%B5%AC%EC%9E%A5" onclick="openTmap('경주 알천축구장', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
@@ -2995,7 +2995,7 @@ id="cheer-section" class="space-y-3">
 
     function closeTeamModal() {
       document.getElementById('teamModal').classList.add('hidden');
-          }
+    }
 
     // Gyeongju Live Weather Integration (Open-Meteo API - 경북 경주시 위도 35.8562, 경도 129.2247)
     function getWeatherMeta(code) {
@@ -3031,7 +3031,7 @@ id="cheer-section" class="space-y-3">
           const descEl = document.getElementById('liveWeatherDesc');
           const iconEl = document.getElementById('liveWeatherIcon');
           const syncTimeEl = document.getElementById('weatherSyncTime');
-
+          
           if (tempEl) tempEl.innerText = `${temp}°C`;
           if (descEl) descEl.innerText = `체감 ${appTemp}°C · 습도 ${humidity}% · 풍속 ${wind}m/s · ${meta.label} (경주 알천구장)`;
           if (iconEl) iconEl.className = meta.icon + ' animate-pulse';
@@ -4966,6 +4966,78 @@ const MATCH_REPORTS = {
       onTarget: [10, 1],
       corners: [6, 2],
       fouls: [3, 4]
+    }
+  },
+
+  'u12_3': {
+    age: 'U-12 대표',
+    stage: '1차 예선 3경기',
+    title: '경기 고양주니어 vs 서울 K리거 강용FC',
+    date: '9월 9일 (수) 16:00',
+    pitch: '알천3A',
+    status: '경기전',
+    score: '0 : 0',
+    home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+    away: { name: '서울 K리거 강용FC', teamKey: 'kangyong', isGoyang: false },
+    goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독, 백운찬/최정원 코치)',
+    coaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangStarters: [
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], isAce: false, isCaptain: false, heightWeight: '160cm/55kg', note: '선발 골키퍼' },
+      { pos: 'DF', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], isAce: false, isCaptain: false, heightWeight: '140cm/40kg', note: '선발 수비' },
+      { pos: 'DF', num: 13, name: '서한결', photo: PLAYER_PHOTOS['u12_13'], isAce: false, isCaptain: false, heightWeight: '162cm/55kg', note: '선발 수비' },
+      { pos: 'MF', num: 6, name: '김래원', photo: PLAYER_PHOTOS['u12_6'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], isAce: false, isCaptain: false, heightWeight: '150cm/38kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isAce: false, isCaptain: false, heightWeight: '146cm/38kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], isAce: false, isCaptain: false, heightWeight: '155cm/40kg', note: '선발 공격' },
+      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], isAce: false, isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' }
+    ],
+    goyangSubs: [
+      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], isAce: false, isCaptain: false, heightWeight: '162cm/43kg', note: '후보 수비' },
+      { pos: 'DF', num: 17, name: '김정후', photo: PLAYER_PHOTOS['u12_17'], isAce: false, isCaptain: false, heightWeight: '150cm/40kg', note: '후보 수비' },
+      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], isAce: false, isCaptain: false, heightWeight: '146cm/43kg', note: '후보 미드필더' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], isAce: false, isCaptain: false, heightWeight: '147cm/43kg', note: '후보 공격' },
+      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], isAce: false, isCaptain: false, heightWeight: '143cm/33kg', note: '후보 공격' }
+    ],
+    oppFormation: '8인제 포메이션 (감독: 강용 / 코치: 김영욱, 이종훈)',
+    oppCoaches: [
+      { role: '감독', name: '강용' },
+      { role: '코치', name: '김영욱' },
+      { role: '코치', name: '이종훈' }
+    ],
+    oppStarters: [
+      { pos: 'GK', num: 1, name: '박현서', isCaptain: false, heightWeight: '146cm/32kg', note: '선발 골키퍼' },
+      { pos: 'MF', num: 5, name: '박예담', isCaptain: false, heightWeight: '140cm/39kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 8, name: '정은결', isCaptain: false, heightWeight: '133cm/27kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 10, name: '김태건', isCaptain: true, heightWeight: '147cm/40kg', note: '주장(C) 선발' },
+      { pos: 'MF', num: 19, name: '고태호', isCaptain: false, heightWeight: '132cm/32kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 21, name: '이서호', isCaptain: false, heightWeight: '143cm/35kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 99, name: '문정후', isCaptain: false, heightWeight: '146cm/40kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 14, name: '박시원', isCaptain: false, heightWeight: '149cm/38kg', note: '선발 공격' }
+    ],
+    oppSubs: [
+      { pos: 'GK', num: 42, name: '김도현', heightWeight: '154cm/39kg', note: '후보 골키퍼' },
+      { pos: 'DF', num: 9, name: '이준원', heightWeight: '157cm/49kg', note: '후보 수비' },
+      { pos: 'DF', num: 13, name: '박주영', heightWeight: '145cm/43kg', note: '후보 수비' },
+      { pos: 'DF', num: 16, name: '최광훈', heightWeight: '144cm/37kg', note: '후보 수비' },
+      { pos: 'DF', num: 39, name: '황지안', heightWeight: '134cm/32kg', note: '후보 수비' },
+      { pos: 'MF', num: 94, name: '신시우', heightWeight: '162cm/43kg', note: '후보 미드필더' },
+      { pos: 'FW', num: 11, name: '이서빈', heightWeight: '140cm/33kg', note: '후보 공격' },
+      { pos: 'FW', num: 15, name: '이승준', heightWeight: '142cm/37kg', note: '후보 공격' },
+      { pos: 'FW', num: 17, name: '허선유', heightWeight: '138cm/30kg', note: '후보 공격' },
+      { pos: 'FW', num: 20, name: '박규현', heightWeight: '140cm/32kg', note: '후보 공격' }
+    ],
+    timeline: [
+      { min: "0'", type: 'whistle', title: '경기 시작 전', desc: '알천3A 구장에서 U-12 대표 1차 예선 3차전 공식 라인업' }
+    ],
+    stats: {
+      shots: [0, 0],
+      onTarget: [0, 0],
+      corners: [0, 0],
+      fouls: [0, 0]
     }
   }
 
