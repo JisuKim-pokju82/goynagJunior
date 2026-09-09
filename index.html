@@ -1025,8 +1025,8 @@
               <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 9일 (수) 16:00</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-u12_3" class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 text-[10px] font-black border border-amber-500/40 shadow-sm">D-3</span>
-              <span id="status-u12_3" class="px-2 py-0.5 rounded-md bg-[#1E222E] text-emerald-400 text-[10px] font-bold border border-[#282D3D]">경기전</span>
+              <span id="dday-u12_3" class="hidden"></span>
+              <span id="status-u12_3" class="px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse">라이브</span>
             </div>
           </div>
           <!-- Row 2: Weather, Home/Away, Pitch -->
@@ -3031,14 +3031,14 @@ id="cheer-section" class="space-y-3">
           const descEl = document.getElementById('liveWeatherDesc');
           const iconEl = document.getElementById('liveWeatherIcon');
           const syncTimeEl = document.getElementById('weatherSyncTime');
-          
+
           if (tempEl) tempEl.innerText = `${temp}°C`;
           if (descEl) descEl.innerText = `체감 ${appTemp}°C · 습도 ${humidity}% · 풍속 ${wind}m/s · ${meta.label} (경주 알천구장)`;
           if (iconEl) iconEl.className = meta.icon + ' animate-pulse';
           if (syncTimeEl) {
             const now = new Date();
             syncTimeEl.innerText = '경주 현지 실시간 연동: ' + now.toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit' });
-          }
+                      }
 
           // Update today's match card badges
           document.querySelectorAll('.today-weather-badge').forEach(el => {
@@ -3423,12 +3423,23 @@ const GOYANG_MATCH_MAP = {
         const kickoff = new Date(sched.datetime);
         const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
 
-        if (statusEl && typeof MATCH_REPORTS !== 'undefined' && MATCH_REPORTS[key]) {
-          const repStatus = MATCH_REPORTS[key].status || '';
-          if (!repStatus.includes('종료')) {
-            if (now >= kickoff && now < finishTime) {
-              statusEl.textContent = '경기중';
-              statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse';
+        const resultEl = document.getElementById('result-' + key);
+
+        if (statusEl) {
+          if (now >= kickoff && now < finishTime) {
+            statusEl.textContent = '라이브';
+            statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse';
+            if (resultEl) {
+              resultEl.classList.add('hidden');
+              resultEl.textContent = '';
+            }
+          } else if (now >= finishTime) {
+            const rep = (typeof MATCH_REPORTS !== 'undefined') ? MATCH_REPORTS[key] : null;
+            if (rep && rep.status && rep.status.includes('종료')) {
+              statusEl.textContent = rep.status;
+            } else if (statusEl.textContent === '경기전' || statusEl.textContent === '라이브' || statusEl.textContent === '경기중') {
+              statusEl.textContent = '경기종료';
+              statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
             }
           }
         }
@@ -4042,11 +4053,7 @@ const GOYANG_MATCH_MAP = {
               let isLive = false;
               let isUpcoming = false;
 
-              if (r.status === 'fin') {
-                isFin = true;
-              } else if (r.status === 'live') {
-                isLive = true;
-              } else if (sched) {
+              if (sched) {
                 const kickoff = new Date(sched.datetime);
                 const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
                 if (now < kickoff) {
@@ -4056,13 +4063,17 @@ const GOYANG_MATCH_MAP = {
                 } else {
                   isFin = true;
                 }
+              } else if (r.status === 'fin') {
+                isFin = true;
+              } else if (r.status === 'live') {
+                isLive = true;
               } else {
                 isUpcoming = true;
               }
 
               let finStatusText = '경기종료';
               let isWin = false, isLoss = false, isDraw = false;
-              if (hasScore) {
+              if (hasScore && isFin) {
                 const gVal = parseInt(goyangScore, 10);
                 const oVal = parseInt(oppScore, 10);
                 if (gVal > oVal) { isWin = true; finStatusText = '경기종료 (승)'; }
@@ -4075,9 +4086,9 @@ const GOYANG_MATCH_MAP = {
                   MATCH_REPORTS[key].score = `${goyangScore} : ${oppScore}`;
                 }
                 if (isFin) {
-                  MATCH_REPORTS[key].status = finStatusText;
+                  MATCH_REPORTS[key].status = (hasScore && (isWin || isLoss || isDraw)) ? finStatusText : '경기종료';
                 } else if (isLive) {
-                  MATCH_REPORTS[key].status = '경기중';
+                  MATCH_REPORTS[key].status = '라이브';
                 } else {
                   MATCH_REPORTS[key].status = '경기전';
                 }
@@ -4110,15 +4121,17 @@ const GOYANG_MATCH_MAP = {
               const ddayEl = document.getElementById(`dday-${key}`);
               if (statusEl) {
                 if (isFin) {
-                  statusEl.textContent = finStatusText;
+                  statusEl.textContent = (hasScore && (isWin || isLoss || isDraw)) ? finStatusText : '경기종료';
                   statusEl.className = isWin
                     ? "px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm"
                     : (isLoss
                       ? "px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-400 text-[10px] font-bold border border-[#282D3D]"
-                      : "px-2 py-0.5 rounded-md bg-amber-950/70 text-amber-300 text-[10px] font-bold border border-amber-500/40");
+                      : (isDraw
+                        ? "px-2 py-0.5 rounded-md bg-amber-950/70 text-amber-300 text-[10px] font-bold border border-amber-500/40"
+                        : "px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700"));
                   if (ddayEl) ddayEl.classList.add('hidden');
                 } else if (isLive) {
-                  statusEl.textContent = '경기중';
+                  statusEl.textContent = '라이브';
                   statusEl.className = "px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse";
                   if (ddayEl) ddayEl.classList.add('hidden');
                 }
@@ -4975,7 +4988,7 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 서울 K리거 강용FC',
     date: '9월 9일 (수) 16:00',
     pitch: '알천3A',
-    status: '경기전',
+    status: '라이브',
     score: '0 : 0',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '서울 K리거 강용FC', teamKey: 'kangyong', isGoyang: false },
