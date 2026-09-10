@@ -3041,13 +3041,14 @@ id="cheer-section" class="space-y-3">
                       }
 
           // Update today's match card badges
-          document.querySelectorAll('.today-weather-badge').forEach(el => {            el.innerHTML = `<i class="${meta.icon}"></i> <span>${temp}°C ${meta.label}</span>`;
+          document.querySelectorAll('.today-weather-badge').forEach(el => {
+            el.innerHTML = `<i class="${meta.icon}"></i> <span>${temp}°C ${meta.label}</span>`;
           });
 
           if (isManual) {
             showToast(`경주 알천 현지 실시간 기상(${temp}°C, ${meta.label})을 연동했습니다! 🌤️`);
           }
-        }
+                  }
       } catch (err) {
         console.warn('Weather API Fallback:', err);
         const tempEl = document.getElementById('liveWeatherTemp');
@@ -3074,18 +3075,30 @@ id="cheer-section" class="space-y-3">
 
     // 고양주니어FC 2차대회(Stage 2) 10경기 공식 매치 매핑
 const GOYANG_MATCH_MAP = {
-      'u10_1': { cat: 'U11', match_no: 24, goyangIsHome: false, name: 'U-10 옐로우 1' },
-      'u10_2': { cat: 'U11', match_no: 124, goyangIsHome: true, name: 'U-10 옐로우 2' },
-      'u10_3': { cat: 'U11', match_no: 223, goyangIsHome: false, name: 'U-10 옐로우 3' },
+      // U-10 ?먮줈??(12議??덉꽑)
+      'u10_1': { cat: 'U11', phase: 'league', match_no: 24, goyangIsHome: false, name: 'U-10 ?먮줈??1李⑥쟾' },
+      'u10_2': { cat: 'U11', phase: 'league', match_no: 124, goyangIsHome: true, name: 'U-10 ?먮줈??2李⑥쟾' },
+      'u10_3': { cat: 'U11', phase: 'league', match_no: 223, goyangIsHome: false, name: 'U-10 ?먮줈??3李⑥쟾' },
 
-      'u11_1': { cat: 'U11', match_no: 22, goyangIsHome: false, name: 'U-11  1' },
-      'u11_2': { cat: 'U11', match_no: 122, goyangIsHome: true, name: 'U-11  2' },
-      'u11_3': { cat: 'U11', match_no: 221, goyangIsHome: false, name: 'U-11  3' },
+      // U-11 ???(11議??덉꽑)
+      'u11_1': { cat: 'U11', phase: 'league', match_no: 22, goyangIsHome: false, name: 'U-11 ???1李⑥쟾' },
+      'u11_2': { cat: 'U11', phase: 'league', match_no: 122, goyangIsHome: true, name: 'U-11 ???2李⑥쟾' },
+      'u11_3': { cat: 'U11', phase: 'league', match_no: 221, goyangIsHome: false, name: 'U-11 ???3李⑥쟾' },
 
-      'u12_1': { cat: 'U12', match_no: 87, goyangIsHome: false, name: 'U-12  1' },
-      'u12_2': { cat: 'U12', match_no: 167, goyangIsHome: true, name: 'U-12  2' },
-      'u12_3': { cat: 'U12', match_no: 248, goyangIsHome: false, name: 'U-12  3' },
-      'u12_4': { cat: 'U12', match_no: 328, goyangIsHome: true, name: 'U-12  4' }
+      // U-12 ???(4議??덉꽑)
+      'u12_1': { cat: 'U12', phase: 'league', match_no: 87, goyangIsHome: false, name: 'U-12 ???1李⑥쟾' },
+      'u12_2': { cat: 'U12', phase: 'league', match_no: 167, goyangIsHome: true, name: 'U-12 ???2李⑥쟾' },
+      'u12_3': { cat: 'U12', phase: 'league', match_no: 248, goyangIsHome: false, name: 'U-12 ???3李⑥쟾' },
+      'u12_4': { cat: 'U12', phase: 'league', match_no: 328, goyangIsHome: true, name: 'U-12 ???4李⑥쟾' },
+
+      // 2李?由ш렇 / ?좊꼫癒쇳듃 (Finals)
+      'final_u10_1': { cat: 'U11', phase: 'round2', match_no: 24, goyangIsHome: false, name: 'U-10 2李?1李⑥쟾' },
+      'final_u10_2': { cat: 'U11', phase: 'round2', match_no: 124, goyangIsHome: true, name: 'U-10 2李?2李⑥쟾' },
+      'final_u10_3': { cat: 'U11', phase: 'round2', match_no: 224, goyangIsHome: false, name: 'U-10 2李?3李⑥쟾' },
+
+      'final_u11_1': { cat: 'U11', phase: 'round2', match_no: 22, goyangIsHome: false, name: 'U-11 2李?1李⑥쟾' },
+      'final_u11_2': { cat: 'U11', phase: 'round2', match_no: 122, goyangIsHome: true, name: 'U-11 2李?2李⑥쟾' },
+      'final_u11_3': { cat: 'U11', phase: 'round2', match_no: 222, goyangIsHome: false, name: 'U-11 2李?3李⑥쟾' }
     };
 
     // All Standings Data & Engine
@@ -3929,7 +3942,7 @@ const GOYANG_MATCH_MAP = {
 
     function renderGroupStandings(rows) {
       const map = {};
-      rows.forEach(x => { map[x.cat + '|' + x.match_no] = x; });
+      rows.filter(x => !x.phase || x.phase === 'league').forEach(x => { map[x.cat + '|' + x.match_no] = x; });
       
       // 9월 7일 완료된 고양주니어 2차전 공식 결과 보정 (서버 지연 대비)
       if (!map['U11|124'] || map['U11|124'].home_score == null) {
@@ -4041,7 +4054,7 @@ const GOYANG_MATCH_MAP = {
         let updatedCount = 0;
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
-            if (mapping.cat === r.cat && mapping.match_no === r.match_no) {
+            if (mapping.cat === r.cat && mapping.match_no === r.match_no && (!mapping.phase || mapping.phase === r.phase)) {
               const goyangScore = mapping.goyangIsHome ? r.home_score : r.away_score;
               const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
               const hasScore = (goyangScore != null && oppScore != null && goyangScore !== '' && oppScore !== '');
