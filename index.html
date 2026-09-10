@@ -3167,7 +3167,7 @@ const GOYANG_MATCH_MAP = {
         if (currentAllStandingsCat === 'U11') {
           shortcutsContainer.innerHTML = 
             '<button onclick="onAllStandingsGroupSelectChange(\'11\')" class="px-2.5 py-1 rounded-lg text-[11px] font-black ' + (currentAllStandingsGroup === '11' ? 'bg-brand-gold text-black shadow' : 'bg-yellow-400/20 text-brand-gold border border-yellow-500/40') + ' active:scale-95 transition flex items-center gap-1 shrink-0">' +
-              '<span>⭐ 11조(고양 와인)</span>' +
+                          '<span>⭐ 11조(고양 와인)</span>' +
             '</button>' +
             '<button onclick="onAllStandingsGroupSelectChange(\'12\')" class="px-2.5 py-1 rounded-lg text-[11px] font-black ' + (currentAllStandingsGroup === '12' ? 'bg-brand-gold text-black shadow' : 'bg-yellow-400/20 text-brand-gold border border-yellow-500/40') + ' active:scale-95 transition flex items-center gap-1 shrink-0">' +
               '<span>⭐ 12조(고양 옐로우)</span>' +
@@ -5150,8 +5150,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 경기 이천유나이티드',
     date: '9월 10일 (목) 16:00',
     pitch: '알천4B',
-    status: '경기종료',
-    score: '0 : 0',
+    status: '종료 (패배)',
+    score: '1 : 4',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 이천유나이티드', teamKey: 'icheon_united', isGoyang: false },
     goyangFormation: '8인제 포메이션 (감독: 정상훈 / 코치: 최정원)',
@@ -5174,11 +5174,11 @@ const MATCH_REPORTS = {
       { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], heightWeight: '147cm/43kg', note: '선발 공격수' }
     ],
     goyangSubs: [
-      { pos: 'GK', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], heightWeight: '140cm/40kg', note: '후보 골키퍼' },
-      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], heightWeight: '162cm/43kg', note: '후보 수비수' },
-      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], heightWeight: '146cm/43kg', note: '후보 미드필더' },
-      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], heightWeight: '132cm/30kg', note: '후보 공격수' },
-      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], heightWeight: '143cm/33kg', note: '후보 공격수' }
+      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], heightWeight: '162cm/43kg', note: '⚽ 36\' 골! / 플라잉교체 투입', goals: 1 },
+      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], heightWeight: '146cm/43kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], heightWeight: '143cm/33kg', note: '플라잉교체 투입' },
+      { pos: 'GK', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], heightWeight: '140cm/40kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], heightWeight: '132cm/30kg', note: '후보 공격수' }
     ],
     oppFormation: '8인제 포메이션 (감독: 이진용 / 코치: 고정한)',
     oppCoaches: [
@@ -5190,24 +5190,38 @@ const MATCH_REPORTS = {
       { pos: 'DF', num: 4, name: '이건행', isCaptain: false, heightWeight: '140cm/43kg', note: '선발 수비수' },
       { pos: 'DF', num: 6, name: '박현준', isCaptain: false, heightWeight: '142cm/31kg', note: '선발 수비수' },
       { pos: 'MF', num: 8, name: '신마하', isCaptain: true, heightWeight: '142cm/34kg', note: '선발 주장(C)' },
-      { pos: 'MF', num: 10, name: '김진온', isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 10, name: '김진온', isCaptain: false, heightWeight: '134cm/28kg', note: '⚽ 2골 멀티골 (16\', 27\')', goals: 2 },
       { pos: 'FW', num: 5, name: 'HAN TAIMIN', isCaptain: false, heightWeight: '160cm/45kg', note: '선발 공격수' },
-      { pos: 'FW', num: 7, name: '이건우', isCaptain: false, heightWeight: '139cm/30kg', note: '선발 공격수' },
+      { pos: 'FW', num: 7, name: '이건우', isCaptain: false, heightWeight: '139cm/30kg', note: '⚽ 2골 멀티골 (45\', 46\') / 🟨 44\' 경고', goals: 2 },
       { pos: 'FW', num: 9, name: '송우빈', isCaptain: false, heightWeight: '139cm/30kg', note: '선발 공격수' }
     ],
     oppSubs: [
-      { pos: 'DF', num: 11, name: '박지명', heightWeight: '133cm/28kg', note: '후보 수비수' },
-      { pos: 'FW', num: 20, name: '김하준', heightWeight: '147cm/36kg', note: '후보 공격수' },
-      { pos: 'FW', num: 33, name: '김지환', heightWeight: '142cm/30kg', note: '후보 공격수' }
+      { pos: 'DF', num: 11, name: '박지명', heightWeight: '133cm/28kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 33, name: '김지환', heightWeight: '142cm/30kg', note: '플라잉교체 투입' },
+      { pos: 'FW', num: 20, name: '김하준', heightWeight: '147cm/36kg', note: '플라잉교체 투입' }
     ],
     timeline: [
-      { min: "0'", type: 'whistle', title: '경기 시작', desc: '알천4B 구장에서 U-12 예선 4차전 킥오프' }
+      { min: "0'", type: 'whistle', title: '경기 시작', desc: '알천4B 구장에서 U-12 예선 4차전 킥오프' },
+      { min: "16'", type: 'goal', title: '⚽ 경기 이천유나이티드 선제골 (0:1)', desc: '이천유나이티드 김진온(No.10) 16분 선제골 득점' },
+      { min: "20'", type: 'sub', title: '🔄 상대팀 플라잉교체', desc: '이천유나이티드 박지명(11), 김지환(33) 플라잉교체 투입' },
+      { min: "22'", type: 'sub', title: '🔄 고양주니어 플라잉교체', desc: '고양주니어 정하율(14) 플라잉교체 투입' },
+      { min: "24'", type: 'sub', title: '🔄 상대팀 플라잉교체', desc: '이천유나이티드 김하준(20) 플라잉교체 투입' },
+      { min: "25'", type: 'whistle', title: '전반전 종료 (0:1)', desc: '전반전 종료' },
+      { min: "26'", type: 'whistle', title: '후반전 킥오프', desc: '후반전 시작' },
+      { min: "27'", type: 'goal', title: '⚽ 경기 이천유나이티드 추가골 (0:2)', desc: '이천유나이티드 김진온(No.10) 27분 멀티골 득점' },
+      { min: "28'", type: 'sub', title: '🔄 고양주니어 연속 플라잉교체', desc: '고양주니어 안시후(4), 권이안(19), 정서훈(3) 플라잉교체 투입' },
+      { min: "36'", type: 'goal', title: '⚽ 고양주니어 정서훈 만회골! (1:2)', desc: '고양주니어 정서훈(DF, No.3) 교체 투입 후 36분 시원한 추격골 득점!' },
+      { min: "42'", type: 'card', title: '🟨 고양주니어 정상훈 감독 경고', desc: '고양주니어 정상훈 지도자 판정 항의로 경고 부여' },
+      { min: "44'", type: 'card', title: '🟨 경기 이천유나이티드 이건우 경고', desc: '이천유나이티드 이건우(No.7) 반칙으로 경고 부여' },
+      { min: "45'", type: 'goal', title: '⚽ 경기 이천유나이티드 추가골 (1:3)', desc: '이천유나이티드 이건우(No.7) 45분 득점' },
+      { min: "46'", type: 'goal', title: '⚽ 경기 이천유나이티드 쐐기골 (1:4)', desc: '이천유나이티드 이건우(No.7) 46분 연속 득점' },
+      { min: "50'+3", type: 'end', title: '🏁 경기 종료 (1:4)', desc: '고양주니어FC U-12 1:4로 예선 4차전 경기 종료' }
     ],
     stats: {
-      shots: [0, 0],
-      onTarget: [0, 0],
-      corners: [0, 0],
-      fouls: [0, 0]
+      shots: [6, 12],
+      onTarget: [3, 8],
+      corners: [2, 5],
+      fouls: [4, 5]
     }
   },
 
