@@ -1158,8 +1158,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="showLineupPendingToast()" class="py-2 rounded-xl bg-[#181B26] hover:bg-[#202534] text-zinc-400 font-medium flex items-center justify-center gap-1.5 text-xs border border-[#282D3D] active:scale-95 transition cursor-pointer">
-              <i class="fa-solid fa-users-slash text-zinc-500 text-[11px]"></i> 라인업 대기
+            <button onclick="openLineupModal('u12_4')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업
             </button>
 
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%20%EC%95%8C%EC%B2%9C%EC%B6%95%EA%B5%AC%EC%9E%A5" onclick="openTmap('경주 알천축구장', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
@@ -3126,7 +3126,7 @@ const GOYANG_MATCH_MAP = {
     // ==================== ALL STANDINGS ENGINE (U11: 50 groups, U12: 40 groups) ====================
     let currentAllStandingsCat = 'U11';
     let currentAllStandingsGroup = '11';
-        let currentFinalAllCat = 'U11';
+    let currentFinalAllCat = 'U11';
 
     function switchAllStandingsCat(cat) {
       currentAllStandingsCat = cat;
@@ -3160,7 +3160,7 @@ const GOYANG_MATCH_MAP = {
           const goyangLabel = hasGoyang ? ' [고양주니어 참가조]' : '';
           return '<option value="' + gNo + '">' + star + currentAllStandingsCat + ' ' + gNo + '조 (' + g.teams.length + '개팀)' + goyangLabel + '</option>';
         }).join('');
-        select.value = currentAllStandingsGroup;
+                select.value = currentAllStandingsGroup;
       }
 
       if (shortcutsContainer) {
@@ -3435,7 +3435,7 @@ const GOYANG_MATCH_MAP = {
       'u12_4': { date: '2026-09-10', time: '16:00', datetime: '2026-09-10T16:00:00+09:00', age: 'U-12 대표', label: '4차전' },
       'final_u10_1': { date: '2026-09-10', time: '12:00', datetime: '2026-09-10T12:00:00+09:00', age: 'U-10 옐로우 2차', label: '1차전' },
       'final_u10_2': { date: '2026-09-11', time: '12:00', datetime: '2026-09-11T12:00:00+09:00', age: 'U-10 옐로우 2차', label: '2차전' },
-      'final_u10_3': { date: '2026-09-12', time: '12:00', datetime: '2026-09-12T12:00:00+09:00', age: 'U-10 옐로우 2차', label: '3차전' },
+      'final_u10_3': { date: '2026-09-12', time: '12:00', datetime: '2026-09-12T12:00:00+09:00', age: 'U-10 예선 2차', label: '3차전' },
       'final_u11_1': { date: '2026-09-10', time: '10:00', datetime: '2026-09-10T10:00:00+09:00', age: 'U-11 와인 2차', label: '1차전' },
       'final_u11_2': { date: '2026-09-11', time: '10:00', datetime: '2026-09-11T10:00:00+09:00', age: 'U-11 와인 2차', label: '2차전' },
       'final_u11_3': { date: '2026-09-12', time: '10:00', datetime: '2026-09-12T10:00:00+09:00', age: 'U-11 와인 2차', label: '3차전' }
@@ -5144,6 +5144,73 @@ const MATCH_REPORTS = {
       fouls: [4, 3]
     }
   },
+  'u12_4': {
+    age: 'U-12 대표',
+    stage: '1차 예선 4차전',
+    title: '경기 고양주니어 vs 경기 이천유나이티드',
+    date: '9월 10일 (목) 16:00',
+    pitch: '알천4B',
+    status: '경기종료',
+    score: '0 : 0',
+    home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+    away: { name: '경기 이천유나이티드', teamKey: 'icheon_united', isGoyang: false },
+    goyangFormation: '8인제 포메이션 (감독: 정상훈 / 코치: 최정원)',
+    coaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangCoaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangStarters: [
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], heightWeight: '160cm/55kg', note: '선발 골키퍼' },
+      { pos: 'DF', num: 13, name: '서한결', photo: PLAYER_PHOTOS['u12_13'], heightWeight: '162cm/55kg', note: '선발 수비수' },
+      { pos: 'DF', num: 17, name: '김정후', photo: PLAYER_PHOTOS['u12_17'], heightWeight: '150cm/40kg', note: '선발 수비수' },
+      { pos: 'MF', num: 6, name: '김래원', photo: PLAYER_PHOTOS['u12_6'], heightWeight: '150cm/38kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], heightWeight: '150cm/38kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], isCaptain: true, heightWeight: '146cm/38kg', note: '선발 주장(C)' },
+      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], heightWeight: '155cm/40kg', note: '선발 공격수' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], heightWeight: '147cm/43kg', note: '선발 공격수' }
+    ],
+    goyangSubs: [
+      { pos: 'GK', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], heightWeight: '140cm/40kg', note: '후보 골키퍼' },
+      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], heightWeight: '162cm/43kg', note: '후보 수비수' },
+      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], heightWeight: '146cm/43kg', note: '후보 미드필더' },
+      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], heightWeight: '132cm/30kg', note: '후보 공격수' },
+      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], heightWeight: '143cm/33kg', note: '후보 공격수' }
+    ],
+    oppFormation: '8인제 포메이션 (감독: 이진용 / 코치: 고정한)',
+    oppCoaches: [
+      { role: '감독', name: '이진용' },
+      { role: '코치', name: '고정한' }
+    ],
+    oppStarters: [
+      { pos: 'GK', num: 1, name: '유호영', isCaptain: false, heightWeight: '135cm/47kg', note: '선발 골키퍼' },
+      { pos: 'DF', num: 4, name: '이건행', isCaptain: false, heightWeight: '140cm/43kg', note: '선발 수비수' },
+      { pos: 'DF', num: 6, name: '박현준', isCaptain: false, heightWeight: '142cm/31kg', note: '선발 수비수' },
+      { pos: 'MF', num: 8, name: '신마하', isCaptain: true, heightWeight: '142cm/34kg', note: '선발 주장(C)' },
+      { pos: 'MF', num: 10, name: '김진온', isCaptain: false, heightWeight: '134cm/28kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 5, name: 'HAN TAIMIN', isCaptain: false, heightWeight: '160cm/45kg', note: '선발 공격수' },
+      { pos: 'FW', num: 7, name: '이건우', isCaptain: false, heightWeight: '139cm/30kg', note: '선발 공격수' },
+      { pos: 'FW', num: 9, name: '송우빈', isCaptain: false, heightWeight: '139cm/30kg', note: '선발 공격수' }
+    ],
+    oppSubs: [
+      { pos: 'DF', num: 11, name: '박지명', heightWeight: '133cm/28kg', note: '후보 수비수' },
+      { pos: 'FW', num: 20, name: '김하준', heightWeight: '147cm/36kg', note: '후보 공격수' },
+      { pos: 'FW', num: 33, name: '김지환', heightWeight: '142cm/30kg', note: '후보 공격수' }
+    ],
+    timeline: [
+      { min: "0'", type: 'whistle', title: '경기 시작', desc: '알천4B 구장에서 U-12 예선 4차전 킥오프' }
+    ],
+    stats: {
+      shots: [0, 0],
+      onTarget: [0, 0],
+      corners: [0, 0],
+      fouls: [0, 0]
+    }
+  },
+
   'final_u11_1': {
     age: 'U-11 와인',
     stage: '2차 리그 1차전',
