@@ -3124,9 +3124,9 @@ const GOYANG_MATCH_MAP = {
     // ==================== ALL GROUPS DATA MASTER REGISTRY ====================
 
     // ==================== ALL STANDINGS ENGINE (U11: 50 groups, U12: 40 groups) ====================
-        let currentAllStandingsCat = 'U11';
+    let currentAllStandingsCat = 'U11';
     let currentAllStandingsGroup = '11';
-    let currentFinalAllCat = 'U11';
+        let currentFinalAllCat = 'U11';
 
     function switchAllStandingsCat(cat) {
       currentAllStandingsCat = cat;
@@ -5162,17 +5162,17 @@ const MATCH_REPORTS = {
     ],
     goyangStarters: [
       { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], heightWeight: '160cm/55kg', note: '선발 골키퍼' },
-      { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], heightWeight: '134cm/29kg', note: '⚽ 39\' 득점' },
-      { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], heightWeight: '135cm/33kg', note: '⚽ 6\' 득점' },
+      { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], heightWeight: '134cm/29kg', note: '⚽ 39\' 골' },
+      { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], heightWeight: '135cm/33kg', note: '⚽ 6\' 골' },
       { pos: 'DF', num: 17, name: '임명훈', photo: PLAYER_PHOTOS['u11_17'], heightWeight: '140cm/35kg', note: '선발 수비' },
-      { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], heightWeight: '152cm/40kg', note: '⚽⚽⚽ 해트트릭! (8\', 9\', 16\')' },
-      { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isCaptain: true, heightWeight: '153cm/42kg', note: '⚽⚽ 멀티골! (10\', 38\') / 주장(C)' },
+      { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], heightWeight: '152cm/40kg', note: '⚽⚽⚽ 해트트릭(3골)! (8\', 9\', 16\')' },
+      { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isCaptain: true, heightWeight: '153cm/42kg', note: '⚽⚽ 멀티골(2골)! (10\', 38\') / 주장(C)' },
       { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], heightWeight: '143cm/30kg', note: '⚽⚽⚽⚽ 포트트릭(4골)! (1\', 7\', 24\', 26\')' },
       { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], heightWeight: '130cm/25kg', note: '선발 공격' }
     ],
     goyangSubs: [
       { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], heightWeight: '146cm/35kg', note: '플라잉교체 투입' },
-      { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], heightWeight: '132cm/32kg', note: '⚽⚽⚽ 해트트릭! (20\', 31\', 40\') / 플라잉교체' }
+      { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], heightWeight: '132cm/32kg', note: '⚽⚽⚽ 해트트릭(3골)! (20\', 31\', 40\')' }
     ],
     oppFormation: '8인제 포메이션 (지도자: 오주호1 감독 / 박동렬 코치 / 조향기 코치 / 창원빈 코치)',
     oppCoaches: [
@@ -5494,7 +5494,7 @@ function renderLineupView(report) {
             </div>
             <div class="text-[9px] text-zinc-400 font-medium flex items-center gap-1">
               <span>${p.pos} · 선발</span>
-              ${p.note && p.note.includes('골') ? `<span class="text-amber-300 font-bold">${p.note}</span>` : ''}
+              ${p.note && (p.note.includes('⚽') || p.note.includes('골') || p.note.includes('득점') || p.note.includes('트릭')) ? `<span class="text-amber-300 font-bold">${p.note}</span>` : (p.note ? `<span class="text-zinc-400">${p.note}</span>` : '')}
             </div>
           </div>
         </div>
@@ -5524,7 +5524,7 @@ function renderLineupView(report) {
           <div class="min-w-0">
             <div class="font-bold text-zinc-200 text-[11px] truncate flex items-center gap-1">
               <span>${p.name}</span>
-              ${p.note && p.note.includes('골') ? `<span class="text-amber-300 font-bold text-[9px]">${p.note}</span>` : ''}
+              ${p.note && (p.note.includes('⚽') || p.note.includes('골') || p.note.includes('득점') || p.note.includes('트릭')) ? `<span class="text-amber-300 font-bold text-[9px]">${p.note}</span>` : (p.note ? `<span class="text-zinc-400 text-[9px]">${p.note}</span>` : '')}
             </div>
             <div class="text-[9px] text-zinc-500">${p.pos} · 교체 출전</div>
           </div>
@@ -5540,16 +5540,20 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
   let badgeStyle = isGoyang ? (p.isAce ? 'bg-brand-gold text-black ring-2 ring-yellow-200 shadow-[0_0_12px_rgba(255,210,0,0.8)]' : 'bg-yellow-400/90 text-black shadow') : 'bg-cyan-400 text-black shadow';
   if (isGk) badgeStyle = 'bg-emerald-300 text-black shadow';
 
+  const hasGoal = p.note && (p.note.includes('⚽') || p.note.includes('골') || p.note.includes('득점') || p.note.includes('트릭'));
+
   const avatarContent = p.photo ? `
     <div class="relative w-8 h-8 sm:w-9 sm:h-9">
       <img src="${p.photo}" alt="${p.name}" class="w-full h-full rounded-full object-cover border-2 ${p.isAce ? 'border-yellow-300 ring-2 ring-yellow-400/80 shadow-[0_0_10px_rgba(255,210,0,0.8)]' : isGk ? 'border-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]' : 'border-yellow-400/90 shadow'} transition transform group-hover:scale-105">
       <span class="absolute -bottom-1 -right-1 min-w-[16px] h-[16px] px-0.5 rounded-full ${p.isAce ? 'bg-brand-gold text-black' : isGk ? 'bg-emerald-500 text-black' : 'bg-black/90 text-yellow-300 border border-yellow-500/60'} font-num font-black text-[8px] flex items-center justify-center leading-none shadow">
         ${p.num}
       </span>
+      ${hasGoal ? '<span class="absolute -top-1 -right-1 text-[10px] leading-none drop-shadow">⚽</span>' : ''}
     </div>
   ` : `
-    <div class="w-8 h-8 rounded-full ${badgeStyle} flex items-center justify-center font-num font-black text-xs transition transform group-hover:scale-110">
+    <div class="relative w-8 h-8 rounded-full ${badgeStyle} flex items-center justify-center font-num font-black text-xs transition transform group-hover:scale-110">
       ${p.num}
+      ${hasGoal ? '<span class="absolute -top-1 -right-1 text-[10px] leading-none drop-shadow">⚽</span>' : ''}
     </div>
   `;
 
