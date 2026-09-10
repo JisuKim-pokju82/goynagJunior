@@ -3051,11 +3051,11 @@ id="cheer-section" class="space-y-3">
         }
       } catch (err) {
         console.warn('Weather API Fallback:', err);
-                const tempEl = document.getElementById('liveWeatherTemp');
+        const tempEl = document.getElementById('liveWeatherTemp');
         const descEl = document.getElementById('liveWeatherDesc');
         const syncTimeEl = document.getElementById('weatherSyncTime');
         if (tempEl && tempEl.innerText === '--°C') tempEl.innerText = '24°C';
-        if (descEl && descEl.innerText.includes('--')) descEl.innerText = '체감 25°C · 습도 78% · 풍속 5.6m/s · 구름조금 (경주 알천구장)';
+                if (descEl && descEl.innerText.includes('--')) descEl.innerText = '체감 25°C · 습도 78% · 풍속 5.6m/s · 구름조금 (경주 알천구장)';
         if (syncTimeEl) syncTimeEl.innerText = '기상청 예보 기준 연동';
         if (isManual) {
           showToast('기상청 실시간 관측 데이터를 최신화했습니다. 🌤️');
@@ -3428,7 +3428,7 @@ const GOYANG_MATCH_MAP = {
 
         if (key.startsWith('final_')) {
           if (statusEl) {
-            statusEl.textContent = '?吏??뺤젙 ?湲?;
+            statusEl.textContent = '대진 확정 대기';
             statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
           }
           if (scoreEl) scoreEl.textContent = 'VS';
@@ -4028,6 +4028,13 @@ const GOYANG_MATCH_MAP = {
           `;
         }).join('');
       });
+    }
+
+    function updateSyncTimestamp() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('ko-KR', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const el = document.getElementById('lastSyncTime');
+      if (el) el.innerText = '화랑대기 공식 실시간 연동: ' + timeStr + ' (45초 자동체크)';
     }
 
     async function syncAllMatches(isUserClick = false) {
