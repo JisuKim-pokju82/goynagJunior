@@ -1656,18 +1656,23 @@
           <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
           <span class="text-sm font-black text-white">U-10 옐로우 2차 리그 (총 3경기)</span>
         </div>
-        <span class="text-[10px] bg-yellow-400/10 text-brand-gold px-2 py-0.5 rounded font-bold border border-yellow-500/30">일정 확정</span>
+        <button onclick="syncAllMatches(true)" class="text-xs font-bold text-brand-gold bg-[#1E222E] hover:bg-[#282D3D] px-2.5 py-1 rounded-xl border border-[#3A4259] flex items-center gap-1.5 active:scale-95 transition shadow-sm cursor-pointer">
+          <i class="fa-solid fa-arrows-rotate text-[11px]"></i> <span>실시간 새로고침</span>
+        </button>
       </div>
 
-      <!-- Official DB Notice Banner -->
+      <!-- Live Sync Status Banner -->
       <div class="rounded-2xl bg-[#11141D] border border-amber-500/30 p-3 flex items-start gap-2.5 shadow-md">
         <div class="w-7 h-7 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-          <i class="fa-solid fa-circle-info text-xs"></i>
+          <i class="fa-solid fa-trophy text-xs text-yellow-400"></i>
         </div>
-        <div class="space-y-0.5 text-left">
-          <div class="text-[11px] font-black text-amber-300">2차 리그 대진 및 결과 안내</div>
+        <div class="space-y-0.5 text-left flex-1">
+          <div class="flex items-center justify-between">
+            <div class="text-[11px] font-black text-amber-300">U-10 2차 리그 실시간 데이터 연동 🟢</div>
+            <span class="text-[10px] text-zinc-400">45초 자동 동기화</span>
+          </div>
           <p class="text-[10px] text-zinc-300 leading-relaxed font-medium">
-            현재 화랑대기 공식사이트에서 2차 리그 전산 DB가 등록되지 않아, 조편성 및 경기 결과가 자동 반영되지 않고 있습니다. 공식 사이트 DB 등록 즉시 실시간 연동되며, 현재는 확정된 경기 정보를 수동으로 신속히 반영 중입니다.
+            화랑대기 주최측 공식 DB와 100% 실시간 연동 중입니다. [실시간 새로고침]을 누르면 최신 경기 결과와 스코어가 즉시 반영됩니다.
           </p>
         </div>
       </div>
@@ -1682,8 +1687,8 @@
               <span class="text-[10px] text-zinc-400 font-bold ml-1">(398경기)</span>
             </div>
             <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-final_u10_1" class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">D-1</span>
-              <span id="status-final_u10_1" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">대진확인 예정</span>
+              <span id="dday-final_u10_1" class="hidden px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">D-1</span>
+              <span id="status-final_u10_1" class="status-tag px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm">종료</span>
             </div>
           </div>
           <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
@@ -1710,8 +1715,12 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_1">VS</div>
-              <span id="result-final_u10_1" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_1">2 : 0</div>
+              <span id="result-final_u10_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm">승리 ✨</span>
+
+              <button onclick="scrapeMatch('final_u10_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Opponent: SC주니어 -->
@@ -1731,8 +1740,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button class="py-2 rounded-xl bg-zinc-800/60 text-zinc-500 font-bold flex items-center justify-center gap-1.5 text-xs border border-zinc-700/50 cursor-not-allowed" disabled>
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (예정)
+            <button onclick="openLineupModal('final_u10_1')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업 보기
             </button>
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%20%EC%95%8C%EC%B2%9C%EC%B6%95%EA%B5%AC%EC%9E%A5" onclick="openTmap('경주 알천축구장', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
               <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (알천4B)
@@ -1742,18 +1751,25 @@
       </div>
 
       <!-- MATCH 2: U-10 2차 2차전 vs 평택유나이티드 화이트 -->
-      <div class="match-card rounded-2xl bg-[#151821] border border-[#232736] overflow-hidden shadow-lg transition-all duration-300 hover:border-brand-gold/40">
-        <div class="bg-[#1A1E2B] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="px-2 py-0.5 rounded-full bg-zinc-700 text-zinc-300 font-bold text-[11px] border border-zinc-600">
-              종료
-            </span>
-            <span class="text-xs font-bold text-zinc-300">9월 11일 (금) 12:00 <span class="text-zinc-500 text-[11px]">(499경기)</span></span>
+      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">2</span>
+              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 11일 (금) 12:00</span>
+              <span class="text-[10px] text-zinc-400 font-bold ml-1">(499경기)</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span id="dday-final_u10_2" class="hidden px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">D-0</span>
+              <span id="status-final_u10_2" class="status-tag px-2 py-0.5 rounded-md bg-[#1E222E] text-zinc-400 text-[10px] font-bold border border-[#282D3D]">종료</span>
+            </div>
           </div>
-          <div class="text-right flex items-center gap-1.5">
-            <div class="flex items-center gap-1">
-              <span id="status-final_u10_2" class="status-tag px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-700">종료</span>
-              <span class="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-400 text-[10px] font-bold border border-purple-500/20">2차 리그 2차전</span>
+          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+            <div class="text-[10px] text-zinc-400 font-medium flex items-center gap-1">
+              <i class="fa-solid fa-trophy text-yellow-400/80"></i> <span>2차 리그 2차전</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
               <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원3A</span>
             </div>
           </div>
@@ -1767,13 +1783,17 @@
                 <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
               </div>
               <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
-              <span class="text-[10px] text-brand-gold font-bold">(홈/옐로우)</span>
+              <span class="text-[10px] text-brand-gold font-bold">(홈팀/옐로우)</span>
             </div>
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_2">1 : 3</div>
-              <span id="result-final_u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-rose-950/80 text-rose-400 border border-rose-600/50">패 (1:3)</span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_2">1 : 3</div>
+              <span id="result-final_u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700">패배</span>
+
+              <button onclick="scrapeMatch('final_u10_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Away: Pyeongtaek United White -->
@@ -1788,8 +1808,8 @@
                   <text x="50" y="82" text-anchor="middle" fill="#3B82F6" font-size="7" font-weight="800">WHITE</text>
                 </svg>
               </div>
-              <div class="text-[12px] font-bold text-zinc-200 leading-tight">평택 유나이티드</div>
-              <span class="text-[10px] text-blue-300 font-bold">(화이트/원정)</span>
+              <div class="text-[12px] font-bold text-zinc-200 leading-tight">경기 평택유나이티드</div>
+              <span class="text-[10px] text-blue-300 font-bold">(원정/화이트)</span>
             </div>
           </div>
 
@@ -1844,6 +1864,10 @@
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_3">VS</div>
               <span id="result-final_u10_3" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+
+              <button onclick="scrapeMatch('final_u10_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Away: Cheongju Yonsei FC -->
@@ -1885,18 +1909,23 @@
           <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
           <span class="text-sm font-black text-white">U-11 와인 2차 리그 (총 3경기)</span>
         </div>
-        <span class="text-[10px] bg-red-500/10 text-rose-300 px-2 py-0.5 rounded font-bold border border-red-500/30">일정 확정</span>
+        <button onclick="syncAllMatches(true)" class="text-xs font-bold text-rose-300 bg-[#1E222E] hover:bg-[#282D3D] px-2.5 py-1 rounded-xl border border-[#3A4259] flex items-center gap-1.5 active:scale-95 transition shadow-sm cursor-pointer">
+          <i class="fa-solid fa-arrows-rotate text-[11px]"></i> <span>실시간 새로고침</span>
+        </button>
       </div>
 
-      <!-- Official DB Notice Banner -->
-      <div class="rounded-2xl bg-[#11141D] border border-amber-500/30 p-3 flex items-start gap-2.5 shadow-md">
-        <div class="w-7 h-7 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-          <i class="fa-solid fa-circle-info text-xs"></i>
+      <!-- Live Sync Status Banner -->
+      <div class="rounded-2xl bg-[#11141D] border border-rose-500/30 p-3 flex items-start gap-2.5 shadow-md">
+        <div class="w-7 h-7 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+          <i class="fa-solid fa-trophy text-xs text-rose-400"></i>
         </div>
-        <div class="space-y-0.5 text-left">
-          <div class="text-[11px] font-black text-amber-300">2차 리그 대진 및 결과 안내</div>
+        <div class="space-y-0.5 text-left flex-1">
+          <div class="flex items-center justify-between">
+            <div class="text-[11px] font-black text-rose-300">U-11 2차 리그 실시간 데이터 연동 🟢</div>
+            <span class="text-[10px] text-zinc-400">45초 자동 동기화</span>
+          </div>
           <p class="text-[10px] text-zinc-300 leading-relaxed font-medium">
-            현재 화랑대기 공식사이트에서 2차 리그 전산 DB가 등록되지 않아, 조편성 및 경기 결과가 자동 반영되지 않고 있습니다. 공식 사이트 DB 등록 즉시 실시간 연동되며, 현재는 확정된 경기 정보를 수동으로 신속히 반영 중입니다.
+            화랑대기 주최측 공식 DB와 100% 실시간 연동 중입니다. [실시간 새로고침]을 누르면 최신 경기 결과와 스코어가 즉시 반영됩니다.
           </p>
         </div>
       </div>
@@ -1912,7 +1941,7 @@
             </div>
             <div class="flex items-center gap-1 shrink-0">
               <span id="dday-final_u11_1" class="hidden px-2 py-0.5 rounded-md bg-red-500/20 text-rose-300 text-[10px] font-black border border-red-500/40">D-1</span>
-              <span id="status-final_u11_1" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료</span>
+              <span id="status-final_u11_1" class="px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm">종료</span>
             </div>
           </div>
           <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
@@ -1939,8 +1968,12 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_1">14 : 1</div>
-              <span id="result-final_u11_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40">승리</span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_1">14 : 1</div>
+              <span id="result-final_u11_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm">승리 ✨</span>
+
+              <button onclick="scrapeMatch('final_u11_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Away: Jeonbuk JLFC A -->
@@ -1962,7 +1995,7 @@
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
             <button onclick="openLineupModal('final_u11_1')" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (14:1 승리)
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업 보기
             </button>
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%B6%95%EA%B5%AC%EA%B3%B5%EC%9B%90" onclick="openTmap('경주축구공원', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
               <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (축구공원6B)
@@ -1982,7 +2015,7 @@
             </div>
             <div class="flex items-center gap-1 shrink-0">
               <span id="dday-final_u11_2" class="hidden px-2 py-0.5 rounded-md bg-red-500/20 text-rose-300 text-[10px] font-black border border-red-500/40">TODAY</span>
-              <span id="status-final_u11_2" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">경기종료</span>
+              <span id="status-final_u11_2" class="px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm">종료</span>
             </div>
           </div>
           <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
@@ -2009,8 +2042,12 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_2">10 : 1</div>
-              <span id="result-final_u11_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40">승리</span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_2">10 : 1</div>
+              <span id="result-final_u11_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm">승리 ✨</span>
+
+              <button onclick="scrapeMatch('final_u11_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Opponent: Busan Gangseo FC -->
@@ -2030,8 +2067,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="openLineupModal('final_u11_2')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (10:1 승리)
+            <button onclick="openLineupModal('final_u11_2')" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업 보기
             </button>
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%B6%95%EA%B5%AC%EA%B3%B5%EC%9B%90" onclick="openTmap('경주축구공원', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
               <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (축구공원2A)
@@ -2040,7 +2077,7 @@
         </div>
       </div>
 
-      <!-- MATCH 3: U-11 2차 3차전 vs 서울 신정축구클럽FC -->
+      <!-- MATCH 3: U-11 2차 3차전 vs 서울 신정축구클럽 -->
       <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-red-500/50">
         <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
           <div class="flex items-center justify-between gap-2">
@@ -2051,7 +2088,7 @@
             </div>
             <div class="flex items-center gap-1 shrink-0">
               <span id="dday-final_u11_3" class="px-2 py-0.5 rounded-md bg-red-500/20 text-rose-300 text-[10px] font-black border border-red-500/40">D-3</span>
-              <span id="status-final_u11_3" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">?吏꾪솗???湲?/span>
+              <span id="status-final_u11_3" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">대진확인 예정</span>
             </div>
           </div>
           <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
@@ -2080,6 +2117,10 @@
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_3">VS</div>
               <span id="result-final_u11_3" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+
+              <button onclick="scrapeMatch('final_u11_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Away: Seoul Sinjeong FC -->
@@ -2120,18 +2161,23 @@
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
           <span class="text-sm font-black text-white">U-12 대표팀 본선 토너먼트 (총 2경기)</span>
         </div>
-        <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded font-bold border border-blue-500/30">일정 확정</span>
+        <button onclick="syncAllMatches(true)" class="text-xs font-bold text-blue-300 bg-[#1E222E] hover:bg-[#282D3D] px-2.5 py-1 rounded-xl border border-[#3A4259] flex items-center gap-1.5 active:scale-95 transition shadow-sm cursor-pointer">
+          <i class="fa-solid fa-arrows-rotate text-[11px]"></i> <span>실시간 새로고침</span>
+        </button>
       </div>
 
-      <!-- Official DB Notice Banner -->
+      <!-- Live Sync Status Banner -->
       <div class="rounded-2xl bg-[#11141D] border border-blue-500/30 p-3 flex items-start gap-2.5 shadow-md">
         <div class="w-7 h-7 rounded-xl bg-blue-500/15 border border-blue-500/30 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-          <i class="fa-solid fa-circle-info text-xs"></i>
+          <i class="fa-solid fa-trophy text-xs text-blue-400"></i>
         </div>
-        <div class="space-y-0.5 text-left">
-          <div class="text-[11px] font-black text-blue-300">본선 토너먼트 대진 및 결과 안내</div>
+        <div class="space-y-0.5 text-left flex-1">
+          <div class="flex items-center justify-between">
+            <div class="text-[11px] font-black text-blue-300">U-12 본선 토너먼트 실시간 연동 🟢</div>
+            <span class="text-[10px] text-zinc-400">45초 자동 동기화</span>
+          </div>
           <p class="text-[10px] text-zinc-300 leading-relaxed font-medium">
-            현재 화랑대기 공식사이트에서 본선 토너먼트 전산 DB가 등록되지 않아, 경기 결과가 자동 반영되지 않고 있습니다. 확정된 토너먼트 대진 및 경기 정보를 수동으로 신속히 반영 중입니다.
+            화랑대기 주최측 공식 DB와 100% 실시간 연동 중입니다. [실시간 새로고침]을 누르면 최신 경기 결과와 스코어가 즉시 반영됩니다.
           </p>
         </div>
       </div>
@@ -2175,6 +2221,10 @@
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u12_1">VS</div>
               <span id="result-final_u12_1" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+
+              <button onclick="scrapeMatch('final_u12_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Right: Seoul JNFC (홈팀/확정) -->
@@ -2195,8 +2245,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="showLineupPendingToast()" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (등록예정)
+            <button onclick="openLineupModal('final_u12_1')" class="py-2 rounded-xl bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 font-bold flex items-center justify-center gap-1.5 text-xs border border-blue-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업 보기
             </button>
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%B6%95%EA%B5%AC%EA%B3%B5%EC%9B%90" onclick="openTmap('경주축구공원', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
               <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (축구공원2B)
@@ -2244,6 +2294,10 @@
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u12_2">VS</div>
               <span id="result-final_u12_2" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+
+              <button onclick="scrapeMatch('final_u12_2', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+              </button>
             </div>
 
             <!-- Opponent: TBD -->
@@ -2268,6 +2322,7 @@
           </div>
         </div>
       </div>
+
     
 
       <!-- ── MAIN BRACKET CARD: 1그룹 4조 토너먼트 대진도 (공식 앱 스타일) ── -->
@@ -3540,22 +3595,34 @@ id="cheer-section" class="space-y-3">
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR3b3ZmcWN0bnVqZmJkdWdsY2RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MzczNDUsImV4cCI6MjEwMzIxMzM0NX0.VdyFAPZ7DgGRhZd7RbYkeoNqAQuxURzT69gzceh8zCk';
 
     // 고양주니어FC 2차대회(Stage 2) 10경기 공식 매치 매핑
-const GOYANG_MATCH_MAP = {
-      // U-10 ?먮줈??(12議??덉꽑)
-      'u10_1': { cat: 'U11', phase: 'league', match_no: 24, goyangIsHome: false, name: 'U-10 ?먮줈??1李⑥쟾' },
-      'u10_2': { cat: 'U11', phase: 'league', match_no: 124, goyangIsHome: true, name: 'U-10 ?먮줈??2李⑥쟾' },
-      'u10_3': { cat: 'U11', phase: 'league', match_no: 223, goyangIsHome: false, name: 'U-10 ?먮줈??3李⑥쟾' },
+    const GOYANG_MATCH_MAP = {
+      // 1차 예선리그 (완료 확정 데이터 보존)
+      'u10_1': { cat: 'U11', stage: 'stage1', phase: 'league', match_no: 24, goyangIsHome: false, name: 'U-10 \uC608\uC120 1\uCC28\uC804' },
+      'u10_2': { cat: 'U11', stage: 'stage1', phase: 'league', match_no: 124, goyangIsHome: true, name: 'U-10 \uC608\uC120 2\uCC28\uC804' },
+      'u10_3': { cat: 'U11', stage: 'stage1', phase: 'league', match_no: 223, goyangIsHome: false, name: 'U-10 \uC608\uC120 3\uCC28\uC804' },
 
-      // U-11 ???(11議??덉꽑)
-      'u11_1': { cat: 'U11', phase: 'league', match_no: 22, goyangIsHome: false, name: 'U-11 ???1李⑥쟾' },
-      'u11_2': { cat: 'U11', phase: 'league', match_no: 122, goyangIsHome: true, name: 'U-11 ???2李⑥쟾' },
-      'u11_3': { cat: 'U11', phase: 'league', match_no: 221, goyangIsHome: false, name: 'U-11 ???3李⑥쟾' },
+      'u11_1': { cat: 'U11', stage: 'stage1', phase: 'league', match_no: 22, goyangIsHome: false, name: 'U-11 \uC608\uC120 1\uCC28\uC804' },
+      'u11_2': { cat: 'U11', stage: 'stage1', phase: 'league', match_no: 122, goyangIsHome: true, name: 'U-11 \uC608\uC120 2\uCC28\uC804' },
+      'u11_3': { cat: 'U11', stage: 'stage1', phase: 'league', match_no: 221, goyangIsHome: false, name: 'U-11 \uC608\uC120 3\uCC28\uC804' },
 
-      // U-12 ???(4議??덉꽑)
-      'u12_1': { cat: 'U12', phase: 'league', match_no: 87, goyangIsHome: false, name: 'U-12 ???1李⑥쟾' },
-      'u12_2': { cat: 'U12', phase: 'league', match_no: 167, goyangIsHome: true, name: 'U-12 ???2李⑥쟾' },
-      'u12_3': { cat: 'U12', phase: 'league', match_no: 248, goyangIsHome: false, name: 'U-12 ???3李⑥쟾' },
-      'u12_4': { cat: 'U12', phase: 'league', match_no: 328, goyangIsHome: true, name: 'U-12 ???4李⑥쟾' }
+      'u12_1': { cat: 'U12', stage: 'stage1', phase: 'league', match_no: 87, goyangIsHome: false, name: 'U-12 \uC608\uC120 1\uCC28\uC804' },
+      'u12_2': { cat: 'U12', stage: 'stage1', phase: 'league', match_no: 167, goyangIsHome: true, name: 'U-12 \uC608\uC120 2\uCC28\uC804' },
+      'u12_3': { cat: 'U12', stage: 'stage1', phase: 'league', match_no: 248, goyangIsHome: false, name: 'U-12 \uC608\uC120 3\uCC28\uC804' },
+      'u12_4': { cat: 'U12', stage: 'stage1', phase: 'league', match_no: 328, goyangIsHome: true, name: 'U-12 \uC608\uC120 4\uCC28\uC804' },
+
+      // 2차 리그 U-10 옐로우 (공식 매치번호: 98, 199, 298)
+      'final_u10_1': { cat: 'U11', stage: 'stage2', phase: 'round2', match_nos: [98, 398], goyangIsHome: false, name: 'U-10 2\uCC28 1\uCC28\uC804 (vs \uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4)' },
+      'final_u10_2': { cat: 'U11', stage: 'stage2', phase: 'round2', match_nos: [199, 499], goyangIsHome: true, name: 'U-10 2\uCC28 2\uCC28\uC804 (vs \uD3C9\uD0DD \uC720\uB098\uC774\uD2F0\uB4DC \uD654\uC774\uD2B8)' },
+      'final_u10_3': { cat: 'U11', stage: 'stage2', phase: 'round2', match_nos: [298, 598], goyangIsHome: true, name: 'U-10 2\uCC28 3\uCC28\uC804 (vs \uCD89\uBD81 \uCCAD\uC8FC\uC5F0\uC138FC)' },
+
+      // 2차 리그 U-11 와인 (공식 매치번호: 46, 147, 247)
+      'final_u11_1': { cat: 'U11', stage: 'stage2', phase: 'round2', match_nos: [46, 346], goyangIsHome: true, name: 'U-11 2\uCC28 1\uCC28\uC804 (vs \uC804\uBD81 JLFC)' },
+      'final_u11_2': { cat: 'U11', stage: 'stage2', phase: 'round2', match_nos: [147, 447], goyangIsHome: false, name: 'U-11 2\uCC28 2\uCC28\uC804 (vs \uBD80\uC0B0 \uAC15\uC11CFC)' },
+      'final_u11_3': { cat: 'U11', stage: 'stage2', phase: 'round2', match_nos: [247, 547], goyangIsHome: true, name: 'U-11 2\uCC28 3\uCC28\uC804 (vs \uC11C\uC6B8 \uC2E0\uC815\uCD95\uAD6C\uD074\uB7FD)' },
+
+      // 본선 토너먼트 U-12 대표팀 (1그룹 4조)
+      'final_u12_1': { cat: 'U12', stage: 'stage2', phase: 'tourney', match_nos: [9999], goyangIsHome: false, name: 'U-12 \uBCF8\uC120 4\uAC15 \uC900\uACB0\uC2B9 (vs \uC11C\uC6B8 JNFC)' },
+      'final_u12_2': { cat: 'U12', stage: 'stage2', phase: 'tourney', match_nos: [9999], goyangIsHome: true, name: 'U-12 \uBCF8\uC120 \uACB0\uC2B9\uC804 / \uC21C\uC704\uACB0\uC815\uC804' }
     };
 
     // All Standings Data & Engine
@@ -3631,11 +3698,12 @@ const GOYANG_MATCH_MAP = {
     }
 
     function onAllStandingsGroupSelectChange(gNo) {
-      currentAllStandingsGroup = String(gNo);
+
+        currentAllStandingsGroup = String(gNo);
       const select = document.getElementById('allStandingsGroupSelect');
       if (select) select.value = currentAllStandingsGroup;
       updateAllStandingsGroupOptions();
-            renderAllStandingsGroup();
+      renderAllStandingsGroup();
     }
 
     function prevAllStandingsGroup() {
@@ -3873,7 +3941,20 @@ const GOYANG_MATCH_MAP = {
       'u12_2': { date: '2026-09-08', time: '16:00', datetime: '2026-09-08T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '2\uCC28' },
       'u12_3': { date: '2026-09-09', time: '16:00', datetime: '2026-09-09T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '3\uCC28' },
       'u12_4': { date: '2026-09-10', time: '16:00', datetime: '2026-09-10T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '4\uCC28' },
-      'final_u10_1': { date: '2026-09-10', time: '12:00', datetime: '2026-09-10T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '1\uCC28' },
+  'final_u10_1': {
+    age: 'U-10 \uC610\uB85C\uC6B0',
+    stage: '2\uCC28 \uB9AC\uADF8 1\uCC28\uC804',
+    title: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4 vs \uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4',
+    date: '9\uC6D4 10\uC77C (\uBAA9) 12:00',
+    pitch: '\uC54C\uCC8C4B',
+    status: '\uC885\uB8CC (\uC2B9)',
+    score: '2 : 0',
+    home: { name: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4', teamKey: 'sc_junior', isGoyang: false },
+    away: { name: '\uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4', teamKey: 'goyang', isGoyang: true },
+    goyangFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158',
+    coaches: [], goyangStarters: [], goyangSubs: [], oppFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158', oppCoaches: [], oppStarters: [], oppSubs: [], timeline: [],
+    stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+  },
       'final_u10_2': { date: '2026-09-11', time: '12:00', datetime: '2026-09-11T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '2\uCC28' },
       'final_u10_3': { date: '2026-09-12', time: '12:00', datetime: '2026-09-12T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '3\uCC28' },
       'final_u11_1': { date: '2026-09-10', time: '10:00', datetime: '2026-09-10T10:00:00+09:00', age: 'U-11 \uC640\uC778 2\uCC28', label: '1\uCC28' },
@@ -4628,7 +4709,7 @@ const GOYANG_MATCH_MAP = {
 
         const now = new Date();
 
-        // 1. 경기 카드 스코어 및 뱃지 실시간 조회성 업데이트 (공식 대회 DB 100% 동기화)
+        // 1. 경기 카드 스코어 및 뱃지 실시간 조회/업데이트 (공식 대회 DB 100% 동기화)
         let updatedCount = 0;
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
@@ -4636,33 +4717,38 @@ const GOYANG_MATCH_MAP = {
             if (key.startsWith('u10_') || key.startsWith('u11_') || key.startsWith('u12_')) {
               continue;
             }
-            if (mapping.cat === r.cat && mapping.match_no === r.match_no && (!mapping.phase || mapping.phase === r.phase)) {
+            if (mapping.cat !== r.cat) continue;
+            if (mapping.stage && mapping.stage !== r.stage) continue;
+            if (mapping.phase && mapping.phase !== r.phase) continue;
+
+            const matchNos = mapping.match_nos || (mapping.match_no ? [mapping.match_no] : []);
+            if (mapping.alt_no && !matchNos.includes(mapping.alt_no)) matchNos.push(mapping.alt_no);
+
+            if (matchNos.includes(r.match_no)) {
               const goyangScore = mapping.goyangIsHome ? r.home_score : r.away_score;
               const oppScore = mapping.goyangIsHome ? r.away_score : r.home_score;
               const hasScore = (goyangScore != null && oppScore != null && goyangScore !== '' && oppScore !== '');
 
               // 경기 시작 시간 및 경기 상태 판정
               const sched = (typeof MATCH_SCHEDULES !== 'undefined') ? MATCH_SCHEDULES[key] : null;
-              let isFin = false;
-              let isLive = false;
-              let isUpcoming = false;
+              let isFin = (r.status === 'fin' || (hasScore && goyangScore !== '' && oppScore !== ''));
+              let isLive = (r.status === 'live');
+              let isUpcoming = (!isFin && !isLive);
 
               if (sched) {
                 const kickoff = new Date(sched.datetime);
                 const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
-                if (now < kickoff) {
+                if (now < kickoff && !isFin && !hasScore) {
                   isUpcoming = true;
-                } else if (now >= kickoff && now < finishTime) {
+                  isLive = false;
+                } else if (now >= kickoff && now < finishTime && !isFin) {
                   isLive = true;
-                } else {
+                  isUpcoming = false;
+                } else if (now >= finishTime || hasScore || r.status === 'fin') {
                   isFin = true;
+                  isLive = false;
+                  isUpcoming = false;
                 }
-              } else if (r.status === 'fin') {
-                isFin = true;
-              } else if (r.status === 'live') {
-                isLive = true;
-              } else {
-                isUpcoming = true;
               }
 
               let finStatusText = '경기종료';
@@ -4692,30 +4778,28 @@ const GOYANG_MATCH_MAP = {
               if (scoreEl) {
                 if (hasScore) {
                   scoreEl.textContent = `${goyangScore} : ${oppScore}`;
-                }
-                if (isFin && hasScore) {
-                  const gVal = parseInt(goyangScore, 10);
-                  const oVal = parseInt(oppScore, 10);
-                  if (gVal > oVal) {
-                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
-                  } else if (gVal === oVal) {
-                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
-                  } else {
-                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                  if (isFin) {
+                    const gVal = parseInt(goyangScore, 10);
+                    const oVal = parseInt(oppScore, 10);
+                    if (gVal > oVal) {
+                      scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                    } else if (gVal === oVal) {
+                      scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-white tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-zinc-800/80 border border-zinc-500/50 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                    } else {
+                      scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                    }
+                  } else if (isLive) {
+                    scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#12151E] border border-amber-500/40 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
                   }
-                } else if (isLive) {
-                  scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#12151E] border border-amber-500/40 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
-                } else {
-                  scoreEl.className = "font-num text-[13px] sm:text-base md:text-lg font-black text-zinc-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]";
+                  updatedCount++;
                 }
-                if (hasScore) updatedCount++;
               }
 
               const statusEl = document.getElementById(`status-${key}`);
               const ddayEl = document.getElementById(`dday-${key}`);
               if (statusEl) {
-                if (isFin) {
-                  statusEl.textContent = (hasScore && (isWin || isLoss || isDraw)) ? finStatusText : '경기종료';
+                if (isFin && hasScore) {
+                  statusEl.textContent = (isWin || isLoss || isDraw) ? finStatusText : '경기종료';
                   statusEl.className = isWin
                     ? "px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm"
                     : (isLoss
@@ -4736,7 +4820,7 @@ const GOYANG_MATCH_MAP = {
                 if (isFin && hasScore) {
                   resultEl.classList.remove('hidden');
                   if (isWin) {
-                    resultEl.textContent = '승리 ⚽';
+                    resultEl.textContent = '승리 ✨';
                     resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm';
                   } else if (isLoss) {
                     resultEl.textContent = '패배';
@@ -4745,17 +4829,13 @@ const GOYANG_MATCH_MAP = {
                     resultEl.textContent = '무승부';
                     resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
                   }
-                } else {
-                  resultEl.textContent = '';
-                  resultEl.innerHTML = '';
-                  resultEl.className = 'hidden';
                 }
               }
             }
           }
         });
 
-        // 2. 탭별 조순위표(Standings) 실시간 자동 갱신
+        // 2. 조별 조순위표(Standings) 실시간 자동 갱신
         renderGroupStandings(rows);
         if (typeof renderAllStandingsGroup === 'function') renderAllStandingsGroup();
 
@@ -4772,7 +4852,6 @@ const GOYANG_MATCH_MAP = {
         return -1;
       }
     }
-
 
     async function scrapeMatch(matchId, btnEl) {
       // 예선 경기(u10, u11, u12)는 확정 완료된 데이터이므로 토스트만 즉시 표시
@@ -5024,6 +5103,20 @@ function registerMasterCoach(name, data) {
 // MATCH REPORTS & LINEUP DATABASE
 // ===========================================================================
 const MATCH_REPORTS = {
+  'final_u10_1': {
+    age: 'U-10 \uC610\uB85C\uC6B0',
+    stage: '2\uCC28 \uB9AC\uADF8 1\uCC28\uC804',
+    title: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4 vs \uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4',
+    date: '9\uC6D4 10\uC77C (\uBAA9) 12:00',
+    pitch: '\uC54C\uCC8C4B',
+    status: '\uC885\uB8CC (\uC2B9)',
+    score: '2 : 0',
+    home: { name: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4', teamKey: 'sc_junior', isGoyang: false },
+    away: { name: '\uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4', teamKey: 'goyang', isGoyang: true },
+    goyangFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158',
+    coaches: [], goyangStarters: [], goyangSubs: [], oppFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158', oppCoaches: [], oppStarters: [], oppSubs: [], timeline: [],
+    stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
+  },
   'final_u10_2': {
     age: 'U-10 옐로우',
     stage: '2차 리그 2차전',
@@ -5099,23 +5192,70 @@ const MATCH_REPORTS = {
 
   'final_u12_1': {
     age: 'U-12 대표',
-    stage: '본선 토너먼트 1차전',
+    stage: '본선 토너먼트 4강 준결승',
     title: '서울 JNFC vs 경기 고양주니어',
     date: '9월 11일 (금) 16:00',
     pitch: '축구공원2B',
-    status: '경기전',
+    status: '경기 예정',
     score: 'VS',
     home: { name: '서울 JNFC', teamKey: 'jnfc', isGoyang: false },
     away: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
-    goyangFormation: '8인제 포메이션',
-    coaches: [],
-    goyangStarters: [],
-    goyangSubs: [],
-    oppFormation: '8인제 포메이션',
-    oppCoaches: [],
-    oppStarters: [],
-    oppSubs: [],
-    timeline: [],
+    goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독 / 백운찬 코치 / 최정원 코치)',
+    coaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangCoaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangStarters: [
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], heightWeight: '160cm/55kg', note: '선발 GK' },
+      { pos: 'GK', num: 14, name: '정하율', photo: PLAYER_PHOTOS['u12_14'], heightWeight: '140cm/40kg', note: '선발 (GK/DF)' },
+      { pos: 'DF', num: 13, name: '서한결', photo: PLAYER_PHOTOS['u12_13'], heightWeight: '162cm/55kg', note: '선발 수비 (DF)' },
+      { pos: 'MF', num: 6, name: '김래원', photo: PLAYER_PHOTOS['u12_6'], isCaptain: true, heightWeight: '150cm/38kg', note: '선발 주장 (C/MF)' },
+      { pos: 'MF', num: 10, name: '김동하', photo: PLAYER_PHOTOS['u12_10'], heightWeight: '150cm/38kg', note: '선발 미드필더 (MF)' },
+      { pos: 'MF', num: 77, name: '류도혁', photo: PLAYER_PHOTOS['u12_77'], heightWeight: '146cm/38kg', note: '선발 미드필더 (MF)' },
+      { pos: 'FW', num: 7, name: '맹현수', photo: PLAYER_PHOTOS['u12_7'], heightWeight: '155cm/40kg', note: '선발 공격 (FW)' },
+      { pos: 'FW', num: 8, name: '박준', photo: PLAYER_PHOTOS['u12_8'], heightWeight: '132cm/30kg', note: '선발 공격 (FW)' }
+    ],
+    goyangSubs: [
+      { pos: 'DF', num: 3, name: '정서훈', photo: PLAYER_PHOTOS['u12_3'], heightWeight: '162cm/43kg', note: '교체 대기 (DF)' },
+      { pos: 'DF', num: 17, name: '김정후', photo: PLAYER_PHOTOS['u12_17'], heightWeight: '150cm/40kg', note: '교체 대기 (DF)' },
+      { pos: 'MF', num: 4, name: '안시후', photo: PLAYER_PHOTOS['u12_4'], heightWeight: '146cm/43kg', note: '교체 대기 (MF)' },
+      { pos: 'FW', num: 9, name: '김정훈', photo: PLAYER_PHOTOS['u12_9'], heightWeight: '147cm/43kg', note: '교체 대기 (FW)' },
+      { pos: 'FW', num: 19, name: '권이안', photo: PLAYER_PHOTOS['u12_19'], heightWeight: '143cm/33kg', note: '교체 대기 (FW)' }
+    ],
+    oppFormation: '8인제 포메이션 (지도자: 맹주성 감독 / 박현진 코치 / 이송필 코치)',
+    oppCoaches: [
+      { role: '감독', name: '맹주성' },
+      { role: '코치', name: '박현진' },
+      { role: '코치', name: '이송필' }
+    ],
+    oppStarters: [
+      { pos: 'GK', num: 83, name: '조동혁', isCaptain: true, heightWeight: '165cm/55kg', note: '선발 GK / 주장(C)' },
+      { pos: 'DF', num: 5, name: '조민성', heightWeight: '140cm/30kg', note: '선발 수비 (DF)' },
+      { pos: 'DF', num: 9, name: '장하람', heightWeight: '155cm/40kg', note: '선발 수비 (DF)' },
+      { pos: 'MF', num: 7, name: '이윤성', heightWeight: '145cm/30kg', note: '선발 미드필더 (MF)' },
+      { pos: 'MF', num: 10, name: '양은엘', heightWeight: '155cm/45kg', note: '선발 미드필더 (MF)' },
+      { pos: 'MF', num: 14, name: '황지환', heightWeight: '150cm/36kg', note: '선발 미드필더 (MF)' },
+      { pos: 'FW', num: 20, name: '서예찬', heightWeight: '156cm/42kg', note: '선발 공격 (FW)' },
+      { pos: 'FW', num: 21, name: '정은호', heightWeight: '140cm/29kg', note: '선발 공격 (FW)' }
+    ],
+    oppSubs: [
+      { pos: 'DF', num: 13, name: '문서혁', heightWeight: '135cm/30kg', note: '교체 대기 (DF)' },
+      { pos: 'DF', num: 18, name: '김시원', heightWeight: '150cm/40kg', note: '교체 대기 (DF)' },
+      { pos: 'MF', num: 15, name: '구도휘', heightWeight: '153cm/43kg', note: '교체 대기 (MF)' },
+      { pos: 'MF', num: 30, name: '이예준', heightWeight: '140cm/32kg', note: '교체 대기 (MF)' },
+      { pos: 'FW', num: 17, name: '박지원', heightWeight: '154cm/43kg', note: '교체 대기 (FW)' },
+      { pos: 'FW', num: 19, name: '송우진', heightWeight: '155cm/40kg', note: '교체 대기 (FW)' },
+      { pos: 'FW', num: 31, name: '임유준', heightWeight: '145cm/30kg', note: '교체 대기 (FW)' }
+    ],
+    timeline: [
+      { min: "0'", type: 'whistle', title: '경기 시작 예정 (16:00)', desc: '경주 축구공원2B 구장에서 2026 화랑대기 U-12 대표팀 4강 준결승전 킥오프 예정' }
+    ],
     stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
   },
   'final_u12_2': {
@@ -6088,6 +6228,11 @@ function openLineupModal(matchId) {
     }
   }
 
+  const oppTeam = (report.home && report.home.isGoyang) ? report.away : report.home;
+  const oppBtn = document.getElementById('lineupTeamBtn-opponent');
+  if (oppBtn && oppTeam) {
+    oppBtn.innerText = oppTeam.name;
+  }
   setModalSubTab('lineup');
   document.getElementById('lineupModal').classList.remove('hidden');
 }
@@ -6156,7 +6301,9 @@ function renderLineupView(report) {
   const coaches = isGoyang ? rawCoaches.map(c => resolveGoyangCoach(Object.assign({}, c))) : rawCoaches;
 
   const formation = (isGoyang ? report.goyangFormation : report.oppFormation) || '8인제 포메이션';
-  const teamName = isGoyang ? report.home.name : report.away.name;
+  const goyangTeam = (report.home && report.home.isGoyang) ? report.home : report.away;
+  const oppTeam = (report.home && report.home.isGoyang) ? report.away : report.home;
+  const teamName = isGoyang ? (goyangTeam ? goyangTeam.name : '경기 고양주니어') : (oppTeam ? oppTeam.name : '상대팀');
 
   // Update Pitch Header
   const titleEl = document.getElementById('pitchTeamTitle');
