@@ -312,7 +312,7 @@
         <div class="h-8 px-2.5 rounded-full bg-[#161922] border border-[#282D3D] flex items-center gap-1.5 text-zinc-400 text-[11px] font-bold shadow-sm">
           <i class="fa-solid fa-users text-brand-gold text-[10px]"></i>
           <span class="text-[10px] text-zinc-400">오늘</span>
-          <span id="todayVisitorCount" class="font-num text-white font-black text-xs">...</span>
+          <span id="todayVisitorCount" class="font-num text-white font-black text-xs">305</span>
           <span class="text-[9px] text-zinc-500">명</span>
         </div>
         <button onclick="shareKakaoOrUrl()" class="h-8 px-3 rounded-full bg-[#1E222E] hover:bg-[#282D3D] text-brand-gold text-xs font-bold flex items-center gap-1.5 transition active:scale-95 border border-[#3A4259]">
@@ -994,7 +994,7 @@
     </div>
 
     <!-- ==================== PRELIM PANE 3: U-12 (대표팀) ==================== -->
-    <div id="pane-prelim-u12" class="match-pane active space-y-3.5" style="display: block !important;">
+    <div id="pane-prelim-u12" class="match-pane space-y-3.5" style="display: none !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
@@ -2155,7 +2155,7 @@
         <!-- =========================================
          MATCH PANE 8: U-12 본선 토너먼트 (pane-final-u12)
          ========================================= -->
-    <div id="pane-final-u12" class="match-pane space-y-3.5" style="display: none !important;">
+    <div id="pane-final-u12" class="match-pane active space-y-3.5" style="display: block !important;">
       <div class="flex items-center justify-between px-1">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
@@ -2255,7 +2255,7 @@
         </div>
       </div>
 
-      <!-- MATCH 2: U-12 3위조 토너먼트 결승전 vs 세종 세종시티FC -->
+      <!-- MATCH 2: U-12 3위조 토너먼트 결승전 vs 서울 GWFC -->
       <div class="rounded-2xl bg-gradient-to-b from-[#1a1f2e] to-[#161922] border-2 border-amber-500/60 overflow-hidden shadow-xl transition hover:border-amber-400">
         <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
           <div class="flex items-center justify-between gap-2">
@@ -2302,18 +2302,18 @@
 
             <!-- Opponent: Sejong City FC (Away) -->
             <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#1c1917] border-2 border-amber-500 p-1 shadow-md flex items-center justify-center cursor-pointer" onclick="openTeamModal('sejong_city')">
+              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#064E3B] border-2 border-emerald-400 p-1 shadow-md flex items-center justify-center cursor-pointer" onclick="openTeamModal('gwfc')">
                 <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#78350F" stroke="#F59E0B" stroke-width="3"/>
+                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#064E3B" stroke="#10B981" stroke-width="3"/>
                   <path d="M50 14 L82 28 L82 56 C82 72 50 86 50 86 C50 86 18 72 18 56 L18 28 Z" fill="#FFFFFF"/>
-                  <circle cx="50" cy="46" r="16" fill="#78350F" stroke="#FCD34D" stroke-width="2"/>
+                  <circle cx="50" cy="46" r="16" fill="#FFFFFF" stroke="#047857" stroke-width="2"/>
                   <polygon points="50,36 54,44 63,44 56,50 58,58 50,53 42,58 44,50 37,44 46,44" fill="#F59E0B"/>
-                  <text x="50" y="73" text-anchor="middle" fill="#78350F" font-size="8" font-weight="900">세종시티FC</text>
-                  <text x="50" y="82" text-anchor="middle" fill="#D97706" font-size="7" font-weight="800">SEJONG</text>
+                  <text x="50" y="73" text-anchor="middle" fill="#78350F" font-size="8" font-weight="900">GWFC</text>
+                  <text x="50" y="82" text-anchor="middle" fill="#D97706" font-size="7" font-weight="800">SEOUL</text>
                 </svg>
               </div>
-              <div class="text-[12px] font-bold text-zinc-200 leading-tight">세종 세종시티FC</div>
-              <span class="text-[10px] text-amber-400 font-bold">(결승전 상대)</span>
+              <div class="text-[12px] font-bold text-emerald-300 font-black leading-tight">서울 GWFC</div>
+              <span class="text-[10px] text-amber-400 font-bold">(결승전 상대/어웨이)</span>
             </div>
           </div>
 
@@ -2366,11 +2366,11 @@
                 <div class="tn-pair">
                   <div class="tn-team opacity-70">
                     <span class="tn-seed">준결1</span>
-                    <span class="tn-name truncate text-zinc-400">서울GWFCU12</span>
+                    <span class="tn-name truncate font-bold text-emerald-300">서울GWFCU12</span>
                   </div>
                   <div class="tn-team border-amber-500/60 bg-amber-500/10">
                     <span class="tn-seed bg-amber-500 text-black font-black">승</span>
-                    <span class="tn-name truncate font-bold text-amber-300">세종세종시티FCU12</span>
+                    <span class="tn-name truncate text-zinc-400">세종세종시티FCU12</span>
                   </div>
                 </div>
 
@@ -2395,7 +2395,7 @@
                 <div class="tn-slot">
                   <div class="tn-team border-amber-500/60 bg-amber-500/15">
                     <span class="tn-seed bg-amber-500 text-black font-black">결승</span>
-                    <span class="tn-name text-amber-200 font-bold truncate">세종세종시티FCU12</span>
+                    <span class="tn-name text-emerald-200 font-bold truncate">서울GWFCU12</span>
                   </div>
                 </div>
                 <div class="tn-slot">
@@ -3401,6 +3401,11 @@ id="cheer-section" class="space-y-3">
 
     // Team Information Map for Interactive Modal
     const TEAMS_INFO = {
+    gwfc: {
+      name: '서울 GWFC U-12',
+      desc: '서울특별시 유소년 명문 축구클럽 (3위조 결승 진출).',
+      html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#064E3B" stroke="#10B981" stroke-width="3"/><circle cx="50" cy="46" r="18" fill="#FFFFFF" stroke="#047857" stroke-width="2"/><polygon points="50,34 54,43 64,43 56,49 59,58 50,52 41,58 44,49 36,43 46,43" fill="#F59E0B"/><text x="50" y="74" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">GWFC</text><text x="50" y="82" text-anchor="middle" fill="#34D399" font-size="7" font-weight="800">SEOUL</text></svg>`
+    },
       goyang: {
         name: '경기 고양주니어 FC',
         desc: '고양시 NO.1 유소년 축구교실 (중산점). 2026 화랑대기 U-10, U-11, U-12 참가!',
@@ -3629,7 +3634,7 @@ id="cheer-section" class="space-y-3">
 
       // 본선 토너먼트 U-12 대표팀 (1그룹 4조)
       'final_u12_1': { cat: 'U12', stage: 'stage2', phase: 'tourney', match_nos: [9999], goyangIsHome: false, name: 'U-12 3위조 4강 준결승 (vs 서울 JNFC)' },
-      'final_u12_2': { cat: 'U12', stage: 'stage2', phase: 'tourney', match_nos: [9999], goyangIsHome: true, name: 'U-12 3위조 결승전 (vs 세종 세종시티FC)' }
+      'final_u12_2': { cat: 'U12', stage: 'stage2', phase: 'tourney', match_nos: [9999], goyangIsHome: true, name: 'U-12 3위조 결승전 (vs 서울 GWFC)' }
     };
 
     // All Standings Data & Engine
@@ -3693,7 +3698,8 @@ id="cheer-section" class="space-y-3">
         } else {
           shortcutsContainer.innerHTML = 
             '<button onclick="onAllStandingsGroupSelectChange(\'4\')" class="px-2.5 py-1 rounded-lg text-[11px] font-black ' + (currentAllStandingsGroup === '4' ? 'bg-brand-gold text-black shadow' : 'bg-yellow-400/20 text-brand-gold border border-yellow-500/40') + ' active:scale-95 transition flex items-center gap-1 shrink-0">' +
-              '<span>⭐ 4조(고양 대표)</span>' +
+
+                          '<span>⭐ 4조(고양 대표)</span>' +
             '</button>' +
             '<button onclick="onAllStandingsGroupSelectChange(\'1\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">1조</button>' +
             '<button onclick="onAllStandingsGroupSelectChange(\'10\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">10조</button>' +
@@ -4145,7 +4151,7 @@ id="cheer-section" class="space-y-3">
       const visitorEl = document.getElementById('todayVisitorCount');
 
       // 1. Initial immediate display from local storage cache
-      let cachedCount = parseInt(localStorage.getItem('goyang_visitor_count_' + todayKey) || '142', 10);
+      let cachedCount = parseInt(localStorage.getItem('goyang_visitor_count_' + todayKey) || '305', 10);
       if (visitorEl) visitorEl.innerText = cachedCount.toLocaleString();
 
       // 2. Debounced increment check (15s per session or new tab/reload)
@@ -4163,7 +4169,7 @@ id="cheer-section" class="space-y-3">
           }
 
           if (typeof serverCount !== 'number' || isNaN(serverCount) || serverCount < 140) {
-            serverCount = 142;
+            serverCount = 305;
           }
 
           if (doIncrement) {
@@ -5261,13 +5267,13 @@ const MATCH_REPORTS = {
   'final_u12_2': {
     age: 'U-12 대표',
     stage: '3위조 토너먼트 결승전',
-    title: '경기 고양주니어 vs 세종 세종시티FC',
+    title: '경기 고양주니어 vs 서울 GWFC',
     date: '9월 12일 (토) 16:00',
     pitch: '경주축구공원',
     status: '결승전 예정',
     score: 'VS',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
-    away: { name: '세종 세종시티FC', teamKey: 'sejong_city', isGoyang: false },
+    away: { name: '서울 GWFC', teamKey: 'gwfc', isGoyang: false },
     goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독 / 백운찬 코치 / 최정원 코치)',
     coaches: [
       { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
@@ -5301,7 +5307,7 @@ const MATCH_REPORTS = {
     oppStarters: [],
     oppSubs: [],
     timeline: [
-      { min: "0'", type: 'whistle', title: '결승전 시작 예정 (16:00)', desc: '2026 화랑대기 U-12 대표팀 3위조 결승전 킥오프 예정 (vs 세종 세종시티FC)' }
+      { min: "0'", type: 'whistle', title: '결승전 시작 예정 (16:00)', desc: '2026 화랑대기 U-12 대표팀 3위조 결승전 킥오프 예정 (vs 서울 GWFC)' }
     ],
     stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
   },
@@ -6818,6 +6824,22 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
       renderActivePane();
     }
 
+    
+    window.switchTab = switchTab;
+    window.switchStage = switchStage;
+    window.renderActivePane = renderActivePane;
+    window.scrollToSection = scrollToSection;
+    window.openTeamModal = openTeamModal;
+    window.closeTeamModal = closeTeamModal;
+    window.openLineupModal = openLineupModal;
+    window.closeLineupModal = closeLineupModal;
+    window.setModalSubTab = typeof setModalSubTab !== 'undefined' ? setModalSubTab : function() {};
+    window.setLineupTeamView = typeof setLineupTeamView !== 'undefined' ? setLineupTeamView : function() {};
+    window.showLineupPendingToast = typeof showLineupPendingToast !== 'undefined' ? showLineupPendingToast : function() {};
+    window.filterCheerCategory = typeof filterCheerCategory !== 'undefined' ? filterCheerCategory : function() {};
+    window.addCheerComment = typeof addCheerComment !== 'undefined' ? addCheerComment : function() {};
+    window.incrementCheerCount = typeof incrementCheerCount !== 'undefined' ? incrementCheerCount : function() {};
+
     function switchTab(tabKey) {
       currentTab = tabKey;
       renderActivePane();
@@ -7135,7 +7157,7 @@ function renderPitchPlayerNode(p, isGoyang, isGk = false) {
 
     async function fetchFirebaseComments() {
       try {
-        const res = await fetch(`${FIREBASE_DB_URL}/comments.json?orderBy="$key"&limitToLast=100`, { cache: 'no-cache' });
+        const res = await fetch(`${FIREBASE_DB_URL}/comments.json`, { cache: 'no-cache' });
         if (res.ok) {
           const data = await res.json();
           if (data && typeof data === 'object') {
