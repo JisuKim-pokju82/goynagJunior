@@ -4720,9 +4720,8 @@ id="cheer-section" class="space-y-3">
         let updatedCount = 0;
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
-            // 예선리그 및 확정 완료된 2차 경기(U-10 1/2차전, U-11 1/2차전, U-12 1차전)는 화랑대기 동기화에서 제외
-            if (key.startsWith('u10_') || key.startsWith('u11_') || key.startsWith('u12_') ||
-                ['final_u10_1', 'final_u10_2', 'final_u11_1', 'final_u11_2', 'final_u12_1'].includes(key)) {
+            // 오늘(9/11)까지 종료된 모든 경기는 확정 보존(연동 제외)하고, 내일(9/12) 3경기만 연동
+            if (!['final_u10_3', 'final_u11_3', 'final_u12_2'].includes(key)) {
               continue;
             }
             if (mapping.cat !== r.cat) continue;
@@ -4862,8 +4861,8 @@ id="cheer-section" class="space-y-3">
     }
 
     async function scrapeMatch(matchId, btnEl) {
-      // 예선 경기(u10, u11, u12)는 확정 완료된 데이터이므로 토스트만 즉시 표시
-      if (matchId.startsWith('u10_') || matchId.startsWith('u11_') || matchId.startsWith('u12_')) {
+      // 오늘까지 완료된 경기(예선 및 2차 1/2차전, U12 4강)는 확정 보존 데이터이므로 토스트만 즉시 표시
+      if (!['final_u10_3', 'final_u11_3', 'final_u12_2'].includes(matchId)) {
         const rep = (typeof MATCH_REPORTS !== 'undefined') ? MATCH_REPORTS[matchId] : null;
         const scoreStr = (rep && rep.score) ? rep.score : (document.getElementById('score-' + matchId) ? document.getElementById('score-' + matchId).textContent.trim() : '0 : 0');
         const ageLabel = rep ? rep.age : '고양주니어';
