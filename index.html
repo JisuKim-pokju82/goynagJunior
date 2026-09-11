@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!-- GOYANG JUNIOR FC HWARANG 2026 - BUILD V3.0 (PERFECT CLEAN FIX): 2026-09-04 13:18:19 -->
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!-- GOYANG JUNIOR FC HWARANG 2026 - BUILD V3.0 (PERFECT CLEAN FIX): 2026-09-04 13:18:19 -->
 <!DOCTYPE html>
 <html lang="ko" class="h-full">
 <head>
@@ -1596,14 +1596,14 @@
       <div class="match-card rounded-2xl bg-[#151821] border border-[#232736] overflow-hidden shadow-lg transition-all duration-300 hover:border-brand-gold/40">
         <div class="bg-[#1A1E2B] px-3.5 py-2.5 border-b border-[#282D3D] flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 font-bold text-[11px] border border-red-500/30 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span> TODAY
+            <span class="px-2 py-0.5 rounded-full bg-zinc-700 text-zinc-300 font-bold text-[11px] border border-zinc-600">
+              종료
             </span>
             <span class="text-xs font-bold text-zinc-300">9월 11일 (금) 12:00 <span class="text-zinc-500 text-[11px]">(499경기)</span></span>
           </div>
           <div class="text-right flex items-center gap-1.5">
             <div class="flex items-center gap-1">
-              <span class="status-tag px-2 py-0.5 rounded-md bg-yellow-500/20 text-yellow-300 text-[10px] font-extrabold border border-yellow-500/40">경기 예정</span>
+              <span id="status-final_u10_2" class="status-tag px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-700">종료</span>
               <span class="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-400 text-[10px] font-bold border border-purple-500/20">2차 리그 2차전</span>
               <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">축구공원3A</span>
             </div>
@@ -1623,8 +1623,8 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_2">VS</div>
-              <span id="result-final_u10_2" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_2">1 : 3</div>
+              <span id="result-final_u10_2" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-rose-950/80 text-rose-400 border border-rose-600/50">패 (1:3)</span>
             </div>
 
             <!-- Away: Pyeongtaek United White -->
@@ -3368,8 +3368,8 @@ const GOYANG_MATCH_MAP = {
       const cardTitle = document.getElementById('allStandingsGroupCardTitle');
       const teamCountBadge = document.getElementById('allStandingsGroupTeamCountBadge');
       if (cardTitle) {
-                const hasGoyang = grp.teams.some(t => t.includes('고양'));
-        cardTitle.innerText = currentAllStandingsCat + ' ' + currentAllStandingsGroup + '조 순위표' + (hasGoyang ? ' ⭐ 고양주니어 참가조' : '');
+        const hasGoyang = grp.teams.some(t => t.includes('고양'));
+                cardTitle.innerText = currentAllStandingsCat + ' ' + currentAllStandingsGroup + '조 순위표' + (hasGoyang ? ' ⭐ 고양주니어 참가조' : '');
       }
       if (teamCountBadge) {
         teamCountBadge.innerText = grp.teams.length + '개팀';
@@ -3561,6 +3561,7 @@ const GOYANG_MATCH_MAP = {
       'u12_3': { date: '2026-09-09', time: '16:00', datetime: '2026-09-09T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '3\uCC28' },
       'u12_4': { date: '2026-09-10', time: '16:00', datetime: '2026-09-10T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '4\uCC28' },
       'final_u10_1': { date: '2026-09-10', time: '12:00', datetime: '2026-09-10T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '1\uCC28' },
+      'final_u10_2': { date: '2026-09-11', time: '12:00', datetime: '2026-09-11T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '2\uCC28' },
       'final_u10_3': { date: '2026-09-12', time: '12:00', datetime: '2026-09-12T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '3\uCC28' },
       'final_u11_1': { date: '2026-09-10', time: '10:00', datetime: '2026-09-10T10:00:00+09:00', age: 'U-11 \uC640\uC778 2\uCC28', label: '1\uCC28' },
       'final_u11_2': { date: '2026-09-11', time: '10:00', datetime: '2026-09-11T10:00:00+09:00', age: 'U-11 \uC640\uC778 2\uCC28', label: '2\uCC28' },
@@ -3580,7 +3581,6 @@ const GOYANG_MATCH_MAP = {
         const resultEl = document.getElementById('result-' + key);
         const scoreEl = document.getElementById('score-' + key);
 
-        // 예선리그(U-10, U-11, U-12)는 확정 완료된 데이터이므로 D-Day 숨김 처리 후 변경 금지
         if (key.startsWith('u10_') || key.startsWith('u11_') || key.startsWith('u12_')) {
           if (ddayEl) ddayEl.classList.add('hidden');
           return;
@@ -3589,7 +3589,7 @@ const GOYANG_MATCH_MAP = {
         if (key.startsWith('final_')) {
           if (key === 'final_u11_1') {
             if (statusEl) {
-              statusEl.textContent = '경기종료';
+              statusEl.textContent = '종료';
               statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-700';
             }
             if (scoreEl) scoreEl.textContent = '14 : 1';
@@ -3603,7 +3603,7 @@ const GOYANG_MATCH_MAP = {
           }
           if (key === 'final_u11_2') {
             if (statusEl) {
-              statusEl.textContent = '경기종료';
+              statusEl.textContent = '종료';
               statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-700';
             }
             if (scoreEl) scoreEl.textContent = '10 : 1';
@@ -3615,9 +3615,23 @@ const GOYANG_MATCH_MAP = {
             if (ddayEl) ddayEl.classList.add('hidden');
             return;
           }
+          if (key === 'final_u10_2') {
+            if (statusEl) {
+              statusEl.textContent = '종료';
+              statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-700';
+            }
+            if (scoreEl) scoreEl.textContent = '1 : 3';
+            if (resultEl) {
+              resultEl.textContent = '패 (1:3)';
+              resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-rose-950/80 text-rose-400 border border-rose-600/50';
+              resultEl.classList.remove('hidden');
+            }
+            if (ddayEl) ddayEl.classList.add('hidden');
+            return;
+          }
           if (key === 'final_u12_1') {
             if (statusEl) {
-              statusEl.textContent = '오늘 경기';
+              statusEl.textContent = '경기 예정';
               statusEl.className = 'px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-black border border-blue-500/40';
             }
             if (scoreEl) scoreEl.textContent = 'VS';
@@ -3631,7 +3645,7 @@ const GOYANG_MATCH_MAP = {
           }
           if (key === 'final_u12_2') {
             if (statusEl) {
-              statusEl.textContent = '상대 미정';
+              statusEl.textContent = '경기 예정';
               statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
             }
             if (scoreEl) scoreEl.textContent = 'VS';
@@ -3643,27 +3657,10 @@ const GOYANG_MATCH_MAP = {
             }
             return;
           }
-                    if (key === 'final_u10_2') {
-            if (statusEl) {
-              statusEl.textContent = '寃쎄린 ?덉젙';
-              statusEl.className = 'px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40';
-            }
-            if (scoreEl) scoreEl.textContent = 'VS';
-            if (resultEl) {
-              resultEl.textContent = '';
-              resultEl.classList.add('hidden');
-            }
-            if (ddayEl) {
-              ddayEl.textContent = 'TODAY';
-              ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black border border-red-500/40 animate-pulse';
-              ddayEl.classList.remove('hidden');
-            }
-            return;
-          }
           if (key === 'final_u10_1') {
             if (statusEl) {
-              statusEl.textContent = '오늘 경기';
-              statusEl.className = 'px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40';
+              statusEl.textContent = '대진확인 예정';
+              statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
             }
             if (scoreEl) scoreEl.textContent = 'VS';
             if (resultEl) {
@@ -3671,14 +3668,14 @@ const GOYANG_MATCH_MAP = {
               resultEl.classList.add('hidden');
             }
             if (ddayEl) {
-              ddayEl.textContent = 'TODAY';
-              ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black border border-red-500/40 animate-pulse';
+              ddayEl.textContent = 'D-1';
+              ddayEl.className = 'px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40';
               ddayEl.classList.remove('hidden');
             }
             return;
           }
           if (statusEl) {
-            statusEl.textContent = '대진 확정 대기';
+            statusEl.textContent = '대진확인 예정';
             statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
           }
           if (scoreEl) scoreEl.textContent = 'VS';
@@ -3686,9 +3683,9 @@ const GOYANG_MATCH_MAP = {
             resultEl.textContent = '';
             resultEl.classList.add('hidden');
           }
-          if (ddayEl) ddayEl.classList.add('hidden');
           return;
         }
+
 
         const kickoff = new Date(sched.datetime);
         const finishTime = new Date(kickoff.getTime() + 60 * 60 * 1000);
@@ -4720,8 +4717,8 @@ const MATCH_REPORTS = {
     title: '경기 고양주니어 vs 경기 평택유나이티드 화이트',
     date: '9월 11일 (금) 12:00',
     pitch: '축구공원3A',
-    status: '경기 예정',
-    score: 'VS',
+    status: '종료 (패)',
+    score: '1 : 3',
     home: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     away: { name: '경기 평택유나이티드 화이트', teamKey: 'pyeongtaek_white', isGoyang: false },
     goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독 / 백운찬 코치 / 최정원 코치)',
@@ -4738,15 +4735,15 @@ const MATCH_REPORTS = {
     goyangStarters: [
       { pos: 'DF', num: 12, name: '최현우', photo: PLAYER_PHOTOS['u10_12'], heightWeight: '130cm/29kg', note: '선발 (GK/DF)' },
       { pos: 'DF', num: 18, name: '김태이', photo: PLAYER_PHOTOS['u10_18'], heightWeight: '141cm/37kg', note: '선발 수비' },
-      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], heightWeight: '143cm/35kg', note: '선발 수비' },
-      { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], heightWeight: '136cm/29kg', note: '선발 미드필더' },
+      { pos: 'DF', num: 27, name: '김주한', photo: PLAYER_PHOTOS['u10_27'], heightWeight: '143cm/35kg', note: '선발 수비 (29\' 🟨 경고)' },
+      { pos: 'MF', num: 5, name: '박한별', photo: PLAYER_PHOTOS['u10_5'], heightWeight: '136cm/29kg', note: '선발 미드필더 (5\' ⚽ 득점)' },
       { pos: 'MF', num: 7, name: '박승준', photo: PLAYER_PHOTOS['u10_7'], isCaptain: true, heightWeight: '132cm/30kg', note: '주장(C) 선발' },
       { pos: 'MF', num: 22, name: '진하랑', photo: PLAYER_PHOTOS['u10_22'], heightWeight: '141cm/33kg', note: '선발 미드필더' },
       { pos: 'MF', num: 73, name: '임현재', photo: PLAYER_PHOTOS['u10_73'], heightWeight: '134cm/28kg', note: '선발 미드필더' },
       { pos: 'FW', num: 16, name: '최선우', photo: PLAYER_PHOTOS['u10_16'], heightWeight: '130cm/29kg', note: '선발 공격수' }
     ],
     goyangSubs: [
-      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], heightWeight: '127cm/27kg', note: '교체 대기' }
+      { pos: 'MF', num: 10, name: '정지훈', photo: PLAYER_PHOTOS['u10_10'], heightWeight: '127cm/27kg', note: '교체 출전 (플라잉교체)' }
     ],
     oppFormation: '8인제 포메이션 (감독: 이동하 / 코치: 정우섭, 정호영, 최준혁)',
     oppCoaches: [
@@ -4761,23 +4758,29 @@ const MATCH_REPORTS = {
       { pos: 'DF', num: 36, name: '윤세혁', heightWeight: '143cm/31kg', note: '선발 수비' },
       { pos: 'DF', num: 49, name: '김유혁', isCaptain: true, heightWeight: '138cm/29kg', note: '주장(C) 선발' },
       { pos: 'MF', num: 30, name: '박주원', heightWeight: '145cm/40kg', note: '선발 미드필더' },
-      { pos: 'MF', num: 33, name: '김시완', heightWeight: '142cm/32kg', note: '선발 미드필더' },
+      { pos: 'MF', num: 33, name: '김시완', heightWeight: '142cm/32kg', note: '선발 미드필더 (26\' ⚽ 득점)' },
       { pos: 'FW', num: 32, name: '배지후', heightWeight: '134cm/28kg', note: '선발 공격수' },
-      { pos: 'FW', num: 35, name: '정지건', heightWeight: '140cm/35kg', note: '선발 공격수' }
+      { pos: 'FW', num: 35, name: '정지건', heightWeight: '140cm/35kg', note: '선발 공격수 (16\', 17\' ⚽ 득점)' }
     ],
     oppSubs: [
-      { pos: 'DF', num: 25, name: '이하랑', heightWeight: '144cm/43kg', note: '교체 대기' },
-      { pos: 'DF', num: 29, name: '최준수', heightWeight: '141cm/34kg', note: '교체 대기' },
-      { pos: 'FW', num: 42, name: '류이준', heightWeight: '137cm/31kg', note: '교체 대기' }
+      { pos: 'DF', num: 25, name: '이하랑', heightWeight: '144cm/43kg', note: '교체 출전 (플라잉교체)' },
+      { pos: 'DF', num: 29, name: '최준수', heightWeight: '141cm/34kg', note: '교체 출전 (플라잉교체)' },
+      { pos: 'FW', num: 42, name: '류이준', heightWeight: '137cm/31kg', note: '교체 출전 (플라잉교체)' }
     ],
     timeline: [
-      { min: "0'", type: 'whistle', title: '경기 시작 예정', desc: '축구공원3A 구장에서 2026 화랑대기 U-10 옐로우 2차 리그 2차전 시작 예정' }
+      { min: "0'", type: 'whistle', title: '경기 시작', desc: '축구공원3A 구장에서 2026 화랑대기 U-10 옐로우 2차 리그 2차전 전반 시작' },
+      { min: "5'", type: 'goal', team: 'goyang', title: '고양주니어 골! (1:0)', desc: '5번 박한별 선제골 득점!' },
+      { min: "16'", type: 'goal', team: 'away', title: '평택유나이티드 화이트 골 (1:1)', desc: '35번 정지건 동점골 득점' },
+      { min: "17'", type: 'goal', team: 'away', title: '평택유나이티드 화이트 골 (1:2)', desc: '35번 정지건 역전골 득점' },
+      { min: "26'", type: 'goal', team: 'away', title: '평택유나이티드 화이트 골 (1:3)', desc: '33번 김시완 추가골 득점' },
+      { min: "29'", type: 'card', team: 'goyang', cardType: 'yellow', title: '경고', desc: '27번 김주한 경고' },
+      { min: "40'+1", type: 'whistle', title: '경기 종료 (1:3)', desc: '경기 종료 (고양주니어 1 : 3 평택유나이티드 화이트)' }
     ],
     stats: {
-      shots: [0, 0],
-      onTarget: [0, 0],
-      corners: [0, 0],
-      fouls: [0, 0]
+      shots: [4, 8],
+      onTarget: [2, 5],
+      corners: [1, 3],
+      fouls: [2, 3]
     }
   },
 
