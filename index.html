@@ -1716,7 +1716,7 @@
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
               <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_1">2 : 0</div>
-              <span id="result-final_u10_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm">승리 ✨</span>
+              <span id="result-final_u10_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm">2:0 승</span>
 
               <button onclick="scrapeMatch('final_u10_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
@@ -2219,8 +2219,8 @@
 
             <!-- Score -->
             <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u12_1">1 : 3</div>
-              <span id="result-final_u12_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-950/80 text-blue-400 border border-blue-600/50">승 (2:1 결승진출)</span>
+              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u12_1">3 : 1</div>
+              <span id="result-final_u12_1" class="mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-950/80 text-blue-400 border border-blue-600/50">승 (3:1결승진출)</span>
 
               <button onclick="scrapeMatch('final_u12_1', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
                 <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
@@ -2318,8 +2318,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button onclick="openLineupModal('final_u12_2')" class="py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold flex items-center justify-center gap-1.5 text-xs border border-amber-500/40 active:scale-95 transition shadow-sm cursor-pointer">
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 보기
+            <button class="py-2 rounded-xl bg-zinc-800/60 text-zinc-500 font-bold flex items-center justify-center gap-1.5 text-xs border border-zinc-700/50 cursor-not-allowed" disabled>
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (예정)
             </button>
             <a href="tmap://search?name=%EC%95%8C%EC%B2%9C3B" onclick="openTmap('알천3B', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition cursor-pointer">
               <i class="fa-solid fa-diamond-turn-right text-teal-400 text-[11px]"></i> 길찾기 (알천3B)
@@ -4028,9 +4028,12 @@ id="cheer-section" class="space-y-3">
               statusEl.textContent = '종료';
               statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 text-[10px] font-bold border border-zinc-700';
             }
-            if (scoreEl) scoreEl.textContent = '1 : 3';
+            if (scoreEl) {
+              scoreEl.textContent = '3 : 1';
+              scoreEl.className = 'font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]';
+            }
             if (resultEl) {
-              resultEl.textContent = '승 (2:1 결승진출)';
+              resultEl.textContent = '승 (3:1결승진출)';
               resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-950/80 text-blue-400 border border-blue-600/50';
               resultEl.classList.remove('hidden');
             }
@@ -4057,19 +4060,19 @@ id="cheer-section" class="space-y-3">
           }
           if (key === 'final_u10_1') {
             if (statusEl) {
-              statusEl.textContent = '대진확인 예정';
-              statusEl.className = 'px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700';
+              statusEl.textContent = '종료';
+              statusEl.className = 'status-tag px-2 py-0.5 rounded-md bg-emerald-950/70 text-emerald-400 text-[10px] font-black border border-emerald-500/60 shadow-sm';
             }
-            if (scoreEl) scoreEl.textContent = 'VS';
+            if (scoreEl) {
+              scoreEl.textContent = '2 : 0';
+              scoreEl.className = 'font-num text-[13px] sm:text-base md:text-lg font-black text-amber-300 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-yellow-950/40 border border-yellow-500/60 shadow-[0_0_10px_rgba(255,210,0,0.3)] whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]';
+            }
             if (resultEl) {
-              resultEl.textContent = '';
-              resultEl.classList.add('hidden');
+              resultEl.textContent = '2:0 승';
+              resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40 shadow-sm';
+              resultEl.classList.remove('hidden');
             }
-            if (ddayEl) {
-              ddayEl.textContent = 'D-1';
-              ddayEl.className = 'px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40';
-              ddayEl.classList.remove('hidden');
-            }
+            if (ddayEl) ddayEl.classList.add('hidden');
             return;
           }
           if (statusEl) {
@@ -4717,8 +4720,9 @@ id="cheer-section" class="space-y-3">
         let updatedCount = 0;
         rows.forEach(r => {
           for (const [key, mapping] of Object.entries(GOYANG_MATCH_MAP)) {
-            // 예선리그 경기(U-10, U-11, U-12)는 이미 완료되어 확정 저장된 데이터이므로 화랑대기 동기화에서 제외
-            if (key.startsWith('u10_') || key.startsWith('u11_') || key.startsWith('u12_')) {
+            // 예선리그 및 확정 완료된 2차 경기(U-10 1/2차전, U-11 1/2차전, U-12 1차전)는 화랑대기 동기화에서 제외
+            if (key.startsWith('u10_') || key.startsWith('u11_') || key.startsWith('u12_') ||
+                ['final_u10_1', 'final_u10_2', 'final_u11_1', 'final_u11_2', 'final_u12_1'].includes(key)) {
               continue;
             }
             if (mapping.cat !== r.cat) continue;
