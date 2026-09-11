@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿<!-- GOYANG JUNIOR FC HWARANG 2026 - BUILD V3.0 (PERFECT CLEAN FIX): 2026-09-04 13:18:19 -->
+<!-- GOYANG JUNIOR FC HWARANG 2026 - BUILD V3.0 (PERFECT CLEAN FIX): 2026-09-04 13:18:19 -->
 <!DOCTYPE html>
 <html lang="ko" class="h-full">
 <head>
@@ -27,7 +27,7 @@
               bgCard: '#161922',
               bgCardLight: '#1E222E',
               border: '#282D3D',
-              borderLight: '#3A4259',
+              borderLight: '#3A4259'
             }
           },
           fontFamily: {
@@ -3224,13 +3224,13 @@ id="cheer-section" class="space-y-3">
       <!-- Scoreboard Summary Banner -->
       <div class="bg-gradient-to-b from-[#1A1D2A] to-[#12151E] p-3.5 border-b border-[#282D3D]">
         <div class="grid grid-cols-5 items-center gap-2 text-center">
-          <!-- Home: Goyang -->
+          <!-- Home -->
           <div class="col-span-2">
-            <div id="modalHomeEmblem" class="w-12 h-12 mx-auto mb-1 rounded-xl bg-black border border-brand-gold/60 p-0.5 shadow overflow-hidden">
+            <div id="modalHomeEmblem" class="w-12 h-12 mx-auto mb-1 rounded-xl bg-black border border-brand-gold/60 p-0.5 shadow overflow-hidden flex items-center justify-center">
               <img src="https://iili.io/nJAGX7S.png" alt="고양주니어" class="w-full h-full object-cover rounded-lg" />
             </div>
             <div id="modalHomeName" class="text-[11px] font-black text-white leading-tight truncate">경기 고양주니어</div>
-            <span class="text-[9px] text-brand-gold font-bold">고양시 (HOME)</span>
+            <span id="modalHomeLabel" class="text-[9px] text-brand-gold font-bold">고양시 (HOME)</span>
           </div>
 
           <!-- Score & Time -->
@@ -3246,13 +3246,13 @@ id="cheer-section" class="space-y-3">
             </div>
           </div>
 
-          <!-- Away: Opponent -->
+          <!-- Away -->
           <div class="col-span-2">
-            <div id="modalAwayEmblem" class="w-12 h-12 mx-auto mb-1 rounded-xl bg-[#083344] border border-cyan-400/60 p-1 shadow flex items-center justify-center">
+            <div id="modalAwayEmblem" class="w-12 h-12 mx-auto mb-1 rounded-xl bg-[#083344] border border-cyan-400/60 p-1 shadow flex items-center justify-center overflow-hidden">
               <!-- Opponent Crest -->
             </div>
             <div id="modalAwayName" class="text-[11px] font-black text-white leading-tight truncate">강원 속초시 체육회</div>
-            <span class="text-[9px] text-cyan-400 font-bold">원정팀 (AWAY)</span>
+            <span id="modalAwayLabel" class="text-[9px] text-cyan-400 font-bold">원정팀 (AWAY)</span>
           </div>
         </div>
       </div>
@@ -3479,6 +3479,11 @@ id="cheer-section" class="space-y-3">
         desc: '부산광역시 강서구를 연고로 하는 명문 유소년 축구클럽.',
         html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#312E81" stroke="#818CF8" stroke-width="3"/><circle cx="50" cy="46" r="16" fill="#4338CA" stroke="#C7D2FE" stroke-width="2"/><polygon points="50,34 54,42 62,44 56,50 58,58 50,53 42,58 44,50 38,44 46,42" fill="#FBBF24"/><text x="50" y="73" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">부산 강서FC</text><text x="50" y="82" text-anchor="middle" fill="#A5B4FC" font-size="7" font-weight="800">GANGSEO FC</text></svg>`
       },
+      jnfc: {
+        name: '서울 JNFC U12',
+        desc: '서울 JNFC',
+        html: `<svg viewBox="0 0 100 100" class="w-full h-full"><path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#1D4ED8" stroke="#60A5FA" stroke-width="3"/><path d="M50 14 L82 28 L82 56 C82 72 50 86 50 86 C50 86 18 72 18 56 L18 28 Z" fill="#1E40AF"/><circle cx="50" cy="46" r="16" fill="#2563EB" stroke="#93C5FD" stroke-width="2"/><polygon points="50,34 54,42 62,44 56,50 58,58 50,53 42,58 44,50 38,44 46,42" fill="#FBBF24"/><text x="50" y="73" text-anchor="middle" fill="#FFFFFF" font-size="9" font-weight="900">서울 JNFC</text><text x="50" y="82" text-anchor="middle" fill="#93C5FD" font-size="7" font-weight="800">JNFC U12</text></svg>`
+      },
       sinjeong: {
         name: '서울 신정축구클럽 FC U12',
         desc: '서울특별시를 대표하는 유소년 축구 전통의 강호.',
@@ -3698,8 +3703,7 @@ id="cheer-section" class="space-y-3">
     }
 
     function onAllStandingsGroupSelectChange(gNo) {
-
-        currentAllStandingsGroup = String(gNo);
+      currentAllStandingsGroup = String(gNo);
       const select = document.getElementById('allStandingsGroupSelect');
       if (select) select.value = currentAllStandingsGroup;
       updateAllStandingsGroupOptions();
@@ -5117,6 +5121,7 @@ const MATCH_REPORTS = {
     coaches: [], goyangStarters: [], goyangSubs: [], oppFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158', oppCoaches: [], oppStarters: [], oppSubs: [], timeline: [],
     stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
   },
+
   'final_u10_2': {
     age: 'U-10 옐로우',
     stage: '2차 리그 2차전',
@@ -5258,6 +5263,7 @@ const MATCH_REPORTS = {
     ],
     stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
   },
+
   'final_u12_2': {
     age: 'U-12 대표',
     stage: '본선 토너먼트 2차전',
@@ -5279,6 +5285,7 @@ const MATCH_REPORTS = {
     timeline: [],
     stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
   },
+
   'u10_1': {
     age: 'U-10 옐로우',
     stage: '1차 예선 1경기',
@@ -5342,6 +5349,7 @@ const MATCH_REPORTS = {
       fouls: [3, 2]
     }
   },
+
   'u10_2': {
     age: 'U-10 옐로우',
     stage: '1차 예선 2경기',
@@ -5411,6 +5419,7 @@ const MATCH_REPORTS = {
       fouls: [2, 3]
     }
   },
+
   'u10_3': {
     age: 'U-10 옐로우',
     stage: '1차 예선 3경기',
@@ -5546,6 +5555,7 @@ const MATCH_REPORTS = {
       fouls: [2, 4]
     }
   },
+
   'u11_2': {
     age: 'U-11 와인',
     stage: '1차 예선 2경기',
@@ -5616,6 +5626,7 @@ const MATCH_REPORTS = {
       fouls: [3, 2]
     }
   },
+
   'u11_3': {
     age: 'U-11 와인',
     stage: '1차 예선 3경기',
@@ -5680,7 +5691,6 @@ const MATCH_REPORTS = {
       fouls: [2, 3]
     }
   },
-
 
   'u12_1': {
     age: 'U-12 대표',
@@ -5757,10 +5767,7 @@ const MATCH_REPORTS = {
       corners: [8, 1],
       fouls: [2, 3]
     }
-  }
-,
-
-
+  },
 
   'u12_2': {
     age: 'U-12 대표',
@@ -5921,6 +5928,7 @@ const MATCH_REPORTS = {
       fouls: [4, 3]
     }
   },
+
   'u12_4': {
     age: 'U-12 대표',
     stage: '1차 예선 4차전',
@@ -6164,9 +6172,7 @@ const MATCH_REPORTS = {
       fouls: [2, 4]
     }
   }
-
-
-    };
+};
 
 function showLineupPendingToast() {
   showToast('해당 경기는 아직 공식 라인업이 등록되지 않았습니다. 경기 종료 후 KFA 공식 기록 업로드 시 활성화됩니다! ⚽');
@@ -6221,10 +6227,41 @@ function openLineupModal(matchId) {
   if (homeNameEl) homeNameEl.innerText = report.home.name;
   if (awayNameEl) awayNameEl.innerText = report.away.name;
 
+  const homeEmblemEl = document.getElementById('modalHomeEmblem');
+  const homeLabelEl = document.getElementById('modalHomeLabel');
+  const awayLabelEl = document.getElementById('modalAwayLabel');
+
+  if (homeEmblemEl) {
+    const homeInfo = TEAMS_INFO[report.home.teamKey];
+    if (homeInfo) {
+      homeEmblemEl.innerHTML = homeInfo.html.replace('https://iili.io/nJAGX7S.png', INLINE_IMAGES.logo);
+    }
+  }
+
   if (awayEmblemEl) {
-    const oppInfo = TEAMS_INFO[report.away.teamKey];
-    if (oppInfo) {
-      awayEmblemEl.innerHTML = oppInfo.html.replace('https://iili.io/nJAGX7S.png', INLINE_IMAGES.logo);
+    const awayInfo = TEAMS_INFO[report.away.teamKey];
+    if (awayInfo) {
+      awayEmblemEl.innerHTML = awayInfo.html.replace('https://iili.io/nJAGX7S.png', INLINE_IMAGES.logo);
+    }
+  }
+
+  if (homeLabelEl) {
+    if (report.home.isGoyang) {
+      homeLabelEl.className = 'text-[9px] text-brand-gold font-bold';
+      homeLabelEl.innerText = '고양시 (HOME)';
+    } else {
+      homeLabelEl.className = 'text-[9px] text-cyan-400 font-bold';
+      homeLabelEl.innerText = '홈팀 (HOME)';
+    }
+  }
+
+  if (awayLabelEl) {
+    if (report.away.isGoyang) {
+      awayLabelEl.className = 'text-[9px] text-brand-gold font-bold';
+      awayLabelEl.innerText = '고양시 (AWAY)';
+    } else {
+      awayLabelEl.className = 'text-[9px] text-cyan-400 font-bold';
+      awayLabelEl.innerText = '원정팀 (AWAY)';
     }
   }
 
