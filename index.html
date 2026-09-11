@@ -1887,8 +1887,8 @@
           </div>
 
           <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button class="py-2 rounded-xl bg-zinc-800/60 text-zinc-500 font-bold flex items-center justify-center gap-1.5 text-xs border border-zinc-700/50 cursor-not-allowed" disabled>
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (대기)
+            <button onclick="openLineupModal('final_u11_2')" class="py-2 rounded-xl bg-yellow-400/20 hover:bg-yellow-400/30 text-brand-gold font-bold flex items-center justify-center gap-1.5 text-xs border border-yellow-500/40 active:scale-95 transition shadow-sm cursor-pointer">
+              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (출전 명단)
             </button>
             <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%EC%B6%95%EA%B5%AC%EA%B3%B5%EC%9B%90" onclick="openTmap('경주축구공원', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
               <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (축구공원2A)
@@ -3282,7 +3282,7 @@ const GOYANG_MATCH_MAP = {
       const select = document.getElementById('allStandingsGroupSelect');
       const shortcutsContainer = document.getElementById('allStandingsShortcutsContainer');
       const catData = (typeof ALL_GROUPS_DATA !== 'undefined') ? ALL_GROUPS_DATA[currentAllStandingsCat] : null;
-            if (!catData) return;
+      if (!catData) return;
 
       if (select) {
         const groups = Object.keys(catData).sort((a, b) => parseInt(a) - parseInt(b));
@@ -3314,7 +3314,7 @@ const GOYANG_MATCH_MAP = {
             '<button onclick="onAllStandingsGroupSelectChange(\'4\')" class="px-2.5 py-1 rounded-lg text-[11px] font-black ' + (currentAllStandingsGroup === '4' ? 'bg-brand-gold text-black shadow' : 'bg-yellow-400/20 text-brand-gold border border-yellow-500/40') + ' active:scale-95 transition flex items-center gap-1 shrink-0">' +
               '<span>⭐ 4조(고양 대표)</span>' +
             '</button>' +
-            '<button onclick="onAllStandingsGroupSelectChange(\'1\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">1조</button>' +
+                        '<button onclick="onAllStandingsGroupSelectChange(\'1\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">1조</button>' +
             '<button onclick="onAllStandingsGroupSelectChange(\'10\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">10조</button>' +
             '<button onclick="onAllStandingsGroupSelectChange(\'20\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">20조</button>' +
             '<button onclick="onAllStandingsGroupSelectChange(\'30\')" class="px-2 py-1 rounded-lg text-[11px] font-bold bg-[#1E222E] text-zinc-300 border border-[#282D3D] hover:text-white active:scale-95 transition shrink-0">30조</button>' +
@@ -5534,6 +5534,71 @@ const MATCH_REPORTS = {
       onTarget: [18, 2],
       corners: [6, 1],
       fouls: [2, 3]
+    }
+  },
+
+  'final_u11_2': {
+    age: 'U-11 와인',
+    stage: '2차 리그 2차전',
+    title: '부산 강서FC vs 경기 고양주니어',
+    date: '9월 11일 (금) 10:00',
+    pitch: '축구공원2A',
+    status: '경기전',
+    score: 'VS',
+    home: { name: '부산 강서FC', teamKey: 'gangseo', isGoyang: false },
+    away: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
+    goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독 / 백운찬 코치 / 최정원 코치)',
+    coaches: [
+      { role: '감독', name: '정상훈', photo: PLAYER_PHOTOS['u11_coach_1'] },
+      { role: '코치', name: '백운찬', photo: PLAYER_PHOTOS['u10_coach_1'] },
+      { role: '코치', name: '최정원', photo: PLAYER_PHOTOS['u11_coach_2'] }
+    ],
+    goyangStarters: [
+      { pos: 'GK', num: 1, name: '백정훈', photo: PLAYER_PHOTOS['u11_1'], heightWeight: '160cm/55kg', note: '선발 골키퍼' },
+      { pos: 'DF', num: 8, name: '이선우', photo: PLAYER_PHOTOS['u11_8'], heightWeight: '134cm/29kg', note: '선발 수비' },
+      { pos: 'DF', num: 17, name: '임명훈', photo: PLAYER_PHOTOS['u11_17'], heightWeight: '140cm/35kg', note: '선발 수비' },
+      { pos: 'DF', num: 30, name: '강현우', photo: PLAYER_PHOTOS['u11_30'], heightWeight: '152cm/40kg', note: '선발 수비' },
+      { pos: 'MF', num: 14, name: '박주혁', photo: PLAYER_PHOTOS['u11_14'], isCaptain: true, heightWeight: '153cm/42kg', note: '주장(C) / 선발 미드필더' },
+      { pos: 'MF', num: 20, name: '권은율', photo: PLAYER_PHOTOS['u11_20'], heightWeight: '143cm/30kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 9, name: '양시우', photo: PLAYER_PHOTOS['u11_9'], heightWeight: '130cm/25kg', note: '선발 공격' },
+      { pos: 'FW', num: 29, name: '김민준', photo: PLAYER_PHOTOS['u11_29'], heightWeight: '132cm/32kg', note: '선발 공격' }
+    ],
+    goyangSubs: [
+      { pos: 'DF', num: 11, name: '이승민', photo: PLAYER_PHOTOS['u11_11'], heightWeight: '135cm/33kg', note: '교체 대기' },
+      { pos: 'MF', num: 4, name: '김시훈', photo: PLAYER_PHOTOS['u11_4'], heightWeight: '146cm/35kg', note: '교체 대기' }
+    ],
+    oppFormation: '8인제 포메이션 (지도자: 정호철 코치)',
+    oppCoaches: [
+      { role: '코치', name: '정호철' }
+    ],
+    oppStarters: [
+      { pos: 'GK', num: 32, name: '정한결', heightWeight: '150cm/50kg', note: '선발 골키퍼' },
+      { pos: 'GK', num: 77, name: '이한빈', heightWeight: '140cm/35kg', note: '선발' },
+      { pos: 'DF', num: 3, name: '김태준', isCaptain: true, heightWeight: '140cm/31kg', note: '주장(C) / 선발 수비' },
+      { pos: 'DF', num: 4, name: '정승환', heightWeight: '135cm/37kg', note: '선발 수비' },
+      { pos: 'MF', num: 7, name: '박시후', heightWeight: '134cm/29kg', note: '선발 미드필더' },
+      { pos: 'FW', num: 8, name: '정의로와', heightWeight: '135cm/30kg', note: '선발 공격' },
+      { pos: 'FW', num: 10, name: '정이찬', heightWeight: '138cm/26kg', note: '선발 공격' },
+      { pos: 'FW', num: 67, name: '손우성', heightWeight: '140cm/41kg', note: '선발 공격' }
+    ],
+    oppSubs: [
+      { pos: 'GK', num: 21, name: '곽시우', heightWeight: '135cm/30kg', note: '교체 대기' },
+      { pos: 'DF', num: 11, name: '양준명', heightWeight: '137cm/29kg', note: '교체 대기' },
+      { pos: 'DF', num: 13, name: '정승빈', heightWeight: '110cm/20kg', note: '교체 대기' },
+      { pos: 'DF', num: 22, name: '예하민', heightWeight: '142cm/38kg', note: '교체 대기' },
+      { pos: 'MF', num: 1, name: '이도빈', heightWeight: '120cm/24kg', note: '교체 대기' },
+      { pos: 'MF', num: 5, name: '윤승민', heightWeight: '145cm/50kg', note: '교체 대기' },
+      { pos: 'MF', num: 12, name: '이상윤', heightWeight: '145cm/35kg', note: '교체 대기' },
+      { pos: 'MF', num: 19, name: '김준우', heightWeight: '139cm/26kg', note: '교체 대기' }
+    ],
+    timeline: [
+      { min: "0'", type: 'whistle', title: '출전 명단 등록 완료', desc: '축구공원2A 구장에서 U-11 와인 2차 리그 2차전 KFA 공식 라인업 등록 완료' }
+    ],
+    stats: {
+      shots: [0, 0],
+      onTarget: [0, 0],
+      corners: [0, 0],
+      fouls: [0, 0]
     }
   }
 
