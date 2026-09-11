@@ -3945,19 +3945,7 @@ id="cheer-section" class="space-y-3">
       'u12_2': { date: '2026-09-08', time: '16:00', datetime: '2026-09-08T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '2\uCC28' },
       'u12_3': { date: '2026-09-09', time: '16:00', datetime: '2026-09-09T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '3\uCC28' },
       'u12_4': { date: '2026-09-10', time: '16:00', datetime: '2026-09-10T16:00:00+09:00', age: 'U-12 \uB300\uD45C', label: '4\uCC28' },
-  'final_u10_1': {
-    age: 'U-10 \uC610\uB85C\uC6B0',
-    stage: '2\uCC28 \uB9AC\uADF8 1\uCC28\uC804',
-    title: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4 vs \uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4',
-    date: '9\uC6D4 10\uC77C (\uBAA9) 12:00',
-    pitch: '\uC54C\uCC8C4B',
-    status: '?쇱씠釉?(2:1 由щ뱶)$21 : 2',
-    home: { name: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4', teamKey: 'sc_junior', isGoyang: false },
-    away: { name: '\uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4', teamKey: 'goyang', isGoyang: true },
-    goyangFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158',
-    coaches: [], goyangStarters: [], goyangSubs: [], oppFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158', oppCoaches: [], oppStarters: [], oppSubs: [], timeline: [],
-    stats: { shots: [0, 0], onTarget: [0, 0], corners: [0, 0], fouls: [0, 0] }
-  },
+      'final_u10_1': { date: '2026-09-10', time: '12:00', datetime: '2026-09-10T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '1\uCC28' },
       'final_u10_2': { date: '2026-09-11', time: '12:00', datetime: '2026-09-11T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '2\uCC28' },
       'final_u10_3': { date: '2026-09-12', time: '12:00', datetime: '2026-09-12T12:00:00+09:00', age: 'U-10 \uC610\uB85C\uC6B0 2\uCC28', label: '3\uCC28' },
       'final_u11_1': { date: '2026-09-10', time: '10:00', datetime: '2026-09-10T10:00:00+09:00', age: 'U-11 \uC640\uC778 2\uCC28', label: '1\uCC28' },
@@ -4028,14 +4016,18 @@ id="cheer-section" class="space-y-3">
           }
           if (key === 'final_u12_1') {
             if (statusEl) {
-              statusEl.textContent = '경기 예정';
-              statusEl.className = 'px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-black border border-blue-500/40';
+              statusEl.textContent = '\uB77C\uC774\uBE0C (2:1)';
+              statusEl.className = 'px-2 py-0.5 rounded-md bg-red-950/70 text-red-400 text-[10px] font-black border border-red-500/60 shadow-sm animate-pulse';
             }
-            if (scoreEl) scoreEl.textContent = 'VS';
-            if (resultEl) { resultEl.textContent = ''; resultEl.classList.add('hidden'); }
+            if (scoreEl) scoreEl.textContent = '2 : 1';
+            if (resultEl) {
+              resultEl.textContent = '2:1 \uB9AC\uB4DC\uC911';
+              resultEl.className = 'mt-1 px-2 py-0.5 rounded text-[10px] font-black bg-blue-950/80 text-blue-400 border border-blue-600/50';
+              resultEl.classList.remove('hidden');
+            }
             if (ddayEl) {
-              ddayEl.textContent = 'TODAY';
-              ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-500/20 text-red-400 text-[10px] font-black border border-red-500/40 animate-pulse';
+              ddayEl.textContent = 'LIVE';
+              ddayEl.className = 'px-2 py-0.5 rounded-md bg-red-600 text-white text-[10px] font-black animate-pulse';
               ddayEl.classList.remove('hidden');
             }
             return;
@@ -5112,7 +5104,8 @@ const MATCH_REPORTS = {
     title: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4 vs \uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4',
     date: '9\uC6D4 10\uC77C (\uBAA9) 12:00',
     pitch: '\uC54C\uCC8C4B',
-    status: '?쇱씠釉?(2:1 由щ뱶)$21 : 2',
+    status: '\uB300\uC9C4\uD655\uC778 \uC608\uC815',
+    score: 'VS',
     home: { name: '\uC11C\uC6B8 SC\uC8FC\uB2C8\uC5B4', teamKey: 'sc_junior', isGoyang: false },
     away: { name: '\uACBD\uAE30 \uACE0\uC591\uC8FC\uB2C8\uC5B4', teamKey: 'goyang', isGoyang: true },
     goyangFormation: '8\uC778\uC81C \uD3EC\uBA54\uC774\uC158',
@@ -5199,7 +5192,8 @@ const MATCH_REPORTS = {
     title: '서울 JNFC vs 경기 고양주니어',
     date: '9월 11일 (금) 16:00',
     pitch: '축구공원2B',
-    status: '?쇱씠釉?(2:1 由щ뱶)$21 : 2',
+    status: '\uB77C\uC774\uBE0C (2:1 \uB9AC\uB4DC)',
+    score: '1 : 2',
     home: { name: '서울 JNFC', teamKey: 'jnfc', isGoyang: false },
     away: { name: '경기 고양주니어', teamKey: 'goyang', isGoyang: true },
     goyangFormation: '8인제 포메이션 (지도자: 정상훈 감독 / 백운찬 코치 / 최정원 코치)',
