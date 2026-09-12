@@ -1824,80 +1824,75 @@
         </div>
       </div>
 
-      <!-- MATCH 3: U-10 2차 3차전 vs 청주연세FC -->
-      <div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
-        <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center gap-1.5 min-w-0">
-              <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
-              <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 12일 (토) 12:00</span>
-              <span class="text-[10px] text-zinc-400 font-bold ml-1">(598경기)</span>
-            </div>
-            <div class="flex items-center gap-1 shrink-0">
-              <span id="dday-final_u10_3" class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">D-3</span>
-              <span id="status-final_u10_3" class="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-[10px] font-bold border border-zinc-700">대진확인 예정</span>
-            </div>
-          </div>
-          <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
-            <div class="text-[10px] text-zinc-400 font-medium flex items-center gap-1">
-              <i class="fa-solid fa-trophy text-yellow-400/80"></i> <span>2차 리그 3차전</span>
-            </div>
-            <div class="flex items-center gap-1 shrink-0">
-              <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
-              <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천3B</span>
-            </div>
-          </div>
+    <!-- MATCH 3: U-10 2차 3차전 vs 청주연세FC -->
+<div class="rounded-2xl bg-[#161922] border border-[#282D3D] overflow-hidden shadow-lg transition hover:border-yellow-500/50">
+  <div class="bg-[#12151E] px-3.5 py-2.5 border-b border-[#282D3D] space-y-1.5">
+    <div class="flex items-center justify-between gap-2">
+      <div class="flex items-center gap-1.5 min-w-0">
+        <span class="w-5 h-5 rounded-md bg-brand-gold text-black font-black text-[11px] flex items-center justify-center font-num shrink-0">3</span>
+        <span class="font-black text-white text-xs sm:text-[13px] tracking-tight whitespace-nowrap">9월 12일 (토) 12:00</span>
+        <span class="text-[10px] text-zinc-400 font-bold ml-1">(598경기)</span>
+      </div>
+      <!-- 상단 경기 상태 변경: D-3, 대진확인 예정 -> 경기종료 (승) -->
+      <div class="flex items-center gap-1 shrink-0">
+        <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-bold border border-yellow-500/40">경기종료 (승)</span>
+      </div>
+    </div>
+    <div class="flex items-center justify-between gap-2 pt-0.5 text-[11px]">
+      <div class="text-[10px] text-zinc-400 font-medium flex items-center gap-1">
+        <i class="fa-solid fa-trophy text-yellow-400/80"></i> <span>2차 리그 3차전</span>
+      </div>
+      <div class="flex items-center gap-1 shrink-0">
+        <span class="px-2 py-0.5 rounded-md bg-yellow-400/20 text-brand-gold text-[10px] font-black border border-yellow-500/40">HOME</span>
+        <span class="px-2 py-0.5 rounded-md bg-yellow-400/10 text-brand-gold text-[10px] font-black border border-yellow-500/30">알천3B</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-3.5">
+    <div class="grid grid-cols-5 items-center gap-1">
+      <!-- Home: Goyang Junior (Yellow) -->
+      <div class="col-span-2 text-center">
+        <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20 cursor-pointer" onclick="openTeamModal('goyang')">
+          <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
         </div>
-
-        <div class="p-3.5">
-          <div class="grid grid-cols-5 items-center gap-1">
-            <!-- Home: Goyang Junior (Yellow) -->
-            <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-black border-2 border-brand-gold/60 p-0.5 shadow-md overflow-hidden ring-2 ring-yellow-400/20 cursor-pointer" onclick="openTeamModal('goyang')">
-                <img src="https://iili.io/nJAGX7S.png" alt="고양주니어FC" class="w-full h-full object-cover rounded-xl" />
-              </div>
-              <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
-              <span class="text-[10px] text-brand-gold font-bold">(홈팀/옐로우)</span>
-            </div>
-
-            <!-- Score -->
-            <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_3">VS</div>
-              <span id="result-final_u10_3" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
-
-              <button onclick="scrapeMatch('final_u10_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
-                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
-              </button>
-            </div>
-
-            <!-- Away: Cheongju Yonsei FC -->
-            <div class="col-span-2 text-center">
-              <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#082f49] border-2 border-cyan-400 p-1 shadow-md flex items-center justify-center cursor-pointer" onclick="openTeamModal('cheongju_yonsei')">
-                <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
-                  <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#0C4A6E" stroke="#38BDF8" stroke-width="3"/>
-                  <circle cx="50" cy="46" r="18" fill="#0369A1" stroke="#BAE6FD" stroke-width="2"/>
-                  <polygon points="50,36 54,44 62,46 56,52 58,60 50,55 42,60 44,52 38,46 46,44" fill="#FFFFFF"/>
-                  <text x="50" y="73" text-anchor="middle" fill="#E0F2FE" font-size="9" font-weight="900">청주연세FC</text>
-                  <text x="50" y="82" text-anchor="middle" fill="#7DD3FC" font-size="7" font-weight="800">U12 CLUB</text>
-                </svg>
-              </div>
-              <div class="text-[12px] font-bold text-zinc-200 leading-tight">충북 청주연세FC</div>
-              <span class="text-[10px] text-cyan-300 font-bold">(원정)</span>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
-            <button class="py-2 rounded-xl bg-zinc-800/60 text-zinc-500 font-bold flex items-center justify-center gap-1.5 text-xs border border-zinc-700/50 cursor-not-allowed" disabled>
-              <i class="fa-solid fa-users text-[11px]"></i> 라인업 (예정)
-            </button>
-            <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%20%EC%95%8C%EC%B2%9C%EC%B6%95%EA%B5%AC%EC%9E%A5" onclick="openTmap('경주 알천축구장', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
-              <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (알천3B)
-            </a>
-          </div>
-        </div>
+        <div class="text-[12px] font-black text-white leading-tight">경기 고양주니어</div>
+        <span class="text-[10px] text-brand-gold font-bold">(홈팀/옐로우)</span>
       </div>
 
+      <!-- Score (4 : 0 승리 고정 및 자바스크립트 자동덮어쓰기 방지) -->
+      <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
+        <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-yellow-500/40 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u10_3_fixed">4 : 0</div>
+        <span id="result-final_u10_3_fixed" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-yellow-400/20 text-brand-gold border border-yellow-500/40">승리</span>
+      </div>
+
+      <!-- Away: Cheongju Yonsei FC -->
+      <div class="col-span-2 text-center">
+        <div class="emblem-box w-14 h-14 mx-auto mb-1 rounded-2xl bg-[#082f49] border-2 border-cyan-400 p-1 shadow-md flex items-center justify-center cursor-pointer" onclick="openTeamModal('cheongju_yonsei')">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow">
+            <path d="M50 8 L88 24 L88 58 C88 78 50 94 50 94 C50 94 12 78 12 58 L12 24 Z" fill="#0C4A6E" stroke="#38BDF8" stroke-width="3"/>
+            <circle cx="50" cy="46" r="18" fill="#0369A1" stroke="#BAE6FD" stroke-width="2"/>
+            <polygon points="50,36 54,44 62,46 56,52 58,60 50,55 42,60 44,52 38,46 46,44" fill="#FFFFFF"/>
+            <text x="50" y="73" text-anchor="middle" fill="#E0F2FE" font-size="9" font-weight="900">청주연세FC</text>
+            <text x="50" y="82" text-anchor="middle" fill="#7DD3FC" font-size="7" font-weight="800">U12 CLUB</text>
+          </svg>
+        </div>
+        <div class="text-[12px] font-bold text-zinc-200 leading-tight">충북 청주연세FC</div>
+        <span class="text-[10px] text-cyan-300 font-bold">(원정)</span>
+      </div>
     </div>
+
+    <div class="grid grid-cols-2 gap-2 mt-3.5 pt-2.5 border-t border-[#282D3D] text-xs">
+      <button class="py-2 rounded-xl bg-zinc-800/60 text-zinc-500 font-bold flex items-center justify-center gap-1.5 text-xs border border-zinc-700/50 cursor-not-allowed" disabled>
+        <i class="fa-solid fa-users text-[11px]"></i> 라인업 (대기)
+      </button>
+      <a href="tmap://search?name=%EA%B2%BD%EC%A3%BC%20%EC%95%8C%EC%B2%9C%EC%B6%95%EA%B5%AC%EC%9E%A5" onclick="openTmap('경주 알천축구장', event)" class="py-2 rounded-xl bg-[#1E222E] hover:bg-[#282D3D] text-zinc-200 font-bold flex items-center justify-center gap-1.5 text-xs border border-[#3A4259] active:scale-95 transition">
+        <i class="fa-solid fa-location-arrow text-teal-400"></i> 길찾기 (알천3B)
+      </a>
+    </div>
+  </div>
+</div>
+
 
 
         <!-- =========================================
