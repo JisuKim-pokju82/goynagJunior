@@ -2113,15 +2113,19 @@
               <span class="text-[10px] text-rose-300 font-bold">(홈팀/와인)</span>
             </div>
 
-            <!-- Score -->
-            <div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
-              <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-brand-gold tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-[#282D3D] shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_3">VS</div>
-              <span id="result-final_u11_3" class="hidden mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-400 border border-zinc-700"></span>
+           <!-- Score -->
+<div class="col-span-1 text-center flex flex-col items-center justify-center px-0.5 min-w-0">
+  <!-- VS 대신 0 : 3 스코어 입력 및 글자색 수정 -->
+  <div class="font-num text-[13px] sm:text-base md:text-lg font-black text-rose-400 tracking-normal py-0.5 px-1 sm:px-2 rounded-lg bg-[#0E1017] border border-rose-500/30 shadow-inner whitespace-nowrap tabular-nums inline-flex items-center justify-center min-w-[50px] sm:min-w-[62px]" id="score-final_u11_3">0 : 3</div>
+  
+  <!-- hidden 클래스를 지우고 '패배' 배지 표시 -->
+  <span id="result-final_u11_3" class="mt-1 px-2 py-0.5 rounded text-[10px] font-bold bg-rose-950/60 text-rose-400 border border-rose-800/50">패배</span>
 
-              <button onclick="scrapeMatch('final_u11_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
-                <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
-              </button>
-            </div>
+  <button onclick="scrapeMatch('final_u11_3', this)" class="mt-1 text-[9px] text-zinc-400 hover:text-brand-gold flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-[#1E222E] border border-[#282D3D] active:scale-95 transition cursor-pointer">
+    <i class="fa-solid fa-arrows-rotate text-[8px]"></i> <span>새로고침</span>
+  </button>
+</div>
+
 
             <!-- Away: Seoul Sinjeong FC -->
             <div class="col-span-2 text-center">
